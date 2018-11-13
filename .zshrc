@@ -11,6 +11,9 @@ plugins=(
   colored-man-pages
   sudo
   cargo
+  python
+  pep8
+  pip
 )
 
 export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
