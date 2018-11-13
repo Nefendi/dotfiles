@@ -5,7 +5,7 @@ ZSH_THEME="candy"
 ENABLE_CORRECTION="true"
 
 plugins=(
-  git
+  gitfast
   hacker-quotes
   osx
   colored-man-pages
