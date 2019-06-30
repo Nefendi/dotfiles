@@ -27,7 +27,7 @@
 [color]
 	ui = auto
 [core]
-	pager = cat
+	pager = less
 [diff]
 	tool = opendiff
 [difftool]
@@ -36,3 +36,5 @@
 	tool = opendiff
 [rerere]
 	enabled = true
+[pager]
+	branch = false
