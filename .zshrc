@@ -1,4 +1,4 @@
-export ZSH="/Users/nefendi/.zplug/repos/robbyrussell/oh-my-zsh"
+ZSH="/Users/nefendi/.zplug/repos/robbyrussell/oh-my-zsh"
 
 ZSH_THEME="candy"
 
@@ -16,12 +16,12 @@ plugins=(
   pip
 )
 
-export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
+ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
 
 source $ZSH/oh-my-zsh.sh
 source /Users/nefendi/.oh-my-zsh/custom/plugins/hacker-quotes/hacker-quotes.plugin.zsh
 
-export PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/usr/local/bin:/anaconda3/bin:/usr/local/opt/llvm/bin:$HOME/.cargo/bin:$PATH"
+PATH="usr/local/texlive/2018/bin/x86_64-darwin:/anaconda3/bin:/usr/local/opt/llvm/bin:$PATH"
 
 if [ -f ~/.zsh_nocorrect ]; then
     while read -r COMMAND; do
@@ -29,7 +29,6 @@ if [ -f ~/.zsh_nocorrect ]; then
     done < ~/.zsh_nocorrect
 fi
 
-PATH="/Users/nefendi/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/Users/nefendi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/nefendi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/nefendi/perl5\""; export PERL_MB_OPT;
