@@ -21,7 +21,7 @@ ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
 source $ZSH/oh-my-zsh.sh
 source /Users/nefendi/.oh-my-zsh/custom/plugins/hacker-quotes/hacker-quotes.plugin.zsh
 
-PATH="usr/local/texlive/2018/bin/x86_64-darwin:/anaconda3/bin:/usr/local/opt/llvm/bin:$PATH"
+PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/anaconda3/bin:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
 
 if [ -f ~/.zsh_nocorrect ]; then
     while read -r COMMAND; do
