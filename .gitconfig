@@ -30,6 +30,7 @@
 	pager = less
 [diff]
 	tool = opendiff
+	algorithm = histogram
 [difftool]
 	prompt = false
 [merge]
