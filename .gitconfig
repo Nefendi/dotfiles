@@ -9,7 +9,7 @@
   dump = cat-file -p
   unwatch = update-index --assume-unchanged
   watch = update-index --no-assume-unchanged
-  ignore = "! echo $1 >> .gitignore"
+  ignore = !echo '$1\n'  >> .gitignore
   aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
   ignored = ! git ls-files --others --ignored --exclude-standard --directory \
 && git ls-files --others -i --exclude-standard
