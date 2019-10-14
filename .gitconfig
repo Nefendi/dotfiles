@@ -29,12 +29,13 @@
 [core]
 	pager = less
 [diff]
-	tool = opendiff
+	tool = meld
 	algorithm = histogram
 [difftool]
 	prompt = false
 [merge]
-	tool = opendiff
+	tool = meld
+	conflictstyle = diff3
 [rerere]
 	enabled = true
 [pager]
