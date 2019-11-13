@@ -28,6 +28,7 @@
 	ui = auto
 [core]
 	pager = less
+	autocrlf = input
 [diff]
 	tool = meld
 	algorithm = histogram

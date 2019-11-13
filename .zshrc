@@ -21,7 +21,7 @@ ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
 source $ZSH/oh-my-zsh.sh
 source /Users/nefendi/.oh-my-zsh/custom/plugins/hacker-quotes/hacker-quotes.plugin.zsh
 
-PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/bin:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
+PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
 
 if [ -f ~/.zsh_nocorrect ]; then
     while read -r COMMAND; do
@@ -34,6 +34,7 @@ PERL_LOCAL_LIB_ROOT="/Users/nefendi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LI
 PERL_MB_OPT="--install_base \"/Users/nefendi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/nefendi/perl5"; export PERL_MM_OPT;
 
+export CPLUS_INCLUDE_PATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

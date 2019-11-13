@@ -2,3 +2,5 @@ git
 gitk
 pip
 ghc
+matplotlib
+jupyter
