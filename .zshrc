@@ -51,3 +51,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions
