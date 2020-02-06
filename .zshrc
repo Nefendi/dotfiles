@@ -6,7 +6,6 @@ ENABLE_CORRECTION="true"
 
 plugins=(
   gitfast
-  hacker-quotes
   osx
   colored-man-pages
   sudo
@@ -16,10 +15,10 @@ plugins=(
   pip
 )
 
-ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
-
 source $ZSH/oh-my-zsh.sh
-source /Users/nefendi/.oh-my-zsh/custom/plugins/hacker-quotes/hacker-quotes.plugin.zsh
+source /Users/nefendi/.oh-my-zsh/custom/plugins/rand-quote/rand-quote.plugin.zsh
+
+quote
 
 PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
 
