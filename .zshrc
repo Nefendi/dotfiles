@@ -4,15 +4,24 @@ ZSH_THEME="candy"
 
 ENABLE_CORRECTION="true"
 
+EDITOR="vim"
+
 plugins=(
   gitfast
   osx
+  common-aliases
   colored-man-pages
   sudo
   cargo
   python
   pep8
+  pylint
   pip
+  z
+  copyfile
+  docker
+  encode64
+  extract
 )
 
 source $ZSH/oh-my-zsh.sh
