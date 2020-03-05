@@ -3,20 +3,10 @@
   ci = commit
   st = status
   br = branch
-  unstage = reset --
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
-  unwatch = update-index --assume-unchanged
-  watch = update-index --no-assume-unchanged
   ignore = !echo '$1\n'  >> .gitignore
-  aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
   ignored = ! git ls-files --others --ignored --exclude-standard --directory \
 && git ls-files --others -i --exclude-standard
 					
-  lmf = ! git st --porcelain | awk '{print $2}' # list all modified, renamed, removed, ... files			
-  co-all = ! git co -- $(git lmf) # reset all files								
-															
 [push]
 	default = upstream
 	
@@ -29,6 +19,7 @@
 [core]
 	pager = less
 	autocrlf = input
+	editor = nvim
 [diff]
 	tool = meld
 	algorithm = histogram
