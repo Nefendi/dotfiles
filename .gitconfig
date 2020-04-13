@@ -20,6 +20,7 @@
 	pager = less
 	autocrlf = input
 	editor = nvim
+	excludesfile = ~/.global_gitignore
 [diff]
 	tool = meld
 	algorithm = histogram
