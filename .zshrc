@@ -26,9 +26,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-motivate && echo -n "\n"
+# motivate && echo -n "\n"
 
-PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
+PATH="/usr/local/opt/binutils/bin:usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
 
 PERL5LIB="/Users/nefendi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/nefendi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
@@ -58,4 +58,5 @@ if [ -f ~/.zsh_nocorrect ]; then
     done < ~/.zsh_nocorrect
 fi
 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"

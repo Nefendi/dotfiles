@@ -15,7 +15,7 @@
 	email = 28621696+Nefendi@users.noreply.github.com
 	mail = 28621696+Nefendi@users.noreply.github.com
 [color]
-	ui = auto
+	ui = always
 [core]
 	pager = less
 	autocrlf = input
@@ -33,3 +33,7 @@
 	enabled = true
 [pager]
 	branch = false
+[pull]
+	rebase = false
+[log]
+	decorate = full
