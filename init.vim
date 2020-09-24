@@ -4,6 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Everyday
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'chrisbra/csv.vim'
 ":match MatchParen '\%>79v.\+'
 
 "Highlight words on double clicking
@@ -13,22 +15,23 @@ Plug 'vim-scripts/mru.vim'
 "Fileview
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+let NERDTreeShowHidden = 1
 
 "Completion
 Plug 'cohama/lexima.vim'
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3.6 ./install.py --all' }
-let g:ycm_server_python_interpreter = 'python3.6'
+Plug 'ycm-core/YouCompleteMe', { 'do': '/usr/local/bin/python3.8 ./install.py --all' }
+Plug 'rdnetto/YCM-Generator'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3.8'
+let g:python3_host_prog = '/usr/local/bin/python3.8'
 let g:ycm_always_populate_location_list = 1
-"let g:ycm_clangd_binary_path = "/usr/bin/clangd"
 let g:ycm_clangd_args = ['-cross-file-rename']
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-let NERDTreeShowHidden = 1
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename 
+nnoremap <leader>r :YcmCompleter RefactorRename
 nnoremap <leader><leader> :YcmCompleter GoToReferences<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
@@ -52,56 +55,71 @@ let g:clang_format#detect_style_file=1
 let g:clang_format#auto_format_on_insert_leave=1
 autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
 
-" C
+"C
 autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
 
-" Markdown
+"Markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 "UML
 Plug 'aklt/plantuml-syntax'
+
+"Git
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
-" Inside terminal-mode
+"Inside terminal-mode
 :tnoremap <C-[> <C-\><C-n>
 :autocmd TermOpen :set nonumber
 
-" All the other stuff
+"All the other stuff
 set number
 set completeopt=preview,menu,longest
 set shiftwidth=4
 set mouse=a
-set textwidth=0 
+set textwidth=0
 set wrapmargin=0
 set nowrap
-:colorscheme delek
+:colorscheme onedark
 
-" lightline
+"lightline
 set noshowmode
 let g:lightline = {
+	    \ 'colorscheme': 'onedark',
+            \ 'component': {
+	    \    'lineinfo': '%3l:%-2c%<',
+            \    'percent': '%3p%%%<',
+            \    'fileformat': '%{&ff}%<',
+            \    'fileencoding': '%{&fenc!=#""?&fenc:&enc}%<',
+            \    'filetype': '%{&ft!=#""?&ft:"no ft"}%<'
+            \   },
 	    \ 'active': {
-	    \   'left': [ [ 'mode' ],
-	    \             [ 'relativepath', 'modified' ] ],
-	    \ 'right': [ ]
+	    \   'left': [ [ 'mode', 'paste' ],
+	    \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
+	    \   'right': [ [ 'lineinfo' ],
+            \             [ 'percent' ],
+            \             [ 'fileformat', 'fileencoding', 'filetype' ] ]
 	    \ },
 	    \ 'inactive': {
-	    \ 'left': [ ['filename'] ],
+	    \ 'left': [ ['relativepath'] ],
 	    \ 'right': []
-	    \},
-	    \ 'component_function': {
 	    \ },
-	    \ 'mode_map': {
-	    \ 'n' : 'NORMAL',
-	    \ 'i' : 'INSERT',
-	    \ 'R' : 'REPLACE',
-	    \ 'v' : 'VISUAL',
-	    \ 'V' : 'VISUAL-LINE',
-	    \ "\<C-v>": 'VISUAL-BLOCK',
-	    \ 'c' : 'COMMAND',
-	    \ 's' : 'CHOICE',
-	    \ 'S' : 'S-LINE',
-	    \ "\<C-s>": 'S-BLOCK',
-	    \ 't': 'TERMINAL',
-	    \}
+	    \ 'component_function': {
+	    \      'gitbranch': 'FugitiveHead',
+	    \ },
 	    \ }
+
+" Check this amazing post
+" https://vi.stackexchange.com/questions/22398/disable-lightline-on-nerdtree
+augroup filetype_nerdtree
+    au!
+    au FileType nerdtree call s:disable_lightline_on_nerdtree()
+    au WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_nerdtree()
+augroup END
+
+fu s:disable_lightline_on_nerdtree() abort
+    let nerdtree_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'nerdtree') + 1
+    call timer_start(0, {-> nerdtree_winnr && setwinvar(nerdtree_winnr, '&stl', '%#Normal#')})
+endfu
