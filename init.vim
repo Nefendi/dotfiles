@@ -6,7 +6,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
-":match MatchParen '\%>79v.\+'
+
+:set spelllang=en_us,pl
+:set spell
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
