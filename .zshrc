@@ -36,7 +36,7 @@ PERL_MB_OPT="--install_base \"/Users/nefendi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/nefendi/perl5"; export PERL_MM_OPT;
 
 PROMPT='[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
-λ '
+%F{244}λ %{$reset_color%}'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
