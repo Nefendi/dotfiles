@@ -33,7 +33,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename
+nnoremap <leader>r :YcmCompleter RefactorRename<Space>
 nnoremap <leader><leader> :YcmCompleter GoToReferences<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
