@@ -214,6 +214,8 @@ Plug 'aklt/plantuml-syntax'
 "Git
 Plug 'tpope/vim-fugitive'
 
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 "Inside terminal-mode

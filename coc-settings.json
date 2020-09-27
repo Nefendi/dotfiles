@@ -4,6 +4,8 @@
         "-cross-file-rename"
     ],
     "python.jediEnabled": false,
+    "explorer.icon.enableVimDevicons": true,
+    "explorer.file.showHiddenFiles": true,
     //-------- Code Spell Checker Configuration --------
     // The Language local to use when spell checking. "en" and "en-GB" are currently supported.
     "cSpellExt.enableDictionaries": [
