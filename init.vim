@@ -7,6 +7,9 @@ Plug 'vim-scripts/mru.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
 
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
+
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
 :inoremap <2-LeftMouse> <c-[>* <c-o> i
@@ -27,7 +30,8 @@ let g:coc_global_extensions = [ 'coc-spell-checker',
 							  \ 'coc-python',
 							  \ 'coc-highlight',
 							  \ 'coc-markdownlint',
-							  \ 'coc-rust-analyzer'
+							  \ 'coc-rust-analyzer',
+							  \ 'coc-snippets'
 							\ ]
 
 " if hidden is not set, TextEdit might fail.
@@ -56,6 +60,12 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -131,9 +141,6 @@ xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call CocAction('fold', <f-args>)
-
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
@@ -171,17 +178,31 @@ autocmd Filetype py set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 "CMake
 Plug 'cdelledonne/vim-cmake'
 
-"C++
+"C++ and C
 autocmd Filetype cpp match MatchParen '\%>79v.\+'
 autocmd Filetype cpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+autocmd Filetype cc set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+autocmd Filetype h set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 Plug 'rhysd/vim-clang-format'
 let g:clang_format#detect_style_file=1
-let g:clang_format#auto_format=1
+let g:clang_format#auto_format=0
 autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
 
-"C
-autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+function! FormatCppOnSave()
+  :silent !{git status}
+  if v:shell_error != 0
+	:ClangFormat
+  else
+    let l:formatdiff = 1
+  	:silent !{git clang-format --force --quiet}
+  	:e
+  endif
+endfunction
+
+autocmd BufWritePost *.h,.*hpp,*.cc,*.cpp,*.c call FormatCppOnSave()
+
 
 "Markdown
 Plug 'godlygeek/tabular'
