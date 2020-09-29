@@ -6,9 +6,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
+
+let g:ale_disable_lsp = 1
 
 "Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
@@ -31,7 +35,8 @@ let g:coc_global_extensions = [ 'coc-spell-checker',
 							  \ 'coc-highlight',
 							  \ 'coc-markdownlint',
 							  \ 'coc-rust-analyzer',
-							  \ 'coc-snippets'
+							  \ 'coc-snippets',
+							  \ 'coc-fzf-preview'
 							\ ]
 
 " if hidden is not set, TextEdit might fail.
@@ -98,8 +103,8 @@ nmap <silent> <leader><leader> <Plug>(coc-references)
 nmap <leader>r <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f <Plug>(coc-format-selected)
-nmap <leader>f <Plug>(coc-format-selected)
+xmap <leader>u <Plug>(coc-format-selected)
+nmap <leader>u <Plug>(coc-format-selected)
 
 " Use \d to show documentation in preview window
 nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
@@ -213,6 +218,36 @@ Plug 'aklt/plantuml-syntax'
 
 "Git
 Plug 'tpope/vim-fugitive'
+
+"Python
+Plug 'numirias/semshi'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'dense-analysis/ale'
+
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint']
+	  \ }
+
+
+"Fzf
+nmap <Leader>f [fzf-p]
+xmap <Leader>f [fzf-p]
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
 
 Plug 'ryanoasis/vim-devicons'
 

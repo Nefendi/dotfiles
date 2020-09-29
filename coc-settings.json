@@ -3,6 +3,7 @@
     "clangd.arguments": [
         "-cross-file-rename"
     ],
+    "diagnostic.displayByAle": true,
     "python.jediEnabled": false,
     "explorer.icon.enableVimDevicons": true,
     "explorer.file.showHiddenFiles": true,
