@@ -1,263 +1,37 @@
-"vim-plug
+""""""""""""""""""""""""""""""""""""""" vim-plug and plugins """""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Everyday
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-let g:python3_host_prog = '/usr/bin/python3'
-let g:python_host_prog = '/usr/bin/python2'
-
-let g:ale_disable_lsp = 1
-
-"Highlight words on double clicking
-:noremap <2-LeftMouse> * <c-o>
-:inoremap <2-LeftMouse> <c-[>* <c-o> i
-
-"Completion
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'cohama/lexima.vim'
-
-"Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = [ 'coc-spell-checker',
-							  \ 'coc-cspell-dicts',
-							  \ 'coc-explorer',
-							  \ 'coc-actions',
-							  \ 'coc-sh',
-							  \ 'coc-json',
-							  \ 'coc-cmake',
-							  \ 'coc-clangd',
-							  \ 'coc-python',
-							  \ 'coc-highlight',
-							  \ 'coc-markdownlint',
-							  \ 'coc-rust-analyzer',
-							  \ 'coc-snippets',
-							  \ 'coc-fzf-preview'
-							\ ]
-
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
-" Better display for messages
-set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Clangd
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-nmap <silent> <leader>h :call CocAction('runCommand', 'clangd.switchSourceHeader')<CR>
-nmap <silent> <leader>s :call CocAction('runCommand', 'clangd.symbolInfo')<CR>
-
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> <leader>g <Plug>(coc-definition)
-nmap <silent> <leader>t <Plug>(coc-type-definition)
-nmap <silent> <leader>i <Plug>(coc-implementation)
-nmap <silent> <leader><leader> <Plug>(coc-references)
-
-" Remap for rename current word
-nmap <leader>r <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>u <Plug>(coc-format-selected)
-nmap <leader>u <Plug>(coc-format-selected)
-
-" Use \d to show documentation in preview window
-nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
-
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-" nmap <silent> <TAB> <Plug>(coc-range-select)
-" xmap <silent> <TAB> <Plug>(coc-range-select)
-" xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
-
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>x  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-"Coc-Explorer
-:nmap <Space>e :CocCommand explorer<CR>
-
-"Rust
-autocmd Filetype rs set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
-
-"Python
-autocmd Filetype py match MatchParen '\%>79v.\+'
-autocmd Filetype py set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-
-"CMake
 Plug 'cdelledonne/vim-cmake'
-
-"C++ and C
-autocmd Filetype cpp match MatchParen '\%>79v.\+'
-autocmd Filetype cpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd Filetype cc set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
-autocmd Filetype h set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 Plug 'rhysd/vim-clang-format'
-let g:clang_format#detect_style_file=1
-let g:clang_format#auto_format=0
-autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
-
-function! FormatCppOnSave()
-  :silent !{git status}
-  if v:shell_error != 0
-	:ClangFormat
-  else
-    let l:formatdiff = 1
-  	:silent !{git clang-format --force --quiet}
-  	:e
-  endif
-endfunction
-
-autocmd BufWritePost *.h,.*hpp,*.cc,*.cpp,*.c call FormatCppOnSave()
-
-
-"Markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
-"UML
 Plug 'aklt/plantuml-syntax'
-
-"Git
 Plug 'tpope/vim-fugitive'
-
-"Python
 Plug 'numirias/semshi'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'dense-analysis/ale'
-
-let g:ale_linters = {
-      \   'python': ['flake8', 'pylint']
-	  \ }
-
-
-"Fzf
-nmap <Leader>f [fzf-p]
-xmap <Leader>f [fzf-p]
-
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
-
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-"Inside terminal-mode
-:tnoremap <C-[> <C-\><C-n>
-:autocmd TermOpen :set nonumber
-
-"All the other stuff
+""""""""""""""""""""""""""""""""""""""" Basic configuration """""""""""""""""""""""""""""""""""""""
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 set number
 set completeopt=preview,menu,longest
 set shiftwidth=4
@@ -265,10 +39,11 @@ set mouse=a
 set textwidth=0
 set wrapmargin=0
 set nowrap
+set noshowmode
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 :colorscheme onedark
 
-"lightline
-set noshowmode
+""""""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
 let g:lightline = {
 	    \ 'colorscheme': 'onedark',
             \ 'component': {
@@ -293,3 +68,169 @@ let g:lightline = {
 	    \      'gitbranch': 'FugitiveHead',
 	    \ },
 	    \ }
+
+let g:coc_global_extensions = [ 'coc-spell-checker',
+							  \ 'coc-cspell-dicts',
+							  \ 'coc-explorer',
+							  \ 'coc-actions',
+							  \ 'coc-sh',
+							  \ 'coc-json',
+							  \ 'coc-cmake',
+							  \ 'coc-clangd',
+							  \ 'coc-python',
+							  \ 'coc-highlight',
+							  \ 'coc-markdownlint',
+							  \ 'coc-rust-analyzer',
+							  \ 'coc-snippets',
+							  \ 'coc-fzf-preview'
+							\ ]
+
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
+
+let g:ale_disable_lsp = 1
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint']
+	  \ }
+
+let g:clang_format#detect_style_file=1
+let g:clang_format#auto_format=1
+autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""" Functions """"""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+
+""""""""""""""""""""""""""""""""""""""" Commands """""""""""""""""""""""""""""""""""""""
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:OR` for organize import of current buffer
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" Rust
+autocmd Filetype rs set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
+
+" Python
+autocmd Filetype py match MatchParen '\%>79v.\+'
+autocmd Filetype py set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+" C++ and C
+autocmd Filetype cpp match MatchParen '\%>79v.\+'
+autocmd Filetype cpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+autocmd Filetype cc set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+autocmd Filetype h set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+:autocmd TermOpen :set nonumber
+
+""""""""""""""""""""""""""""""""""""""" Mappings """""""""""""""""""""""""""""""""""""""
+
+" Highlight words on double clicking
+:noremap <2-LeftMouse> * <c-o>
+:inoremap <2-LeftMouse> <c-[>* <c-o> i
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Clangd
+nmap <silent> <leader>h :call CocAction('runCommand', 'clangd.switchSourceHeader')<CR>
+nmap <silent> <leader>s :call CocAction('runCommand', 'clangd.symbolInfo')<CR>
+
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> <leader>g <Plug>(coc-definition)
+nmap <silent> <leader>t <Plug>(coc-type-definition)
+nmap <silent> <leader>i <Plug>(coc-implementation)
+nmap <silent> <leader><leader> <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>r <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>u <Plug>(coc-format-selected)
+nmap <leader>u <Plug>(coc-format-selected)
+
+" Use \d to show documentation in preview window
+nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
+
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@<CR>
+
+" Fix autofix problem of current line
+nmap <leader>qf <Plug>(coc-fix-current)
+
+" Coc-Explorer
+:nmap <Space>e :CocCommand explorer<CR>
+
+" Fzf
+nmap <Leader>f [fzf-p]
+xmap <Leader>f [fzf-p]
+
+nnoremap <silent> <space><space> :<C-u>CocFzfList<CR>
+nnoremap <silent> <space>a       :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <space>b       :<C-u>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <space>c       :<C-u>CocFzfList commands<CR>
+nnoremap <silent> <space>x       :<C-u>CocFzfList extensions<CR>
+nnoremap <silent> <space>l       :<C-u>CocFzfList location<CR>
+nnoremap <silent> <space>o       :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <space>s       :<C-u>CocFzfList symbols<CR>
+nnoremap <silent> <space>p       :<C-u>CocFzfListResume<CR>
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+
+" Inside terminal-mode
+:tnoremap <C-[> <C-\><C-n>
