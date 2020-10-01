@@ -22,6 +22,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'dense-analysis/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'maximbaz/lightline-ale'
+Plug 'vimlab/split-term.vim'
 
 call plug#end()
 
@@ -32,18 +33,20 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
 set number
+"set signcolumn=number
+set signcolumn=yes
 set completeopt=preview,menu,longest
 set shiftwidth=4
 set mouse=a
-set textwidth=0
+set textwidth=120
 set wrapmargin=0
-set nowrap
+set wrap
 set noshowmode
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-" Signcolumn produces an error in neovim
-"set signcolumn=number
+set splitbelow
+set splitright
+set clipboard=unnamed
 :colorscheme onedark
 
 """"""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
@@ -90,9 +93,9 @@ let g:lightline.component_type = {
       \ }
 
 let g:lightline#ale#indicator_checking = "\uf110 "
-let g:lightline#ale#indicator_infos = "\uf129 "
+let g:lightline#ale#indicator_infos = "∙∙ "
 let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "\uf00d "
+let g:lightline#ale#indicator_errors = "✗ "
 let g:lightline#ale#indicator_ok = "\uf00c "
 
 
@@ -134,11 +137,11 @@ let g:ale_fix_on_save = 1
 
 let b:ale_warn_about_trailing_whitespace = 0
 
-let g:ale_sign_error = "\uf00d"
+let g:ale_sign_error = "✗"
 let g:ale_sign_warning = "\uf071"
-let g:ale_sign_info = "\uf129"
+let g:ale_sign_info = "∙∙"
 
-highlight ALEWarningSign ctermfg=DarkYellow
+highlight ALEWarningSign ctermfg=Yellow
 highlight ALEInfoSign ctermfg=Green
 
 let g:clang_format#detect_style_file = 1
@@ -275,5 +278,4 @@ nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
 nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
 
-" Inside terminal-mode
-:tnoremap <C-[> <C-\><C-n>
+nmap <leader>q :Term<CR>
