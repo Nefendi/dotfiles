@@ -96,7 +96,7 @@ let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_infos = "∙∙ "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "✗ "
-let g:lightline#ale#indicator_ok = "\uf00c "
+let g:lightline#ale#indicator_ok = "✔"
 
 
 let g:coc_global_extensions = [ 'coc-spell-checker',
