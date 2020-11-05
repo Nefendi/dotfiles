@@ -28,12 +28,16 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-PATH="/usr/local/opt/binutils/bin:usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/usr/local/opt/llvm/bin:/Users/nefendi/.local/bin:$PATH"
+PATH="/usr/local/opt/llvm/bin:/usr/local/opt/binutils/bin:usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/Users/nefendi/.local/bin:$PATH"
 
 PERL5LIB="/Users/nefendi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/nefendi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/nefendi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/nefendi/perl5"; export PERL_MM_OPT;
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 PROMPT='[%*]%{$reset_color%} [%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
 %F{244}λ %{$reset_color%}'
