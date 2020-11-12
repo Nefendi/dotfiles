@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'numirias/semshi'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'dense-analysis/ale'
+Plug 'liuchengxu/vista.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'maximbaz/lightline-ale'
 Plug 'vimlab/split-term.vim'
@@ -61,7 +62,7 @@ let g:lightline = {
             \   },
 	    \ 'active': {
 	    \   'left': [ [ 'mode', 'paste' ],
-	    \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
+	    \             [ 'gitbranch', 'readonly', 'relativepath', 'method', 'modified' ] ],
 	    \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
 			\			  [ 'lineinfo' ],
             \             [ 'percent' ],
@@ -73,6 +74,7 @@ let g:lightline = {
 	    \ },
 	    \ 'component_function': {
 	    \      'gitbranch': 'FugitiveHead',
+	    \      'method': 'NearestMethodOrFunction',
 	    \ },
 	    \ }
 
@@ -121,18 +123,9 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:ale_disable_lsp = 1
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-
-let g:ale_linters = {
-      \   'python': [ 'flake8', 'pylint' ]
-	  \ }
-
-let g:ale_fixers = {
-	  \   '*': [ 'remove_trailing_lines', 'trim_whitespace' ],
-	  \ }
-
+let g:ale_lint_on_save = 0
 let g:ale_fix_on_save = 1
 
 let b:ale_warn_about_trailing_whitespace = 0
@@ -144,11 +137,32 @@ let g:ale_sign_info = "∙∙"
 highlight ALEWarningSign ctermfg=Yellow
 highlight ALEInfoSign ctermfg=Green
 
+let g:ale_linters = {
+      \   'python': [ 'flake8', 'pylint' ]
+	  \ }
+
+let g:ale_fixers = {
+	  \   '*': [ 'remove_trailing_lines', 'trim_whitespace' ],
+	  \   'python': [ 'yapf' ],
+	  \ }
+
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
 autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
 
+let g:vista_fzf_preview = [ 'right:50%' ]
+let g:vista_icon_indent = [ "╰─▸ ", "├─▸ " ]
+let g:vista_default_executive = 'ctags'
+let g:vista_close_on_jump = 1
+let g:vista_update_on_text_changed = 1
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+       \   "function": "\uf0ad",
+       \   "variable": "\uf031",
+       \  }
+
 """""""""""""""""""""""""""""""""""""""""""""""""""" Functions """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -166,6 +180,10 @@ function! s:cocActionsOpenFromSelected(type) abort
   execute 'CocCommand actions.open ' . a:type
 endfunction
 
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
 """"""""""""""""""""""""""""""""""""""" Commands """""""""""""""""""""""""""""""""""""""
 
 " Highlight symbol under cursor on CursorHold
@@ -177,22 +195,11 @@ command! -nargs=0 Format :call CocAction('format')
 " Use `:OR` for organize import of current buffer
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
-" Rust
-autocmd Filetype rs set tabstop=8 softtabstop=4 expandtab shiftwidth=4 smarttab
-
-" Python
-autocmd Filetype py match MatchParen '\%>79v.\+'
-autocmd Filetype py set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-
-" C++ and C
-autocmd Filetype cpp match MatchParen '\%>79v.\+'
-autocmd Filetype cpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd Filetype cc set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd Filetype c set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
-autocmd Filetype h set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-autocmd Filetype hpp set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-
 :autocmd TermOpen :set nonumber
+
+au BufNewFile,BufRead *.py set foldmethod=indent
+
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 """"""""""""""""""""""""""""""""""""""" Mappings """""""""""""""""""""""""""""""""""""""
 
@@ -214,6 +221,13 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Folding (only Python)
+nnoremap <space> za
+
+nmap <silent> <F10> :ALEFix<CR>
+
+nmap <silent> <leader>v :Vista<CR>
 
 " Clangd
 nmap <silent> <leader>h :call CocAction('runCommand', 'clangd.switchSourceHeader')<CR>
