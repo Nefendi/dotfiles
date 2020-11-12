@@ -12,6 +12,7 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'cohama/lexima.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cdelledonne/vim-cmake'
+Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/vim-clang-format'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -19,6 +20,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'tpope/vim-fugitive'
 Plug 'numirias/semshi'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
 Plug 'liuchengxu/vista.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -58,7 +60,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'onedark'
 let g:airline#extensions#ale#enabled = 1
 
 let g:coc_global_extensions = [ 'coc-spell-checker',
@@ -80,6 +82,11 @@ let g:coc_global_extensions = [ 'coc-spell-checker',
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
 
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = 'ﰣ'
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_preview_win_floating = 1
+
 let g:ale_disable_lsp = 1
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -87,18 +94,16 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 0
 let g:ale_fix_on_save = 1
-
 let b:ale_warn_about_trailing_whitespace = 0
-
 let g:ale_sign_error = "✗"
-let g:ale_sign_warning = "\uf071"
-let g:ale_sign_info = "∙∙"
+let g:ale_sign_warning = ""
+let g:ale_sign_info = "כֿ"
 
 highlight ALEWarningSign ctermfg=Yellow
-highlight ALEInfoSign ctermfg=Green
+highlight ALEInfoSign ctermfg=DarkBlue
 
 let g:ale_linters = {
-      \   'python': [ 'flake8', 'pylint' ]
+      \   'python': [ 'pylint' ]
 	  \ }
 
 let g:ale_fixers = {
@@ -108,7 +113,7 @@ let g:ale_fixers = {
 
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
-autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google"}
+autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google" }
 
 let g:vista_fzf_preview = [ 'right:50%' ]
 let g:vista_icon_indent = [ "╰─▸ ", "├─▸ " ]
@@ -134,10 +139,6 @@ endfunction
 
 function! s:cocActionsOpenFromSelected(type) abort
   execute 'CocCommand actions.open ' . a:type
-endfunction
-
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
 """"""""""""""""""""""""""""""""""""""" Commands """""""""""""""""""""""""""""""""""""""
