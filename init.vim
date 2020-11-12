@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""" vim-plug and plugins """""""""""""""""""""""""""""""""""""""
+
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
@@ -22,12 +22,14 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'dense-analysis/ale'
 Plug 'liuchengxu/vista.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'maximbaz/lightline-ale'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vimlab/split-term.vim'
 
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""" Basic configuration """""""""""""""""""""""""""""""""""""""
+
 set hidden
 set nobackup
 set nowritebackup
@@ -51,55 +53,13 @@ set clipboard=unnamed
 :colorscheme onedark
 
 """"""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
-let g:lightline = {
-	    \ 'colorscheme': 'onedark',
-            \ 'component': {
-	    	\    'lineinfo': '%3l:%-2c%<',
-            \    'percent': '%3p%%%<',
-            \    'fileformat': '%{&ff}%<',
-            \    'fileencoding': '%{&fenc!=#""?&fenc:&enc}%<',
-            \    'filetype': '%{&ft!=#""?&ft:"no ft"}%<'
-            \   },
-	    \ 'active': {
-	    \   'left': [ [ 'mode', 'paste' ],
-	    \             [ 'gitbranch', 'readonly', 'relativepath', 'method', 'modified' ] ],
-	    \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
-			\			  [ 'lineinfo' ],
-            \             [ 'percent' ],
-            \             [ 'fileformat', 'fileencoding', 'filetype' ] ]
-	    \ },
-	    \ 'inactive': {
-	    \ 'left': [ ['relativepath'] ],
-	    \ 'right': []
-	    \ },
-	    \ 'component_function': {
-	    \      'gitbranch': 'FugitiveHead',
-	    \      'method': 'NearestMethodOrFunction',
-	    \ },
-	    \ }
 
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_infos': 'lightline#ale#infos',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
-
-let g:lightline.component_type = {
-      \     'linter_checking': 'right',
-      \     'linter_infos': 'right',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'right',
-      \ }
-
-let g:lightline#ale#indicator_checking = "\uf110 "
-let g:lightline#ale#indicator_infos = "∙∙ "
-let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "✗ "
-let g:lightline#ale#indicator_ok = "✔"
-
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tomorrow'
+let g:airline#extensions#ale#enabled = 1
 
 let g:coc_global_extensions = [ 'coc-spell-checker',
 							  \ 'coc-cspell-dicts',
@@ -156,10 +116,6 @@ let g:vista_default_executive = 'ctags'
 let g:vista_close_on_jump = 1
 let g:vista_update_on_text_changed = 1
 let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-       \   "function": "\uf0ad",
-       \   "variable": "\uf031",
-       \  }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""" Functions """"""""""""""""""""""""""""""""""""""""""""""""""""
 
