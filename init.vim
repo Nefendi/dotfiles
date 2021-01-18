@@ -7,7 +7,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'cohama/lexima.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
@@ -56,7 +56,7 @@ set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
 
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
