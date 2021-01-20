@@ -28,7 +28,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-PATH="/usr/local/opt/llvm/bin:/usr/local/opt/binutils/bin:usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/Users/nefendi/.local/bin:$PATH"
+PATH="/usr/local/texlive/2018/bin/x86_64-darwin:/Users/nefendi/anaconda3/envs:/Users/nefendi/.local/bin:$PATH"
 
 PERL5LIB="/Users/nefendi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
 export PERL5LIB
@@ -39,13 +39,15 @@ export PERL_MB_OPT
 PERL_MM_OPT="INSTALL_BASE=/Users/nefendi/perl5"
 export PERL_MM_OPT
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 PROMPT='[%*]%{$reset_color%} [%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
 %F{244}λ %{$reset_color%}'
+
 GIT_PS1_SHOWSTASHSTATE=1
+
+export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | pbcopy)'"
+
+############################################################################################################################3
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -70,4 +72,4 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | pbcopy)'"
+[ -f "/Users/nefendi/.ghcup/env" ] && source "/Users/nefendi/.ghcup/env" # ghcup-env
