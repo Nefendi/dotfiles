@@ -7,7 +7,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'cohama/lexima.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
@@ -79,8 +79,8 @@ let g:coc_global_extensions = [ 'coc-spell-checker',
 							  \ 'coc-fzf-preview'
 							\ ]
 
-let g:python3_host_prog = '/usr/bin/python3'
-let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/opt/miniconda3/bin/python'
+let g:python_host_prog = '/home/nefendi/.conda/envs/py27/bin/python'
 
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = 'ﰣ'
