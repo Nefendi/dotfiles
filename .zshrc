@@ -28,27 +28,27 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-PATH="/opt/miniconda3/envs:$PATH"
+PATH="/home/nefendi/.local/bin:/home/nefendi/miniconda3/envs:$PATH"
 
 PROMPT='[%*]%{$reset_color%} [%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
 %F{244}λ %{$reset_color%}'
 
 GIT_PS1_SHOWSTASHSTATE=1
 
-export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
+export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 
 #############################################################################################################################
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+__conda_setup="$('/home/nefendi/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/nefendi/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nefendi/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/miniconda3/bin:$PATH"
+        export PATH="/home/nefendi/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

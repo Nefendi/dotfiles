@@ -1,5 +1,11 @@
 """"""""""""""""""""""""""""""""""""""" vim-plug and plugins """""""""""""""""""""""""""""""""""""""
 
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-scripts/mru.vim'
@@ -7,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'cohama/lexima.vim'
@@ -79,7 +86,7 @@ let g:coc_global_extensions = [ 'coc-spell-checker',
 							  \ 'coc-fzf-preview'
 							\ ]
 
-let g:python3_host_prog = '/opt/miniconda3/bin/python'
+let g:python3_host_prog = '/home/nefendi/miniconda3/bin/python'
 let g:python_host_prog = '/home/nefendi/.conda/envs/py27/bin/python'
 
 let g:gitgutter_sign_added = ''
