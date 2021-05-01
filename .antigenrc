@@ -1,0 +1,31 @@
+antigen use oh-my-zsh
+
+antigen theme kphoen
+
+antigen bundles <<BUNDLES
+    gitfast
+    common-aliases
+    command-not-found
+    colored-man-pages
+    sudo
+    cargo
+    python
+    pep8
+    pylint
+    pip
+    z
+    fasd
+    copyfile
+    docker
+    extract
+
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-completions
+
+    woefe/git-prompt.zsh
+    wookayin/fzf-fasd
+    MichaelAquilina/zsh-you-should-use
+BUNDLES
+
+antigen apply
