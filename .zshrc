@@ -2,20 +2,21 @@
 export ZSH="${HOME}/.oh-my-zsh"
 export PATH="${HOME}/.local/bin:${HOME}/miniconda3/envs:${PATH}"
 
+# ZSH_CONFIGURATION
+EDITOR="nvim"
+ENABLE_CORRECTION="true"
+ZSH_GIT_PROMPT_SHOW_UPSTREAM="full"
+ZSH_GIT_PROMPT_SHOW_STASH=1
+
 # ANTIGEN
 source "${HOME}/antigen/antigen.zsh"
 antigen init "${HOME}/.antigenrc"
 
-# ZSH_CONFIGURATION
-ENABLE_CORRECTION="true"
-EDITOR="nvim"
-ZSH_GIT_PROMPT_SHOW_UPSTREAM="full"
-ZSH_GIT_PROMPT_SHOW_STASH=1
+# OTHER_SETTINGS
+FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 
 PROMPT='[%*]%{$reset_color%} [%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(gitprompt)]
 %F{244}λ %{$reset_color%}'
-
-FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
