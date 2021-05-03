@@ -1,7 +1,5 @@
 antigen use oh-my-zsh
 
-antigen theme kphoen
-
 antigen bundles <<BUNDLES
     gitfast
     common-aliases
@@ -29,5 +27,7 @@ antigen bundles <<BUNDLES
     wookayin/fzf-fasd
     MichaelAquilina/zsh-you-should-use
 BUNDLES
+
+antigen theme denysdovhan/spaceship-prompt
 
 antigen apply

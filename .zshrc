@@ -5,15 +5,17 @@ export PATH="${HOME}/.local/bin:${HOME}/miniconda3/envs:${PATH}"
 # ZSH_CONFIGURATION
 EDITOR="nvim"
 
-# ANTIGEN
-source "${HOME}/antigen/antigen.zsh"
-antigen init "${HOME}/.antigenrc"
+# SPACESHIP CONFIGURATION
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_EXIT_CODE_SHOW="true"
 
 # OTHER_SETTINGS
 FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 
-PROMPT='[%*]%{$reset_color%} [%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(gitprompt)]
-%F{244}λ %{$reset_color%}'
+# ANTIGEN
+source "${HOME}/antigen/antigen.zsh"
+antigen init "${HOME}/.antigenrc"
+antigen apply
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
