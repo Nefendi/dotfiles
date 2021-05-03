@@ -4,9 +4,6 @@ export PATH="${HOME}/.local/bin:${HOME}/miniconda3/envs:${PATH}"
 
 # ZSH_CONFIGURATION
 EDITOR="nvim"
-ENABLE_CORRECTION="true"
-ZSH_GIT_PROMPT_SHOW_UPSTREAM="full"
-ZSH_GIT_PROMPT_SHOW_STASH=1
 
 # ANTIGEN
 source "${HOME}/antigen/antigen.zsh"
@@ -35,10 +32,3 @@ unset __conda_setup
 
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
-
-# ZSH_NOCORRECT
-if [ -f ~/.zsh_nocorrect ]; then
-    while read -r COMMAND; do
-        alias $COMMAND="nocorrect $COMMAND"
-    done <~/.zsh_nocorrect
-fi

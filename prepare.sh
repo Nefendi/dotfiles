@@ -34,7 +34,6 @@ ln -s "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
 ln -s "$(realpath init.vim)" ~/.config/nvim/init.vim
 ln -s "$(realpath .antigenrc)" ~/.antigenrc
 ln -s "$(realpath .zshrc)" ~/.zshrc
-ln -s "$(realpath .zsh_nocorrect)" ~/.zsh_nocorrect
 ln -s "$(realpath .latexmkrc)" ~/.latexmkrc
 ln -s "$(realpath .global_gitignore)" ~/.global_gitignore
 ln -s "$(realpath .gitconfig)" ~/.gitconfig

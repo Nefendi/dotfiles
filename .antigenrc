@@ -26,7 +26,6 @@ antigen bundles <<BUNDLES
     zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
 
-    woefe/git-prompt.zsh
     wookayin/fzf-fasd
     MichaelAquilina/zsh-you-should-use
 BUNDLES
