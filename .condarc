@@ -4,3 +4,4 @@ channels:
   - defaults
 ssl_verify: true
 channel_priority: strict
+changeps1: false
