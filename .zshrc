@@ -5,10 +5,6 @@ export PATH="${HOME}/.local/bin:${HOME}/miniconda3/envs:${PATH}"
 # ZSH_CONFIGURATION
 EDITOR="nvim"
 
-# SPACESHIP CONFIGURATION
-SPACESHIP_TIME_SHOW="true"
-SPACESHIP_EXIT_CODE_SHOW="true"
-
 # OTHER_SETTINGS
 FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 
@@ -34,3 +30,6 @@ unset __conda_setup
 
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
+
+# STARSHIP
+eval "$(starship init zsh)"

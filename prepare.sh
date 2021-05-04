@@ -23,6 +23,10 @@ if [[ ! -f "${HOME}/antigen/antigen.zsh" ]]; then
     curl -L git.io/antigen >"${HOME}/antigen/antigen.zsh"
 fi
 
+# STARSHIP
+printf "\nInstalling or updating Starship prompt...\n"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 # SYMBOLIC LINKS
 printf "\nMaking symbolic links...\n"
 
@@ -31,6 +35,7 @@ mkdir -p ~/.config/nvim
 ln -fs "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
 ln -fs "$(realpath init.vim)" ~/.config/nvim/init.vim
 ln -fs "$(realpath .antigenrc)" ~/.antigenrc
+ln -fs "$(realpath starship.toml)" ~/.config/starship.toml
 ln -fs "$(realpath .zshrc)" ~/.zshrc
 ln -fs "$(realpath .latexmkrc)" ~/.latexmkrc
 ln -fs "$(realpath .global_gitignore)" ~/.global_gitignore

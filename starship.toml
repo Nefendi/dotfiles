@@ -1,0 +1,73 @@
+format = """
+$time\
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$status\
+$shell\
+$character"""
+
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[➜](bold red) '
+
+[conda]
+ignore_base = false
+
+[time]
+disabled = false
+format = '[$time]($style) '
+
+[status]
+disabled = false
