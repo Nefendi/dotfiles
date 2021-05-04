@@ -3,6 +3,8 @@
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  let g:not_finish_vimplug = "yes"
+
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -55,11 +57,14 @@ set textwidth=120
 set wrapmargin=0
 set wrap
 set noshowmode
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set splitbelow
 set splitright
 set clipboard=unnamed
-:colorscheme onedark
+
+if !exists('g:not_finish_vimplug')
+  colorscheme onedark
+  set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+endif
 
 """"""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
 
@@ -86,8 +91,7 @@ let g:coc_global_extensions = [ 'coc-spell-checker',
 							  \ 'coc-fzf-preview'
 							\ ]
 
-let g:python3_host_prog = '/home/nefendi/miniconda3/bin/python'
-let g:python_host_prog = '/home/nefendi/.conda/envs/py27/bin/python'
+let g:python3_host_prog = '~/miniconda3/bin/python'
 
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = 'ﰣ'
