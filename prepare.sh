@@ -76,7 +76,7 @@ ln -fs "$(realpath .condarc)" ~/.condarc
 printf "\nSetting up Neovim...\n\n"
 
 sleep 2
-nvim +'PlugInstall --sync' +qa
+nvim +'PlugInstall --sync' +UpdateRemotePlugins +qa
 sh -c "${HOME}/miniconda3/bin/conda install --yes pynvim"
 
 printf "\ncoc.nvim extensions will be downloaded after you run Neovim next time."
