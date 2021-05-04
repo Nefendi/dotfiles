@@ -15,12 +15,12 @@ if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
 fi
 
 # ANTIGEN
-printf "\nInstalling Antigen...\n"
+printf "\nDownloading Antigen...\n"
 
 mkdir -p "${HOME}/antigen"
 
 if [[ ! -f "${HOME}/antigen/antigen.zsh" ]]; then
-    curl -L git.io/antigen >"${HOME}/antigen/antigen.zsh"
+    git clone https://github.com/zsh-users/antigen.git "${HOME}/antigen"
 fi
 
 # STARSHIP
