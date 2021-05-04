@@ -71,3 +71,10 @@ format = '[$time]($style) '
 
 [status]
 disabled = false
+map_symbol = true
+
+[memory_usage]
+disabled = false
+
+[python]
+detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini", "environment.yml"]
