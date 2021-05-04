@@ -28,16 +28,14 @@ printf "\nMaking symbolic links...\n"
 
 mkdir -p ~/.config/nvim
 
-ln -s "$(realpath .clang-tidy)" ~/.clang-tidy
-ln -s "$(realpath .clang-format)" ~/.clang-format
-ln -s "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
-ln -s "$(realpath init.vim)" ~/.config/nvim/init.vim
-ln -s "$(realpath .antigenrc)" ~/.antigenrc
-ln -s "$(realpath .zshrc)" ~/.zshrc
-ln -s "$(realpath .latexmkrc)" ~/.latexmkrc
-ln -s "$(realpath .global_gitignore)" ~/.global_gitignore
-ln -s "$(realpath .gitconfig)" ~/.gitconfig
-ln -s "$(realpath .alacritty.yml)" ~/.alacritty.yml
-ln -s "$(realpath .condarc)" ~/.condarc
+ln -fs "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
+ln -fs "$(realpath init.vim)" ~/.config/nvim/init.vim
+ln -fs "$(realpath .antigenrc)" ~/.antigenrc
+ln -fs "$(realpath .zshrc)" ~/.zshrc
+ln -fs "$(realpath .latexmkrc)" ~/.latexmkrc
+ln -fs "$(realpath .global_gitignore)" ~/.global_gitignore
+ln -fs "$(realpath .gitconfig)" ~/.gitconfig
+ln -fs "$(realpath .alacritty.yml)" ~/.alacritty.yml
+ln -fs "$(realpath .condarc)" ~/.condarc
 
 printf "\nAll done! Please, log out and log in to finish applying the changes.\n"
