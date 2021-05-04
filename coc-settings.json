@@ -1,4 +1,5 @@
 {
+    "coc.preferences.extensionUpdateCheck": "daily",
     "clangd.semanticHighlighting": true,
     "clangd.arguments": [
         "-cross-file-rename"
