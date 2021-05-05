@@ -29,5 +29,8 @@ unset __conda_setup
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
 
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # STARSHIP
 eval "$(starship init zsh)"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NEEDED_SOFTWARE=("zsh" "curl" "tmux" "fzf" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd")
+NEEDED_SOFTWARE=("zsh" "curl" "tmux" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd")
 
 # https://raymii.org/s/snippets/Bash_Bits_Check_if_command_is_available.html
 command_exists() {
@@ -34,6 +34,8 @@ printf "\nInstalling Oh-My-Zsh...\n\n"
 
 if [[ ! -d "${HOME}"/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+    printf "Oh-My-Zsh is already installed, skipping...\n\n"
 fi
 
 # SYMBOLIC LINKS
@@ -68,6 +70,16 @@ printf "\nInstalling Miniconda3...\n\n"
 
 curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
 bash ~/miniconda.sh -f -b -p "${HOME}"/miniconda3
+
+# FZF
+printf "\nDownloading and installing fzf...\n\n"
+
+if [[ ! -d "${HOME}"/.fzf ]]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf
+    "${HOME}"/.fzf/install --key-bindings --completion --no-update-rc
+else
+    printf "fzf is already installed, skipping...\n\n"
+fi
 
 # NEOVIM
 printf "\nSetting up Neovim...\n\n"
