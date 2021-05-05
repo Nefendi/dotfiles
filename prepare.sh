@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NEEDED_SOFTWARE=("zsh" "curl" "tmux" "fzf" "nvim" "npm" "git" "ctags" "cmake" "xclip")
+NEEDED_SOFTWARE=("zsh" "curl" "tmux" "fzf" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd")
 
 # https://raymii.org/s/snippets/Bash_Bits_Check_if_command_is_available.html
 command_exists() {
@@ -32,18 +32,31 @@ chsh -s /bin/zsh
 # OH-MY-ZSH
 printf "\nInstalling Oh-My-Zsh...\n\n"
 
-if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
+if [[ ! -d "${HOME}"/.oh-my-zsh ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-# ANTIGEN
-printf "\nDownloading Antigen...\n\n"
+# SYMBOLIC LINKS
+printf "\nMaking symbolic links...\n"
 
-mkdir -p "${HOME}/antigen"
+mkdir -p ~/.config/nvim
 
-if [[ ! -f "${HOME}/antigen/antigen.zsh" ]]; then
-    git clone https://github.com/zsh-users/antigen.git "${HOME}/antigen"
-fi
+ln -fs "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
+ln -fs "$(realpath init.vim)" ~/.config/nvim/init.vim
+ln -fs "$(realpath .zsh_plugins.txt)" ~/.zsh_plugins.txt
+ln -fs "$(realpath starship.toml)" ~/.config/starship.toml
+ln -fs "$(realpath .zshrc)" ~/.zshrc
+ln -fs "$(realpath .latexmkrc)" ~/.latexmkrc
+ln -fs "$(realpath .global_gitignore)" ~/.global_gitignore
+ln -fs "$(realpath .gitconfig)" ~/.gitconfig
+ln -fs "$(realpath .alacritty.yml)" ~/.alacritty.yml
+ln -fs "$(realpath .condarc)" ~/.condarc
+
+# ANTIBODY
+printf "\nDownloading and initialising Antibody...\n\n"
+
+curl -sfL git.io/antibody | sh -s - -b "${HOME}"/antibody
+"${HOME}"/antibody/antibody bundle <"${HOME}"/.zsh_plugins.txt >"${HOME}"/.zsh_plugins.sh
 
 # STARSHIP
 printf "\nInstalling or updating Starship prompt...\n"
@@ -54,23 +67,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" --yes
 printf "\nInstalling Miniconda3...\n\n"
 
 curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
-bash ~/miniconda.sh -f -b -p "${HOME}/miniconda3"
-
-# SYMBOLIC LINKS
-printf "\nMaking symbolic links...\n"
-
-mkdir -p ~/.config/nvim
-
-ln -fs "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
-ln -fs "$(realpath init.vim)" ~/.config/nvim/init.vim
-ln -fs "$(realpath .antigenrc)" ~/.antigenrc
-ln -fs "$(realpath starship.toml)" ~/.config/starship.toml
-ln -fs "$(realpath .zshrc)" ~/.zshrc
-ln -fs "$(realpath .latexmkrc)" ~/.latexmkrc
-ln -fs "$(realpath .global_gitignore)" ~/.global_gitignore
-ln -fs "$(realpath .gitconfig)" ~/.gitconfig
-ln -fs "$(realpath .alacritty.yml)" ~/.alacritty.yml
-ln -fs "$(realpath .condarc)" ~/.condarc
+bash ~/miniconda.sh -f -b -p "${HOME}"/miniconda3
 
 # NEOVIM
 printf "\nSetting up Neovim...\n\n"

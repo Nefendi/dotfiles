@@ -1,6 +1,6 @@
 # PATHS
-export ZSH="${HOME}/.oh-my-zsh"
-export PATH="${HOME}/.local/bin:${HOME}/miniconda3/envs:${PATH}"
+export ZSH="${HOME}"/.oh-my-zsh
+export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${PATH}"
 
 # ZSH_CONFIGURATION
 EDITOR="nvim"
@@ -8,10 +8,8 @@ EDITOR="nvim"
 # OTHER_SETTINGS
 FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 
-# ANTIGEN
-source "${HOME}/antigen/antigen.zsh"
-antigen init "${HOME}/.antigenrc"
-antigen apply
+# ANTIBODY
+source "${HOME}"/.zsh_plugins.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
