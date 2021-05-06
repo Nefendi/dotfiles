@@ -26,3 +26,9 @@
 	mail = a@b.c
 [color]
 	ui = auto
+[core]
+	pager = cat
+[diff]
+	tool = opendiff
+[difftool]
+	prompt = false
