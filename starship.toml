@@ -78,3 +78,11 @@ disabled = false
 
 [python]
 detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini", "environment.yml"]
+
+[git_branch]
+always_show_remote = true
+format = "on [$symbol$branch( \\[$remote_name/$remote_branch\\])]($style) "
+
+[git_commit]
+only_detached = false
+tag_disabled = false
