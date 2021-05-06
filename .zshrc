@@ -18,4 +18,4 @@ export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE="1"
 source $ZSH/oh-my-zsh.sh
 source /Users/nefendi/.oh-my-zsh/custom/plugins/hacker-quotes/hacker-quotes.plugin.zsh
 
-export PATH="/anaconda3/bin:/usr/local/Cellar/llvm/6.0.1/bin:$HOME/.cargo/bin:$PATH"
+export PATH="/Users/nefendi/Library/Orca401:/usr/local/bin:/anaconda3/bin:/usr/local/Cellar/llvm/6.0.1/bin:$HOME/.cargo/bin:$PATH"
