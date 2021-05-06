@@ -7,7 +7,6 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   hacker-quotes
-  rand-quote
   osx
   colored-man-pages
   sudo
