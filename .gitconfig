@@ -10,11 +10,13 @@
   unwatch = update-index --assume-unchanged
   watch = update-index --no-assume-unchanged
   ignore = "! echo $1 >> .gitignore"
-  
   aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
   ignored = ! git ls-files --others --ignored --exclude-standard --directory \
 && git ls-files --others -i --exclude-standard
-
+					
+  lmf = ! git st --porcelain | awk '{print $2}' # list all modified, renamed, removed, ... files			
+  co-all = ! git co -- $(git lmf) # reset all files								
+															
 [push]
 	default = upstream
 	
