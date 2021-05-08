@@ -53,6 +53,7 @@ ln -fs "$(realpath .global_gitignore)" ~/.global_gitignore
 ln -fs "$(realpath .gitconfig)" ~/.gitconfig
 ln -fs "$(realpath .alacritty.yml)" ~/.alacritty.yml
 ln -fs "$(realpath .condarc)" ~/.condarc
+ln -fs "$(realpath .ghci)" ~/.ghci
 
 # ANTIBODY
 printf "\nDownloading and initialising Antibody...\n\n"
