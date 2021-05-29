@@ -1,3 +1,6 @@
+import:
+  - "/home/nefendi/Desktop/Repositories/alacritty-dracula/dracula.yml"
+
 env:
   LC_ALL: "pl_PL.UTF-8"
 
@@ -27,11 +30,11 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: FiraMono Nerd Font
     style: Medium
 
   bold:
-    family: JetBrainsMono Nerd Font
+    family: FiraMono Nerd Font
     style: Bold
 
   size: 12.0
@@ -48,64 +51,64 @@ font:
 
 draw_bold_text_with_bright_colors: false
 
-colors:
-  primary:
-    background: '#222222'
-    foreground: '#F2F2F2'
+# colors:
+#   primary:
+#     background: "#222222"
+#     foreground: "#F2F2F2"
 
-  normal:
-    black:   '#333333'
-    red:     '#CC0000'
-    green:   '#4E9A06'
-    yellow:  '#C4A000'
-    blue:    '#3465A4'
-    magenta: '#75507B'
-    cyan:    '#06989A'
-    white:   '#D3D7CF'
+#   normal:
+#     black: "#333333"
+#     red: "#CC0000"
+#     green: "#4E9A06"
+#     yellow: "#C4A000"
+#     blue: "#3465A4"
+#     magenta: "#75507B"
+#     cyan: "#06989A"
+#     white: "#D3D7CF"
 
-  bright:
-    black:   '#88807C'
-    red:     '#F15D22'
-    green:   '#73C48F'
-    yellow:  '#FFCE51'
-    blue:    '#48B9C7'
-    magenta: '#AD7FA8'
-    cyan:    '#34E2E2'
-    white:   '#EEEEEC'
+#   bright:
+#     black: "#88807C"
+#     red: "#F15D22"
+#     green: "#73C48F"
+#     yellow: "#FFCE51"
+#     blue: "#48B9C7"
+#     magenta: "#AD7FA8"
+#     cyan: "#34E2E2"
+#     white: "#EEEEEC"
 
-  # # Normal colors
-  # normal:
-  #   black: "0x000000"
-  #   red: "0xd54e53"
-  #   green: "0xb9ca4a"
-  #   yellow: "0xe6c547"
-  #   blue: "0x7aa6da"
-  #   magenta: "0xc397d8"
-  #   cyan: "0x70c0ba"
-  #   white: "0xeaeaea"
+# # Normal colors
+# normal:
+#   black: "0x000000"
+#   red: "0xd54e53"
+#   green: "0xb9ca4a"
+#   yellow: "0xe6c547"
+#   blue: "0x7aa6da"
+#   magenta: "0xc397d8"
+#   cyan: "0x70c0ba"
+#   white: "0xeaeaea"
 
-  # # Bright colors
-  # bright:
-  #   black: "0x666666"
-  #   red: "0xff3334"
-  #   green: "0x9ec400"
-  #   yellow: "0xe7c547"
-  #   blue: "0x7aa6da"
-  #   magenta: "0xb77ee0"
-  #   cyan: "0x54ced6"
-  #   white: "0xffffff"
+# # Bright colors
+# bright:
+#   black: "0x666666"
+#   red: "0xff3334"
+#   green: "0x9ec400"
+#   yellow: "0xe7c547"
+#   blue: "0x7aa6da"
+#   magenta: "0xb77ee0"
+#   cyan: "0x54ced6"
+#   white: "0xffffff"
 
-  # dim:
-  #   black: "0x000000"
-  #   red: "0x8c3336"
-  #   green: "0x7a8530"
-  #   yellow: "0x97822e"
-  #   blue: "0x506d8f"
-  #   magenta: "0x80638e"
-  #   cyan: "0x497e7a"
-  #   white: "0x9a9a9a"
+# dim:
+#   black: "0x000000"
+#   red: "0x8c3336"
+#   green: "0x7a8530"
+#   yellow: "0x97822e"
+#   blue: "0x506d8f"
+#   magenta: "0x80638e"
+#   cyan: "0x497e7a"
+#   white: "0x9a9a9a"
 
-  indexed_colors: []
+# indexed_colors: []
 
 bell:
   animation: EaseOutExpo
