@@ -1,5 +1,5 @@
 import:
-  - "/home/nefendi/Desktop/Repositories/alacritty-dracula/dracula.yml"
+  - "~/alacritty-themes/dracula/dracula.yml"
 
 env:
   LC_ALL: "pl_PL.UTF-8"
