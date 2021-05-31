@@ -41,7 +41,7 @@ fi
 # SYMBOLIC LINKS
 printf "\nMaking symbolic links...\n"
 
-mkdir -p ~/.config/nvim
+mkdir -p "${HOME}"/.config/nvim
 
 ln -fs "$(realpath coc-settings.json)" ~/.config/nvim/coc-settings.json
 ln -fs "$(realpath init.vim)" ~/.config/nvim/init.vim
@@ -81,6 +81,12 @@ if [[ ! -d "${HOME}"/.fzf ]]; then
 else
     printf "fzf is already installed, skipping...\n\n"
 fi
+
+# DRACULA THEME FOR ALACRITTY
+printf "\nDownloading Dracula theme for Alacritty...\n\n"
+
+mkdir -p "${HOME}"/alacritty-themes/dracula
+git clone --depth 1 https://github.com/dracula/alacritty.git "${HOME}"/alacritty-themes/dracula
 
 # NEOVIM
 printf "\nSetting up Neovim...\n\n"
