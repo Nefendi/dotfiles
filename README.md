@@ -1,10 +1,41 @@
 # Dotfiles
 
-A collection dotfiles which are unrelated to each other.
+A collection of different dotfiles and configuration files, which I use in my day-to-day work.
+
+## How to quickly set everything up?
+
+The preparation script `prepare.sh` takes care of the majority of things for you. If you do not want to use it straight away and instead see how the setup will look like, go to the [Testing the setup](#testing-the-setup) section for more information.
+
+## Prerequisites
+
+This setup needs a few programmes already installed to work properly. The preparation script checks for their presence in the **PATH** variable so you do not have to worry about running it without needed dependencies. For now, the list of necessary programmes is the following:
+
+```bash
+zsh curl tmux nvim npm git ctags cmake xclip fasd
+```
+
+
+In Ubuntu-based systems, you can install them by issuing:
+
+```bash
+sudo apt update && sudo apt install zsh curl tmux neovim npm git universal-ctags cmake xclip fasd
+```
+
+
+### Testing the setup
+
+You can easily test if the whole setup is to your liking or even modify some things and test them without affecting your current environment if you have **docker** installed. You can simply use the attached **Dockerfile** to build an image and then run a container based on it:
+
+```bash
+docker build . -t dotfiles_test_env
+docker run -it --rm dotfiles_test_env
+```
+
+Please note that if you spin up the container without any command, the `prepare.sh` script will be automatically run.
 
 ## init.vim
 
-The config to nvim is based on [this](https://github.com/WysokiStudent/nvim-config) repository. Go [here](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/) for CoC configuration.
+The CoC configuration was taken from [here](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/).
 
 ## .clang-tidy && .clang-format
 
