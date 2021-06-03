@@ -11,14 +11,14 @@ The preparation script `prepare.sh` takes care of the majority of things for you
 This setup needs a few programmes already installed to work properly. The preparation script checks for their presence in the **PATH** variable so you do not have to worry about running it without needed dependencies. For now, the list of necessary programmes is the following:
 
 ```bash
-zsh curl tmux nvim npm git ctags cmake xclip fasd
+zsh curl tmux nvim npm git ctags cmake xclip fasd rg
 ```
 
 
 In Ubuntu-based systems, you can install them by issuing:
 
 ```bash
-sudo apt update && sudo apt install zsh curl tmux neovim npm git universal-ctags cmake xclip fasd
+sudo apt update && sudo apt install zsh curl tmux neovim npm git universal-ctags cmake xclip fasd ripgrep
 ```
 
 

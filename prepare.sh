@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NEEDED_SOFTWARE=("zsh" "curl" "tmux" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd")
+NEEDED_SOFTWARE=("zsh" "curl" "tmux" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd" "rg")
 
 # https://raymii.org/s/snippets/Bash_Bits_Check_if_command_is_available.html
 command_exists() {
@@ -93,7 +93,7 @@ printf "\nSetting up Neovim...\n\n"
 
 sleep 2
 nvim +'PlugInstall --sync' +UpdateRemotePlugins +qa
-sh -c "${HOME}/miniconda3/bin/conda install --yes pynvim"
+sh -c "${HOME}/miniconda3/bin/conda install --yes --verbose pynvim"
 
 printf "\ncoc.nvim extensions will be downloaded after you run Neovim next time."
 
