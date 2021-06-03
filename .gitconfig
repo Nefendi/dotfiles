@@ -1,42 +1,49 @@
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  ignore = !echo '$1\n'  >> .gitignore
-  ignored = ! git ls-files --others --ignored --exclude-standard --directory \
-&& git ls-files --others -i --exclude-standard
-					
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+
 [push]
 	default = upstream
-	
+
 [user]
 	name = Nefendi
 	email = 28621696+Nefendi@users.noreply.github.com
 	mail = 28621696+Nefendi@users.noreply.github.com
+
 [color]
 	ui = always
+
 [core]
 	pager = less
 	autocrlf = input
 	editor = nvim
 	excludesfile = ~/.global_gitignore
+
 [diff]
 	tool = meld
 	algorithm = histogram
+
 [difftool]
 	prompt = false
+
 [merge]
 	tool = meld
 	conflictstyle = diff3
+
 [rerere]
 	enabled = true
+
 [pager]
 	branch = false
+
 [pull]
 	rebase = false
+
 [log]
 	decorate = full
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
