@@ -8,17 +8,17 @@ The preparation script `prepare.sh` takes care of the majority of things for you
 
 ## Prerequisites
 
-This setup needs a few programmes already installed to work properly. The preparation script checks for their presence in the **PATH** variable so you do not have to worry about running it without needed dependencies. For now, the list of necessary programmes is the following:
+This setup needs a few programmes already installed to work properly. The preparation script checks for their presence in the **PATH** variable so you do not have to worry about running it without needed dependencies **assuming you are running an Ubuntu-based system**. For now, the list of necessary programmes is the following (please note that the names of the programmes come from an Ubuntu-based system, in other systems the names may be different):
 
 ```bash
-zsh curl tmux nvim npm git ctags cmake xclip fasd rg
+zsh curl tmux nvim npm git ctags cmake xclip fasd rg batcat
 ```
 
 
 In Ubuntu-based systems, you can install them by issuing:
 
 ```bash
-sudo apt update && sudo apt install zsh curl tmux neovim npm git universal-ctags cmake xclip fasd ripgrep
+sudo apt update && sudo apt install zsh curl tmux neovim npm git universal-ctags cmake xclip fasd ripgrep bat
 ```
 
 

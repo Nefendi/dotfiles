@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NEEDED_SOFTWARE=("zsh" "curl" "tmux" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd" "rg")
+NEEDED_SOFTWARE=("zsh" "curl" "tmux" "nvim" "npm" "git" "ctags" "cmake" "xclip" "fasd" "rg" "batcat")
 
 # https://raymii.org/s/snippets/Bash_Bits_Check_if_command_is_available.html
 command_exists() {
