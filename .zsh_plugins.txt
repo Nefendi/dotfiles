@@ -27,3 +27,4 @@ zsh-users/zsh-history-substring-search
 
 wookayin/fzf-fasd
 MichaelAquilina/zsh-you-should-use
+zpm-zsh/material-colors
