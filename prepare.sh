@@ -83,10 +83,10 @@ else
 fi
 
 # DRACULA THEME FOR ALACRITTY
-printf "\nDownloading Dracula theme for Alacritty...\n\n"
+# printf "\nDownloading Dracula theme for Alacritty...\n\n"
 
-mkdir -p "${HOME}"/alacritty-themes/dracula
-git clone --depth 1 https://github.com/dracula/alacritty.git "${HOME}"/alacritty-themes/dracula
+# mkdir -p "${HOME}"/alacritty-themes/dracula
+# git clone --depth 1 https://github.com/dracula/alacritty.git "${HOME}"/alacritty-themes/dracula
 
 # NEOVIM
 printf "\nSetting up Neovim...\n\n"
