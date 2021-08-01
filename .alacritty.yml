@@ -30,14 +30,22 @@ scrolling:
 
 font:
   normal:
-    family: FiraMono Nerd Font
+    family: Mononoki Nerd Font
     style: Medium
 
   bold:
-    family: FiraMono Nerd Font
+    family: Mononoki Nerd Font
     style: Bold
 
-  size: 12.0
+  italic:
+    family: Mononoki Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: Mononoki Nerd Font
+    style: Bold Italic
+
+  size: 13.0
 
   offset:
     x: 0
