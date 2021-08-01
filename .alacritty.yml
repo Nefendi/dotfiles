@@ -1,6 +1,3 @@
-# import:
-#   - "~/alacritty-themes/dracula/dracula.yml"
-
 env:
   LC_ALL: "en_US.UTF-8"
 
@@ -25,8 +22,6 @@ scrolling:
   history: 5000
 
   multiplier: 3
-
-  #auto_scroll: false
 
 font:
   normal:
@@ -55,68 +50,59 @@ font:
     x: 0
     y: 0
 
-  # use_thin_strokes: true
-
 draw_bold_text_with_bright_colors: false
 
+# Ocean dark colours
 colors:
   primary:
-    background: "#333333"
-    foreground: "#F2F2F2"
+    background: "0x2b303b"
+    foreground: "0xc0c5ce"
 
   normal:
-    black: "#333333"
-    red: "#CC0000"
-    green: "#4E9A06"
-    yellow: "#C4A000"
-    blue: "#3465A4"
-    magenta: "#75507B"
-    cyan: "#06989A"
-    white: "#D3D7CF"
+    black: "0x2b303b"
+    red: "0xbf616a"
+    green: "0xa3be8c"
+    yellow: "0xebcb8b"
+    blue: "0x8fa1b3"
+    magenta: "0xb48ead"
+    cyan: "0x96b5b4"
+    white: "0xc0c5ce"
 
   bright:
-    black: "#88807C"
-    red: "#F15D22"
-    green: "#73C48F"
-    yellow: "#FFCE51"
-    blue: "#48B9C7"
-    magenta: "#AD7FA8"
-    cyan: "#34E2E2"
-    white: "#EEEEEC"
+    black: "0x65737e"
+    red: "0xbf616a"
+    green: "0xa3be8c"
+    yellow: "0xebcb8b"
+    blue: "0x8fa1b3"
+    magenta: "0xb48ead"
+    cyan: "0x96b5b4"
+    white: "0xeff1f5"
 
-# # Normal colors
-# normal:
-#   black: "0x000000"
-#   red: "0xd54e53"
-#   green: "0xb9ca4a"
-#   yellow: "0xe6c547"
-#   blue: "0x7aa6da"
-#   magenta: "0xc397d8"
-#   cyan: "0x70c0ba"
-#   white: "0xeaeaea"
+# Pop!_OS colours
+#colors:
+#  primary:
+#    background: "#333333"
+#    foreground: "#F2F2F2"
 
-# # Bright colors
-# bright:
-#   black: "0x666666"
-#   red: "0xff3334"
-#   green: "0x9ec400"
-#   yellow: "0xe7c547"
-#   blue: "0x7aa6da"
-#   magenta: "0xb77ee0"
-#   cyan: "0x54ced6"
-#   white: "0xffffff"
+#  normal:
+#    black: "#333333"
+#    red: "#CC0000"
+#    green: "#4E9A06"
+#    yellow: "#C4A000"
+#    blue: "#3465A4"
+#    magenta: "#75507B"
+#    cyan: "#06989A"
+#    white: "#D3D7CF"
 
-# dim:
-#   black: "0x000000"
-#   red: "0x8c3336"
-#   green: "0x7a8530"
-#   yellow: "0x97822e"
-#   blue: "0x506d8f"
-#   magenta: "0x80638e"
-#   cyan: "0x497e7a"
-#   white: "0x9a9a9a"
-
-# indexed_colors: []
+#  bright:
+#    black: "#88807C"
+#    red: "#F15D22"
+#    green: "#73C48F"
+#    yellow: "#FFCE51"
+#    blue: "#48B9C7"
+#    magenta: "#AD7FA8"
+#    cyan: "#34E2E2"
+#    white: "#EEEEEC"
 
 bell:
   animation: EaseOutExpo
