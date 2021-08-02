@@ -6,7 +6,8 @@
     ],
     "diagnostic.displayByAle": true,
     "python.jediEnabled": false,
-    "explorer.icon.enableVimDevicons": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "vim-devicons",
     "explorer.file.showHiddenFiles": true,
     //-------- Code Spell Checker Configuration --------
     // The Language local to use when spell checking. "en" and "en-GB" are currently supported.

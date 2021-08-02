@@ -12,7 +12,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-scripts/mru.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dracula/vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -62,7 +62,7 @@ set splitright
 set clipboard=unnamed
 
 if !exists('g:not_finish_vimplug')
-  colorscheme dracula
+  colorscheme nord
   set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 endif
 
@@ -72,7 +72,7 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'nord'
 let g:airline#extensions#ale#enabled = 1
 
 let g:coc_global_extensions = [ 'coc-spell-checker',
