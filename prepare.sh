@@ -62,9 +62,9 @@ curl -sfL git.io/antibody | sh -s - -b "${HOME}"/antibody
 "${HOME}"/antibody/antibody bundle <"${HOME}"/.zsh_plugins.txt >"${HOME}"/.zsh_plugins.sh
 
 # STARSHIP
-printf "\nInstalling or updating Starship prompt...\n"
+# printf "\nInstalling or updating Starship prompt...\n"
 
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" --yes
+# sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" --yes
 
 # MINICONDA
 printf "\nInstalling Miniconda3...\n\n"
