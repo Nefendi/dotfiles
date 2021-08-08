@@ -10,6 +10,9 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
+# ALIASES
+alias k="kubectl"
+
 # ANTIBODY
 source "${HOME}"/.zsh_plugins.sh
 
