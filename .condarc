@@ -4,3 +4,4 @@ channels:
 ssl_verify: true
 channel_priority: strict
 changeps1: false
+auto_activate_base: false

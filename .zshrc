@@ -1,6 +1,6 @@
 # ENVIRONMENT VARIABLES
 export ZSH="${HOME}"/.oh-my-zsh
-export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${PATH}"
+export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:${PATH}"
 
 export EDITOR="nvim"
 
