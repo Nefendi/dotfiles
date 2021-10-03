@@ -1,10 +1,13 @@
 # ENVIRONMENT VARIABLES
-set -e fish_user_paths
-set -gx fish_user_paths $HOME/.local/bin $HOME/miniconda3/envs $HOME/.emacs.d/bin $HOME/.poetry/bin $HOME/.fzf/bin $fish_user_paths
+set -gx PATH $HOME/.local/bin $PATH
+set -gx PATH $HOME/miniconda3/envs $PATH
+set -gx PATH $HOME/.emacs.d/bin $PATH
+set -gx PATH $HOME/.poetry/bin $PATH
+set -gx PATH $HOME/.fzf/bin $PATH
 
-set -gx fish_greeting
-set -gx TERM "xterm-256color"
-set -gx EDITOR "nvim"
+set fish_greeting ""
+set -gx TERM xterm-256color
+set -gx EDITOR nvim
 set -gx fish_escape_delay_ms 500
 
 set -gx FZF_LEGACY_KEYBINDINGS 0
@@ -17,15 +20,10 @@ set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow --no-ignore-vcs"
 
 set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
-# AUTOCOMPLETE AND HIGHLIGHT COLORS
-# set -gx fish_color_normal brcyan
-# set -gx fish_color_autosuggestion '#7d7d7d'
-# set -gx fish_color_command brcyan
-# set -gx fish_color_error '#ff6c6b'
-# set -gx fish_color_param brcyan
-
 # ALIASES
-alias k="kubectl"
+alias k "kubectl"
+alias ll "exa -l -g --icons"
+alias lla "ll -a"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
