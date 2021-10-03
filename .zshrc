@@ -1,6 +1,6 @@
 # ENVIRONMENT VARIABLES
 export ZSH="${HOME}"/.oh-my-zsh
-export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:${PATH}"
+export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${PATH}"
 
 export EDITOR="nvim"
 
@@ -10,11 +10,14 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
-# ALIASES
-alias k="kubectl"
-
 # ANTIBODY
 source "${HOME}"/.zsh_plugins.sh
+
+# ALIASES
+alias k="kubectl"
+alias ls='exa -gal --color=always --group-directories-first --icons'
+alias la='exa -ga --color=always --group-directories-first --icons'
+alias lt='exa -gaT --color=always --group-directories-first --icons'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -36,6 +39,8 @@ unset __conda_setup
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+enable-fzf-tab
 
 # STARSHIP
 eval "$(starship init zsh)"
