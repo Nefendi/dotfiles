@@ -24,6 +24,8 @@ ohmyzsh/ohmyzsh path:plugins/kubectl
 ohmyzsh/ohmyzsh path:plugins/helm
 ohmyzsh/ohmyzsh path:plugins/docker
 
+Aloxaf/fzf-tab
+
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
@@ -32,3 +34,4 @@ zsh-users/zsh-history-substring-search
 wookayin/fzf-fasd
 MichaelAquilina/zsh-you-should-use
 zpm-zsh/material-colors
+zdharma/fast-syntax-highlighting
