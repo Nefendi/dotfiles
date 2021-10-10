@@ -1,6 +1,6 @@
 # ENVIRONMENT VARIABLES
 export ZSH="${HOME}"/.oh-my-zsh
-export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${PATH}"
+export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${PATH}"
 
 export EDITOR="nvim"
 
@@ -15,8 +15,9 @@ source "${HOME}"/.zsh_plugins.sh
 
 # ALIASES
 alias k="kubectl"
-alias ls='exa -gal --color=always --group-directories-first --icons'
-alias la='exa -ga --color=always --group-directories-first --icons'
+alias ls='exa -g --color=always --group-directories-first --icons'
+alias ll='exa -gl --color=always --group-directories-first --icons'
+alias la='exa -gal --color=always --group-directories-first --icons'
 alias lt='exa -gaT --color=always --group-directories-first --icons'
 
 # >>> conda initialize >>>

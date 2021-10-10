@@ -11,13 +11,18 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-scripts/mru.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'joshdick/onedark.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'nvim-lua/completion-nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
+" Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'cohama/lexima.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cdelledonne/vim-cmake'
@@ -30,16 +35,32 @@ Plug 'tpope/vim-fugitive'
 Plug 'numirias/semshi'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'rust-lang/rust.vim'
-Plug 'dense-analysis/ale'
-Plug 'liuchengxu/vista.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'arkav/lualine-lsp-progress'
 Plug 'vimlab/split-term.vim'
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
+Plug 'justinmk/vim-sneak'
+Plug 'lukas-reineke/indent-blankline.nvim'
+" NERDTree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/nerdtree-project-plugin'
+Plug 'PhilRunninger/nerdtree-buffer-ops'
+Plug 'PhilRunninger/nerdtree-visual-selection'
 
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""" Basic configuration """""""""""""""""""""""""""""""""""""""
+
+if has('nvim')
+    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    set inccommand=nosplit
+    noremap <C-q> :confirm qall<CR>
+end
 
 set hidden
 set nobackup
@@ -47,10 +68,21 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set number
-"set signcolumn=number
+set relativenumber
 set signcolumn=yes
-set completeopt=preview,menu,longest
+set background=dark
+set encoding=utf-8
+
+" Source: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
+  set termguicolors
+endif
+
+" Better completion
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
 set shiftwidth=4
 set mouse=a
 set textwidth=120
@@ -61,203 +93,191 @@ set splitbelow
 set splitright
 set clipboard=unnamed
 
+let base16colorspace=256
+
 if !exists('g:not_finish_vimplug')
-  colorscheme onedark
-  set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+    colorscheme tokyonight
 endif
 
 """"""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
 
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'onedark'
-let g:airline#extensions#ale#enabled = 1
-
-let g:coc_global_extensions = [ 'coc-spell-checker',
-							  \ 'coc-cspell-dicts',
-							  \ 'coc-explorer',
-							  \ 'coc-actions',
-							  \ 'coc-sh',
-							  \ 'coc-json',
-							  \ 'coc-cmake',
-							  \ 'coc-clangd',
-							  \ 'coc-python',
-							  \ 'coc-highlight',
-							  \ 'coc-markdownlint',
-							  \ 'coc-rust-analyzer',
-							  \ 'coc-snippets',
-							  \ 'coc-fzf-preview'
-							\ ]
-
 let g:python3_host_prog = '~/miniconda3/bin/python'
+
+" Rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+let g:rust_clip_command = 'xclip -selection clipboard'
+
+" Golang
+let g:go_play_open_browser = 0
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "goimports"
+let g:go_bin_path = expand("~/go/bin")
 
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = 'ﰣ'
 let g:gitgutter_sign_removed = ''
 let g:gitgutter_preview_win_floating = 1
 
-let g:ale_disable_lsp = 1
-let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
-let g:ale_fix_on_save = 1
-let b:ale_warn_about_trailing_whitespace = 0
-let g:ale_sign_error = "✗"
-let g:ale_sign_warning = ""
-let g:ale_sign_info = "כֿ"
-
-highlight ALEWarningSign ctermfg=Yellow
-highlight ALEInfoSign ctermfg=DarkBlue
-
-let g:ale_linters = {
-      \   'python': [ 'pylint' ]
-	  \ }
-
-let g:ale_fixers = {
-	  \   '*': [ 'remove_trailing_lines', 'trim_whitespace' ],
-	  \   'python': [ 'yapf' ],
-	  \ }
-
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
 autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Google" }
 
-let g:vista_fzf_preview = [ 'right:50%' ]
-let g:vista_icon_indent = [ "╰─▸ ", "├─▸ " ]
-let g:vista_default_executive = 'ctags'
-let g:vista_close_on_jump = 1
-let g:vista_update_on_text_changed = 1
-let g:vista#renderer#enable_icon = 1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""" Functions """"""""""""""""""""""""""""""""""""""""""""""""""""
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
 
 """"""""""""""""""""""""""""""""""""""" Commands """""""""""""""""""""""""""""""""""""""
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" Lua configuration
+lua <<LUA_CONF
+local lspconfig = require('lspconfig')
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
+  --Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-" Use `:OR` for organize import of current buffer
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+  -- Forward to other plugins
+  require'completion'.on_attach(client)
+end
+
+local servers = { "rust_analyzer", "gopls", "clangd", "pyright", "hls" }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
+
+require("trouble").setup {}
+
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " ", Other = "﫠" }
+for type, icon in pairs(signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+-- Lualine
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'tokyonight',
+    component_separators = {'', ''},
+    section_separators = {'', ''},
+    disabled_filetypes = {}
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {
+      { 'diagnostics',
+        sources = {'nvim_lsp'},
+        sections = {'error', 'warn', 'info', 'hint'},
+      },
+      'filename',
+      'lsp_progress'},
+    lualine_x = {'encoding', 'fileformat', {'filetype', colored = true}},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {'quickfix', 'fzf', 'nerdtree'}
+}
+
+-- Indent-Blankline
+vim.opt.list = true
+vim.opt.listchars = "space:⋅"
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    buftype_exclude = {"terminal"},
+}
+
+LUA_CONF
 
 :autocmd TermOpen :set nonumber
 
 au BufNewFile,BufRead *.py set foldmethod=indent
 
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
 """"""""""""""""""""""""""""""""""""""" Mappings """""""""""""""""""""""""""""""""""""""
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" use <Tab> as trigger keys
+imap <Tab> <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
+
+" Enable type inlay hints
+autocmd CursorHold,CursorHoldI *.rs :lua require'lsp_extensions'.inlay_hints{ only_current_line = true }
+
+map <C-p> :Files<CR>
+nmap <leader>; :Buffers<CR>
+
+" Quick-save
+nmap <leader>w :w<CR>
 
 " Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
 :inoremap <2-LeftMouse> <c-[>* <c-o> i
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " Folding (only Python)
 nnoremap <space> za
-
-nmap <silent> <F10> :ALEFix<CR>
-
-nmap <silent> <leader>v :Vista<CR>
-
-" Clangd
-nmap <silent> <leader>h :call CocAction('runCommand', 'clangd.switchSourceHeader')<CR>
-nmap <silent> <leader>s :call CocAction('runCommand', 'clangd.symbolInfo')<CR>
-
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> <leader>g <Plug>(coc-definition)
-nmap <silent> <leader>t <Plug>(coc-type-definition)
-nmap <silent> <leader>i <Plug>(coc-implementation)
-nmap <silent> <leader><leader> <Plug>(coc-references)
-
-" Remap for rename current word
-nmap <leader>r <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>u <Plug>(coc-format-selected)
-nmap <leader>u <Plug>(coc-format-selected)
-
-" Use \d to show documentation in preview window
-nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
-
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@<CR>
-
-" Fix autofix problem of current line
-nmap <leader>qf <Plug>(coc-fix-current)
-
-" Coc-Explorer
-:nmap <Space>e :CocCommand explorer<CR>
 
 " Fzf
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 
-nnoremap <silent> <space><space> :<C-u>CocFzfList<CR>
-nnoremap <silent> <space>a       :<C-u>CocFzfList diagnostics<CR>
-nnoremap <silent> <space>b       :<C-u>CocFzfList diagnostics --current-buf<CR>
-nnoremap <silent> <space>c       :<C-u>CocFzfList commands<CR>
-nnoremap <silent> <space>x       :<C-u>CocFzfList extensions<CR>
-nnoremap <silent> <space>l       :<C-u>CocFzfList location<CR>
-nnoremap <silent> <space>o       :<C-u>CocFzfList outline<CR>
-nnoremap <silent> <space>s       :<C-u>CocFzfList symbols<CR>
-nnoremap <silent> <space>p       :<C-u>CocFzfListResume<CR>
-
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
-
 nmap <leader>q :Term<CR>
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Trouble
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
