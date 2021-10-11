@@ -179,7 +179,7 @@ schemes:
       cyan:    '0x0db9d7'
       white:   '0xacb0d0'
 
-colors: *tokyo_night_storm
+colors: *gruvbox_dark
 
 bell:
   animation: EaseOutExpo

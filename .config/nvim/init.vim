@@ -12,13 +12,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-scripts/mru.vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
-" Plug 'morhetz/gruvbox'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -32,7 +36,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'aklt/plantuml-syntax'
 Plug 'tpope/vim-fugitive'
-Plug 'numirias/semshi'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -56,34 +60,24 @@ call plug#end()
 
 """"""""""""""""""""""""""""""""""""""" Basic configuration """""""""""""""""""""""""""""""""""""""
 
-if has('nvim')
-    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-    set inccommand=nosplit
-    noremap <C-q> :confirm qall<CR>
-end
-
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
 set hidden
 set nobackup
 set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set number
 set relativenumber
 set signcolumn=yes
 set background=dark
 set encoding=utf-8
-
-" Source: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
-  set termguicolors
-endif
-
-" Better completion
-" menuone: popup even when there's only one match
-" noinsert: Do not insert text until a selection is made
-" noselect: Do not select, force user to select one from the menu
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,menu,noselect
+set tabstop=4
 set shiftwidth=4
+set expandtab
 set mouse=a
 set textwidth=120
 set wrapmargin=0
@@ -92,11 +86,18 @@ set noshowmode
 set splitbelow
 set splitright
 set clipboard=unnamed
+set numberwidth=3
+set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
 
-let base16colorspace=256
+" Source: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
+  set termguicolors
+endif
 
 if !exists('g:not_finish_vimplug')
-    colorscheme tokyonight
+  let g:gruvbox_contrast_dark = 'dark'
+  colorscheme gruvbox
+  :highlight SignColumn guibg=#282828
 endif
 
 """"""""""""""""""""""""""""""""""""""" Variables """""""""""""""""""""""""""""""""""""""
@@ -131,39 +132,42 @@ autocmd Filetype cpp let g:clang_format#style_options = { "BasedOnStyle" : "Goog
 " Lua configuration
 lua <<LUA_CONF
 local lspconfig = require('lspconfig')
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  --Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
-  -- Forward to other plugins
-  require'completion'.on_attach(client)
+  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
 local servers = { "rust_analyzer", "gopls", "clangd", "pyright", "hls" }
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -179,6 +183,54 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+-- luasnip setup
+local luasnip = require 'luasnip'
+
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
+}
+
+-- Trouble
 require("trouble").setup {}
 
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " ", Other = "﫠" }
@@ -191,14 +243,14 @@ end
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'tokyonight',
+    theme = 'gruvbox',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
+    lualine_b = {'branch', 'diff'},
     lualine_c = {
       { 'diagnostics',
         sources = {'nvim_lsp'},
@@ -224,31 +276,17 @@ require('lualine').setup {
 
 -- Indent-Blankline
 vim.opt.list = true
-vim.opt.listchars = "space:⋅"
-
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    buftype_exclude = {"terminal"},
-}
+require("indent_blankline").setup {}
 
 LUA_CONF
+
+" autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require'lsp_extensions'.inlay_hints{ prefix = ' » ', highlight = "NonText", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
 :autocmd TermOpen :set nonumber
 
 au BufNewFile,BufRead *.py set foldmethod=indent
 
 """"""""""""""""""""""""""""""""""""""" Mappings """""""""""""""""""""""""""""""""""""""
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
-
-" Enable type inlay hints
-autocmd CursorHold,CursorHoldI *.rs :lua require'lsp_extensions'.inlay_hints{ only_current_line = true }
 
 map <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
@@ -259,9 +297,6 @@ nmap <leader>w :w<CR>
 " Highlight words on double clicking
 :noremap <2-LeftMouse> * <c-o>
 :inoremap <2-LeftMouse> <c-[>* <c-o> i
-
-" Folding (only Python)
-nnoremap <space> za
 
 " Fzf
 nmap <Leader>f [fzf-p]
