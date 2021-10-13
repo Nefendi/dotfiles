@@ -30,7 +30,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'cohama/lexima.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'cdelledonne/vim-cmake'
-Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/vim-clang-format'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -55,6 +54,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'scrooloose/nerdtree-project-plugin'
 Plug 'PhilRunninger/nerdtree-buffer-ops'
 Plug 'PhilRunninger/nerdtree-visual-selection'
+
+Plug 'neovimhaskell/haskell-vim'
+Plug 'sdiehl/vim-ormolu'
 
 call plug#end()
 
@@ -89,6 +91,9 @@ set clipboard=unnamed
 set numberwidth=3
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
 
+syntax on
+filetype plugin indent on
+
 " Source: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
   set termguicolors
@@ -115,11 +120,6 @@ let g:go_play_open_browser = 0
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("~/go/bin")
-
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_modified = 'ﰣ'
-let g:gitgutter_sign_removed = ''
-let g:gitgutter_preview_win_floating = 1
 
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
@@ -256,7 +256,7 @@ require('lualine').setup {
         sources = {'nvim_lsp'},
         sections = {'error', 'warn', 'info', 'hint'},
       },
-      'filename',
+      {'filename', path = 1},
       'lsp_progress'},
     lualine_x = {'encoding', 'fileformat', {'filetype', colored = true}},
     lualine_y = {'progress'},
@@ -283,8 +283,6 @@ LUA_CONF
 " autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require'lsp_extensions'.inlay_hints{ prefix = ' » ', highlight = "NonText", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
 :autocmd TermOpen :set nonumber
-
-au BufNewFile,BufRead *.py set foldmethod=indent
 
 """"""""""""""""""""""""""""""""""""""" Mappings """""""""""""""""""""""""""""""""""""""
 
