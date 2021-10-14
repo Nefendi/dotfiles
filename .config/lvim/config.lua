@@ -39,6 +39,10 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
 -- end
 
+vim.g.nvim_tree_hide_dotfiles = 0
+
+require('nvim-tree').setup {}
+
 require('telescope').setup {
   pickers = {
     find_files = {
@@ -139,6 +143,9 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.lang.python.formatters = {
   {
     exe = "black",
+  },
+  {
+    exe = "isort"
   }
 }
 
@@ -147,6 +154,13 @@ lvim.lang.cpp.formatters = {
     exe = "clang-format",
   }
 }
+
+lvim.lang.javascript.formatters = {
+  {
+    exe = "prettier"
+  }
+}
+
 -- set an additional linter
 lvim.lang.python.linters = {
   {
@@ -154,7 +168,7 @@ lvim.lang.python.linters = {
   },
   {
     exe =  "pylint"
-  }
+  },
 }
 
 -- Additional Plugins
@@ -183,6 +197,7 @@ lvim.plugins = {
     config = function ()
       vim.cmd ("let g:go_fmt_command = 'goimports'")
       vim.cmd ("let g:go_bin_path = expand('~/go/bin')")
+      vim.cmd ("let g:go_def_mapping_enabled = 0")
     end,
   },
   {
