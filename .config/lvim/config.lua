@@ -12,7 +12,7 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "base16-gruvbox-dark-hard"
 
 vim.opt.relativenumber = true
 
@@ -42,7 +42,21 @@ require('telescope').setup {
   pickers = {
     find_files = {
       find_command = {'rg', '--files', '--hidden', '-g', '!.git' }
-    }
+    },
+    live_grep = {
+      vimgrep_arguments = {
+        "rg",
+        "--hidden",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "-g",
+        "!.git"
+      }
+    },
   }
 }
 
@@ -154,9 +168,9 @@ lvim.plugins = {
   {
     "lunarvim/colorschemes"
   },
-  -- {
-  --   "RRethy/nvim-base16"
-  -- },
+  {
+    "RRethy/nvim-base16"
+  },
   {
     "fatih/vim-go",
     run = function ()
@@ -195,18 +209,18 @@ lvim.plugins = {
       lvim.lang.lua.lsp.setup = luadev
     end
   },
-  -- {
-  --   "p00f/nvim-ts-rainbow",
-  --   config = function()
-  --     require("nvim-treesitter.configs").setup {
-  --       rainbow = {
-  --         enable = true,
-  --         extended_mode = true,
-  --         max_file_lines = nil,
-  --       }
-  --     }
-  --   end,
-  -- },
+  {
+    "p00f/nvim-ts-rainbow",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        rainbow = {
+          enable = true,
+          extended_mode = true,
+          max_file_lines = nil,
+        }
+      }
+    end,
+  },
   {
     "ggandor/lightspeed.nvim",
     event = "BufRead",
