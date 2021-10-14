@@ -12,7 +12,8 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-lvim.colorscheme = "base16-gruvbox-dark-hard"
+lvim.colorscheme = "nordfox"
+lvim.builtin.lualine.options.theme = "nordfox"
 
 vim.opt.relativenumber = true
 
@@ -172,6 +173,9 @@ lvim.plugins = {
     "RRethy/nvim-base16"
   },
   {
+    "EdenEast/nightfox.nvim"
+  },
+  {
     "fatih/vim-go",
     run = function ()
       vim.cmd (":GoUpdateBinaries")
@@ -217,6 +221,15 @@ lvim.plugins = {
           enable = true,
           extended_mode = true,
           max_file_lines = nil,
+          colors = {
+            "#bf616a",
+            "#d08770",
+            "#ebcb8b",
+            "#a3be8c",
+            "#88c0d0",
+            "#5e81ac",
+            "#b48ead",
+          }
         }
       }
     end,
