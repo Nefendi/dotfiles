@@ -1,13 +1,3 @@
---[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
@@ -16,6 +6,94 @@ lvim.colorscheme = "nordfox"
 lvim.builtin.lualine.options.theme = "nordfox"
 
 vim.opt.relativenumber = true
+
+ -- sections = {
+ --    lualine_a = {
+ --      components.mode,
+ --    },
+ --    lualine_b = {
+ --      components.branch,
+ --      components.filename,
+ --    },
+ --    lualine_c = {
+ --      components.diff,
+ --      components.python_env,
+ --    },
+ --    lualine_x = {
+ --      components.diagnostics,
+ --      components.treesitter,
+ --      components.lsp,
+ --      components.filetype,
+ --    },
+ --    lualine_y = {},
+ --    lualine_z = {
+ --      components.scrollbar,
+ --    },
+ --  },
+
+-- mode, branch, filename, diff, python_env, diagnostics
+-- treesitter, lsp, location, progress, spaces
+-- encoding, filetype, scrollbar
+
+-- local components = require('core.lualine.components')
+
+-- lvim.builtin.lualine.sections.lualine_y = {
+--   components.spaces,
+--   components.location,
+--   components.progress,
+--   components.encoding
+-- }
+
+vim.g.symbols_outline = {
+    highlight_hovered_item = true,
+    show_guides = true,
+    auto_preview = false,
+    position = 'right',
+    width = 25,
+    show_numbers = false,
+    show_relative_numbers = false,
+    show_symbol_details = true,
+    preview_bg_highlight = 'Pmenu',
+    keymaps = { -- These keymaps can be a string or a table for multiple keys
+        close = {"<Esc>", "q"},
+        goto_location = "<Cr>",
+        focus_location = "o",
+        hover_symbol = "<C-space>",
+        toggle_preview = "K",
+        rename_symbol = "r",
+        code_actions = "a",
+    },
+    lsp_blacklist = {},
+    symbol_blacklist = {},
+    symbols = {
+        File = {icon = "", hl = "TSURI"},
+        Module = {icon = "", hl = "TSNamespace"},
+        Namespace = {icon = "", hl = "TSNamespace"},
+        Package = {icon = "", hl = "TSNamespace"},
+        Class = {icon = "𝓒", hl = "TSType"},
+        Method = {icon = "ƒ", hl = "TSMethod"},
+        Property = {icon = "", hl = "TSMethod"},
+        Field = {icon = "", hl = "TSField"},
+        Constructor = {icon = "", hl = "TSConstructor"},
+        Enum = {icon = "ℰ", hl = "TSType"},
+        Interface = {icon = "ﰮ", hl = "TSType"},
+        Function = {icon = "", hl = "TSFunction"},
+        Variable = {icon = "", hl = "TSConstant"},
+        Constant = {icon = "", hl = "TSConstant"},
+        String = {icon = "𝓐", hl = "TSString"},
+        Number = {icon = "#", hl = "TSNumber"},
+        Boolean = {icon = "⊨", hl = "TSBoolean"},
+        Array = {icon = "", hl = "TSConstant"},
+        Object = {icon = "⦿", hl = "TSType"},
+        Key = {icon = "🔐", hl = "TSType"},
+        Null = {icon = "NULL", hl = "TSType"},
+        EnumMember = {icon = "", hl = "TSField"},
+        Struct = {icon = "𝓢", hl = "TSType"},
+        Event = {icon = "🗲", hl = "TSType"},
+        Operator = {icon = "+", hl = "TSOperator"},
+        TypeParameter = {icon = "𝙏", hl = "TSParameter"}
+    }
+}
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -76,6 +154,17 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 }
+lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols"}
+lvim.builtin.which_key.mappings["G"] = {
+  name = "Go",
+  b = { "<cmd>GoBuild<cr>", "Build" },
+  r = { "<cmd>GoRun<cr>", "Run" },
+  t = { "<cmd>GoTest<cr>", "Test" },
+  c = { "<cmd>GoCoverageToggle<cr>", "Toggle coverage" },
+  g = { "<cmd>GoGenerate<cr>", "Generate"},
+  i = { "<cmd>GoImpl<cr>", "Implement"},
+}
+lvim.builtin.which_key.mappings["b"]["s"] = { "<cmd>:wa<cr>", "Save all" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -171,6 +260,8 @@ lvim.lang.python.linters = {
   },
 }
 
+lvim.lsp.override = { "rust" }
+
 -- Additional Plugins
 lvim.plugins = {
   {
@@ -199,6 +290,21 @@ lvim.plugins = {
       vim.cmd ("let g:go_bin_path = expand('~/go/bin')")
       vim.cmd ("let g:go_def_mapping_enabled = 0")
     end,
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      require("rust-tools").setup({
+        tools = {
+          autoSetHints = true,
+          hover_with_actions = true,
+          runnables = {
+            use_telescope = true,
+          },
+        },
+      })
+    end,
+    ft = { "rust", "rs" },
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -234,7 +340,7 @@ lvim.plugins = {
       require("nvim-treesitter.configs").setup {
         rainbow = {
           enable = true,
-          extended_mode = true,
+          extended_mode = false,
           max_file_lines = nil,
           colors = {
             "#bf616a",
@@ -281,6 +387,9 @@ lvim.plugins = {
             css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
             })
     end,
+  },
+  {
+    "simrat39/symbols-outline.nvim"
   },
 }
 
