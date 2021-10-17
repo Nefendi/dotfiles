@@ -35,8 +35,7 @@ vim.opt.relativenumber = true
 -- treesitter, lsp, location, progress, spaces
 -- encoding, filetype, scrollbar
 
--- local components = require('core.lualine.components')
-
+-- local components = require 'core.lualine.components'
 -- lvim.builtin.lualine.sections.lualine_y = {
 --   components.spaces,
 --   components.location,
@@ -156,7 +155,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols"}
 lvim.builtin.which_key.mappings["G"] = {
-  name = "Go",
+  name = "+Go",
   b = { "<cmd>GoBuild<cr>", "Build" },
   r = { "<cmd>GoRun<cr>", "Run" },
   t = { "<cmd>GoTest<cr>", "Test" },
@@ -164,7 +163,11 @@ lvim.builtin.which_key.mappings["G"] = {
   g = { "<cmd>GoGenerate<cr>", "Generate"},
   i = { "<cmd>GoImpl<cr>", "Implement"},
 }
-lvim.builtin.which_key.mappings["b"]["s"] = { "<cmd>:wa<cr>", "Save all" }
+lvim.builtin.which_key.mappings["a"] = { "<cmd>:wa<cr>", "Save All" }
+lvim.builtin.which_key.mappings["m"] = {
+  name = "+Markdown",
+  p = { "<cmd>:Glow<cr>", "Preview" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -391,6 +394,9 @@ lvim.plugins = {
   {
     "simrat39/symbols-outline.nvim"
   },
+  {
+    "ellisonleao/glow.nvim"
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
