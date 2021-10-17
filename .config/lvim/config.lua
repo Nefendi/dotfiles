@@ -177,31 +177,7 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "cmake",
-  "cpp",
-  "css",
-  "dockerfile",
-  "go",
-  "gomod",
-  "haskell",
-  "html",
-  "java",
-  "javascript",
-  "json",
-  "latex",
-  "lua",
-  "python",
-  "rust",
-  "rust",
-  "scss",
-  "toml",
-  "typescript",
-  "vim",
-  "yaml"
-}
+lvim.builtin.treesitter.ensure_installed = "maintained"
 
 lvim.builtin.treesitter.highlight.enabled = true
 
