@@ -2,7 +2,7 @@
 export ZSH="${HOME}"/.oh-my-zsh
 export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${PATH}"
 
-export EDITOR="nvim"
+export EDITOR="lvim"
 
 export TERM="xterm-256color"
 

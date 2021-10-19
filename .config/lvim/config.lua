@@ -6,6 +6,7 @@ lvim.colorscheme = "nordfox"
 lvim.builtin.lualine.options.theme = "nordfox"
 
 vim.opt.relativenumber = true
+vim.opt.colorcolumn = "120"
 
  -- sections = {
  --    lualine_a = {
