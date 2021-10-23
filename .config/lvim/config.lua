@@ -2,8 +2,7 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-lvim.colorscheme = "nordfox"
-lvim.builtin.lualine.options.theme = "nordfox"
+lvim.colorscheme = "doom-one"
 
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "120"
@@ -240,8 +239,6 @@ lvim.lang.python.linters = {
   },
 }
 
-lvim.lsp.override = { "rust" }
-
 -- Additional Plugins
 lvim.plugins = {
   {
@@ -282,6 +279,22 @@ lvim.plugins = {
             use_telescope = true,
           },
         },
+        server = {
+          cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
+          on_attach = require("lvim.lsp").common_on_attach,
+          on_init = require("lvim.lsp").common_on_init,
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = {
+                    enable = true,
+                    command = "clippy",
+                    extraArgs = {
+                         "--target-dir", "/tmp/rust-analyzer-check",
+                    },
+                },
+            },
+        },
+    }
       })
     end,
     ft = { "rust", "rs" },
@@ -291,7 +304,7 @@ lvim.plugins = {
     event = "BufRead",
     setup = function()
       vim.g.indentLine_enabled = 1
-      vim.g.indent_blankline_char = "▏"
+      vim.g.indent_blankline_char_list = {'|', '¦', '┆', '┊'}
       vim.g.indent_blankline_filetype_exclude = {"help", "terminal", "dashboard"}
       vim.g.indent_blankline_buftype_exclude = {"terminal"}
       vim.g.indent_blankline_show_trailing_blankline_indent = false
@@ -373,7 +386,42 @@ lvim.plugins = {
   },
   {
     "ellisonleao/glow.nvim"
-  }
+  },
+  {
+    "sainnhe/gruvbox-material"
+  },
+  {
+    "NTBBloodbath/doom-one.nvim",
+    config = function()
+        require('doom-one').setup({
+            cursor_coloring = false,
+            terminal_colors = true,
+            italic_comments = true,
+            enable_treesitter = true,
+            transparent_background = false,
+            pumblend = {
+                enable = true,
+                transparency_amount = 20,
+            },
+            plugins_integrations = {
+                neorg = true,
+                barbar = true,
+                bufferline = true,
+                gitgutter = false,
+                gitsigns = true,
+                telescope = true,
+                neogit = true,
+                nvim_tree = true,
+                dashboard = true,
+                startify = true,
+                whichkey = true,
+                indent_blankline = true,
+                vim_illuminate = true,
+                lspsaga = false,
+            },
+        })
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

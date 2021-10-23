@@ -129,6 +129,31 @@ schemes:
       cyan:    '0x8ec07c'
       white:   '0xebdbb2'
 
+  Gruvbox_Material_Dark_Medium: &gruvbox_medium
+    primary:
+      background: '0x282828'
+      foreground: '0xdfbf8e'
+
+      normal:
+        black:   '0x665c54'
+        red:     '0xea6962'
+        green:   '0xa9b665'
+        yellow:  '0xe78a4e'
+        blue:    '0x7daea3'
+        magenta: '0xd3869b'
+        cyan:    '0x89b482'
+        white:   '0xdfbf8e'
+
+      bright:
+        black:   '0x928374'
+        red:     '0xea6962'
+        green:   '0xa9b665'
+        yellow:  '0xe3a84e'
+        blue:    '0x7daea3'
+        magenta: '0xd3869b'
+        cyan:    '0x89b482'
+        white:   '0xdfbf8e'
+
   Tokyo_Night: &tokyo_night
     primary:
       background: '0x1a1b26'
@@ -218,8 +243,38 @@ schemes:
     indexed_colors:
       - { index: 16, color: '0xc9826b' }
       - { index: 17, color: '0xbf88bc' }
-  
-colors: *nordfox
+ 
+  # Upstream: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/alacritty/alacritty.yml
+  Doom_One: &doom_one
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text: CellBackground
+      cursor: '#528bff'
+    selection:
+      text: CellForeground
+      background: '#3e4451'
+    normal:
+      black:   '#1c1f24'
+      red:     '#ff6c6b'
+      green:   '#98be65'
+      yellow:  '#da8548'
+      blue:    '#51afef'
+      magenta: '#c678dd'
+      cyan:    '#5699af'
+      white:   '#202328'
+    bright:
+      black:   '#5b6268'
+      red:     '#da8548'
+      green:   '#4db5bd'
+      yellow:  '#ecbe7b'
+      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+      magenta: '#a9a1e1'
+      cyan:    '#46d9ff'
+      white:   '#dfdfdf'
+
+colors: *doom_one
 
 bell:
   animation: EaseOutExpo
