@@ -274,7 +274,7 @@ schemes:
       cyan:    '#46d9ff'
       white:   '#dfdfdf'
 
-colors: *doom_one
+colors: *tokyo_night_storm
 
 bell:
   animation: EaseOutExpo

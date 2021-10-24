@@ -1,5 +1,7 @@
 # Dotfiles
 
+**WARNING: The contents of this file are deprecated.**
+
 A collection of different dotfiles and configuration files, which I use in my day-to-day work.
 
 ## How to quickly set everything up?

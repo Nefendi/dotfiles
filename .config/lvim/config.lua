@@ -2,46 +2,21 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-lvim.colorscheme = "doom-one"
+lvim.colorscheme = "tokyonight"
 
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "120"
 
- -- sections = {
- --    lualine_a = {
- --      components.mode,
- --    },
- --    lualine_b = {
- --      components.branch,
- --      components.filename,
- --    },
- --    lualine_c = {
- --      components.diff,
- --      components.python_env,
- --    },
- --    lualine_x = {
- --      components.diagnostics,
- --      components.treesitter,
- --      components.lsp,
- --      components.filetype,
- --    },
- --    lualine_y = {},
- --    lualine_z = {
- --      components.scrollbar,
- --    },
- --  },
+local components = require 'lvim.core.lualine.components'
 
--- mode, branch, filename, diff, python_env, diagnostics
--- treesitter, lsp, location, progress, spaces
--- encoding, filetype, scrollbar
+lvim.builtin.lualine.sections.lualine_x = {
+  components.treesitter,
+  components.lsp,
+  components.filetype,
+  components.encoding,
+  components.spaces,
 
--- local components = require 'core.lualine.components'
--- lvim.builtin.lualine.sections.lualine_y = {
---   components.spaces,
---   components.location,
---   components.progress,
---   components.encoding
--- }
+}
 
 vim.g.symbols_outline = {
     highlight_hovered_item = true,
@@ -328,27 +303,6 @@ lvim.plugins = {
     end
   },
   {
-    "p00f/nvim-ts-rainbow",
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        rainbow = {
-          enable = true,
-          extended_mode = false,
-          max_file_lines = nil,
-          colors = {
-            "#bf616a",
-            "#d08770",
-            "#ebcb8b",
-            "#a3be8c",
-            "#88c0d0",
-            "#5e81ac",
-            "#b48ead",
-          }
-        }
-      }
-    end,
-  },
-  {
     "ggandor/lightspeed.nvim",
     event = "BufRead",
   },
@@ -390,36 +344,57 @@ lvim.plugins = {
   {
     "sainnhe/gruvbox-material"
   },
+  -- {
+  --   "NTBBloodbath/doom-one.nvim",
+  --   config = function()
+  --       require('doom-one').setup({
+  --           cursor_coloring = false,
+  --           terminal_colors = true,
+  --           italic_comments = true,
+  --           enable_treesitter = true,
+  --           transparent_background = false,
+  --           pumblend = {
+  --               enable = true,
+  --               transparency_amount = 20,
+  --           },
+  --           plugins_integrations = {
+  --               neorg = true,
+  --               barbar = true,
+  --               bufferline = true,
+  --               gitgutter = false,
+  --               gitsigns = true,
+  --               telescope = true,
+  --               neogit = true,
+  --               nvim_tree = true,
+  --               dashboard = true,
+  --               startify = true,
+  --               whichkey = true,
+  --               indent_blankline = true,
+  --               vim_illuminate = true,
+  --               lspsaga = false,
+  --           },
+  --       })
+  --   end,
+  -- },
   {
-    "NTBBloodbath/doom-one.nvim",
+    "p00f/nvim-ts-rainbow",
     config = function()
-        require('doom-one').setup({
-            cursor_coloring = false,
-            terminal_colors = true,
-            italic_comments = true,
-            enable_treesitter = true,
-            transparent_background = false,
-            pumblend = {
-                enable = true,
-                transparency_amount = 20,
-            },
-            plugins_integrations = {
-                neorg = true,
-                barbar = true,
-                bufferline = true,
-                gitgutter = false,
-                gitsigns = true,
-                telescope = true,
-                neogit = true,
-                nvim_tree = true,
-                dashboard = true,
-                startify = true,
-                whichkey = true,
-                indent_blankline = true,
-                vim_illuminate = true,
-                lspsaga = false,
-            },
-        })
+      require("nvim-treesitter.configs").setup {
+        rainbow = {
+          enable = true,
+          extended_mode = false,
+          max_file_lines = nil,
+          colors = {
+            "#bf616a",
+            "#d08770",
+            "#ebcb8b",
+            "#a3be8c",
+            "#88c0d0",
+            "#5e81ac",
+            "#b48ead",
+          }
+        }
+      }
     end,
   },
 }
