@@ -39,10 +39,8 @@ eval "$HOME/miniconda3/bin/conda" "shell.fish" "hook" $argv | source
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # TMUX
-if status --is-interactive
-	if ! set -q TMUX
-		exec tmux
-	end
+if status --is-interactive && not set -q TMUX
+  tmux new-session -As main
 end
 
 # Tokyonight Storm color palette
