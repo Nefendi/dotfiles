@@ -98,7 +98,7 @@ require('nvim-tree').setup {}
 require('telescope').setup {
   pickers = {
     find_files = {
-      find_command = {'rg', '--files', '--hidden', '-g', '!.git' }
+      find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' }
     },
     live_grep = {
       vimgrep_arguments = {
@@ -111,7 +111,9 @@ require('telescope').setup {
         "--column",
         "--smart-case",
         "-g",
-        "!.git"
+        "!.git",
+        "-g",
+        "!node_modules"
       }
     },
   }
