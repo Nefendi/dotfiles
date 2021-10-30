@@ -274,7 +274,37 @@ schemes:
       cyan:    '#46d9ff'
       white:   '#dfdfdf'
 
-colors: *tokyo_night_storm
+  # Upstream: https://github.com/NLKNguyen/papercolor-theme
+  Paper_Color_Dark: &paper_color_dark
+    primary:
+      background: '#1c1c1c'
+      foreground: '#d0d0d0'
+
+    cursor:
+      text: '#1c1c1c'
+      cursor: '#d0d0d0'
+
+    normal:
+      black:   '#1c1c1c'
+      red:     '#af005f'
+      green:   '#afd700'
+      yellow:  '#d7af5f'
+      blue:    '#5fafd7'
+      magenta: '#af87d7'
+      cyan:    '#d7875f'
+      white:   '#d0d0d0'
+
+    bright:
+      black:   '#585858'
+      red:     '#5faf5f'
+      green:   '#afd700'
+      yellow:  '#af87d7'
+      blue:    '#ff5faf'
+      magenta: '#ff5faf'
+      cyan:    '#00afaf'
+      white:   '#d7875f'
+
+colors: *paper_color_dark
 
 bell:
   animation: EaseOutExpo

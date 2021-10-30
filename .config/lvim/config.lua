@@ -2,7 +2,9 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-lvim.colorscheme = "tokyonight"
+vim.opt.background = "dark"
+lvim.colorscheme = "PaperColorSlim"
+lvim.builtin.lualine.options.theme = "onedark"
 
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "120"
@@ -91,9 +93,11 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
 -- end
 
-vim.g.nvim_tree_hide_dotfiles = 0
-
-require('nvim-tree').setup {}
+require('nvim-tree').setup {
+  filters = {
+    dotfiles = true,
+  }
+}
 
 require('telescope').setup {
   pickers = {
@@ -236,13 +240,18 @@ lvim.plugins = {
   },
   {
     "fatih/vim-go",
-    run = function ()
+    run = function()
       vim.cmd (":GoUpdateBinaries")
     end,
-    config = function ()
-      vim.cmd ("let g:go_fmt_command = 'goimports'")
+    config = function()
       vim.cmd ("let g:go_bin_path = expand('~/go/bin')")
       vim.cmd ("let g:go_def_mapping_enabled = 0")
+      -- vim.cmd ("let g:go_fmt_command = 'goimports'")
+      -- vim.cmd ("let g:go_gopls_enabled = 0")
+      -- vim.cmd ("let g:go_fmt_autosave = 0")
+      -- vim.cmd ("let g:go_mod_fmt_autosave = 0")
+      -- vim.cmd ("let g:go_code_completion_enabled = 0")
+      -- vim.cmd ("let g:go_imports_autosave = 0")
     end,
   },
   {
@@ -398,6 +407,15 @@ lvim.plugins = {
         }
       }
     end,
+  },
+  {
+    "NLKNguyen/papercolor-theme",
+  },
+  {
+    "pappasam/papercolor-theme-slim",
+  },
+  {
+    "folke/lsp-colors.nvim",
   },
 }
 
