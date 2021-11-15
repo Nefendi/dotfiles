@@ -13,43 +13,43 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # ANTIBODY
-source "${HOME}"/.zsh_plugins.sh
+# source "${HOME}"/.zsh_plugins.sh
 
-# ALIASES
-alias k="kubectl"
-alias ls='exa -g --color=always --group-directories-first --icons'
-alias ll='exa -gl --color=always --group-directories-first --icons'
-alias la='exa -gal --color=always --group-directories-first --icons'
-alias lt='exa -gaT --color=always --group-directories-first --icons'
+# # ALIASES
+# alias k="kubectl"
+# alias ls='exa -g --color=always --group-directories-first --icons'
+# alias ll='exa -gl --color=always --group-directories-first --icons'
+# alias la='exa -gal --color=always --group-directories-first --icons'
+# alias lt='exa -gaT --color=always --group-directories-first --icons'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("${HOME}"'/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/${HOME}/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="${HOME}/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$("${HOME}"'/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/${HOME}/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="${HOME}/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
-# GHCUP
-[ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
+# # GHCUP
+# [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# # FZF
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-enable-fzf-tab
+# enable-fzf-tab
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
+# # NVM
+# export NVM_DIR="$HOME/.nvm"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # TMUX
 # if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
@@ -57,5 +57,7 @@ export NVM_DIR="$HOME/.nvm"
 # fi
 
 # STARSHIP
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+exec fish
 

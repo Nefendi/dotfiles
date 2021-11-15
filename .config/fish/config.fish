@@ -39,9 +39,9 @@ eval "$HOME/miniconda3/bin/conda" "shell.fish" "hook" $argv | source
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # TMUX
-if status --is-interactive && not set -q TMUX
-  tmux new-session -As main
-end
+# if status --is-interactive && not set -q TMUX
+#   tmux new-session -As main
+# end
 
 # Tokyonight Storm color palette
 # Upstream: https://github.com/folke/tokyonight.nvim/blob/main/extras/fish_tokyonight_storm.fish
@@ -77,7 +77,7 @@ end
 # set -g fish_pager_color_prefix $cyan
 # set -g fish_pager_color_completion $foreground
 # set -g fish_pager_color_description $comment
-# Upstream: https://github.com/folke/tokyonight.nvim/blob/main/extras/fish_tokyonight_storm.fish
+# #  Upstream: https://github.com/folke/tokyonight.nvim/blob/main/extras/fish_tokyonight_storm.fish
 # set -l foreground c0caf5
 # set -l selection 364A82
 # set -l comment 565f89
@@ -91,37 +91,37 @@ end
 
 # PaperColor colour palette
 # Upstream: https://github.com/NLKNguyen/papercolor-theme
-set -l foreground d0d0d0
-set -l selection 808080
-set -l comment 5858585
-set -l red af005f
-set -l orange ffaf00
-set -l yellow d7af5f
-set -l green afd700
-set -l purple af87d7
-set -l cyan 00afaf
-set -l pink ff5af
-
-# Syntax Highlighting Colors
-set -g fish_color_normal $foreground
-set -g fish_color_command $green
-set -g fish_color_keyword $pink
-set -g fish_color_quote $yellow
-set -g fish_color_redirection $foreground
-set -g fish_color_end $orange
-set -g fish_color_error $red
-set -g fish_color_param $purple
-set -g fish_color_comment $comment
-set -g fish_color_selection --background=$selection
-set -g fish_color_search_match --background=$selection
-set -g fish_color_operator $cyan
-set -g fish_color_escape $pink
-set -g fish_color_autosuggestion $comment
-
-# Completion Pager Colors
-set -g fish_pager_color_progress $comment
-set -g fish_pager_color_prefix $purple
-set -g fish_pager_color_completion $foreground
+# set -l foreground d0d0d0
+# set -l selection 808080
+# set -l comment 5858585
+# set -l red af005f
+# set -l orange ffaf00
+# set -l yellow d7af5f
+# set -l green afd700
+# set -l purple af87d7
+# set -l cyan 00afaf
+# set -l pink ff5af
+# 
+# # Syntax Highlighting Colors
+# set -g fish_color_normal $foreground
+# set -g fish_color_command $green
+# set -g fish_color_keyword $pink
+# set -g fish_color_quote $yellow
+# set -g fish_color_redirection $foreground
+# set -g fish_color_end $orange
+# set -g fish_color_error $red
+# set -g fish_color_param $purple
+# set -g fish_color_comment $comment
+# set -g fish_color_selection --background=$selection
+# set -g fish_color_search_match --background=$selection
+# set -g fish_color_operator $cyan
+# set -g fish_color_escape $pink
+# set -g fish_color_autosuggestion $comment
+# 
+# # Completion Pager Colors
+# set -g fish_pager_color_progress $comment
+# set -g fish_pager_color_prefix $purple
+# set -g fish_pager_color_completion $foreground
 
 # STARSHIP
 starship init fish | source

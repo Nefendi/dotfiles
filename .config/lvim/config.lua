@@ -2,12 +2,13 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-vim.opt.background = "dark"
-lvim.colorscheme = "PaperColorSlim"
-lvim.builtin.lualine.options.theme = "onedark"
+lvim.colorscheme = "onedarker"
 
+vim.opt.background = "dark"
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "120"
+vim.opt.textwidth = 120
+vim.opt.linebreak = true
 
 local components = require 'lvim.core.lualine.components'
 
@@ -17,7 +18,6 @@ lvim.builtin.lualine.sections.lualine_x = {
   components.filetype,
   components.encoding,
   components.spaces,
-
 }
 
 vim.g.symbols_outline = {
@@ -93,11 +93,11 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
 -- end
 
-require('nvim-tree').setup {
-  filters = {
-    dotfiles = true,
-  }
-}
+-- require('nvim-tree').setup {
+--   filters = {
+--     dotfiles = true,
+--   }
+-- }
 
 require('telescope').setup {
   pickers = {
@@ -417,6 +417,9 @@ lvim.plugins = {
   {
     "folke/lsp-colors.nvim",
   },
+  {
+    "lervag/vimtex",
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
