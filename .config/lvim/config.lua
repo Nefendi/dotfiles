@@ -144,9 +144,6 @@ formatters.setup {
   },
   {
     exe = "clang-format"
-  },
-  {
-    exe = "prettier"
   }
 }
 
@@ -158,6 +155,10 @@ linters.setup {
   },
   {
     exe = "pylint"
+  },
+  {
+    exe = "shellcheck",
+    args = { "--severity", "warning" }
   }
 }
 

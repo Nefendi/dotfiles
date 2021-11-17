@@ -35,3 +35,5 @@ wookayin/fzf-fasd
 MichaelAquilina/zsh-you-should-use
 zpm-zsh/material-colors
 zdharma/fast-syntax-highlighting
+lukechilds/zsh-nvm
+lukechilds/zsh-better-npm-completion
