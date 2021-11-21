@@ -8,6 +8,9 @@ vim.opt.relativenumber = true
 vim.opt.colorcolumn = "120"
 vim.opt.textwidth = 120
 vim.opt.linebreak = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 local components = require 'lvim.core.lualine.components'
 
