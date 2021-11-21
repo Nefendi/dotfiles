@@ -24,10 +24,10 @@ source "${HOME}"/.zsh_plugins.sh
 
 # ALIASES
 alias k="kubectl"
-alias ls='exa -g --color=always --group-directories-first --icons'
-alias ll='exa -gl --color=always --group-directories-first --icons'
-alias la='exa -gal --color=always --group-directories-first --icons'
-alias lt='exa -gaT --color=always --group-directories-first --icons'
+alias ls='exa -gF --color=always --group-directories-first --icons'
+alias ll='exa -glFh --color=always --group-directories-first --icons'
+alias la='exa -galFh --color=always --group-directories-first --icons'
+alias lt='exa -gaTFh --color=always --group-directories-first --icons'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
