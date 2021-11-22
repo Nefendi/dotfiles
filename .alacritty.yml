@@ -25,26 +25,26 @@ scrolling:
 
 font:
   normal:
-    family: Mononoki Nerd Font
-    style: Medium
+    family: RecMonoDuotoneNF
+    style: Regular
 
   bold:
-    family: Mononoki Nerd Font
+    family: RecMonoDuotoneNF
     style: Bold
 
   italic:
-    family: Mononoki Nerd Font
+    family: RecMonoDuotoneNF
     style: Italic
 
   bold_italic:
-    family: Mononoki Nerd Font
+    family: RecMonoDuotoneNF
     style: Bold Italic
 
-  size: 13.0
+  size: 12.0
 
   offset:
     x: 0
-    y: 0
+    y: 3 
 
   glyph_offset:
     x: 0
