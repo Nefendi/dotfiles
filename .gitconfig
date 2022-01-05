@@ -18,7 +18,7 @@
 [core]
 	pager = less
 	autocrlf = input
-	editor = nvim
+	editor = lvim
 	excludesfile = ~/.global_gitignore
 
 [diff]

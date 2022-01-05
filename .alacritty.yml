@@ -7,8 +7,8 @@ window:
     lines: 35
 
   padding:
-    x: 0
-    y: 0
+    x: 6
+    y: 6
 
   dynamic_padding: false
 
@@ -18,6 +18,10 @@ window:
 
   title: Alacritty
 
+  class:
+    instance: Alacritty
+    general: Alacritty
+
 scrolling:
   history: 5000
 
@@ -25,97 +29,293 @@ scrolling:
 
 font:
   normal:
-    family: Mononoki Nerd Font Mono
-    style: Medium
+    family: JetBrainsMonoNL NF
+    style: Regular
 
   bold:
-    family: Mononoki Nerd Font Mono
+    family: JetBrainsMonoNL NF
     style: Bold
 
   italic:
-    family: Mononoki Nerd Font Mono
+    family: JetBrainsMonoNL NF
     style: Italic
 
   bold_italic:
-    family: Mononoki Nerd Font Mono
+    family: JetBrainsMonoNL NF
     style: Bold Italic
 
-  size: 13.0
+  size: 12.0
 
   offset:
     x: 0
-    y: 0
+    y: 0 
 
   glyph_offset:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
-# # Material Ocean colours
-# colors:
-#   primary:
-#     background: "0x0f111a"
-#     foreground: "0xD8DEE9"
-#   cursor:
-#     cursor: "0xff4151"
-#   normal:
-#     black: "0x4C566A"
-#     red: "0xBF616A"
-#     green: "0xA3BE8C"
-#     yellow: "0xEBCB8B"
-#     blue: "0x81A1C1"
-#     magenta: "0xB48EAD"
-#     cyan: "0x88C0D0"
-#     white: "0xE5E9F0"
+schemes:
+  Material_Ocean: &material_ocean
+    primary:
+      background: "0x0f111a"
+      foreground: "0xD8DEE9"
+    cursor:
+      cursor: "0xff4151"
+    normal:
+      black: "0x4C566A"
+      red: "0xBF616A"
+      green: "0xA3BE8C"
+      yellow: "0xEBCB8B"
+      blue: "0x81A1C1"
+      magenta: "0xB48EAD"
+      cyan: "0x88C0D0"
+      white: "0xE5E9F0"
 
-# One Dark colours
-colors:
-  # Default colors
-  primary:
-    background: "0x1e2127"
-    foreground: "0xabb2bf"
-    bright_foreground: "0xe6efff"
+  One_Dark: &one_dark
+    primary:
+      background: "0x1e2127"
+      foreground: "0xabb2bf"
+      bright_foreground: "0xe6efff"
 
-  # Normal colors
-  normal:
-    black: "0x1e2127"
-    red: "0xe06c75"
-    green: "0x98c379"
-    yellow: "0xd19a66"
-    blue: "0x61afef"
-    magenta: "0xc678dd"
-    cyan: "0x56b6c2"
-    white: "0x828791"
+    normal:
+      black: "0x1e2127"
+      red: "0xe06c75"
+      green: "0x98c379"
+      yellow: "0xd19a66"
+      blue: "0x61afef"
+      magenta: "0xc678dd"
+      cyan: "0x56b6c2"
+      white: "0x828791"
 
-  # Bright colors
-  bright:
-    black: "0x5c6370"
-    red: "0xe06c75"
-    green: "0x98c379"
-    yellow: "0xd19a66"
-    blue: "0x61afef"
-    magenta: "0xc678dd"
-    cyan: "0x56b6c2"
-    white: "0xe6efff"
+    bright:
+      black: "0x5c6370"
+      red: "0xe06c75"
+      green: "0x98c379"
+      yellow: "0xd19a66"
+      blue: "0x61afef"
+      magenta: "0xc678dd"
+      cyan: "0x56b6c2"
+      white: "0xe6efff"
 
-  # Dim colors
-  dim:
-    black: "0x1e2127"
-    red: "0xe06c75"
-    green: "0x98c379"
-    yellow: "0xd19a66"
-    blue: "0x61afef"
-    magenta: "0xc678dd"
-    cyan: "0x56b6c2"
-    white: "0x828791"
+    dim:
+      black: "0x1e2127"
+      red: "0xe06c75"
+      green: "0x98c379"
+      yellow: "0xd19a66"
+      blue: "0x61afef"
+      magenta: "0xc678dd"
+      cyan: "0x56b6c2"
+      white: "0x828791"
+
+  Gruvbox_Dark: &gruvbox_dark
+    primary:
+      background: '0x1d2021'
+      foreground: '0xebdbb2'
+
+    normal:
+      black:   '0x282828'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+
+  Gruvbox_Material_Dark_Medium: &gruvbox_medium
+    primary:
+      background: '0x282828'
+      foreground: '0xdfbf8e'
+
+      normal:
+        black:   '0x665c54'
+        red:     '0xea6962'
+        green:   '0xa9b665'
+        yellow:  '0xe78a4e'
+        blue:    '0x7daea3'
+        magenta: '0xd3869b'
+        cyan:    '0x89b482'
+        white:   '0xdfbf8e'
+
+      bright:
+        black:   '0x928374'
+        red:     '0xea6962'
+        green:   '0xa9b665'
+        yellow:  '0xe3a84e'
+        blue:    '0x7daea3'
+        magenta: '0xd3869b'
+        cyan:    '0x89b482'
+        white:   '0xdfbf8e'
+
+  Tokyo_Night: &tokyo_night
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xc0caf5'
+
+    normal:
+      black:   '0x15161E'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+
+  Tokyo_Night_Storm: &tokyo_night_storm
+    primary:
+      background: '0x24283b'
+      foreground: '0xc0caf5'
+
+    normal:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }
+
+  # Nightfox Alacritty Colors
+  # Style: nordfox
+  # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_alacritty.yml
+  Nordfox: &nordfox
+    primary:
+      background: '0x2e3440'
+      foreground: '0xb9bfca'
+
+    normal:
+      black:   '0x3b4252'
+      red:     '0xbf616a'
+      green:   '0xa3be8c'
+      yellow:  '0xebcb8b'
+      blue:    '0x81a1c1'
+      magenta: '0xb48ead'
+      cyan:    '0x88c0d0'
+      white:   '0xe5e9f0'
+
+    bright:
+      black:   '0x465780'
+      red:     '0xd06f79'
+      green:   '0xb1d196'
+      yellow:  '0xf0d399'
+      blue:    '0x8cafd2'
+      magenta: '0xc895bf'
+      cyan:    '0x93ccdc'
+      white:   '0xe7ecf4'
+
+    indexed_colors:
+      - { index: 16, color: '0xc9826b' }
+      - { index: 17, color: '0xbf88bc' }
+ 
+  # Upstream: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/alacritty/alacritty.yml
+  Doom_One: &doom_one
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text: CellBackground
+      cursor: '#528bff'
+    selection:
+      text: CellForeground
+      background: '#3e4451'
+    normal:
+      black:   '#1c1f24'
+      red:     '#ff6c6b'
+      green:   '#98be65'
+      yellow:  '#da8548'
+      blue:    '#51afef'
+      magenta: '#c678dd'
+      cyan:    '#5699af'
+      white:   '#202328'
+    bright:
+      black:   '#5b6268'
+      red:     '#da8548'
+      green:   '#4db5bd'
+      yellow:  '#ecbe7b'
+      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+      magenta: '#a9a1e1'
+      cyan:    '#46d9ff'
+      white:   '#dfdfdf'
+
+  # Upstream: https://github.com/NLKNguyen/papercolor-theme
+  Paper_Color_Dark: &paper_color_dark
+    primary:
+      background: '#1c1c1c'
+      foreground: '#d0d0d0'
+
+    cursor:
+      text: '#1c1c1c'
+      cursor: '#d0d0d0'
+
+    normal:
+      black:   '#1c1c1c'
+      red:     '#af005f'
+      green:   '#afd700'
+      yellow:  '#d7af5f'
+      blue:    '#5fafd7'
+      magenta: '#af87d7'
+      cyan:    '#d7875f'
+      white:   '#d0d0d0'
+
+    bright:
+      black:   '#585858'
+      red:     '#5faf5f'
+      green:   '#afd700'
+      yellow:  '#af87d7'
+      blue:    '#ff5faf'
+      magenta: '#ff5faf'
+      cyan:    '#00afaf'
+      white:   '#d7875f'
+
+colors: *one_dark
 
 bell:
   animation: EaseOutExpo
   duration: 0
   color: "0xffffff"
 
-background_opacity: 1.0
+background_opacity: 0.9
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
@@ -158,7 +358,7 @@ mouse_bindings:
   - { mouse: Right, action: PasteSelection }
 
 key_bindings:
-  - { key: Q, mods: Control, action: Quit }
+  # - { key: Q, mods: Control, action: Quit }
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
