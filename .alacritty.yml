@@ -7,8 +7,8 @@ window:
     lines: 35
 
   padding:
-    x: 0
-    y: 0
+    x: 6
+    y: 6
 
   dynamic_padding: false
 
@@ -18,6 +18,10 @@ window:
 
   title: Alacritty
 
+  class:
+    instance: Alacritty
+    general: Alacritty
+
 scrolling:
   history: 5000
 
@@ -25,32 +29,32 @@ scrolling:
 
 font:
   normal:
-    family: RecMonoDuotoneNF
+    family: JetBrainsMonoNL NF
     style: Regular
 
   bold:
-    family: RecMonoDuotoneNF
+    family: JetBrainsMonoNL NF
     style: Bold
 
   italic:
-    family: RecMonoDuotoneNF
+    family: JetBrainsMonoNL NF
     style: Italic
 
   bold_italic:
-    family: RecMonoDuotoneNF
+    family: JetBrainsMonoNL NF
     style: Bold Italic
 
   size: 12.0
 
   offset:
     x: 0
-    y: 3 
+    y: 0 
 
   glyph_offset:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 schemes:
   Material_Ocean: &material_ocean
