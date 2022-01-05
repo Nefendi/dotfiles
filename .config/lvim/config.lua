@@ -147,6 +147,9 @@ formatters.setup {
   },
   {
     exe = "clang-format"
+  },
+  {
+    exe = "prettier"
   }
 }
 
