@@ -142,6 +142,41 @@ lvim.builtin.treesitter.ensure_installed = "maintained"
 
 lvim.builtin.treesitter.highlight.enabled = true
 
+
+-- emmet_ls
+local lspconfig = require'lspconfig'
+local configs = require'lspconfig/configs'
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+if not lspconfig.emmet_ls then
+  configs.emmet_ls = {
+    default_config = {
+      cmd = {'emmet-ls', '--stdio'};
+      filetypes = {
+          'html',
+          'css',
+          'scss',
+          'javascript',
+          'typescript',
+          'typescriptreact',
+          'javascriptreact',
+        };
+      root_dir = function(fname)
+        return vim.loop.cwd()
+      end;
+      settings = {};
+    };
+  }
+end
+
+lspconfig.emmet_ls.setup{ capabilities = capabilities; }
+
+
+
+
+
 local formatters = require "lvim.lsp.null-ls.formatters"
 
 formatters.setup {
