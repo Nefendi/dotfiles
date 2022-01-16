@@ -22,6 +22,12 @@ lvim.builtin.lualine.sections.lualine_x = {
   components.spaces,
 }
 
+lvim.builtin.dashboard.active = true
+lvim.builtin.notify.active = true
+lvim.builtin.terminal.active = true
+
+lvim.lsp.diagnostics.virtual_text = true
+
 vim.g.symbols_outline = {
     highlight_hovered_item = true,
     show_guides = true,
@@ -149,7 +155,15 @@ formatters.setup {
     exe = "clang-format"
   },
   {
-    exe = "prettier"
+    exe = "prettier",
+    filetypes = { "javascript", 
+                  "javascriptreact",
+                  "typescript",
+                  "typescriptreact",
+                  "html",
+                  "css",
+                  "scss"
+        }
   }
 }
 
@@ -175,16 +189,10 @@ lvim.plugins = {
     cmd = TroubleToggle
   },
   {
-    "folke/tokyonight.nvim"
-  },
-  {
     "lunarvim/colorschemes"
   },
   {
     "RRethy/nvim-base16"
-  },
-  {
-    "EdenEast/nightfox.nvim"
   },
   {
     "fatih/vim-go",
@@ -253,15 +261,6 @@ lvim.plugins = {
     end,
   },
   {
-    "folke/lua-dev.nvim",
-    config = function()
-      local luadev = require("lua-dev").setup({
-        lspconfig = lvim.lang.lua.lsp.setup
-      })
-      lvim.lang.lua.lsp.setup = luadev
-    end
-  },
-  {
     "ggandor/lightspeed.nvim",
     event = "BufRead",
   },
@@ -299,9 +298,6 @@ lvim.plugins = {
   },
   {
     "ellisonleao/glow.nvim"
-  },
-  {
-    "sainnhe/gruvbox-material"
   },
   -- {
   --   "NTBBloodbath/doom-one.nvim",
@@ -357,17 +353,8 @@ lvim.plugins = {
     end,
   },
   {
-    "NLKNguyen/papercolor-theme",
-  },
-  {
-    "pappasam/papercolor-theme-slim",
-  },
-  {
     "folke/lsp-colors.nvim",
   },
-  {
-    "lervag/vimtex",
-  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
