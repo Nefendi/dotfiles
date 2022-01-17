@@ -277,6 +277,17 @@ lvim.plugins = {
     ft = { "rust", "rs" },
   },
   {
+    "Saecki/crates.nvim",
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end,
+  },
+  {
+    "David-Kunz/cmp-npm",
+    requires = { "nvim-lua/plenary.nvim" }
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
     setup = function()
@@ -391,8 +402,3 @@ lvim.plugins = {
     "folke/lsp-colors.nvim",
   },
 }
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
