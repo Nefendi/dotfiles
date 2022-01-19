@@ -1,7 +1,11 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 
-lvim.colorscheme = "onedarker"
+vim.g.nord_contrast = true
+vim.g.nord_borders = true
+vim.g.nord_italic = true
+
+lvim.colorscheme = "nord"
 
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
@@ -11,6 +15,12 @@ vim.opt.linebreak = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+require('lualine').setup {
+  options = {
+    theme = 'nord'
+  }
+}
 
 local components = require 'lvim.core.lualine.components'
 
@@ -84,7 +94,7 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 local telescope = require "telescope"
-local telescope_actions = require "telescope.actions"
+local actions = require "telescope.actions"
 
 telescope.load_extension("media_files")
 
@@ -113,11 +123,11 @@ telescope.setup {
   defaults = {
       mappings = {
           i = {
-              ["<C-n>"] = telescope_actions.cycle_history_next,
-              ["<C-p>"] = telescope_actions.cycle_history_prev,
+              ["<C-n>"] = actions.cycle_history_next,
+              ["<C-p>"] = actions.cycle_history_prev,
 
-              ["<C-j>"] = telescope_actions.move_selection_next,
-              ["<C-k>"] = telescope_actions.move_selection_previous,
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
             }
         }
     },
@@ -136,10 +146,10 @@ lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
+  d = { "<cmd>Trouble document_diagnostics<cr>", "Document diagnostics" },
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace diagnostics" },
 }
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols"}
 lvim.builtin.which_key.mappings["G"] = {
@@ -423,5 +433,8 @@ lvim.plugins = {
   },
   {
     "nvim-telescope/telescope-media-files.nvim"
+  },
+  {
+    "shaunsingh/nord.nvim"
   }
 }
