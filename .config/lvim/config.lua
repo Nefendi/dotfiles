@@ -83,7 +83,12 @@ lvim.leader = "space"
 
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
-require('telescope').setup {
+local telescope = require "telescope"
+local telescope_actions = require "telescope.actions"
+
+telescope.load_extension("media_files")
+
+telescope.setup {
   pickers = {
     find_files = {
       find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' }
@@ -104,7 +109,26 @@ require('telescope').setup {
         "!node_modules"
       }
     },
-  }
+  },
+  defaults = {
+      mappings = {
+          i = {
+              ["<C-n>"] = telescope_actions.cycle_history_next,
+              ["<C-p>"] = telescope_actions.cycle_history_prev,
+
+              ["<C-j>"] = telescope_actions.move_selection_next,
+              ["<C-k>"] = telescope_actions.move_selection_previous,
+            }
+        }
+    },
+    extensions = {
+        media_files = {
+          -- filetypes whitelist
+          -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+          filetypes = {"png", "webp", "jpg", "jpeg"},
+          find_cmd = "rg" -- find command (defaults to `fd`)
+        }
+      },
 }
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -176,7 +200,6 @@ lspconfig.emmet_ls.setup{ capabilities = capabilities; }
 
 
 
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 
 formatters.setup {
@@ -191,7 +214,7 @@ formatters.setup {
   },
   {
     exe = "prettier",
-    filetypes = { "javascript", 
+    filetypes = { "javascript",
                   "javascriptreact",
                   "typescript",
                   "typescriptreact",
@@ -222,9 +245,6 @@ lvim.plugins = {
   {
     "folke/trouble.nvim",
     cmd = TroubleToggle
-  },
-  {
-    "lunarvim/colorschemes"
   },
   {
     "RRethy/nvim-base16"
@@ -401,4 +421,7 @@ lvim.plugins = {
   {
     "folke/lsp-colors.nvim",
   },
+  {
+    "nvim-telescope/telescope-media-files.nvim"
+  }
 }
