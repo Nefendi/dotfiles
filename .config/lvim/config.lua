@@ -1,5 +1,4 @@
-lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save.timeout = 5000
 
 vim.g.nord_contrast = true
 vim.g.nord_borders = true
@@ -93,53 +92,84 @@ lvim.leader = "space"
 
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
-local telescope = require "telescope"
+-- Telescope
+local telescope = lvim.builtin.telescope
 local actions = require "telescope.actions"
 
-telescope.load_extension("media_files")
+telescope.defaults.mappings.i = {
+  ["<C-n>"] = actions.cycle_history_next,
+  ["<C-p>"] = actions.cycle_history_prev,
 
-telescope.setup {
-  pickers = {
-    find_files = {
-      find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' }
-    },
-    live_grep = {
-      vimgrep_arguments = {
-        "rg",
-        "--hidden",
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
-        "-g",
-        "!.git",
-        "-g",
-        "!node_modules"
-      }
-    },
-  },
-  defaults = {
-      mappings = {
-          i = {
-              ["<C-n>"] = actions.cycle_history_next,
-              ["<C-p>"] = actions.cycle_history_prev,
-
-              ["<C-j>"] = actions.move_selection_next,
-              ["<C-k>"] = actions.move_selection_previous,
-            }
-        }
-    },
-    extensions = {
-        media_files = {
-          -- filetypes whitelist
-          -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-          filetypes = {"png", "webp", "jpg", "jpeg"},
-          find_cmd = "rg" -- find command (defaults to `fd`)
-        }
-      },
+  ["<C-j>"] = actions.move_selection_next,
+  ["<C-k>"] = actions.move_selection_previous,
 }
+
+telescope.defaults.vimgrep_arguments = {
+    "rg",
+    "--hidden",
+    "--color=never",
+    "--no-heading",
+    "--with-filename",
+    "--line-number",
+    "--column",
+    "--smart-case",
+    "-g",
+    "!.git",
+    "-g",
+    "!node_modules"
+}
+
+telescope.defaults.pickers.find_files.find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' }
+telescope.defaults.pickers.live_grep.vimgrep_arguments = {
+    "rg",
+    "--hidden",
+    "--color=never",
+    "--no-heading",
+    "--with-filename",
+    "--line-number",
+    "--column",
+    "--smart-case",
+    "-g",
+    "!.git",
+    "-g",
+    "!node_modules"
+}
+
+require("telescope").setup(
+    {
+        pickers = {
+            find_files = {
+                find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' }
+            },
+         live_grep = {
+              vimgrep_arguments = {
+                "rg",
+                "--hidden",
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--smart-case",
+                "-g",
+                "!.git",
+                "-g",
+                "!node_modules"
+              }
+            },
+        }
+    }
+)
+
+require("telescope").load_extension("media_files")
+
+telescope.extensions.media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
+}
+
 
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
@@ -166,6 +196,8 @@ lvim.builtin.which_key.mappings["m"] = {
   name = "+Markdown",
   p = { "<cmd>:Glow<cr>", "Preview" },
 }
+lvim.builtin.which_key.mappings["s"] = vim.tbl_extend("force", { s = { "<cmd>Telescope grep_string<CR>", "Grep string" }},
+    lvim.builtin.which_key.mappings["s"]) 
 
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
