@@ -199,7 +199,11 @@ lvim.builtin.which_key.mappings["m"] = {
   name = "+Markdown",
   p = { "<cmd>:Glow<cr>", "Preview" },
 }
-lvim.builtin.which_key.mappings["s"] = vim.tbl_extend("force", { s = { "<cmd>Telescope grep_string<CR>", "Grep string" }},
+lvim.builtin.which_key.mappings["s"] = vim.tbl_extend("force", {
+    s = { "<cmd>Telescope grep_string<CR>", "Grep string" },
+    m = { "<cmd>Telescope media_files<CR>", "Search media files" },
+   
+},
     lvim.builtin.which_key.mappings["s"]) 
 
 lvim.builtin.dashboard.active = true
