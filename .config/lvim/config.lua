@@ -218,25 +218,34 @@ lvim.builtin.treesitter.ensure_installed = "maintained"
 
 lvim.builtin.treesitter.highlight.enabled = true
 
--- emmet_ls
+-- ls_emmet support
 local lspconfig = require("lspconfig")
-local configs = require("lspconfig/configs")
+local configs = require("lspconfig.configs")
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+local ls_emmet_capabilities = vim.lsp.protocol.make_client_capabilities()
+ls_emmet_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-if not lspconfig.emmet_ls then
-	configs.emmet_ls = {
+if not configs.ls_emmet then
+	configs.ls_emmet = {
 		default_config = {
-			cmd = { "emmet-ls", "--stdio" },
+			cmd = { "ls_emmet", "--stdio" },
 			filetypes = {
 				"html",
 				"css",
 				"scss",
 				"javascript",
+				"javascriptreact",
 				"typescript",
 				"typescriptreact",
-				"javascriptreact",
+				"haml",
+				"xml",
+				"xsl",
+				"pug",
+				"slim",
+				"sass",
+				"stylus",
+				"less",
+				"sss",
 			},
 			root_dir = function(fname)
 				return vim.loop.cwd()
@@ -246,12 +255,12 @@ if not lspconfig.emmet_ls then
 	}
 end
 
-lspconfig.emmet_ls.setup({ capabilities = capabilities })
+lspconfig.ls_emmet.setup({ capabilities = ls_emmet_capabilities })
 
 -- clangd multiple different client encodings workaround
 local clangd_capabilities = vim.lsp.protocol.make_client_capabilities()
 clangd_capabilities.offsetEncoding = { "utf-16" }
-require("lspconfig").clangd.setup({ capabilities = clangd_capabilities })
+lspconfig.clangd.setup({ capabilities = clangd_capabilities })
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 
@@ -298,10 +307,7 @@ linters.setup({
 lvim.plugins = {
 	{
 		"folke/trouble.nvim",
-		cmd = TroubleToggle,
-	},
-	{
-		"RRethy/nvim-base16",
+		cmd = "TroubleToggle",
 	},
 	{
 		"fatih/vim-go",
