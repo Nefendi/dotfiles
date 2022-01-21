@@ -258,9 +258,6 @@ formatters.setup({
 		exe = "isort",
 	},
 	{
-		exe = "clang-format",
-	},
-	{
 		exe = "prettier",
 		filetypes = {
 			"javascript",
