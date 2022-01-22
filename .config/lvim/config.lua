@@ -490,4 +490,10 @@ lvim.plugins = {
 	{
 		"shaunsingh/nord.nvim",
 	},
+	{
+		"tpope/vim-surround",
+	},
+	{
+		"tpope/vim-repeat",
+	},
 }
