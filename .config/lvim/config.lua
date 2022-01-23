@@ -301,6 +301,9 @@ linters.setup({
 		exe = "shellcheck",
 		args = { "--severity", "warning" },
 	},
+	{
+		exe = "eslint_d",
+	},
 })
 
 -- Additional Plugins
