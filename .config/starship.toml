@@ -1,62 +1,4 @@
-format = """
-$time\
-$username\
-$hostname\
-$shlvl\
-$kubernetes\
-$directory\
-$vcsh\
-$git_branch\
-$git_commit\
-$git_state\
-$git_status\
-$hg_branch\
-$docker_context\
-$package\
-$cmake\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$helm\
-$java\
-$julia\
-$kotlin\
-$nim\
-$nodejs\
-$ocaml\
-$perl\
-$php\
-$purescript\
-$python\
-$red\
-$ruby\
-$rust\
-$scala\
-$swift\
-$terraform\
-$vagrant\
-$zig\
-$nix_shell\
-$conda\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$custom\
-$cmd_duration\
-$line_break\
-$lua\
-$jobs\
-$battery\
-$status\
-$shell\
-$character"""
+format = "$time$all"
 
 command_timeout = 2000
 
@@ -75,7 +17,16 @@ map_symbol = true
 disabled = false
 
 [python]
-detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini", "environment.yml"]
+detect_files = [
+    ".python-version",
+    "Pipfile",
+    "__init__.py",
+    "pyproject.toml",
+    "requirements.txt",
+    "setup.py",
+    "tox.ini",
+    "environment.yml",
+]
 
 [git_branch]
 always_show_remote = true
@@ -84,3 +35,9 @@ format = "on [$symbol$branch( \\[$remote_name/$remote_branch\\])]($style) "
 [git_commit]
 only_detached = false
 tag_disabled = false
+
+[kubernetes]
+disabled = false
+
+[sudo]
+disabled = false
