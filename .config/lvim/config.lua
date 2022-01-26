@@ -298,6 +298,9 @@ linters.setup({
 		exe = "pylint",
 	},
 	{
+		exe = "mypy",
+	},
+	{
 		exe = "shellcheck",
 		args = { "--severity", "warning" },
 	},
