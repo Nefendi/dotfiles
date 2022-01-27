@@ -15,13 +15,9 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-require("lualine").setup({
-	options = {
-		theme = "nord",
-	},
-})
-
 local components = require("lvim.core.lualine.components")
+
+lvim.builtin.lualine.options.theme = "nord"
 
 lvim.builtin.lualine.sections.lualine_x = {
 	components.treesitter,
@@ -34,6 +30,9 @@ lvim.builtin.lualine.sections.lualine_x = {
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
+
+lvim.builtin.terminal.direction = "horizontal"
+lvim.builtin.terminal.size = 30
 
 lvim.lsp.diagnostics.virtual_text = true
 
