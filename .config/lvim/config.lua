@@ -501,4 +501,7 @@ lvim.plugins = {
 	{
 		"tpope/vim-repeat",
 	},
+	{
+		"lervag/vimtex",
+	},
 }
