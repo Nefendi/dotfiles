@@ -359,7 +359,7 @@ schemes:
       white: '#aeb3bb'
 
 
-colors: *nord
+colors: *tokyo_night_storm
 
 bell:
   animation: EaseOutExpo

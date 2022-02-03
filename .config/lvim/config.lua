@@ -1,10 +1,14 @@
 lvim.format_on_save.timeout = 5000
 
-vim.g.nord_contrast = true
-vim.g.nord_borders = true
-vim.g.nord_italic = true
+-- vim.g.nord_contrast = true
+-- vim.g.nord_borders = true
+-- vim.g.nord_italic = true
 
-lvim.colorscheme = "nord"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_italic_variables = true
+vim.g.tokyonight_lualine_bold = true
+
+lvim.colorscheme = "tokyonight"
 
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
@@ -17,7 +21,7 @@ vim.opt.expandtab = true
 
 local components = require("lvim.core.lualine.components")
 
-lvim.builtin.lualine.options.theme = "nord"
+-- lvim.builtin.lualine.options.theme = "nord"
 
 lvim.builtin.lualine.sections.lualine_x = {
 	components.treesitter,
@@ -494,6 +498,9 @@ lvim.plugins = {
 	},
 	{
 		"shaunsingh/nord.nvim",
+	},
+	{
+		"folke/tokyonight.nvim",
 	},
 	{
 		"tpope/vim-surround",
