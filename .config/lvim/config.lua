@@ -35,7 +35,6 @@ lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 
-lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 30
 
 lvim.lsp.diagnostics.virtual_text = true
