@@ -6,6 +6,8 @@ window:
     columns: 125
     lines: 35
 
+  opacity: 0.9
+
   padding:
     x: 6
     y: 6
@@ -365,8 +367,6 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: "0xffffff"
-
-background_opacity: 0.9
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
