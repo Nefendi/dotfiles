@@ -382,6 +382,11 @@ lvim.plugins = {
 	{
 		"David-Kunz/cmp-npm",
 		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("cmp-npm").setup()
+
+			table.insert(lvim.builtin.cmp.sources, { name = "npm", keyword_length = 4 })
+		end,
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
