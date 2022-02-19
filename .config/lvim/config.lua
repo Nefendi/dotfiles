@@ -201,6 +201,10 @@ lvim.builtin.which_key.mappings["G"] = {
 	c = { "<cmd>GoCoverageToggle<cr>", "Toggle coverage" },
 	g = { "<cmd>GoGenerate<cr>", "Generate" },
 	i = { "<cmd>GoImpl<cr>", "Implement" },
+	T = { "<cmd>GoAddTags<cr>", "Add tags" },
+	R = { "<cmd>GoRemoveTags<cr>", "Remove tags" },
+	e = { "<cmd>GoIfErr<cr>", "Add if-err statement" },
+	f = { "<cmd>GoFillStruct<cr>", "Fill struct" },
 }
 lvim.builtin.which_key.mappings["a"] = { "<cmd>:wa<cr>", "Save All" }
 lvim.builtin.which_key.mappings["m"] = {
@@ -289,6 +293,12 @@ formatters.setup({
 	{
 		exe = "stylua",
 	},
+	{
+		exe = "golines",
+	},
+	{
+		exe = "gofumpt",
+	},
 })
 
 local linters = require("lvim.lsp.null-ls.linters")
@@ -310,6 +320,9 @@ linters.setup({
 	{
 		exe = "eslint_d",
 	},
+	{
+		exe = "golangci-lint",
+	},
 })
 
 -- Additional Plugins
@@ -324,14 +337,7 @@ lvim.plugins = {
 			vim.cmd(":GoUpdateBinaries")
 		end,
 		config = function()
-			vim.cmd("let g:go_bin_path = expand('~/go/bin')")
-			vim.cmd("let g:go_def_mapping_enabled = 0")
-			-- vim.cmd ("let g:go_fmt_command = 'goimports'")
-			-- vim.cmd ("let g:go_gopls_enabled = 0")
-			-- vim.cmd ("let g:go_fmt_autosave = 0")
-			-- vim.cmd ("let g:go_mod_fmt_autosave = 0")
-			-- vim.cmd ("let g:go_code_completion_enabled = 0")
-			-- vim.cmd ("let g:go_imports_autosave = 0")
+			vim.g.go_def_mapping_enabled = 0
 		end,
 	},
 	{
