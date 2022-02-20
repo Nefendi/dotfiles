@@ -1,15 +1,5 @@
 lvim.format_on_save.timeout = 5000
 
--- vim.g.nord_contrast = true
--- vim.g.nord_borders = true
--- vim.g.nord_italic = true
-
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_italic_variables = true
-vim.g.tokyonight_lualine_bold = true
-
-lvim.colorscheme = "tokyonight"
-
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "120"
@@ -19,9 +9,17 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-local components = require("lvim.core.lualine.components")
+vim.g.zenbones_darkness = "stark"
+vim.g.forestbones_darkness = "stark"
+vim.g.kanagawa_darkness = "stark"
 
--- lvim.builtin.lualine.options.theme = "nord"
+vim.g.zenbones_colorize_diagnostic_underline_test = true
+vim.g.forestbones_colorize_diagnostic_underline_test = true
+vim.g.kanagawabones_colorize_diagnostic_underline_test = true
+
+lvim.colorscheme = "kanagawabones"
+
+local components = require("lvim.core.lualine.components")
 
 lvim.builtin.lualine.sections.lualine_x = {
 	components.treesitter,
@@ -263,11 +261,6 @@ end
 
 lspconfig.ls_emmet.setup({ capabilities = ls_emmet_capabilities })
 
--- clangd multiple different client encodings workaround
-local clangd_capabilities = vim.lsp.protocol.make_client_capabilities()
-clangd_capabilities.offsetEncoding = { "utf-16" }
-lspconfig.clangd.setup({ capabilities = clangd_capabilities })
-
 local formatters = require("lvim.lsp.null-ls.formatters")
 
 formatters.setup({
@@ -447,38 +440,6 @@ lvim.plugins = {
 	{
 		"ellisonleao/glow.nvim",
 	},
-	-- {
-	--   "NTBBloodbath/doom-one.nvim",
-	--   config = function()
-	--       require('doom-one').setup({
-	--           cursor_coloring = false,
-	--           terminal_colors = true,
-	--           italic_comments = true,
-	--           enable_treesitter = true,
-	--           transparent_background = false,
-	--           pumblend = {
-	--               enable = true,
-	--               transparency_amount = 20,
-	--           },
-	--           plugins_integrations = {
-	--               neorg = true,
-	--               barbar = true,
-	--               bufferline = true,
-	--               gitgutter = false,
-	--               gitsigns = true,
-	--               telescope = true,
-	--               neogit = true,
-	--               nvim_tree = true,
-	--               dashboard = true,
-	--               startify = true,
-	--               whichkey = true,
-	--               indent_blankline = true,
-	--               vim_illuminate = true,
-	--               lspsaga = false,
-	--           },
-	--       })
-	--   end,
-	-- },
 	{
 		"p00f/nvim-ts-rainbow",
 		config = function()
@@ -520,5 +481,24 @@ lvim.plugins = {
 	},
 	{
 		"lervag/vimtex",
+	},
+	{
+		"rmehri01/onenord.nvim",
+		-- config = function()
+		-- 	require("onenord").setup({
+		-- 		styles = {
+		-- 			comments = "italic",
+		-- 			functions = "italic,bold",
+		-- 			keywords = "italic",
+		-- 			diagnostics = "undercurl",
+		-- 			strings = "italic",
+		-- 			-- variables = "bold",
+		-- 		},
+		-- 	})
+		-- end,
+	},
+	{
+		"mcchrish/zenbones.nvim",
+		requires = "rktjmp/lush.nvim",
 	},
 }

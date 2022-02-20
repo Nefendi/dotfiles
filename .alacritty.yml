@@ -360,8 +360,110 @@ schemes:
       cyan: '#6d96a5'
       white: '#aeb3bb'
 
+  # Upstream: https://github.com/rmehri01/onenord.nvim/blob/main/extras/onenord.yaml
+  Onenord: &onenord
+    primary:
+      background: '0x2E3440'
+      foreground: '0xC8D0E0'
 
-colors: *tokyo_night_storm
+    normal:
+      black:   '0x3B4252'
+      red:     '0xBF616A'
+      green:   '0xA3BE8C'
+      yellow:  '0xEBCB8B'
+      blue:    '0x81A1C1'
+      magenta: '0xB988B0'
+      cyan:    '0x88C0D0'
+      white:   '0xE5E9F0'
+
+    bright:
+      black:   '0x4C566A'
+      red:     '0xBF616A'
+      green:   '0xA3BE8C'
+      yellow:  '0xEBCB8B'
+      blue:    '0x81A1C1'
+      magenta: '0xB988B0'
+      cyan:    '0x8FBCBB'
+      white:   '0xECEFF4'
+
+    search:
+      matches:
+       foreground: '#81A1C1'
+       background: '#4C566A'
+      focused_match:
+       foreground: '#EBCB8B'
+       background: '#4C566A'
+
+      bar:
+       background: '#434C5E'
+       foreground: '#88C0D0'
+
+    hints:
+      start:
+       foreground: '#B988B0'
+       background: '#4C566A'
+
+      end:
+       foreground: '#81A1C1'
+       background: '#4C566A'
+
+    selection:
+     text: CellForeground
+     background: '#3F4758'
+
+  # Upstream: https://github.com/mcchrish/zenbones.nvim/blob/main/extras/alacritty/zenbones_dark.yml
+  Zenbones_dark: &zenbones_dark
+    primary:
+      foreground: '#B4BDC3'
+      background: '#1C1917'
+    cursor:
+      cursor: '#C4CACF'
+      text: '#1C1917'
+    normal:
+      black:   '#1C1917'
+      red:     '#DE6E7C'
+      green:   '#819B69'
+      yellow:  '#B77E64'
+      blue:    '#6099C0'
+      magenta: '#B279A7'
+      cyan:    '#66A5AD'
+      white:   '#B4BDC3'
+    bright:
+      black:   '#403833'
+      red:     '#E8838F'
+      green:   '#8BAE68'
+      yellow:  '#D68C67'
+      blue:    '#61ABDA'
+      magenta: '#CF86C1'
+      cyan:    '#65B8C1'
+      white:   '#888F94'
+  # Upstream: https://github.com/mcchrish/zenbones.nvim/blob/main/extras/alacritty/kanagawabones.yml
+  Kanagawa_bones: &kanagawa_bones
+    foreground: '#DDD8BB'
+    background: '#1F1F28'
+  cursor:
+    cursor: '#E6E0C2'
+    text: '#1F1F28'
+  normal:
+    black:   '#1F1F28'
+    red:     '#E46A78'
+    green:   '#98BC6D'
+    yellow:  '#E5C283'
+    blue:    '#7EB3C9'
+    magenta: '#957FB8'
+    cyan:    '#7EB3C9'
+    white:   '#DDD8BB'
+  bright:
+    black:   '#3C3C51'
+    red:     '#EC818C'
+    green:   '#9EC967'
+    yellow:  '#F1C982'
+    blue:    '#7BC2DF'
+    magenta: '#A98FD2'
+    cyan:    '#7BC2DF'
+    white:   '#A8A48D'
+
+colors: *kanagawa_bones
 
 bell:
   animation: EaseOutExpo
