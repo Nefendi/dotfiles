@@ -95,6 +95,9 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- nvim-tree
 lvim.builtin.nvimtree.setup.view.width = 50
 
+-- project.nvim
+vim.list_extend(lvim.builtin.project.patterns, { "go.mod", "Cargo.toml" })
+
 -- Telescope
 local telescope = lvim.builtin.telescope
 local actions = require("telescope.actions")
