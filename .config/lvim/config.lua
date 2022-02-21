@@ -9,15 +9,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.g.zenbones_darkness = "stark"
-vim.g.forestbones_darkness = "stark"
-vim.g.kanagawa_darkness = "stark"
-
-vim.g.zenbones_colorize_diagnostic_underline_test = true
-vim.g.forestbones_colorize_diagnostic_underline_test = true
-vim.g.kanagawabones_colorize_diagnostic_underline_test = true
-
-lvim.colorscheme = "kanagawabones"
+lvim.colorscheme = "kanagawa"
 
 local components = require("lvim.core.lualine.components")
 
@@ -471,12 +463,6 @@ lvim.plugins = {
 		"nvim-telescope/telescope-media-files.nvim",
 	},
 	{
-		"shaunsingh/nord.nvim",
-	},
-	{
-		"folke/tokyonight.nvim",
-	},
-	{
 		"tpope/vim-surround",
 	},
 	{
@@ -486,22 +472,6 @@ lvim.plugins = {
 		"lervag/vimtex",
 	},
 	{
-		"rmehri01/onenord.nvim",
-		-- config = function()
-		-- 	require("onenord").setup({
-		-- 		styles = {
-		-- 			comments = "italic",
-		-- 			functions = "italic,bold",
-		-- 			keywords = "italic",
-		-- 			diagnostics = "undercurl",
-		-- 			strings = "italic",
-		-- 			-- variables = "bold",
-		-- 		},
-		-- 	})
-		-- end,
-	},
-	{
-		"mcchrish/zenbones.nvim",
-		requires = "rktjmp/lush.nvim",
+		"rebelot/kanagawa.nvim",
 	},
 }
