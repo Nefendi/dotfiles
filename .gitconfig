@@ -10,7 +10,6 @@
 [user]
 	name = Nefendi
 	email = 28621696+Nefendi@users.noreply.github.com
-	mail = 28621696+Nefendi@users.noreply.github.com
 
 [color]
 	ui = always
@@ -24,6 +23,7 @@
 [diff]
 	tool = meld
 	algorithm = histogram
+	colorMoved = zebra
 
 [difftool]
 	prompt = false
@@ -39,10 +39,13 @@
 	branch = false
 
 [pull]
-	rebase = false
+	rebase = true
 
 [log]
 	decorate = full
+
+[fetch]
+	prune = true
 
 [filter "lfs"]
 	process = git-lfs filter-process
