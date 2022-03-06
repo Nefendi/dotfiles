@@ -27,6 +27,7 @@ alias ls='exa -gF --color=always --group-directories-first --icons'
 alias ll='exa -glFh --color=always --group-directories-first --icons'
 alias la='exa -galFh --color=always --group-directories-first --icons'
 alias lt='exa -gaTFh --color=always --group-directories-first --icons'
+alias n='nordvpn'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
