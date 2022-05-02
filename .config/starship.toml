@@ -38,3 +38,6 @@ tag_disabled = false
 
 [kubernetes]
 disabled = false
+
+[sudo]
+disabled = false
