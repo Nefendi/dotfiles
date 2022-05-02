@@ -21,7 +21,7 @@ lvim.builtin.lualine.sections.lualine_x = {
 	components.spaces,
 }
 
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 
@@ -208,12 +208,10 @@ lvim.builtin.which_key.mappings["s"] = vim.tbl_extend("force", {
 	m = { "<cmd>Telescope media_files<CR>", "Search media files" },
 }, lvim.builtin.which_key.mappings["s"])
 
-lvim.builtin.dashboard.active = true
-lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
 
-lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.ensure_installed = "all"
 
 lvim.builtin.treesitter.highlight.enabled = true
 
@@ -312,6 +310,8 @@ linters.setup({
 	},
 })
 
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
+
 -- Additional Plugins
 lvim.plugins = {
 	{
@@ -330,6 +330,8 @@ lvim.plugins = {
 	{
 		"simrat39/rust-tools.nvim",
 		config = function()
+			local lsp_installer_servers = require("nvim-lsp-installer.servers")
+			local _, requested_server = lsp_installer_servers.get_server("rust_analyzer")
 			require("rust-tools").setup({
 				tools = {
 					autoSetHints = true,
@@ -339,7 +341,7 @@ lvim.plugins = {
 					},
 				},
 				server = {
-					cmd = { vim.fn.stdpath("data") .. "/lsp_servers/rust/rust-analyzer" },
+					cmd_env = requested_server._default_options.cmd_env,
 					on_attach = require("lvim.lsp").common_on_attach,
 					on_init = require("lvim.lsp").common_on_init,
 					settings = {
@@ -381,7 +383,7 @@ lvim.plugins = {
 		setup = function()
 			vim.g.indentLine_enabled = 1
 			vim.g.indent_blankline_char_list = { "|", "¦", "┆", "┊" }
-			vim.g.indent_blankline_filetype_exclude = { "help", "terminal", "dashboard" }
+			vim.g.indent_blankline_filetype_exclude = { "help", "terminal", "alpha" }
 			vim.g.indent_blankline_buftype_exclude = { "terminal" }
 			vim.g.indent_blankline_show_trailing_blankline_indent = false
 			vim.g.indent_blankline_show_first_indent_level = false
