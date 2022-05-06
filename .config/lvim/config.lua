@@ -14,6 +14,7 @@ lvim.colorscheme = "kanagawa"
 local components = require("lvim.core.lualine.components")
 
 lvim.builtin.lualine.sections.lualine_x = {
+	components.diagnostics,
 	components.treesitter,
 	components.lsp,
 	components.filetype,
