@@ -1,6 +1,6 @@
 # ENVIRONMENT VARIABLES
 export ZSH="${HOME}"/.oh-my-zsh
-export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/miniconda3/envs:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${PATH}"
+export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${PATH}"
 
 export EDITOR="lvim"
 
@@ -28,21 +28,6 @@ alias ll='exa -glFh --color=always --group-directories-first --icons'
 alias la='exa -galFh --color=always --group-directories-first --icons'
 alias lt='exa -gaTFh --color=always --group-directories-first --icons'
 alias n='nordvpn'
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("${HOME}"'/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/${HOME}/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="${HOME}/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
