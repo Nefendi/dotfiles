@@ -10,6 +10,7 @@ ohmyzsh/ohmyzsh path:plugins/sudo
 ohmyzsh/ohmyzsh path:plugins/rust
 # ohmyzsh/ohmyzsh path:plugins/poetry
 ohmyzsh/ohmyzsh path:plugins/ripgrep
+ohmyzsh/ohmyzsh path:plugins/fasd
 ohmyzsh/ohmyzsh path:plugins/z
 ohmyzsh/ohmyzsh path:plugins/fzf
 ohmyzsh/ohmyzsh path:plugins/copyfile
