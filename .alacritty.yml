@@ -1,5 +1,5 @@
 env:
-  LC_ALL: "en_US.UTF-8"
+  LC_ALL: 'en_US.UTF-8'
 
 window:
   dimensions:
@@ -50,7 +50,7 @@ font:
 
   offset:
     x: 0
-    y: 0 
+    y: 0
 
   glyph_offset:
     x: 0
@@ -61,55 +61,55 @@ draw_bold_text_with_bright_colors: true
 schemes:
   Material_Ocean: &material_ocean
     primary:
-      background: "0x0f111a"
-      foreground: "0xD8DEE9"
+      background: '0x0f111a'
+      foreground: '0xD8DEE9'
     cursor:
-      cursor: "0xff4151"
+      cursor: '0xff4151'
     normal:
-      black: "0x4C566A"
-      red: "0xBF616A"
-      green: "0xA3BE8C"
-      yellow: "0xEBCB8B"
-      blue: "0x81A1C1"
-      magenta: "0xB48EAD"
-      cyan: "0x88C0D0"
-      white: "0xE5E9F0"
+      black: '0x4C566A'
+      red: '0xBF616A'
+      green: '0xA3BE8C'
+      yellow: '0xEBCB8B'
+      blue: '0x81A1C1'
+      magenta: '0xB48EAD'
+      cyan: '0x88C0D0'
+      white: '0xE5E9F0'
 
   One_Dark: &one_dark
     primary:
-      background: "0x1e2127"
-      foreground: "0xabb2bf"
-      bright_foreground: "0xe6efff"
+      background: '0x1e2127'
+      foreground: '0xabb2bf'
+      bright_foreground: '0xe6efff'
 
     normal:
-      black: "0x1e2127"
-      red: "0xe06c75"
-      green: "0x98c379"
-      yellow: "0xd19a66"
-      blue: "0x61afef"
-      magenta: "0xc678dd"
-      cyan: "0x56b6c2"
-      white: "0x828791"
+      black: '0x1e2127'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0x828791'
 
     bright:
-      black: "0x5c6370"
-      red: "0xe06c75"
-      green: "0x98c379"
-      yellow: "0xd19a66"
-      blue: "0x61afef"
-      magenta: "0xc678dd"
-      cyan: "0x56b6c2"
-      white: "0xe6efff"
+      black: '0x5c6370'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0xe6efff'
 
     dim:
-      black: "0x1e2127"
-      red: "0xe06c75"
-      green: "0x98c379"
-      yellow: "0xd19a66"
-      blue: "0x61afef"
-      magenta: "0xc678dd"
-      cyan: "0x56b6c2"
-      white: "0x828791"
+      black: '0x1e2127'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0x828791'
 
   Gruvbox_Dark: &gruvbox_dark
     primary:
@@ -117,23 +117,23 @@ schemes:
       foreground: '0xebdbb2'
 
     normal:
-      black:   '0x282828'
-      red:     '0xcc241d'
-      green:   '0x98971a'
-      yellow:  '0xd79921'
-      blue:    '0x458588'
+      black: '0x282828'
+      red: '0xcc241d'
+      green: '0x98971a'
+      yellow: '0xd79921'
+      blue: '0x458588'
       magenta: '0xb16286'
-      cyan:    '0x689d6a'
-      white:   '0xa89984'
+      cyan: '0x689d6a'
+      white: '0xa89984'
     bright:
-      black:   '0x928374'
-      red:     '0xfb4934'
-      green:   '0xb8bb26'
-      yellow:  '0xfabd2f'
-      blue:    '0x83a598'
+      black: '0x928374'
+      red: '0xfb4934'
+      green: '0xb8bb26'
+      yellow: '0xfabd2f'
+      blue: '0x83a598'
       magenta: '0xd3869b'
-      cyan:    '0x8ec07c'
-      white:   '0xebdbb2'
+      cyan: '0x8ec07c'
+      white: '0xebdbb2'
 
   Gruvbox_Material_Dark_Medium: &gruvbox_medium
     primary:
@@ -141,24 +141,24 @@ schemes:
       foreground: '0xdfbf8e'
 
       normal:
-        black:   '0x665c54'
-        red:     '0xea6962'
-        green:   '0xa9b665'
-        yellow:  '0xe78a4e'
-        blue:    '0x7daea3'
+        black: '0x665c54'
+        red: '0xea6962'
+        green: '0xa9b665'
+        yellow: '0xe78a4e'
+        blue: '0x7daea3'
         magenta: '0xd3869b'
-        cyan:    '0x89b482'
-        white:   '0xdfbf8e'
+        cyan: '0x89b482'
+        white: '0xdfbf8e'
 
       bright:
-        black:   '0x928374'
-        red:     '0xea6962'
-        green:   '0xa9b665'
-        yellow:  '0xe3a84e'
-        blue:    '0x7daea3'
+        black: '0x928374'
+        red: '0xea6962'
+        green: '0xa9b665'
+        yellow: '0xe3a84e'
+        blue: '0x7daea3'
         magenta: '0xd3869b'
-        cyan:    '0x89b482'
-        white:   '0xdfbf8e'
+        cyan: '0x89b482'
+        white: '0xdfbf8e'
 
   Tokyo_Night: &tokyo_night
     primary:
@@ -166,24 +166,24 @@ schemes:
       foreground: '0xc0caf5'
 
     normal:
-      black:   '0x15161E'
-      red:     '0xf7768e'
-      green:   '0x9ece6a'
-      yellow:  '0xe0af68'
-      blue:    '0x7aa2f7'
+      black: '0x15161E'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
       magenta: '0xbb9af7'
-      cyan:    '0x7dcfff'
-      white:   '0xa9b1d6'
+      cyan: '0x7dcfff'
+      white: '0xa9b1d6'
 
     bright:
-      black:   '0x414868'
-      red:     '0xf7768e'
-      green:   '0x9ece6a'
-      yellow:  '0xe0af68'
-      blue:    '0x7aa2f7'
+      black: '0x414868'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
       magenta: '0xbb9af7'
-      cyan:    '0x7dcfff'
-      white:   '0xc0caf5'
+      cyan: '0x7dcfff'
+      white: '0xc0caf5'
 
   indexed_colors:
     - { index: 16, color: '0xff9e64' }
@@ -195,24 +195,24 @@ schemes:
       foreground: '0xc0caf5'
 
     normal:
-      black:   '0x1D202F'
-      red:     '0xf7768e'
-      green:   '0x9ece6a'
-      yellow:  '0xe0af68'
-      blue:    '0x7aa2f7'
+      black: '0x1D202F'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
       magenta: '0xbb9af7'
-      cyan:    '0x7dcfff'
-      white:   '0xa9b1d6'
+      cyan: '0x7dcfff'
+      white: '0xa9b1d6'
 
     bright:
-      black:   '0x414868'
-      red:     '0xf7768e'
-      green:   '0x9ece6a'
-      yellow:  '0xe0af68'
-      blue:    '0x7aa2f7'
+      black: '0x414868'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
       magenta: '0xbb9af7'
-      cyan:    '0x7dcfff'
-      white:   '0xc0caf5'
+      cyan: '0x7dcfff'
+      white: '0xc0caf5'
 
     indexed_colors:
       - { index: 16, color: '0xff9e64' }
@@ -227,29 +227,29 @@ schemes:
       foreground: '0xb9bfca'
 
     normal:
-      black:   '0x3b4252'
-      red:     '0xbf616a'
-      green:   '0xa3be8c'
-      yellow:  '0xebcb8b'
-      blue:    '0x81a1c1'
+      black: '0x3b4252'
+      red: '0xbf616a'
+      green: '0xa3be8c'
+      yellow: '0xebcb8b'
+      blue: '0x81a1c1'
       magenta: '0xb48ead'
-      cyan:    '0x88c0d0'
-      white:   '0xe5e9f0'
+      cyan: '0x88c0d0'
+      white: '0xe5e9f0'
 
     bright:
-      black:   '0x465780'
-      red:     '0xd06f79'
-      green:   '0xb1d196'
-      yellow:  '0xf0d399'
-      blue:    '0x8cafd2'
+      black: '0x465780'
+      red: '0xd06f79'
+      green: '0xb1d196'
+      yellow: '0xf0d399'
+      blue: '0x8cafd2'
       magenta: '0xc895bf'
-      cyan:    '0x93ccdc'
-      white:   '0xe7ecf4'
+      cyan: '0x93ccdc'
+      white: '0xe7ecf4'
 
     indexed_colors:
       - { index: 16, color: '0xc9826b' }
       - { index: 17, color: '0xbf88bc' }
- 
+
   # Upstream: https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/alacritty/alacritty.yml
   Doom_One: &doom_one
     primary:
@@ -262,23 +262,23 @@ schemes:
       text: CellForeground
       background: '#3e4451'
     normal:
-      black:   '#1c1f24'
-      red:     '#ff6c6b'
-      green:   '#98be65'
-      yellow:  '#da8548'
-      blue:    '#51afef'
+      black: '#1c1f24'
+      red: '#ff6c6b'
+      green: '#98be65'
+      yellow: '#da8548'
+      blue: '#51afef'
       magenta: '#c678dd'
-      cyan:    '#5699af'
-      white:   '#202328'
+      cyan: '#5699af'
+      white: '#202328'
     bright:
-      black:   '#5b6268'
-      red:     '#da8548'
-      green:   '#4db5bd'
-      yellow:  '#ecbe7b'
-      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+      black: '#5b6268'
+      red: '#da8548'
+      green: '#4db5bd'
+      yellow: '#ecbe7b'
+      blue: '#3071db' # This is 2257a0 in Doom Emacs but I lightened it.
       magenta: '#a9a1e1'
-      cyan:    '#46d9ff'
-      white:   '#dfdfdf'
+      cyan: '#46d9ff'
+      white: '#dfdfdf'
 
   # Upstream: https://github.com/NLKNguyen/papercolor-theme
   Paper_Color_Dark: &paper_color_dark
@@ -291,24 +291,24 @@ schemes:
       cursor: '#d0d0d0'
 
     normal:
-      black:   '#1c1c1c'
-      red:     '#af005f'
-      green:   '#afd700'
-      yellow:  '#d7af5f'
-      blue:    '#5fafd7'
+      black: '#1c1c1c'
+      red: '#af005f'
+      green: '#afd700'
+      yellow: '#d7af5f'
+      blue: '#5fafd7'
       magenta: '#af87d7'
-      cyan:    '#d7875f'
-      white:   '#d0d0d0'
+      cyan: '#d7875f'
+      white: '#d0d0d0'
 
     bright:
-      black:   '#585858'
-      red:     '#5faf5f'
-      green:   '#afd700'
-      yellow:  '#af87d7'
-      blue:    '#ff5faf'
+      black: '#585858'
+      red: '#5faf5f'
+      green: '#afd700'
+      yellow: '#af87d7'
+      blue: '#ff5faf'
       magenta: '#ff5faf'
-      cyan:    '#00afaf'
-      white:   '#d7875f'
+      cyan: '#00afaf'
+      white: '#d7875f'
 
   # Upstream: https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
   Nord: &nord
@@ -367,49 +367,49 @@ schemes:
       foreground: '0xC8D0E0'
 
     normal:
-      black:   '0x3B4252'
-      red:     '0xBF616A'
-      green:   '0xA3BE8C'
-      yellow:  '0xEBCB8B'
-      blue:    '0x81A1C1'
+      black: '0x3B4252'
+      red: '0xBF616A'
+      green: '0xA3BE8C'
+      yellow: '0xEBCB8B'
+      blue: '0x81A1C1'
       magenta: '0xB988B0'
-      cyan:    '0x88C0D0'
-      white:   '0xE5E9F0'
+      cyan: '0x88C0D0'
+      white: '0xE5E9F0'
 
     bright:
-      black:   '0x4C566A'
-      red:     '0xBF616A'
-      green:   '0xA3BE8C'
-      yellow:  '0xEBCB8B'
-      blue:    '0x81A1C1'
+      black: '0x4C566A'
+      red: '0xBF616A'
+      green: '0xA3BE8C'
+      yellow: '0xEBCB8B'
+      blue: '0x81A1C1'
       magenta: '0xB988B0'
-      cyan:    '0x8FBCBB'
-      white:   '0xECEFF4'
+      cyan: '0x8FBCBB'
+      white: '0xECEFF4'
 
     search:
       matches:
-       foreground: '#81A1C1'
-       background: '#4C566A'
+        foreground: '#81A1C1'
+        background: '#4C566A'
       focused_match:
-       foreground: '#EBCB8B'
-       background: '#4C566A'
+        foreground: '#EBCB8B'
+        background: '#4C566A'
 
       bar:
-       background: '#434C5E'
-       foreground: '#88C0D0'
+        background: '#434C5E'
+        foreground: '#88C0D0'
 
     hints:
       start:
-       foreground: '#B988B0'
-       background: '#4C566A'
+        foreground: '#B988B0'
+        background: '#4C566A'
 
       end:
-       foreground: '#81A1C1'
-       background: '#4C566A'
+        foreground: '#81A1C1'
+        background: '#4C566A'
 
     selection:
-     text: CellForeground
-     background: '#3F4758'
+      text: CellForeground
+      background: '#3F4758'
 
   # Upstream: https://github.com/mcchrish/zenbones.nvim/blob/main/extras/alacritty/zenbones_dark.yml
   Zenbones_dark: &zenbones_dark
@@ -420,23 +420,23 @@ schemes:
       cursor: '#C4CACF'
       text: '#1C1917'
     normal:
-      black:   '#1C1917'
-      red:     '#DE6E7C'
-      green:   '#819B69'
-      yellow:  '#B77E64'
-      blue:    '#6099C0'
+      black: '#1C1917'
+      red: '#DE6E7C'
+      green: '#819B69'
+      yellow: '#B77E64'
+      blue: '#6099C0'
       magenta: '#B279A7'
-      cyan:    '#66A5AD'
-      white:   '#B4BDC3'
+      cyan: '#66A5AD'
+      white: '#B4BDC3'
     bright:
-      black:   '#403833'
-      red:     '#E8838F'
-      green:   '#8BAE68'
-      yellow:  '#D68C67'
-      blue:    '#61ABDA'
+      black: '#403833'
+      red: '#E8838F'
+      green: '#8BAE68'
+      yellow: '#D68C67'
+      blue: '#61ABDA'
       magenta: '#CF86C1'
-      cyan:    '#65B8C1'
-      white:   '#888F94'
+      cyan: '#65B8C1'
+      white: '#888F94'
   # Upstream: https://github.com/mcchrish/zenbones.nvim/blob/main/extras/alacritty/kanagawabones.yml
   Kanagawa_bones: &kanagawa_bones
     foreground: '#DDD8BB'
@@ -445,23 +445,23 @@ schemes:
     cursor: '#E6E0C2'
     text: '#1F1F28'
   normal:
-    black:   '#1F1F28'
-    red:     '#E46A78'
-    green:   '#98BC6D'
-    yellow:  '#E5C283'
-    blue:    '#7EB3C9'
+    black: '#1F1F28'
+    red: '#E46A78'
+    green: '#98BC6D'
+    yellow: '#E5C283'
+    blue: '#7EB3C9'
     magenta: '#957FB8'
-    cyan:    '#7EB3C9'
-    white:   '#DDD8BB'
+    cyan: '#7EB3C9'
+    white: '#DDD8BB'
   bright:
-    black:   '#3C3C51'
-    red:     '#EC818C'
-    green:   '#9EC967'
-    yellow:  '#F1C982'
-    blue:    '#7BC2DF'
+    black: '#3C3C51'
+    red: '#EC818C'
+    green: '#9EC967'
+    yellow: '#F1C982'
+    blue: '#7BC2DF'
     magenta: '#A98FD2'
-    cyan:    '#7BC2DF'
-    white:   '#A8A48D'
+    cyan: '#7BC2DF'
+    white: '#A8A48D'
 
   # Upstream: https://github.com/rebelot/kanagawa.nvim/blob/master/extras/alacritty_kanagawa.yml
   Kanagawa: &kanagawa
@@ -470,24 +470,24 @@ schemes:
       foreground: '0xdcd7ba'
 
     normal:
-      black:   '0x090618'
-      red:     '0xc34043'
-      green:   '0x76946a'
-      yellow:  '0xc0a36e'
-      blue:    '0x7e9cd8'
+      black: '0x090618'
+      red: '0xc34043'
+      green: '0x76946a'
+      yellow: '0xc0a36e'
+      blue: '0x7e9cd8'
       magenta: '0x957fb8'
-      cyan:    '0x6a9589'
-      white:   '0xc8c093'
+      cyan: '0x6a9589'
+      white: '0xc8c093'
 
     bright:
-      black:   '0x727169'
-      red:     '0xe82424'
-      green:   '0x98bb6c'
-      yellow:  '0xe6c384'
-      blue:    '0x7fb4ca'
+      black: '0x727169'
+      red: '0xe82424'
+      green: '0x98bb6c'
+      yellow: '0xe6c384'
+      blue: '0x7fb4ca'
       magenta: '0x938aa9'
-      cyan:    '0x7aa89f'
-      white:   '0xdcd7ba'
+      cyan: '0x7aa89f'
+      white: '0xdcd7ba'
 
     selection:
       background: '0x2d4f67'
@@ -497,12 +497,43 @@ schemes:
       - { index: 16, color: '0xffa066' }
       - { index: 17, color: '0xff5d62' }
 
-colors: *kanagawa
+  # Upstream: https://github.com/projekt0n/github-nvim-theme/blob/main/terminal/alacritty/github_dimmed.yml
+  Github_dimmed: &github_dimmed
+    primary:
+      background: '0x22272e'
+      # Changed from '0x768390'
+      foreground: '0xd1d5da'
+
+    normal:
+      black: '0x545d68'
+      red: '0xf47067'
+      green: '0x57ab5a'
+      yellow: '0xc69026'
+      blue: '0x539bf5'
+      magenta: '0xb083f0'
+      cyan: '0x39c5cf'
+      white: '0x909dab'
+
+    bright:
+      black: '0x636e7b'
+      red: '0xff938a'
+      green: '0x6bc46d'
+      yellow: '0xdaaa3f'
+      blue: '0x6cb6ff'
+      magenta: '0xdcbdfb'
+      cyan: '0x56d4dd'
+      white: '0xcdd9e5'
+
+    indexed_colors:
+      - { index: 16, color: '0xd18616' }
+      - { index: 17, color: '0xff938a' }
+
+colors: *github_dimmed
 
 bell:
   animation: EaseOutExpo
   duration: 0
-  color: "0xffffff"
+  color: '0xffffff'
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
