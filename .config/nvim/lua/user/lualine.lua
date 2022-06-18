@@ -7,6 +7,10 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 70
 end
 
+local green = "#98BE65"
+local yellow = "#ECBE7B"
+local red = "#EC5F67"
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -21,9 +25,9 @@ local diff = {
 	"diff",
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
 	diff_color = {
-		added = { fg = "#98BE65" },
-		modified = { fg = "#ECBE7B" },
-		removed = { fg = "#EC5F67" },
+		added = { fg = green },
+		modified = { fg = yellow },
+		removed = { fg = red },
 	},
 	color = { bg = "" },
 	cond = hide_in_width,
@@ -131,6 +135,36 @@ local lsp = {
 	cond = hide_in_width,
 }
 
+local function python_env_cleanup(venv)
+	if string.find(venv, "/") then
+		local final_venv = venv
+		for w in venv:gmatch("([^/]+)") do
+			final_venv = w
+		end
+		venv = final_venv
+	end
+	return venv
+end
+
+local python_env = {
+	function()
+		if vim.bo.filetype == "python" then
+			local venv = os.getenv("CONDA_DEFAULT_ENV")
+			if venv then
+				return string.format("  (%s)", python_env_cleanup(venv))
+			end
+			venv = os.getenv("VIRTUAL_ENV")
+			if venv then
+				return string.format("  (%s)", python_env_cleanup(venv))
+			end
+			return ""
+		end
+		return ""
+	end,
+	color = { fg = green },
+	cond = hide_in_width,
+}
+
 lualine.setup({
 	options = {
 		globalstatus = true,
@@ -144,7 +178,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { branch },
-		lualine_c = { diff, filename, diagnostics },
+		lualine_c = { diff, python_env, filename, diagnostics },
 		lualine_x = { lsp, spaces, encoding, fileformat, filetype },
 		lualine_y = { "location" },
 		lualine_z = { "progress" },
