@@ -2,7 +2,7 @@
 export ZSH="${HOME}"/.oh-my-zsh
 export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${PATH}"
 
-export EDITOR="lvim"
+export EDITOR="nvim"
 
 export TERM="xterm-256color"
 
@@ -14,7 +14,7 @@ export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('lvim')
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('lvim' 'nvim')
 
 # ANTIBODY
 source "${HOME}"/.zsh_plugins.sh

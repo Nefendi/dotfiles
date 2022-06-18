@@ -16,13 +16,11 @@ This setup needs a few programmes already installed to work properly. The prepar
 zsh curl tmux nvim npm git ctags cmake xclip fasd rg batcat
 ```
 
-
 In Ubuntu-based systems, you can install them by issuing:
 
 ```bash
 sudo apt update && sudo apt install zsh curl tmux neovim npm git universal-ctags cmake xclip fasd ripgrep bat
 ```
-
 
 ### Testing the setup
 
@@ -35,10 +33,10 @@ docker run -it --rm dotfiles_test_env
 
 Please note that if you spin up the container without any command, the `prepare.sh` script will be automatically run.
 
-## init.vim
-
-The CoC configuration was taken from [here](https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/).
-
 ## .clang-tidy && .clang-format
 
 The files are based on Jason Turner's ones which can be seen [here](https://github.com/lefticus/cpp_weekly_game_project).
+
+## Neovim config
+
+The configuration for Neovim was taken from [here]("https://github.com/LunarVim/nvim-basic-ide") and then tweaked according to my needs.
