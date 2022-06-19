@@ -118,21 +118,13 @@ local lsp = {
 			end
 		end
 
-		local ret = "[" .. table.concat(buf_client_names, ", ")
-
-		buf_client_names = {}
-
 		local supported_formatters = list_registered_null_ls_providers(buf_ft, null_ls.methods.FORMATTING)
 		vim.list_extend(buf_client_names, supported_formatters)
 
 		local supported_linters = list_registered_null_ls_providers(buf_ft, null_ls.methods.DIAGNOSTICS)
 		vim.list_extend(buf_client_names, supported_linters)
 
-		if next(buf_client_names) then
-			ret = ret .. " | "
-		end
-
-		return ret .. table.concat(buf_client_names, ", ") .. "]"
+		return "[" .. table.concat(buf_client_names, ", ") .. "]"
 	end,
 	icon = " LSP:",
 	color = { gui = "bold" },
