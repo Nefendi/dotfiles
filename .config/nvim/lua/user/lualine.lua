@@ -1,3 +1,5 @@
+-- Sources for spaces, LSP, Python env and Tresitter components: https://github.com/LunarVim/LunarVim
+
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return
@@ -50,7 +52,6 @@ local branch = {
 	icon = "",
 }
 
--- Source: https://github.com/LunarVim/LunarVim/blob/rolling/lua/lvim/core/lualine/components.lua
 local spaces = {
 	function()
 		if not vim.api.nvim_buf_get_option(0, "expandtab") then
@@ -76,7 +77,6 @@ local encoding = {
 	cond = hide_in_width,
 }
 
--- Source for LSP stuff: https://github.com/LunarVim/LunarVim/blob/rolling/lua/lvim/core/lualine/components.lua
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
 	return
@@ -169,6 +169,18 @@ local python_env = {
 	cond = hide_in_width,
 }
 
+local treesitter = {
+	function()
+		local b = vim.api.nvim_get_current_buf()
+		if next(vim.treesitter.highlighter.active[b]) then
+			return ""
+		end
+		return ""
+	end,
+	color = { fg = green },
+	cond = hide_in_width,
+}
+
 lualine.setup({
 	options = {
 		globalstatus = true,
@@ -183,7 +195,7 @@ lualine.setup({
 		lualine_a = { "mode" },
 		lualine_b = { branch },
 		lualine_c = { diff, python_env, filename, diagnostics },
-		lualine_x = { lsp, spaces, encoding, fileformat, filetype },
+		lualine_x = { lsp, spaces, encoding, fileformat, treesitter, filetype },
 		lualine_y = { "location" },
 		lualine_z = { "progress" },
 	},
