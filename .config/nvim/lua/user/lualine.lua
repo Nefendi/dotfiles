@@ -16,8 +16,8 @@ local red = "#EC5F67"
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "hint" },
-	symbols = { error = " ", warn = " ", hint = " " },
+	sections = { "error", "warn", "info", "hint" },
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 	colored = true,
 	update_in_insert = false,
 	always_visible = false,
