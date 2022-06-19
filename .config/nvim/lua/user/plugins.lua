@@ -120,6 +120,11 @@ return packer.startup(function(use)
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 	use({ "nvim-telescope/telescope-ui-select.nvim", commit = "62ea5e58c7bbe191297b983a9e7e89420f581369" })
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		commit = "6a33ecefa9b3d9ade654f9a7a6396a00c3758ca6",
+		run = "make",
+	})
 
 	-- Treesitter
 	use({
