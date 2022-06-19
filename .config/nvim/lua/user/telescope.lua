@@ -10,7 +10,21 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
-		file_ignore_patterns = { ".git/", "node_modules", ".venv/", ".mypy_cache" },
+		file_ignore_patterns = {
+			-- General
+			".git/",
+			".idea/",
+			".vscode/",
+			-- JavaScript
+			"node_modules/",
+			-- Python
+			".venv/",
+			".mypy_cache/",
+			".pytest_cache/",
+			"__pycache__",
+			-- Rust
+			"target/",
+		},
 		vimgrep_arguments = {
 			"rg",
 			"--color=never",
