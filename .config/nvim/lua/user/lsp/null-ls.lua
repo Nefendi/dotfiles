@@ -47,5 +47,8 @@ null_ls.setup({
 
 		-- LaTeX
 		formatting.latexindent,
+
+		-- C++
+		formatting.clang_format,
 	},
 })
