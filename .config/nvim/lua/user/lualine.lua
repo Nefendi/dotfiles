@@ -31,13 +31,13 @@ local diff = {
 		modified = { fg = yellow },
 		removed = { fg = red },
 	},
-	color = { bg = "" },
 	cond = hide_in_width,
 }
 
 local filetype = {
 	"filetype",
 	icons_enabled = true,
+	cond = hide_in_width,
 }
 
 local filename = {
@@ -50,6 +50,8 @@ local branch = {
 	"branch",
 	icons_enabled = true,
 	icon = "",
+	color = { gui = "bold" },
+	cond = hide_in_width,
 }
 
 local spaces = {
@@ -185,9 +187,9 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { branch },
-		lualine_c = { diff, python_env, filename, diagnostics },
-		lualine_x = { lsp, spaces, encoding, fileformat, treesitter, filetype },
+		lualine_b = { branch, filename },
+		lualine_c = { diff, python_env },
+		lualine_x = { diagnostics, treesitter, lsp, filetype, fileformat, spaces, encoding },
 		lualine_y = { "location" },
 		lualine_z = { "progress" },
 	},
