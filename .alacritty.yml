@@ -528,7 +528,7 @@ schemes:
       - { index: 16, color: "0xd18616" }
       - { index: 17, color: "0xff938a" }
 
-colors: *github_dimmed
+colors: *gruvbox_dark
 
 bell:
   animation: EaseOutExpo
