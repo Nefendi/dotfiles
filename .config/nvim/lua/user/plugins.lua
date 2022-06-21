@@ -126,6 +126,7 @@ return packer.startup(function(use)
 		commit = "6a33ecefa9b3d9ade654f9a7a6396a00c3758ca6",
 		run = "make",
 	})
+	use({ "nvim-telescope/telescope-media-files.nvim", commit = "513e4ee385edd72bf0b35a217b7e39f84b6fe93c" })
 
 	-- Treesitter
 	use({
