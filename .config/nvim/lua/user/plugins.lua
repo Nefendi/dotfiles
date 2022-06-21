@@ -66,6 +66,7 @@ return packer.startup(function(use)
 	use({ "ellisonleao/glow.nvim", commit = "900042f7dda528cb980b7f1056ed7c21d4402826" })
 	use({ "rhysd/conflict-marker.vim", commit = "22b6133116795ea8fb6705ddca981aa8faecedda" })
 	use({ "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" })
+	use({ "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" })
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec" })
