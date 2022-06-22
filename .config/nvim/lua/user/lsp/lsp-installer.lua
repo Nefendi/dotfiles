@@ -55,10 +55,13 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "clangd" then
-		-- This is needed to overcome the issue with multiple offset encodings
-		-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
-		local clangd_opts = { capabilities = { offsetEncoding = { "utf-16" } } }
+		local clangd_opts = require("user.lsp.settings.clangd")
 		opts = vim.tbl_deep_extend("force", clangd_opts, opts)
+	end
+
+	if server == "emmet_ls" then
+		local emmet_ls_opts = require("user.lsp.settings.emmet_ls")
+		opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
 	end
 
 	lspconfig[server].setup(opts)
