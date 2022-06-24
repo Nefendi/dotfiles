@@ -10,18 +10,23 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
+		-- Some directories, e.g. Haskell's .stack-work are not ignored in when put into this array. To mitigate that
+		-- issue put the directory directly in the command line options of a search programme
 		file_ignore_patterns = {
 			-- General
 			".git/",
 			".idea/",
 			".vscode/",
+
 			-- JavaScript
 			"node_modules/",
+
 			-- Python
 			".venv/",
 			".mypy_cache/",
 			".pytest_cache/",
 			"__pycache__",
+
 			-- Rust
 			"target/",
 		},
@@ -34,6 +39,9 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 			"-uu",
+			"--glob",
+			-- Haskell
+			"!.stack-work/",
 		},
 		mappings = {
 			i = {
@@ -50,6 +58,9 @@ telescope.setup({
 				"rg",
 				"--files",
 				"-uu",
+				"--glob",
+				-- Haskell
+				"!.stack-work/",
 			},
 		},
 		live_grep = {

@@ -22,6 +22,7 @@ local servers = {
 	"gopls",
 	"rust_analyzer",
 	"emmet_ls",
+	"hls",
 }
 
 lsp_installer.setup()
