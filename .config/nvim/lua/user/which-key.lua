@@ -82,6 +82,11 @@ local mappings = {
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 
+	m = {
+		name = "Markdown",
+		g = { "<cmd>Glow<cr>", "Glow Preview" },
+	},
+
 	-- o = {
 	-- 	name = "Options",
 	-- 	w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
