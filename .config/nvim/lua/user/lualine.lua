@@ -182,6 +182,16 @@ local treesitter = {
 	cond = hide_in_width,
 }
 
+local gps_status_ok, gps = pcall(require, "nvim-gps")
+if not gps_status_ok then
+	return
+end
+
+local semantic_location = {
+	gps.get_location,
+	cond = hide_in_width and gps.is_available,
+}
+
 lualine.setup({
 	options = {
 		globalstatus = true,
@@ -195,7 +205,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { branch, filename },
-		lualine_c = { diff, python_env },
+		lualine_c = { diff, python_env, semantic_location },
 		lualine_x = { diagnostics, treesitter, lsp, filetype, fileformat, spaces, encoding },
 		lualine_y = { "location" },
 		lualine_z = { "progress" },

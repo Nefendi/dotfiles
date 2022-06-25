@@ -68,6 +68,11 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" })
 	use({ "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" })
 	use({ "nvim-pack/nvim-spectre", commit = "345e5dd57773e2b4b425a2515c831108b9808a0f" })
+	use({
+		"SmiteshP/nvim-gps",
+		commit = "be4bb5b903af81f04b316425b8ba8142504d023f",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+	})
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec" })
