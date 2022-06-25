@@ -81,7 +81,7 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
 
 -- Glow
-keymap("n", "<leader>p", ":Glow<CR>", opts)
+keymap("n", "<leader>mg", ":Glow<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
