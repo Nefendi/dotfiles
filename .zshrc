@@ -28,6 +28,7 @@ alias ll='exa -glFh --color=always --group-directories-first --icons'
 alias la='exa -galFh --color=always --group-directories-first --icons'
 alias lt='exa -gaTFh --color=always --group-directories-first --icons'
 alias n='nordvpn'
+alias g='lazygit'
 
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
