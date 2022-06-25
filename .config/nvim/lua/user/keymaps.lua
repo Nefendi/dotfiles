@@ -45,6 +45,9 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<leader>q", "<C-w>q", opts)
 
+-- Better paste
+keymap("v", "p", '"_dP', opts)
+
 -- Save
 keymap("n", "<leader>w", ":w<CR>", opts)
 

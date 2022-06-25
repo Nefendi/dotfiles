@@ -129,14 +129,8 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		},
-		completion = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		},
+		documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
 	},
 	experimental = {
 		ghost_text = true,
