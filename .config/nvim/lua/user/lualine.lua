@@ -13,6 +13,13 @@ local green = "#98BE65"
 local yellow = "#ECBE7B"
 local red = "#EC5F67"
 
+local mode = {
+	function()
+		return "▊"
+	end,
+	padding = { right = 1 },
+}
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -186,7 +193,7 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { "mode" },
+		lualine_a = { mode },
 		lualine_b = { branch, filename },
 		lualine_c = { diff, python_env },
 		lualine_x = { diagnostics, treesitter, lsp, filetype, fileformat, spaces, encoding },
