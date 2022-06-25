@@ -91,6 +91,12 @@ return packer.startup(function(use)
 		commit = "4b6166c3feeaf8dae162e33ee319dc5880e44a29",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
+	use({
+		"tzachar/cmp-tabnine",
+		commit = "e23d32a76304496aade4e4b285751a6a8b505491",
+		requires = { "hrsh7th/nvim-cmp" },
+		run = "./install.sh",
+	})
 
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine

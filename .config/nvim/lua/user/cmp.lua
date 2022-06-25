@@ -96,8 +96,13 @@ cmp.setup({
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			vim_item.menu = ({
 
+			if entry.source.name == "cmp_tabnine" then
+				vim_item.kind = "ﮧ"
+				vim_item.kind_hl_group = "CmpItemKindTabnine"
+			end
+
+			vim_item.menu = ({
 				nvim_lsp = "",
 				nvim_lua = "",
 				luasnip = "",
@@ -105,10 +110,12 @@ cmp.setup({
 				path = "",
 				emoji = "",
 			})[entry.source.name]
+
 			return vim_item
 		end,
 	},
 	sources = {
+		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
