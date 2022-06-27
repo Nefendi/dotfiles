@@ -11,9 +11,9 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- Miscellaneous
 		formatting.prettier.with({
 			extra_filetypes = { "toml" },
-			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 		}),
 
 		-- Python
