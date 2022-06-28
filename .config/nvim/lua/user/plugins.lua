@@ -123,11 +123,10 @@ return packer.startup(function(use)
 	})
 
 	-- Rust
-	-- use({
-	-- 	"simrat39/rust-tools.nvim",
-	-- 	commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
-	-- 	ft = { "rust", "rs" },
-	-- })
+	use({
+		"simrat39/rust-tools.nvim",
+		commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
+	})
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })

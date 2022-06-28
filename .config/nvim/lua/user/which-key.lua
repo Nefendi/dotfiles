@@ -109,6 +109,17 @@ local mappings = {
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 	},
 
+	R = {
+		name = "Rust",
+		h = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Inlay Hints" },
+		r = { "<cmd>RustRunnables<Cr>", "Runnables" },
+		e = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
+		c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
+		p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
+		g = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
+		w = { "<cmd>RustReloadWorkspace<Cr>", "Reload Workspace" },
+	},
+
 	d = {
 		name = "Debug",
 		b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },

@@ -26,8 +26,6 @@ require("user.nvim-colorizer")
 require("user.numb")
 require("user.lsp_signature")
 require("user.vim-go")
--- This does not work right now
--- require("user.rust-tools")
 require("user.crates")
 require("user.cmp-npm")
 require("user.git-blame")
