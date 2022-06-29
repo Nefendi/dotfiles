@@ -3,6 +3,7 @@ format = "$time$all"
 command_timeout = 2000
 
 [conda]
+symbol = " "
 ignore_base = false
 
 [time]
@@ -14,9 +15,11 @@ disabled = false
 map_symbol = true
 
 [memory_usage]
+symbol = " "
 disabled = false
 
 [python]
+symbol = " "
 detect_files = [
     ".python-version",
     "Pipfile",
@@ -29,6 +32,7 @@ detect_files = [
 ]
 
 [git_branch]
+symbol = " "
 always_show_remote = true
 format = "on [$symbol$branch( \\[$remote_name/$remote_branch\\])]($style) "
 
@@ -41,3 +45,60 @@ disabled = false
 
 [sudo]
 disabled = false
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
