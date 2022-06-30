@@ -115,14 +115,14 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "crates" },
+		{ name = "npm", keyword_length = 4 },
 		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "crates" },
-		{ name = "npm", keyword_length = 4 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
