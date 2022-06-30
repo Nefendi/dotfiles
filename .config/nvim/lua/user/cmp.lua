@@ -1,3 +1,5 @@
+-- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/cmp.lua
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
 	return
@@ -42,6 +44,10 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = "",
 }
+
+vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+vim.api.nvim_set_hl(0, "CmpItemKindPackage", { fg = "#F64D00" })
+vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
 cmp.setup({
 	snippet = {
@@ -95,11 +101,21 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.kind = kind_icons[vim_item.kind]
 
 			if entry.source.name == "cmp_tabnine" then
 				vim_item.kind = "ﮧ"
 				vim_item.kind_hl_group = "CmpItemKindTabnine"
+			end
+
+			if entry.source.name == "crates" or entry.source.name == "npm" then
+				vim_item.kind = ""
+				vim_item.kind_hl_group = "CmpItemKindPackage"
+			end
+
+			if entry.source.name == "emoji" then
+				vim_item.kind = "ﲃ"
+				vim_item.kind_hl_group = "CmpItemKindEmoji"
 			end
 
 			vim_item.menu = ({
@@ -115,14 +131,15 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "crates" },
-		{ name = "npm", keyword_length = 4 },
-		{ name = "cmp_tabnine" },
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
+		{ name = "crates", group_index = 1 },
+		{ name = "npm", keyword_length = 4, group_index = 2 },
+		{ name = "nvim_lsp", group_index = 2 },
+		{ name = "nvim_lua", group_index = 2 },
+		{ name = "cmp_tabnine", group_index = 2 },
+		{ name = "luasnip", group_index = 2 },
+		{ name = "buffer", group_index = 2 },
+		{ name = "path", group_index = 2 },
+		{ name = "emoji", group_index = 2 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
