@@ -73,6 +73,7 @@ return packer.startup(function(use)
 		commit = "be4bb5b903af81f04b316425b8ba8142504d023f",
 		requires = { "nvim-treesitter/nvim-treesitter" },
 	})
+	use({ "stevearc/dressing.nvim", commit = "af179837e1cdddfb164f0296883951b2255c46d2" })
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec" })
