@@ -13,21 +13,24 @@ local green = "#98BE65"
 local yellow = "#ECBE7B"
 local red = "#EC5F67"
 
+vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
+vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
+
 local mode = {
 	function()
-		return "▊"
+		return " "
 	end,
-	padding = { right = 1 },
+	padding = { left = 0, right = 0 },
 }
 
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info", "hint" },
-	symbols = { error = " ", warn = " ", info = " ", hint = " " },
-	colored = true,
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
+	colored = false,
 	update_in_insert = false,
-	always_visible = false,
+	always_visible = true,
 }
 
 local diff = {
@@ -56,9 +59,8 @@ local filename = {
 local branch = {
 	"branch",
 	icons_enabled = true,
-	icon = "",
-	color = { gui = "bold" },
-	cond = hide_in_width,
+	icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
+	colored = false,
 }
 
 local spaces = {
@@ -203,10 +205,12 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { mode },
-		lualine_b = { branch, filename },
-		lualine_c = { diff, python_env, semantic_location },
-		lualine_x = { diagnostics, treesitter, lsp, filetype, fileformat, spaces, encoding },
+		lualine_a = { mode, branch },
+		-- lualine_b = { branch, filename },
+		lualine_b = { diagnostics },
+		lualine_c = { python_env },
+		-- lualine_x = { diagnostics, treesitter, lsp, filetype, fileformat, spaces, encoding },
+		lualine_x = { diff, filetype, fileformat, spaces, encoding },
 		lualine_y = { "location" },
 		lualine_z = { "progress" },
 	},
