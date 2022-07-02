@@ -53,7 +53,7 @@ dressing.setup({
 
 		-- Priority list of preferred vim.select implementations
 		-- backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
-		backend = { "telescope", "builtin", "nui" },
+		backend = { "builtin", "telescope", "nui" },
 
 		-- Trim trailing `:` from prompt
 		trim_prompt = true,
