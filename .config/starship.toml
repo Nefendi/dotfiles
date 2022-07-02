@@ -13,6 +13,7 @@ format = '[$time]($style) '
 [status]
 disabled = false
 map_symbol = true
+format = "[$symbol $status]($style) "
 
 [memory_usage]
 symbol = " "
