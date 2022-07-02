@@ -13,6 +13,8 @@ if not dap_install_status_ok then
 	return
 end
 
+local icons = require("user.icons")
+
 dap_install.setup({})
 
 dap_install.config("python", {})
@@ -60,7 +62,10 @@ dapui.setup({
 	windows = { indent = 1 },
 })
 
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+vim.fn.sign_define(
+	"DapBreakpoint",
+	{ text = icons.misc.SmallDot, texthl = "DiagnosticSignError", linehl = "", numhl = "" }
+)
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()

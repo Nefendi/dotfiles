@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+local icons = require("user.icons")
+
 -- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/whichkey.lua
 
 local setup = {
@@ -25,8 +27,8 @@ local setup = {
 		},
 	},
 	icons = {
-		breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-		separator = "➜", -- symbol used between a key and it's label
+		breadcrumb = icons.ui.DoubleRightChevron, -- symbol used in the command line area that shows your active key combo
+		separator = icons.ui.RightArrow, -- symbol used between a key and it's label
 		group = "+", -- symbol prepended to a group
 	},
 	popup_mappings = {

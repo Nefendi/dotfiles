@@ -8,6 +8,8 @@ if not config_status_ok then
 	return
 end
 
+local icons = require("user.icons")
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
@@ -30,7 +32,7 @@ nvim_tree.setup({
 			webdev_colors = true,
 			git_placement = "before",
 			padding = " ",
-			symlink_arrow = " ➛ ",
+			symlink_arrow = " " .. icons.ui.ThinRightArrow .. " ",
 			show = {
 				file = true,
 				folder = true,
@@ -38,26 +40,26 @@ nvim_tree.setup({
 				git = true,
 			},
 			glyphs = {
-				default = "",
-				symlink = "",
+				default = icons.documents.PageWithText,
+				symlink = icons.ui.Symlink,
 				folder = {
-					arrow_open = "",
-					arrow_closed = "",
-					default = "",
-					open = "",
-					empty = "",
-					empty_open = "",
-					symlink = "",
-					symlink_open = "",
+					arrow_open = icons.ui.DownChevron,
+					arrow_closed = icons.ui.RightChevron,
+					default = icons.ui.ClosedFullFolder,
+					open = icons.ui.OpenedFullFolder,
+					empty = icons.ui.ClosedEmptyFolder,
+					empty_open = icons.ui.OpenedEmptyFolder,
+					symlink = icons.ui.DirectorySymlink,
+					symlink_open = icons.ui.DirectorySymlink,
 				},
 				git = {
-					unstaged = "",
+					unstaged = icons.misc.SmallDot,
 					staged = "S",
-					unmerged = "",
-					renamed = "➜",
+					unmerged = icons.git.Unmerged,
+					renamed = icons.ui.RightArrow,
 					untracked = "U",
-					deleted = "",
-					ignored = "◌",
+					deleted = icons.git.Removed,
+					ignored = icons.misc.EmptyDot,
 				},
 			},
 		},
@@ -65,10 +67,10 @@ nvim_tree.setup({
 	diagnostics = {
 		enable = true,
 		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+			hint = icons.diagnostics.Hint,
+			info = icons.diagnostics.Info,
+			warning = icons.diagnostics.Warning,
+			error = icons.diagnostics.Error,
 		},
 	},
 	update_focused_file = {

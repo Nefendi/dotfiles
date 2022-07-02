@@ -5,10 +5,12 @@ end
 
 local actions = require("telescope.actions")
 
+local icons = require("user.icons")
+
 telescope.setup({
 	defaults = {
-		prompt_prefix = " ",
-		selection_caret = " ",
+		prompt_prefix = icons.ui.Telescope .. " ",
+		selection_caret = icons.ui.EnterArrow .. " ",
 		path_display = { "smart" },
 		-- Some directories, e.g. Haskell's .stack-work are not ignored in when put into this array. To mitigate that
 		-- issue put the directory directly in the command line options of a search programme

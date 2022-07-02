@@ -17,33 +17,9 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-local kind_icons = {
-	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "",
-	Interface = "",
-	Module = "",
-	Property = "",
-	Unit = "",
-	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
-}
+local icons = require("user.icons")
+
+local kind_icons = icons.kind
 
 vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindPackage", { fg = "#F64D00" })
@@ -104,17 +80,17 @@ cmp.setup({
 			vim_item.kind = kind_icons[vim_item.kind]
 
 			if entry.source.name == "cmp_tabnine" then
-				vim_item.kind = "ﮧ"
+				vim_item.kind = icons.misc.Robot
 				vim_item.kind_hl_group = "CmpItemKindTabnine"
 			end
 
 			if entry.source.name == "crates" or entry.source.name == "npm" then
-				vim_item.kind = ""
+				vim_item.kind = icons.misc.Package
 				vim_item.kind_hl_group = "CmpItemKindPackage"
 			end
 
 			if entry.source.name == "emoji" then
-				vim_item.kind = "ﲃ"
+				vim_item.kind = icons.misc.Smiley
 				vim_item.kind_hl_group = "CmpItemKindEmoji"
 			end
 
