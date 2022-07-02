@@ -14,7 +14,7 @@ export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('lvim' 'nvim')
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
 
 # ANTIBODY
 source "${HOME}"/.zsh_plugins.sh
