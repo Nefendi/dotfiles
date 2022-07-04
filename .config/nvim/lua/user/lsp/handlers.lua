@@ -6,10 +6,10 @@ local icons = require("user.icons")
 
 M.setup = function()
 	local signs = {
-		{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
-		{ name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+		{ name = "DiagnosticSignError", text = icons.diagnostics_codicons.Error },
+		{ name = "DiagnosticSignWarn", text = icons.diagnostics_codicons.Warning },
 		{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-		{ name = "DiagnosticSignInfo", text = icons.diagnostics.Info },
+		{ name = "DiagnosticSignInfo", text = icons.diagnostics_codicons.Info },
 	}
 
 	for _, sign in ipairs(signs) do

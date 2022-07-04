@@ -68,9 +68,9 @@ nvim_tree.setup({
 		enable = true,
 		icons = {
 			hint = icons.diagnostics.Hint,
-			info = icons.diagnostics.Info,
-			warning = icons.diagnostics.Warning,
-			error = icons.diagnostics.Error,
+			info = icons.diagnostics_codicons.Info,
+			warning = icons.diagnostics_codicons.Warning,
+			error = icons.diagnostics_codicons.Error,
 		},
 	},
 	update_focused_file = {

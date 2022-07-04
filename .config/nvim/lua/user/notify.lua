@@ -32,9 +32,9 @@ notify.setup({
 
 	-- Icons for the different levels
 	icons = {
-		ERROR = icons.diagnostics.FilledError,
-		WARN = icons.diagnostics.FilledWarning,
-		INFO = icons.diagnostics.FilledInfo,
+		ERROR = icons.diagnostics_codicons.Error,
+		WARN = icons.diagnostics_codicons.Warning,
+		INFO = icons.diagnostics_codicons.Info,
 		DEBUG = icons.misc.Bug,
 		TRACE = icons.misc.Pencil,
 	},

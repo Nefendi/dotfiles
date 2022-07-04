@@ -63,9 +63,9 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info", "hint" },
 	symbols = {
-		error = icons.diagnostics.Error .. " ",
-		warn = icons.diagnostics.Warning .. " ",
-		info = icons.diagnostics.Info .. " ",
+		error = icons.diagnostics_codicons.Error .. " ",
+		warn = icons.diagnostics_codicons.Warning .. " ",
+		info = icons.diagnostics_codicons.Info .. " ",
 		hint = icons.diagnostics.Hint .. " ",
 	},
 	colored = false,

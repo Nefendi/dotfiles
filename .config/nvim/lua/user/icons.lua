@@ -63,6 +63,13 @@ return {
 		FilledWarning = "",
 		FilledInfo = "",
 	},
+	diagnostics_codicons = {
+		Error = "",
+		Warning = "",
+		Info = "",
+		Question = "",
+		Hint = "",
+	},
 	documents = { Files = " ", File = "", PageWithText = "" },
 	ui = {
 		Cog = "",
