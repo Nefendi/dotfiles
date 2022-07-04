@@ -19,7 +19,7 @@ end
 
 local icons = require("user.icons")
 
-local kind_icons = icons.kind
+local kind_icons = icons.kind_codicons
 
 vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindPackage", { fg = "#F64D00" })
@@ -75,32 +75,35 @@ cmp.setup({
 		}),
 	}),
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
+		fields = { "abbr", "kind", "menu" },
 		format = function(entry, vim_item)
-			vim_item.kind = kind_icons[vim_item.kind]
+			vim_item.kind = (kind_icons[vim_item.kind] or "") .. "  " .. vim_item.kind
 
 			if entry.source.name == "cmp_tabnine" then
-				vim_item.kind = icons.misc.Robot
+				vim_item.kind = icons.misc.Robot .. "  Suggestion"
 				vim_item.kind_hl_group = "CmpItemKindTabnine"
 			end
 
 			if entry.source.name == "crates" or entry.source.name == "npm" then
-				vim_item.kind = icons.misc.Package
+				vim_item.kind = icons.misc.Package .. "  Version"
 				vim_item.kind_hl_group = "CmpItemKindPackage"
 			end
 
 			if entry.source.name == "emoji" then
-				vim_item.kind = icons.misc.Smiley
+				vim_item.kind = icons.misc.SmileyCodicon .. "  Emoji"
 				vim_item.kind_hl_group = "CmpItemKindEmoji"
 			end
 
 			vim_item.menu = ({
-				nvim_lsp = "",
-				nvim_lua = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
-				emoji = "",
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[Lua]",
+				luasnip = "[LuaSnip]",
+				buffer = "[Buffer]",
+				path = "[Path]",
+				emoji = "[CMP]",
+				cmp_tabnine = "[Tabnine]",
+				crates = "[Crates]",
+				npm = "[NPM]",
 			})[entry.source.name]
 
 			return vim_item
@@ -108,7 +111,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "crates", group_index = 1 },
-		{ name = "npm", keyword_length = 4, group_index = 2 },
+		{ name = "npm", keyword_length = 4, group_index = 1 },
 		{ name = "nvim_lsp", group_index = 2 },
 		{ name = "nvim_lua", group_index = 2 },
 		{ name = "cmp_tabnine", group_index = 2 },
