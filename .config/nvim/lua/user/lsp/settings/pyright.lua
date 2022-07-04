@@ -1,9 +1,12 @@
 return {
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "off",
-      },
-    },
-  },
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "basic",
+				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
+				autoImportCompletions = true,
+			},
+		},
+	},
 }
