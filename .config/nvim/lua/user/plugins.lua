@@ -81,6 +81,7 @@ return packer.startup(function(use)
 	use({ "projekt0n/github-nvim-theme", commit = "1cc4a8d508bc6b846c72b9e629e8188ac24d0f13" })
 	use({ "ellisonleao/gruvbox.nvim", commit = "3352c12c083d0ab6285a9738b7679e24e7602411" })
 	use({ "lunarvim/darkplus.nvim", commit = "8a61396774816c20baf71dd17091a88a4a51e2e4" })
+	use({ "Mofiqul/vscode.nvim", commit = "ba65e6ad9a486737dcd912a1ae58b940e2b38a5c" })
 
 	-- Cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin

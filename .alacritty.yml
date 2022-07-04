@@ -528,7 +528,37 @@ schemes:
       - { index: 16, color: "0xd18616" }
       - { index: 17, color: "0xff938a" }
 
-colors: *one_dark
+  # Upstream: https://github.com/Mofiqul/vscode.nvim/blob/main/extra/alacritty/alacritty.yml
+  code_dark: &code_dark
+    primary:
+      background: "#1e1e1e"
+      foreground: "#d4d4d4"
+
+    cursor:
+      text: "#d4d4d4"
+      cursor: "#d4d4d4"
+
+    normal:
+      black: "#1e1e1e"
+      red: "#f44747"
+      green: "#608b4e"
+      yellow: "#dcdcaa"
+      blue: "#569cd6"
+      magenta: "#c678dd"
+      cyan: "#56b6c2"
+      white: "#d4d4d4"
+
+    bright:
+      black: "#545454"
+      red: "#f44747"
+      green: "#608b4e"
+      yellow: "#dcdcaa"
+      blue: "#569cd6"
+      magenta: "#c678dd"
+      cyan: "#56b6c2"
+      white: "#d4d4d4"
+
+colors: *code_dark
 
 bell:
   animation: EaseOutExpo
