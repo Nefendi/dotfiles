@@ -66,45 +66,18 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
 	end
 
-    -- Source: https://github.com/LunarVim/nvim-basic-ide/tree/rust-ide-0.7
     if server == "rust_analyzer" then
-        local keymap = vim.keymap.set
-        local key_opts = { silent = true }
+        local rust_opts = require("user.lsp.settings.rust")
 
-        keymap("n", "<leader>Rh", "<cmd>RustToggleInlayHints<Cr>", key_opts)
-        keymap("n", "<leader>Rr", "<cmd>RustRunnables<Cr>", key_opts)
-        keymap("n", "<leader>Re", "<cmd>RustExpandMacro<Cr>", key_opts)
-        keymap("n", "<leader>Rc", "<cmd>RustOpenCargo<Cr>", key_opts)
-        keymap("n", "<leader>Rp", "<cmd>RustParentModule<Cr>", key_opts)
-        keymap("n", "<leader>Rg", "<cmd>RustViewCrateGraph<Cr>", key_opts)
-        keymap("n", "<leader>Rw", "<cmd>RustReloadWorkspace<Cr>", key_opts)
+        local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
+        if not rust_tools_status_ok then
+          return
+        end
 
-        require("rust-tools").setup {
-          tools = {
-            on_initialized = function()
-              vim.cmd [[
-                autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
-              ]]
-            end,
-          },
-          server = {
-            on_attach = require("user.lsp.handlers").on_attach,
-            capabilities = require("user.lsp.handlers").capabilities,
-            settings = {
-              ["rust-analyzer"] = {
-                lens = {
-                  enable = true,
-                },
-                checkOnSave = {
-                  command = "clippy",
-                },
-              },
-            },
-          },
-        }
+        rust_tools.setup(rust_opts)
 
         goto continue
-  end
+    end
 
 	lspconfig[server].setup(opts)
 
