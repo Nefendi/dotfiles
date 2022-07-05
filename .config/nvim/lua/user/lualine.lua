@@ -20,12 +20,20 @@ local green = "#98BE65"
 local yellow = "#ECBE7B"
 local red = "#EC5F67"
 
+-- darkplus
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
 vim.api.nvim_set_hl(0, "SLLocation", { fg = "#D4D4D4", bg = "#303030" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
 
+-- onedarker
+-- vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#32363e" })
+-- vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = false })
+-- vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
+-- vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
+
 local mode_color = {
+	-- darkplus
 	n = "#569cd6",
 	i = "#6a9955",
 	v = "#c586c0",
@@ -46,6 +54,28 @@ local mode_color = {
 	["r?"] = "#4EC9B0",
 	["!"] = "#4EC9B0",
 	t = "#D7BA7D",
+
+	-- onedarker
+	-- n = "#61afef",
+	-- i = "#e06c75",
+	-- v = "#c678dd",
+	-- [""] = "#c678dd",
+	-- V = "#c678dd",
+	-- c = "#56b6c2",
+	-- no = "#61afef",
+	-- s = "#d19a66",
+	-- S = "#d19a66",
+	-- [""] = "#d19a66",
+	-- ic = "#e06c75",
+	-- R = "#d19a66",
+	-- Rv = "#e06c75",
+	-- cv = "#61afef",
+	-- ce = "#61afef",
+	-- r = "#e06c75",
+	-- rm = "#56b6c2",
+	-- ["r?"] = "#56b6c2",
+	-- ["!"] = "#56b6c2",
+	-- t = "#98c379",
 }
 
 local mode = {
@@ -66,7 +96,7 @@ local diagnostics = {
 		error = icons.diagnostics_codicons.Error .. " ",
 		warn = icons.diagnostics_codicons.Warning .. " ",
 		info = icons.diagnostics_codicons.Info .. " ",
-		hint = icons.diagnostics.Hint .. " ",
+		hint = icons.diagnostics_codicons.Hint .. " ",
 	},
 	colored = false,
 	update_in_insert = false,
@@ -219,6 +249,17 @@ local python_env = {
 	cond = hide_in_width,
 }
 
+local current_signature = {
+	function()
+		if not pcall(require, "lsp_signature") then
+			return
+		end
+		local sig = require("lsp_signature").status_line(30)
+		return "%#SLSeparator#" .. sig.hint .. "%*"
+	end,
+	cond = hide_in_width,
+}
+
 local treesitter = {
 	function()
 		local b = vim.api.nvim_get_current_buf()
@@ -231,16 +272,6 @@ local treesitter = {
 	cond = hide_in_width,
 }
 
-local gps_status_ok, gps = pcall(require, "nvim-gps")
-if not gps_status_ok then
-	return
-end
-
-local semantic_location = {
-	gps.get_location,
-	cond = hide_in_width and gps.is_available,
-}
-
 local location = {
 	"location",
 	color = "SLLocation",
@@ -250,7 +281,10 @@ local location = {
 local progress = {
 	"progress",
 	color = function()
+		-- darkplus
 		return { fg = "#252525", bg = mode_color[vim.fn.mode()] }
+		-- onedarker
+		-- return { fg = "#1E232A", bg = mode_color[vim.fn.mode()] }
 	end,
 }
 
@@ -267,7 +301,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode, branch },
 		lualine_b = { diagnostics },
-		lualine_c = { python_env },
+		lualine_c = { python_env, current_signature },
 		lualine_x = { diff, spaces, encoding, fileformat, filetype },
 		lualine_y = { location },
 		lualine_z = { progress },

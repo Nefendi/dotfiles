@@ -77,10 +77,10 @@ return packer.startup(function(use)
 	use({ "abecodes/tabout.nvim", commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca" })
 
 	-- Colorschemes
-	use({ "lunarvim/onedarker.nvim", commit = "b00dd2189f264c5aeb4cf04c59439655ecd573ec" })
+	use({ "lunarvim/onedarker.nvim", commit = "e2d6d14f9ba8255b63d83274b52933248d7b7277" })
 	use({ "projekt0n/github-nvim-theme", commit = "1cc4a8d508bc6b846c72b9e629e8188ac24d0f13" })
 	use({ "ellisonleao/gruvbox.nvim", commit = "3352c12c083d0ab6285a9738b7679e24e7602411" })
-	use({ "lunarvim/darkplus.nvim", commit = "8a61396774816c20baf71dd17091a88a4a51e2e4" })
+	use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" })
 	use({ "Mofiqul/vscode.nvim", commit = "ba65e6ad9a486737dcd912a1ae58b940e2b38a5c" })
 
 	-- Cmp plugins
