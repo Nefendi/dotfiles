@@ -1,6 +1,6 @@
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect" },
+	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect", "null-ls-info" },
 	callback = function()
 		vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR> 
@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd({ "User" }, {
 	pattern = { "AlphaReady" },
 	callback = function()
 		vim.cmd([[
-      set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
       set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
     ]])
 	end,
@@ -44,6 +43,15 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
 	end,
 })
+
+-- Winbar
+if vim.fn.has("nvim-0.8") == 1 then
+	vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" }, {
+		callback = function()
+			require("user.winbar").get_winbar()
+		end,
+	})
+end
 
 -- Format on save
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {

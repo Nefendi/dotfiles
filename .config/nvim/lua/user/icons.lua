@@ -82,6 +82,7 @@ return {
 		RightChevron = "",
 		DownChevron = "",
 		DoubleRightChevron = "»",
+		GpsRightChevron = ">",
 		RightArrow = "➜",
 		ThinRightArrow = "➛",
 		Symlink = "",
