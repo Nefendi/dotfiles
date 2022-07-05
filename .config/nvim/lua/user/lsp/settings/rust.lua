@@ -15,7 +15,6 @@ return {
 		hover_actions = {
 			auto_focus = false,
 			border = "rounded",
-			width = 60,
 		},
 	},
 	server = {
