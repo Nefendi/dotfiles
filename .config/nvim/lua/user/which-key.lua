@@ -188,7 +188,7 @@ local mappings = {
 			"Workspace Diagnostics",
 		},
 		-- Do something about the hardcoded timeout
-		f = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 5000)<cr>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },

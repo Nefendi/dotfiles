@@ -1,14 +1,12 @@
 local M = {}
 
-local formatting_timeout_ms = 5000
-
 local icons = require("user.icons")
 
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = icons.diagnostics_codicons.Error },
 		{ name = "DiagnosticSignWarn", text = icons.diagnostics_codicons.Warning },
-		{ name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
+		{ name = "DiagnosticSignHint", text = icons.diagnostics_codicons.Hint },
 		{ name = "DiagnosticSignInfo", text = icons.diagnostics_codicons.Info },
 	}
 
@@ -38,12 +36,10 @@ M.setup = function()
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
-		width = 60,
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
-		width = 60,
 	})
 end
 
@@ -56,13 +52,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	keymap(
-		bufnr,
-		"n",
-		"<leader>lf",
-		string.format("<cmd>lua vim.lsp.buf.formatting_sync(nil, %i)<cr>", formatting_timeout_ms),
-		opts
-	)
+	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", opts)
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 	keymap(bufnr, "n", "<leader>ln", "<cmd>NullLsInfo<cr>", opts)
@@ -81,35 +71,35 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "remark_ls" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "gopls" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "taplo" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "html" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "jsonls" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	if client.name == "clangd" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	M.capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -117,10 +107,12 @@ M.on_attach = function(client, bufnr)
 	M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 	lsp_keymaps(bufnr)
+
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
 		return
 	end
+
 	illuminate.on_attach(client)
 end
 
@@ -130,7 +122,7 @@ function M.enable_format_on_save(notify)
 	vim.cmd([[
     augroup format_on_save
       autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, formatting_timeout_ms)
+      autocmd BufWritePre * lua vim.lsp.buf.format()
     augroup end
   ]])
 
