@@ -34,11 +34,12 @@ vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
-vim.opt.relativenumber = true -- set relative numbered lines
-vim.opt.colorcolumn = "120"
+vim.opt.relativenumber = false -- set relative numbered lines
+vim.opt.fillchars = vim.opt.fillchars + "eob: "
+-- vim.opt.fillchars.eob = " "
+-- vim.opt.colorcolumn = "120"
 -- vim.opt.textwidth = 120
 -- vim.opt.linebreak = true
