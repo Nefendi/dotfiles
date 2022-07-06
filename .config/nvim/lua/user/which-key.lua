@@ -69,11 +69,16 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w<CR>", "Write" },
+	["a"] = { "<cmd>wa<CR>", "Write All" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
 	["q"] = { "<C-w>q", "Quit" },
 	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	[" "] = {
+		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Find Files",
+	},
 
 	p = {
 		name = "Packer",
@@ -120,6 +125,20 @@ local mappings = {
 		p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
 		g = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
 		w = { "<cmd>RustReloadWorkspace<Cr>", "Reload Workspace" },
+	},
+
+	G = {
+		name = "+Go",
+		b = { "<cmd>GoBuild<cr>", "Build" },
+		r = { "<cmd>GoRun<cr>", "Run" },
+		t = { "<cmd>GoTest<cr>", "Test" },
+		c = { "<cmd>GoCoverageToggle<cr>", "Toggle coverage" },
+		g = { "<cmd>GoGenerate<cr>", "Generate" },
+		i = { "<cmd>GoImpl<cr>", "Implement" },
+		T = { "<cmd>GoAddTags<cr>", "Add tags" },
+		R = { "<cmd>GoRemoveTags<cr>", "Remove tags" },
+		e = { "<cmd>GoIfErr<cr>", "Add if-err statement" },
+		f = { "<cmd>GoFillStruct<cr>", "Fill struct" },
 	},
 
 	d = {
@@ -187,7 +206,6 @@ local mappings = {
 			"<cmd>Telescope diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
-		-- Do something about the hardcoded timeout
 		f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
