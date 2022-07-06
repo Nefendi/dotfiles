@@ -114,6 +114,13 @@ M.on_attach = function(client, bufnr)
 	end
 
 	illuminate.on_attach(client)
+
+	local status_navic_ok, navic = pcall(require, "nvim-navic")
+	if not status_navic_ok then
+		return
+	end
+
+	navic.attach(client, bufnr)
 end
 
 function M.enable_format_on_save(notify)

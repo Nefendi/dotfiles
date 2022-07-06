@@ -46,23 +46,23 @@ local get_filename = function()
 	end
 end
 
-local get_gps = function()
-	local status_gps_ok, gps = pcall(require, "nvim-gps")
-	if not status_gps_ok then
+local get_navic = function()
+	local status_navic_ok, navic = pcall(require, "nvim-navic")
+	if not status_navic_ok then
 		return ""
 	end
 
-	local status_ok, gps_location = pcall(gps.get_location, {})
+	local status_ok, navic_location = pcall(navic.get_location, {})
 	if not status_ok then
 		return ""
 	end
 
-	if not gps.is_available() or gps_location == "error" then
+	if not navic.is_available() or navic_location == "error" then
 		return ""
 	end
 
-	if not functions.isempty(gps_location) then
-		return " " .. gps_location
+	if not functions.isempty(navic_location) then
+		return " " .. navic_location
 	else
 		return ""
 	end
@@ -84,19 +84,19 @@ M.get_winbar = function()
 
 	if not functions.isempty(value) and functions.get_buf_option("mod") then
 		local mod = "%#LineNr#" .. " " .. icons.misc.SmallDot .. "%*"
-		if gps_added then
+		if navic_added then
 			value = value .. " " .. mod
 		else
 			value = value .. mod
 		end
 	end
 
-	local gps_added = false
+	local navic_added = false
 	if not functions.isempty(value) then
-		local gps_value = get_gps()
-		value = value .. " " .. gps_value
-		if not functions.isempty(gps_value) then
-			gps_added = true
+		local navic_value = get_navic()
+		value = value .. " " .. navic_value
+		if not functions.isempty(navic_value) then
+			navic_added = true
 		end
 	end
 
