@@ -12,6 +12,8 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+local compare = require("cmp.config.compare")
+
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
@@ -119,6 +121,19 @@ cmp.setup({
 		{ name = "buffer", group_index = 2 },
 		{ name = "path", group_index = 2 },
 		{ name = "emoji", group_index = 2 },
+	},
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			compare.offset,
+			compare.exact,
+			compare.score,
+			compare.recently_used,
+			compare.locality,
+			compare.sort_text,
+			compare.length,
+			compare.order,
+		},
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
