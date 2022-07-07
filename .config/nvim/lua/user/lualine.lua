@@ -289,7 +289,7 @@ lualine.setup({
 		lualine_a = { mode, branch },
 		lualine_b = { diagnostics },
 		lualine_c = { python_env, current_signature },
-		lualine_x = { lsp, diff, spaces, encoding, fileformat, filetype },
+		lualine_x = { diff, spaces, encoding, fileformat, filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
