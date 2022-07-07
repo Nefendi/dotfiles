@@ -15,7 +15,7 @@ local icons = require("user.icons")
 local functions = require("user.functions")
 
 local hide_in_width = function()
-	return vim.fn.winwidth(0) > 70
+	return vim.o.columns > 70
 end
 
 local green = "#98BE65"
