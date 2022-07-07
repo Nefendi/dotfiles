@@ -94,14 +94,14 @@ local mappings = {
 		g = { "<cmd>Glow<cr>", "Glow Preview" },
 	},
 
-	-- o = {
-	-- 	name = "Options",
-	-- 	w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
-	-- 	r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
-	-- 	l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
-	-- 	s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
-	-- 	t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
-	-- },
+	o = {
+		name = "Options",
+		w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
+		r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
+		-- l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
+		-- s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
+		-- t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
+	},
 
 	s = {
 		name = "Split",
