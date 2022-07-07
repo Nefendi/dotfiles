@@ -108,6 +108,7 @@ M.on_attach = function(client, bufnr)
 
 	lsp_keymaps(bufnr)
 
+	-- illuminate
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
 		return
@@ -115,9 +116,29 @@ M.on_attach = function(client, bufnr)
 
 	illuminate.on_attach(client)
 
+	-- nvim-navic
 	local status_navic_ok, navic = pcall(require, "nvim-navic")
 	if not status_navic_ok then
 		return
+	end
+
+	-- nvim-navic requires an LSP to support documentSymbol and old SymbolInformation format
+	local not_supported_navic_servers = {
+		"dockerls",
+		"cssmodules_ls",
+		"html",
+		"eslint",
+		"emmet_ls",
+		"cssls",
+		"bashls",
+		"remark_ls",
+		"ltex",
+	}
+
+	for _, server_name in ipairs(not_supported_navic_servers) do
+		if client.name == server_name then
+			return
+		end
 	end
 
 	navic.attach(client, bufnr)
