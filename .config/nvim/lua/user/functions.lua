@@ -21,4 +21,22 @@ function M.toggle_option(option)
 	vim.notify(option .. " set to " .. tostring(value))
 end
 
+function M.list_registered_null_ls_providers(file_type, kind)
+	local null_ls_sources__status_ok, null_ls_sources = pcall(require, "null-ls.sources")
+	if not null_ls_sources__status_ok then
+		return
+	end
+
+	local available_sources = null_ls_sources.get_available(file_type)
+
+	local registered = {}
+	for _, source in ipairs(available_sources) do
+		for method in pairs(source.methods) do
+			registered[method] = registered[method] or {}
+			table.insert(registered[method], source.name)
+		end
+	end
+	return registered[kind] or {}
+end
+
 return M

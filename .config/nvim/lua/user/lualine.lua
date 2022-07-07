@@ -5,12 +5,14 @@ if not status_ok then
 	return
 end
 
-local status_theme_ok, theme = pcall(require, "lualine.themes.darkplus_dark")
+local status_theme_ok, theme = pcall(require, "lualine.themes.onedarker_alt")
 if not status_theme_ok then
 	return
 end
 
 local icons = require("user.icons")
+
+local functions = require("user.functions")
 
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 70
@@ -21,61 +23,61 @@ local yellow = "#ECBE7B"
 local red = "#EC5F67"
 
 -- darkplus
-vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
-vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
-vim.api.nvim_set_hl(0, "SLLocation", { fg = "#D4D4D4", bg = "#303030" })
-vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
+-- vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
+-- vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
+-- vim.api.nvim_set_hl(0, "SLLocation", { fg = "#D4D4D4", bg = "#303030" })
+-- vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
 
 -- onedarker
--- vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#32363e" })
--- vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = false })
--- vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
--- vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#32363e" })
+vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = false })
+vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
+vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
 
 local mode_color = {
 	-- darkplus
-	n = "#569cd6",
-	i = "#6a9955",
-	v = "#c586c0",
-	[""] = "#c586c0",
-	V = "#c586c0",
-	c = "#4EC9B0",
-	no = "#569cd6",
-	s = "#ce9178",
-	S = "#ce9178",
-	[""] = "#ce9178",
-	ic = "#dcdcaa",
-	R = "#d16969",
-	Rv = "#d16969",
-	cv = "#569cd6",
-	ce = "#569cd6",
-	r = "#d16969",
-	rm = "#4EC9B0",
-	["r?"] = "#4EC9B0",
-	["!"] = "#4EC9B0",
-	t = "#D7BA7D",
+	-- n = "#569cd6",
+	-- i = "#6a9955",
+	-- v = "#c586c0",
+	-- [""] = "#c586c0",
+	-- V = "#c586c0",
+	-- c = "#4EC9B0",
+	-- no = "#569cd6",
+	-- s = "#ce9178",
+	-- S = "#ce9178",
+	-- [""] = "#ce9178",
+	-- ic = "#dcdcaa",
+	-- R = "#d16969",
+	-- Rv = "#d16969",
+	-- cv = "#569cd6",
+	-- ce = "#569cd6",
+	-- r = "#d16969",
+	-- rm = "#4EC9B0",
+	-- ["r?"] = "#4EC9B0",
+	-- ["!"] = "#4EC9B0",
+	-- t = "#D7BA7D",
 
 	-- onedarker
-	-- n = "#61afef",
-	-- i = "#e06c75",
-	-- v = "#c678dd",
-	-- [""] = "#c678dd",
-	-- V = "#c678dd",
-	-- c = "#56b6c2",
-	-- no = "#61afef",
-	-- s = "#d19a66",
-	-- S = "#d19a66",
-	-- [""] = "#d19a66",
-	-- ic = "#e06c75",
-	-- R = "#d19a66",
-	-- Rv = "#e06c75",
-	-- cv = "#61afef",
-	-- ce = "#61afef",
-	-- r = "#e06c75",
-	-- rm = "#56b6c2",
-	-- ["r?"] = "#56b6c2",
-	-- ["!"] = "#56b6c2",
-	-- t = "#98c379",
+	n = "#61afef",
+	i = "#e06c75",
+	v = "#c678dd",
+	[""] = "#c678dd",
+	V = "#c678dd",
+	c = "#56b6c2",
+	no = "#61afef",
+	s = "#d19a66",
+	S = "#d19a66",
+	[""] = "#d19a66",
+	ic = "#e06c75",
+	R = "#d19a66",
+	Rv = "#e06c75",
+	cv = "#61afef",
+	ce = "#61afef",
+	r = "#e06c75",
+	rm = "#56b6c2",
+	["r?"] = "#56b6c2",
+	["!"] = "#56b6c2",
+	t = "#98c379",
 }
 
 local mode = {
@@ -85,7 +87,7 @@ local mode = {
 	color = function()
 		return { bg = mode_color[vim.fn.mode()] }
 	end,
-	padding = { left = 0, right = 0 },
+	padding = 0,
 }
 
 local diagnostics = {
@@ -170,23 +172,6 @@ if not null_ls_status_ok then
 	return
 end
 
-local null_ls_sources__status_ok, null_ls_sources = pcall(require, "null-ls.sources")
-if not null_ls_sources__status_ok then
-	return
-end
-
-local function list_registered_null_ls_providers(file_type, kind)
-	local available_sources = null_ls_sources.get_available(file_type)
-	local registered = {}
-	for _, source in ipairs(available_sources) do
-		for method in pairs(source.methods) do
-			registered[method] = registered[method] or {}
-			table.insert(registered[method], source.name)
-		end
-	end
-	return registered[kind] or {}
-end
-
 local lsp = {
 	function(msg)
 		msg = msg or "LS Inactive"
@@ -206,17 +191,19 @@ local lsp = {
 			end
 		end
 
-		local supported_formatters = list_registered_null_ls_providers(buf_ft, null_ls.methods.FORMATTING)
+		local supported_formatters = functions.list_registered_null_ls_providers(buf_ft, null_ls.methods.FORMATTING)
 		vim.list_extend(buf_client_names, supported_formatters)
 
-		local supported_linters = list_registered_null_ls_providers(buf_ft, null_ls.methods.DIAGNOSTICS)
+		local supported_linters = functions.list_registered_null_ls_providers(buf_ft, null_ls.methods.DIAGNOSTICS)
 		vim.list_extend(buf_client_names, supported_linters)
 
 		return "[" .. table.concat(buf_client_names, ", ") .. "]"
 	end,
-	icon = icons.ui.Cogs .. "LSP:",
+	-- icon = icons.ui.Cogs .. "LSP:",
 	color = { gui = "bold" },
+	padding = 0,
 	cond = hide_in_width,
+	separator = "%#SLSeparator# " .. icons.misc.RightThinBar .. "%* ",
 }
 
 local function python_env_cleanup(venv)
@@ -282,9 +269,9 @@ local progress = {
 	"progress",
 	color = function()
 		-- darkplus
-		return { fg = "#252525", bg = mode_color[vim.fn.mode()] }
+		-- return { fg = "#252525", bg = mode_color[vim.fn.mode()] }
 		-- onedarker
-		-- return { fg = "#1E232A", bg = mode_color[vim.fn.mode()] }
+		return { fg = "#1E232A", bg = mode_color[vim.fn.mode()] }
 	end,
 }
 
@@ -302,7 +289,7 @@ lualine.setup({
 		lualine_a = { mode, branch },
 		lualine_b = { diagnostics },
 		lualine_c = { python_env, current_signature },
-		lualine_x = { diff, spaces, encoding, fileformat, filetype },
+		lualine_x = { lsp, diff, spaces, encoding, fileformat, filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},

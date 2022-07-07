@@ -558,7 +558,7 @@ schemes:
       cyan: "#56b6c2"
       white: "#d4d4d4"
 
-colors: *code_dark
+colors: *one_dark
 
 bell:
   animation: EaseOutExpo
