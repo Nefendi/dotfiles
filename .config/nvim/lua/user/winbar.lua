@@ -42,7 +42,7 @@ local get_filename = function()
 			file_icon_color = ""
 		end
 
-		return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
+		return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#Winbar#" .. filename .. "%*"
 	end
 end
 
@@ -83,7 +83,7 @@ M.get_winbar = function()
 	local value = get_filename()
 
 	if not functions.isempty(value) and functions.get_buf_option("mod") then
-		local mod = "%#LineNr#" .. " " .. icons.misc.SmallDot .. "%*"
+		local mod = "%#LspCodeLens#" .. " " .. icons.misc.SmallDot .. "%*"
 		if navic_added then
 			value = value .. " " .. mod
 		else
