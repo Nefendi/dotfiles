@@ -59,19 +59,17 @@ local mode_color = {
 
 	-- onedarker
 	n = "#519fdf",
-	i = "#d05c65",
+	i = "#c18a56",
 	v = "#b668cd",
 	[""] = "#b668cd",
 	V = "#b668cd",
-	-- c = '#B5CEA8',
-	-- c = '#D7BA7D',
 	c = "#46a6b2",
-	no = "#519fdf",
-	s = "#c18a56",
+	no = "#D16D9E",
+	s = "#88b369",
 	S = "#c18a56",
 	[""] = "#c18a56",
 	ic = "#d05c65",
-	R = "#c18a56",
+	R = "#D16D9E",
 	Rv = "#d05c65",
 	cv = "#519fdf",
 	ce = "#519fdf",
@@ -79,7 +77,7 @@ local mode_color = {
 	rm = "#46a6b2",
 	["r?"] = "#46a6b2",
 	["!"] = "#46a6b2",
-	t = "#88b369",
+	t = "#d05c65",
 }
 
 local mode = {
@@ -125,6 +123,32 @@ local diff = {
 
 local filetype = {
 	"filetype",
+	fmt = function(str)
+		local ui_filetypes = {
+			"help",
+			"packer",
+			"neogitstatus",
+			"NvimTree",
+			"Trouble",
+			"lir",
+			"Outline",
+			"spectre_panel",
+			"toggleterm",
+			"DressingSelect",
+			"",
+		}
+
+		if str == "toggleterm" then
+			local term = icons.ui.Terminal .. " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
+			return term
+		end
+
+		if functions.contains(ui_filetypes, str) then
+			return ""
+		else
+			return str
+		end
+	end,
 	icons_enabled = true,
 	cond = hide_in_width,
 }
