@@ -9,6 +9,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Always start terminals in insert mode
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "term://*" },
+	callback = function()
+		vim.cmd("startinsert!")
+	end,
+})
+
 -- Remove statusline and tabline when in Alpha
 vim.api.nvim_create_autocmd({ "User" }, {
 	pattern = { "AlphaReady" },
