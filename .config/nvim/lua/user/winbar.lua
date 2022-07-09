@@ -80,24 +80,17 @@ M.get_winbar = function()
 	if excludes() then
 		return
 	end
+
 	local value = get_filename()
 
-	if not functions.isempty(value) and functions.get_buf_option("mod") then
-		local mod = "%#LspCodeLens#" .. " " .. icons.misc.SmallDot .. "%*"
-		if navic_added then
-			value = value .. " " .. mod
-		else
-			value = value .. mod
-		end
-	end
-
-	local navic_added = false
 	if not functions.isempty(value) then
 		local navic_value = get_navic()
-		value = value .. " " .. navic_value
-		if not functions.isempty(navic_value) then
-			navic_added = true
+
+		if functions.get_buf_option("mod") then
+			value = value .. "%#LspCodeLens#" .. " " .. icons.misc.SmallDot .. "%*"
 		end
+
+		value = value .. " " .. navic_value
 	end
 
 	local status_ok, _ = pcall(vim.api.nvim_set_option_value, "winbar", value, { scope = "local" })
