@@ -10,4 +10,5 @@ spectre.setup({
 			options = { "ignore-case", "hidden" },
 		},
 	},
+	is_insert_mode = true,
 })
