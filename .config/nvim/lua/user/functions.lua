@@ -39,4 +39,13 @@ function M.list_registered_null_ls_providers(file_type, kind)
 	return registered[kind] or {}
 end
 
+function M.contains(t, value)
+	for _, v in pairs(t) do
+		if v == value then
+			return true
+		end
+	end
+	return false
+end
+
 return M

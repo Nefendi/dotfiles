@@ -1,6 +1,7 @@
 local M = {}
 
 local icons = require("user.icons")
+local functions = require("user.functions")
 
 M.setup = function()
 	local signs = {
@@ -135,13 +136,13 @@ M.on_attach = function(client, bufnr)
 		"ltex",
 	}
 
-	for _, server_name in ipairs(not_supported_navic_servers) do
-		if client.name == server_name then
-			return
-		end
+	if functions.contains(not_supported_navic_servers, client.name) then
+		goto after_navic_setup
 	end
 
 	navic.attach(client, bufnr)
+
+    ::after_navic_setup::
 end
 
 function M.enable_format_on_save(notify)
