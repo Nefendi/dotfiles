@@ -31,8 +31,8 @@ vim.api.nvim_set_hl(0, "NavicIconsStruct", { default = true, bg = "#1e222a", fg 
 vim.api.nvim_set_hl(0, "NavicIconsEvent", { default = true, bg = "#1e222a", fg = "#B180D7" })
 vim.api.nvim_set_hl(0, "NavicIconsOperator", { default = true, bg = "#1e222a", fg = "#abb2bf" })
 vim.api.nvim_set_hl(0, "NavicIconsTypeParameter", { default = true, bg = "#1e222a", fg = "#abb2bf" })
-vim.api.nvim_set_hl(0, "NavicText", { default = true, bg = "#1e222a", fg = "#abb2bf" })
-vim.api.nvim_set_hl(0, "NavicSeparator", { default = true, bg = "#1e222a", fg = "#abb2bf" })
+vim.api.nvim_set_hl(0, "NavicText", { default = true, bg = "#1e222a", fg = "#6b737f" })
+vim.api.nvim_set_hl(0, "NavicSeparator", { default = true, bg = "#1e222a", fg = "#6b737f" })
 
 navic.setup({
 	icons = {
@@ -68,5 +68,4 @@ navic.setup({
 	depth = 0,
 	depth_limit_indicator = "..",
 	highlight = true,
-	text_hl = "Winbar",
 })

@@ -37,10 +37,13 @@ local get_filename = function()
 		local hl_group = "FileIconColor" .. extension
 
 		vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
+
 		if functions.isempty(file_icon) then
 			file_icon = icons.kind.File
 			file_icon_color = ""
 		end
+
+		vim.api.nvim_set_hl(0, "Winbar", { fg = "#6b737f" })
 
 		return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#Winbar#" .. filename .. "%*"
 	end
