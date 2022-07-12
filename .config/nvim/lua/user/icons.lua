@@ -101,6 +101,7 @@ return {
 		ClosedFullFolder = "",
 		ClosedEmptyFolder = "",
 		Terminal = "",
+		Function = "",
 	},
 	misc = {
 		Robot = "ﮧ",
