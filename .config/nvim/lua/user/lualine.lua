@@ -33,6 +33,8 @@ vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#32363e" })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = false })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
 
 local mode_color = {
 	-- darkplus
@@ -139,7 +141,14 @@ local filetype = {
 		}
 
 		if str == "toggleterm" then
-			local term = icons.ui.Terminal .. " " .. vim.api.nvim_buf_get_var(0, "toggle_number")
+			local term = "%#SLTermIcon#"
+				.. icons.ui.Terminal
+				.. " "
+				.. "%*"
+				.. "%#SLFG#"
+				.. vim.api.nvim_buf_get_var(0, "toggle_number")
+				.. " "
+				.. "%*"
 			return term
 		end
 
@@ -248,11 +257,11 @@ local python_env = {
 		if vim.bo.filetype == "python" then
 			local venv = os.getenv("CONDA_DEFAULT_ENV")
 			if venv then
-				return string.format(" %s (%s)", icons.misc.Python, python_env_cleanup(venv))
+				return string.format("%s (%s)", icons.misc.Python, python_env_cleanup(venv))
 			end
 			venv = os.getenv("VIRTUAL_ENV")
 			if venv then
-				return string.format(" %s (%s)", icons.misc.Python, python_env_cleanup(venv))
+				return string.format("%s (%s)", icons.misc.Python, python_env_cleanup(venv))
 			end
 			return ""
 		end
@@ -268,9 +277,10 @@ local current_signature = {
 			return
 		end
 		local sig = require("lsp_signature").status_line(30)
-		return "%#SLSeparator#" .. sig.hint .. "%*"
+		return "%#SLSeparator# " .. icons.misc.ThinBar .. " " .. sig.hint .. "%*"
 	end,
 	cond = hide_in_width,
+	padding = 0,
 }
 
 local treesitter = {
