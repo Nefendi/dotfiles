@@ -242,14 +242,6 @@ local mappings = {
 			"Signature Help",
 		},
 	},
-
-	t = {
-		name = "Terminal",
-		["1"] = { ":1ToggleTerm<cr>", "1" },
-		["2"] = { ":2ToggleTerm<cr>", "2" },
-		["3"] = { ":3ToggleTerm<cr>", "3" },
-		["4"] = { ":4ToggleTerm<cr>", "4" },
-	},
 }
 
 local vopts = {

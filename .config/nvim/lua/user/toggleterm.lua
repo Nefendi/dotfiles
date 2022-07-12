@@ -42,15 +42,44 @@ local lazygit = Terminal:new({
 	cmd = "lazygit",
 	hidden = true,
 	direction = "tab",
-	on_open = function(term)
+	on_open = function(_)
 		vim.cmd("startinsert!")
 		vim.cmd("set laststatus=0")
 	end,
-	on_close = function(term)
+	on_close = function(_)
 		vim.cmd("set laststatus=3")
 	end,
+	count = 99,
 })
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
+
+local opts = { silent = true }
+
+local keymap = vim.keymap.set
+
+keymap("n", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
+keymap("t", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
+keymap("i", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
+
+keymap("n", "<m-2>", "<cmd>2ToggleTerm direction=float<cr>", opts)
+keymap("t", "<m-2>", "<cmd>2ToggleTerm direction=float<cr>", opts)
+keymap("i", "<m-2>", "<cmd>2ToggleTerm direction=float<cr>", opts)
+
+keymap("n", "<m-3>", "<cmd>3ToggleTerm direction=float<cr>", opts)
+keymap("t", "<m-3>", "<cmd>3ToggleTerm direction=float<cr>", opts)
+keymap("i", "<m-3>", "<cmd>3ToggleTerm direction=float<cr>", opts)
+
+keymap("n", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
+keymap("t", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
+keymap("i", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
+
+-- keymap("n", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
+-- keymap("t", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
+-- keymap("i", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
+
+-- keymap("n", "<m-3>", "<cmd>2ToggleTerm size=80 direction=vertical<cr>", opts)
+-- keymap("t", "<m-3>", "<cmd>2ToggleTerm size=80 direction=vertical<cr>", opts)
+-- keymap("i", "<m-3>", "<cmd>2ToggleTerm size=80 direction=vertical<cr>", opts)
