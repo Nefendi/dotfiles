@@ -26,6 +26,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Splits
+keymap("n", "<m-s>", "<cmd>split<cr>", opts)
+keymap("n", "<m-v>", "<cmd>vsplit<cr>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -48,6 +52,7 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 -- Close
 -- keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
 -- keymap("n", "<leader>q", "<C-w>q", opts)
+keymap("n", "<m-q>", "<cmd>:q<cr>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
