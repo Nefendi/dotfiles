@@ -88,6 +88,9 @@ keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
 keymap("n", "<S-h>", "<Plug>(CybuPrev)")
 keymap("n", "<S-l>", "<Plug>(CybuNext)")
 
+-- JABS
+keymap("n", "<m-b>", "<cmd>JABSOpen<cr>", opts)
+
 -- NvimTree
 -- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
