@@ -1,3 +1,3 @@
 return {
-	filetypes = { "bib", "gitcommit", "org", "plaintex", "rst", "rnoweb", "tex" },
+	filetypes = { "bib", "org", "plaintex", "rst", "rnoweb", "tex" },
 }
