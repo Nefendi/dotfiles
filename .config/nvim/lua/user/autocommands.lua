@@ -62,6 +62,14 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
+-- Check for buffers changed outside of vim upon entering a buffer
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		vim.cmd("checktime")
+	end,
+})
+
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
