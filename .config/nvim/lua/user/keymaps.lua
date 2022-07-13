@@ -39,8 +39,8 @@ keymap("x", "<A-j>", ":m '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 -- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -83,6 +83,10 @@ end
 keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
 
 -- Plugins --
+
+-- Cybu
+keymap("n", "<S-h>", "<Plug>(CybuPrev)")
+keymap("n", "<S-l>", "<Plug>(CybuNext)")
 
 -- NvimTree
 -- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)

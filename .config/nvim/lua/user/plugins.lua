@@ -68,6 +68,7 @@ return packer.startup(function(use)
 	use({ "nvim-pack/nvim-spectre", commit = "a52139da068ee4d0860810af7c6b6d48d3cde603" })
 	use({ "stevearc/dressing.nvim", commit = "af179837e1cdddfb164f0296883951b2255c46d2" })
 	use({ "abecodes/tabout.nvim", commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca" })
+	use({ "ghillb/cybu.nvim", commit = "aee926d1bc069194ae32e0e490d52fa3c1ed1bb7" })
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "724aa3ab5efbdfe83ae0ea1ad9d44166b1685ba8" })
