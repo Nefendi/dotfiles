@@ -1,4 +1,8 @@
-local opts = { silent = true }
+-- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/keymaps.lua
+
+local M = {}
+
+local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -63,6 +67,21 @@ keymap("v", ">", ">gv", opts)
 -- Open with a system application
 keymap("n", "gx", [[:silent execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
+M.show_documentation = function()
+	local filetype = vim.bo.filetype
+	if vim.tbl_contains({ "vim", "help" }, filetype) then
+		vim.cmd("h " .. vim.fn.expand("<cword>"))
+	elseif vim.tbl_contains({ "man" }, filetype) then
+		vim.cmd("Man " .. vim.fn.expand("<cword>"))
+	elseif vim.fn.expand("%:t") == "Cargo.toml" then
+		require("crates").show_popup()
+	else
+		vim.lsp.buf.hover()
+	end
+end
+
+keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
+
 -- Plugins --
 
 -- NvimTree
@@ -106,3 +125,5 @@ keymap("n", "gx", [[:silent execute '!xdg-open ' . shellescape(expand('<cfile>')
 
 -- Formatting
 -- keymap("n", "<leader>F", "<cmd>LspToggleAutoFormat<cr>", opts)
+
+return M
