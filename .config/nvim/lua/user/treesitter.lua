@@ -3,22 +3,21 @@ if not status_ok then
 	return
 end
 
-local rainbow_status_ok, _ = pcall(require, "rainbow")
-if not rainbow_status_ok then
-	return
-end
-
 configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
+		disable = { "markdown" }, -- list of language that will be disabled
 	},
 	autopairs = {
 		enable = true,
 	},
+	autotag = {
+		enable = true,
+	},
 	indent = { enable = true, disable = { "python", "css" } },
+	context_commentstring = { enable = true },
 	rainbow = {
 		enable = true,
 		extended_mode = false,
@@ -35,5 +34,6 @@ configs.setup({
 			"#946EaD",
 			"#c7aA6D",
 		},
+		disable = { "html" },
 	},
 })
