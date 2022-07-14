@@ -25,7 +25,7 @@ local red = "#EC5F67"
 -- darkplus
 -- vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "#303030" })
 -- vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "#303030", bold = false })
--- vim.api.nvim_set_hl(0, "SLLocation", { fg = "#D4D4D4", bg = "#303030" })
+-- vim.api.nvim_set_hl(0, "SLProgress", { fg = "#D4D4D4", bg = "#303030" })
 -- vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "#252525" })
 
 -- onedarker
@@ -296,18 +296,18 @@ local treesitter = {
 
 local location = {
 	"location",
-	color = "SLLocation",
-	separator = { left = " " },
-}
-
-local progress = {
-	"progress",
 	color = function()
 		-- darkplus
 		-- return { fg = "#252525", bg = mode_color[vim.fn.mode()] }
 		-- onedarker
 		return { fg = "#1E232A", bg = mode_color[vim.fn.mode()] }
 	end,
+}
+
+local progress = {
+	"progress",
+	color = "SLProgress",
+	separator = { left = " " },
 }
 
 lualine.setup({
@@ -325,7 +325,7 @@ lualine.setup({
 		lualine_b = { diagnostics },
 		lualine_c = { python_env, current_signature },
 		lualine_x = { diff, spaces, encoding, fileformat, filetype },
-		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_y = { progress },
+		lualine_z = { location },
 	},
 })
