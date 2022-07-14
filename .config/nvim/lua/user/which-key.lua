@@ -170,6 +170,7 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		n = { "<cmd>Telescope notify<cr>", "Find Notifications" },
+		g = { "<cmd>Telescope git_branches<cr>", "List Git Branches" },
 	},
 
 	g = {
