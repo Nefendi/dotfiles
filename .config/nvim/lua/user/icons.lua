@@ -102,6 +102,10 @@ return {
 		ClosedEmptyFolder = "",
 		Terminal = "",
 		Function = "",
+		CheckCodicon = "",
+		FireCodicon = "",
+		DashboardCodicon = "",
+		NoteCodicon = "",
 	},
 	misc = {
 		Robot = "ﮧ",
