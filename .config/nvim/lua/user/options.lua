@@ -37,7 +37,7 @@ vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applicati
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
-vim.opt.relativenumber = false -- set relative numbered lines
+vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 -- vim.opt.fillchars.eob = " "
 -- vim.opt.colorcolumn = "120"
