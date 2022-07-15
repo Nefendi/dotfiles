@@ -53,7 +53,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
-	use({ "kylechui/nvim-surround", commit = "0624c8777b69ea5d9d76c24bc2b97a8092ed9ae2" })
+	use({ "kylechui/nvim-surround", commit = "a498d10222e8712b42d9115b9748449c2d1cf645" })
 	use({ "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" })
 	use({ "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" })
 	use({ "folke/todo-comments.nvim", commit = "98b1ebf198836bdc226c0562b9f906584e6c400e" })
@@ -64,7 +64,7 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" })
 	use({ "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" })
 	use({ "nvim-pack/nvim-spectre", commit = "a52139da068ee4d0860810af7c6b6d48d3cde603" })
-	use({ "stevearc/dressing.nvim", commit = "af179837e1cdddfb164f0296883951b2255c46d2" })
+	use({ "stevearc/dressing.nvim", commit = "1e60c07ae9a8557ac6395144606c3a5335ad47e0" })
 	use({ "abecodes/tabout.nvim", commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca" })
 	use({ "ghillb/cybu.nvim", commit = "aee926d1bc069194ae32e0e490d52fa3c1ed1bb7" })
 	use({ "ChristianChiarulli/JABS.nvim", commit = "aa9966994fdabbd89a3d8b3b3505ccccdbe8125a" })
@@ -130,7 +130,8 @@ return packer.startup(function(use)
 	-- Rust
 	use({
 		"simrat39/rust-tools.nvim",
-		commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
+		-- commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
+		branch = "modularize_and_inlay_rewrite",
 	})
 
 	-- Telescope
