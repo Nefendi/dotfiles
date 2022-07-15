@@ -15,9 +15,10 @@ configs.setup({
 	},
 	autotag = {
 		enable = true,
+		disable = { "markdown" },
 	},
-	indent = { enable = true, disable = { "python", "css" } },
-	context_commentstring = { enable = true },
+	indent = { enable = true, disable = { "python", "css", "markdown" } },
+	context_commentstring = { enable = true, disable = { "markdown" } },
 	rainbow = {
 		enable = true,
 		extended_mode = false,
