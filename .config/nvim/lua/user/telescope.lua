@@ -19,12 +19,14 @@ telescope.setup({
 			".git/",
 			".idea/",
 			".vscode/",
+			"htmlcov/",
 
 			-- JavaScript
 			"node_modules/",
 
 			-- Python
 			".venv/",
+			"venv/",
 			".mypy_cache/",
 			".pytest_cache/",
 			"__pycache__",
