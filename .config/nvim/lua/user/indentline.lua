@@ -8,11 +8,15 @@ local icons = require("user.icons")
 vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {
 	"help",
+	"startify",
+	"dashboard",
 	"packer",
 	"neogitstatus",
 	"NvimTree",
 	"Trouble",
+	"text",
 }
+
 vim.g.indentLine_enabled = 1
 vim.g.indent_blankline_char = icons.misc.ThinBar
 -- vim.g.indent_blankline_char_list = { "|", "¦", "┆", "┊" }
