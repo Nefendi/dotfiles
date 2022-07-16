@@ -64,7 +64,7 @@ local opts = {
 
 local mappings = {
 	["b"] = {
-		"<cmd>JABSOpen<cr>",
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
 		"Buffers",
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
