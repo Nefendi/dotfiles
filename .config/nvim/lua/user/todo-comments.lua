@@ -16,7 +16,7 @@ local perf_purple = "#7C3AED"
 todo_comments.setup({
 	keywords = {
 		FIX = {
-			icon = icons.misc.Bug, -- icon used for the sign, and in search results
+			icon = icons.misc.BugCodicon, -- icon used for the sign, and in search results
 			color = error_red, -- can be a hex color, or a named color (see below)
 			alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
 		},

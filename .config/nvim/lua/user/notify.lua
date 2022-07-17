@@ -35,7 +35,7 @@ notify.setup({
 		ERROR = icons.diagnostics_codicons.Error,
 		WARN = icons.diagnostics_codicons.Warning,
 		INFO = icons.diagnostics_codicons.Info,
-		DEBUG = icons.misc.Bug,
+		DEBUG = icons.misc.BugCodicon,
 		TRACE = icons.misc.Pencil,
 	},
 })

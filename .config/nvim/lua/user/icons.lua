@@ -125,6 +125,7 @@ return {
 		Python = "",
 		Tree = "",
 		Bug = "",
+		BugCodicon = "",
 		Pencil = "",
 	},
 }
