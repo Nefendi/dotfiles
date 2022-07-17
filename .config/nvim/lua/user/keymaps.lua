@@ -96,6 +96,9 @@ keymap("n", "<S-l>", "<Plug>(CybuNext)")
 -- JABS
 -- keymap("n", "<m-b>", "<cmd>JABSOpen<cr>", opts)
 
+-- Jaq
+keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
+
 -- NvimTree
 -- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 

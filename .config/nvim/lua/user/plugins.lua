@@ -69,6 +69,7 @@ return packer.startup(function(use)
 	use({ "ghillb/cybu.nvim", commit = "aee926d1bc069194ae32e0e490d52fa3c1ed1bb7" })
 	use({ "ChristianChiarulli/JABS.nvim", commit = "aa9966994fdabbd89a3d8b3b3505ccccdbe8125a" })
 	use({ "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" })
+	use({ "is0n/jaq-nvim", commit = "051842d30357100e397dc6e904f813841c8edcb7" })
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "b79ebd09779472c00e19c38caf698aa43b51fe1c" })
