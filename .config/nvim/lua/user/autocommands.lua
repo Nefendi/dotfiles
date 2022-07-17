@@ -2,7 +2,17 @@
 
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect", "null-ls-info" },
+	pattern = {
+		"qf",
+		"help",
+		"man",
+		"lspinfo",
+		"spectre_panel",
+		"lir",
+		"DressingSelect",
+		"null-ls-info",
+		"tsplayground",
+	},
 	callback = function()
 		vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR> 

@@ -243,6 +243,13 @@ local mappings = {
 			"Signature Help",
 		},
 	},
+
+	T = {
+		name = "Treesitter",
+		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
+		p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
+		r = { "<cmd>TSToggle rainbow<cr>", "Toggle Rainbow" },
+	},
 }
 
 local vopts = {
