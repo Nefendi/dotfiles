@@ -165,18 +165,20 @@ local mappings = {
 		T = { "<cmd>Telescope grep_string<cr>", "Find Current Word" },
 		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help" },
+		H = { "<cmd>Telescope highlights<cr>", "Highlights" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		n = { "<cmd>Telescope notify<cr>", "Find Notifications" },
-		g = { "<cmd>Telescope git_branches<cr>", "List Git Branches" },
 	},
 
 	g = {
 		name = "Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		l = { "<cmd>GitBlameToggle<cr>", "Toggle Blame" },
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout Branch" },
 		c = {
 			name = "+Conflicts",
 			o = { "<cmd>GitConflictChooseOurs<cr>", "Accept Current Changes" },
@@ -198,7 +200,6 @@ local mappings = {
 		-- 	"Undo Stage Hunk",
 		-- },
 		-- o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		-- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		-- c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		-- d = {
 		-- 	"<cmd>Gitsigns diffthis HEAD<cr>",
