@@ -21,6 +21,7 @@ M.winbar_filetype_exclude = {
 	"toggleterm",
 	"DressingSelect",
 	"Jaq",
+	"glowpreview",
 	"dapui_scopes",
 	"dapui_breakpoints",
 	"dapui_stacks",
