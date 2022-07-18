@@ -117,7 +117,7 @@ return packer.startup(function(use)
 	use({ "j-hui/fidget.nvim", commit = "46d1110435f1f023c22fa95bb10b3906aecd7bde" })
 	use({
 		"SmiteshP/nvim-navic",
-		commit = "f0a354225570521bace3244d2bce91fdb484d4cd",
+		commit = "94bf6fcb1dc27bdad230d9385da085e72c390019",
 		requires = { "neovim/nvim-lspconfig" },
 	})
 
