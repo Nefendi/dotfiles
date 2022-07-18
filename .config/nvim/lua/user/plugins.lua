@@ -136,7 +136,7 @@ return packer.startup(function(use)
 	})
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = "b79cd6c88b3d96b0f49cb7d240807cd59b610cd8" })
+	use({ "nvim-telescope/telescope.nvim", commit = "6bddc38c25af7b50f99cb0c035248d7272971810" })
 	use({ "nvim-telescope/telescope-ui-select.nvim", commit = "62ea5e58c7bbe191297b983a9e7e89420f581369" })
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
