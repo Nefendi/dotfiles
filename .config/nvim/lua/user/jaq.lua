@@ -29,7 +29,7 @@ jaq_nvim.setup({
 			width = 0.8,
 			x = 0.5,
 			y = 0.5,
-			winblend = 20,
+			winblend = 10,
 		},
 		terminal = {
 			position = "vert",
