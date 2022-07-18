@@ -119,7 +119,7 @@ local diff = {
 		removed = { fg = red },
 	},
 	cond = hide_in_width,
-	separator = "%#SLSeparator# " .. icons.misc.ThinBar .. "%*",
+	separator = "%#SLSeparator# " .. icons.misc.ThinBar .. " " .. "%*",
 }
 
 local filetype = {
@@ -186,13 +186,13 @@ local spaces = {
 		return "spaces: " .. size
 	end,
 	cond = hide_in_width,
-	-- separator = "%#SLSeparator#" .. icons.misc.RightThinBar .. "%*",
+	-- separator = "%#SLSeparator# " .. icons.misc.ThinBar .. " " .. "%*",
 }
 
 local fileformat = {
 	"fileformat",
 	icons_enabled = false,
-	separator = "%#SLSeparator#" .. icons.misc.RightThinBar .. " %*",
+	separator = "%#SLSeparator# " .. icons.misc.ThinBar .. " %*",
 }
 
 local encoding = {
@@ -237,7 +237,7 @@ local lsp = {
 	color = { gui = "bold" },
 	padding = 0,
 	cond = hide_in_width,
-	separator = "%#SLSeparator# " .. icons.misc.RightThinBar .. "%* ",
+	separator = "%#SLSeparator# " .. icons.misc.ThinBar .. " %*",
 }
 
 local function python_env_cleanup(venv)

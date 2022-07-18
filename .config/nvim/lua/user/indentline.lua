@@ -18,7 +18,7 @@ vim.g.indent_blankline_filetype_exclude = {
 }
 
 vim.g.indentLine_enabled = 1
-vim.g.indent_blankline_char = icons.misc.ThinBar
+vim.g.indent_blankline_char = icons.misc.LeftThinBar
 -- vim.g.indent_blankline_char_list = { "|", "¦", "┆", "┊" }
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_first_indent_level = true
