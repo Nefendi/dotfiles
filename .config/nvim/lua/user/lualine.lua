@@ -34,6 +34,7 @@ vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = 
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLError", { fg = "#bf616a", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLWarning", { fg = "#C68A75", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLInfo", { fg = "#D7BA7D", bg = "#282c34" })
@@ -176,6 +177,7 @@ local branch = {
 	icons_enabled = true,
 	icon = "%#SLGitIcon#" .. icons.git.Branch .. "%*" .. "%#SLBranchName#",
 	colored = false,
+	separator = { right = " " },
 }
 
 local spaces = {
