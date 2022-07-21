@@ -131,8 +131,7 @@ return packer.startup(function(use)
 	-- Rust
 	use({
 		"simrat39/rust-tools.nvim",
-		-- commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
-		branch = "modularize_and_inlay_rewrite",
+		commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
 	})
 
 	-- Telescope
