@@ -103,7 +103,7 @@ keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 -- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<m-g>", ":Telescope git_branches<CR>", opts)
+-- keymap("n", "<m-g>", ":Telescope git_branches<CR>", opts)
 -- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 -- keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 -- keymap("n", "<leader>fT", ":Telescope grep_string<CR>", opts)
