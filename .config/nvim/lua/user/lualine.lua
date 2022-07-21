@@ -34,6 +34,10 @@ vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = "#32363e", bold = 
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "#abb2bf", bg = "#32363e" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "#282c34" })
 vim.api.nvim_set_hl(0, "SLTermIcon", { fg = "#b668cd", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLError", { fg = "#bf616a", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLWarning", { fg = "#C68A75", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLInfo", { fg = "#D7BA7D", bg = "#282c34" })
+vim.api.nvim_set_hl(0, "SLHint", { fg = "#88c0d0", bg = "#282c34" })
 
 local mode_color = {
 	-- darkplus
@@ -96,10 +100,10 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info", "hint" },
 	symbols = {
-		error = icons.diagnostics_codicons.Error .. " ",
-		warn = icons.diagnostics_codicons.Warning .. " ",
-		info = icons.diagnostics_codicons.Info .. " ",
-		hint = icons.diagnostics_codicons.Hint .. " ",
+		error = "%#SLError#" .. icons.diagnostics_codicons.Error .. "%*" .. " ",
+		warn = "%#SLWarning#" .. icons.diagnostics_codicons.Warning .. "%*" .. " ",
+		info = "%#SLInfo#" .. icons.diagnostics_codicons.Info .. "%*" .. " ",
+		hint = "%#SLHint#" .. icons.diagnostics_codicons.Hint .. "%*" .. " ",
 	},
 	colored = false,
 	update_in_insert = false,
