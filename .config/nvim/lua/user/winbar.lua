@@ -28,6 +28,7 @@ M.winbar_filetype_exclude = {
 	"dapui_watches",
 	"dap-repl",
 	"dap-terminal",
+	"dapui_console",
 	"",
 }
 
