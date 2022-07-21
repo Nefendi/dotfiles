@@ -40,7 +40,7 @@ local setup = {
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 0,
+		winblend = 10,
 	},
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -63,20 +63,20 @@ local opts = {
 }
 
 local mappings = {
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
+	b = {
+		"<cmd>Telescope buffers<cr>",
 		"Buffers",
 	},
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w<CR>", "Write" },
-	["a"] = { "<cmd>wa<CR>", "Write All" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-	["q"] = { "<C-w>q", "Quit" },
+	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+	w = { "<cmd>w<CR>", "Write" },
+	a = { "<cmd>wa<CR>", "Write All" },
+	h = { "<cmd>nohlsearch<CR>", "No HL" },
+	q = { "<C-w>q", "Quit" },
 	["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	P = { "<cmd>Telescope projects<cr>", "Projects" },
 	[" "] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"<cmd>Telescope find_files<cr>",
 		"Find Files",
 	},
 
@@ -161,12 +161,12 @@ local mappings = {
 		name = "Find",
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		f = {
-			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"<cmd>Telescope find_files<cr>",
 			"Find Files",
 		},
 		t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 		T = { "<cmd>Telescope grep_string<cr>", "Find Current Word" },
-		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+		i = { "<cmd>Telescope media_files<cr>", "Media" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" },
 		H = { "<cmd>Telescope highlights<cr>", "Highlights" },

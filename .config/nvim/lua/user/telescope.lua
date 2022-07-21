@@ -9,6 +9,7 @@ local icons = require("user.icons")
 
 telescope.setup({
 	defaults = {
+		winblend = 10,
 		prompt_prefix = icons.ui.Telescope .. " ",
 		selection_caret = icons.ui.EnterArrow .. " ",
 		path_display = { "smart" },
@@ -73,9 +74,20 @@ telescope.setup({
 				-- Haskell
 				"!.stack-work/",
 			},
+			theme = "dropdown",
+			previewer = false,
 		},
 		live_grep = {
+			require("telescope.themes").get_dropdown(),
+		},
+		grep_string = {
+			require("telescope.themes").get_dropdown(),
 			only_sort_text = true,
+		},
+		buffers = {
+			theme = "dropdown",
+			previewer = false,
+			initial_mode = "normal",
 		},
 	},
 	extensions = {
