@@ -152,7 +152,7 @@ function M.enable_format_on_save(notify)
 	vim.cmd([[
     augroup format_on_save
       autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format()
+      autocmd BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 5000 })
     augroup end
   ]])
 
