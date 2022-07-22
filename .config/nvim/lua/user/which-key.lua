@@ -89,11 +89,6 @@ local mappings = {
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 
-	m = {
-		name = "Markdown",
-		g = { "<cmd>Glow<cr>", "Glow Preview" },
-	},
-
 	o = {
 		name = "Options",
 		w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
@@ -117,31 +112,6 @@ local mappings = {
 			"Replace Word",
 		},
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-	},
-
-	R = {
-		name = "Rust",
-		h = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Inlay Hints" },
-		r = { "<cmd>RustRunnables<Cr>", "Runnables" },
-		e = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
-		c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
-		p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
-		g = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
-		w = { "<cmd>RustReloadWorkspace<Cr>", "Reload Workspace" },
-	},
-
-	G = {
-		name = "+Go",
-		b = { "<cmd>GoBuild<cr>", "Build" },
-		r = { "<cmd>GoRun<cr>", "Run" },
-		t = { "<cmd>GoTest<cr>", "Test" },
-		c = { "<cmd>GoCoverageToggle<cr>", "Toggle coverage" },
-		g = { "<cmd>GoGenerate<cr>", "Generate" },
-		i = { "<cmd>GoImpl<cr>", "Implement" },
-		T = { "<cmd>GoAddTags<cr>", "Add tags" },
-		R = { "<cmd>GoRemoveTags<cr>", "Remove tags" },
-		e = { "<cmd>GoIfErr<cr>", "Add if-err statement" },
-		f = { "<cmd>GoFillStruct<cr>", "Fill struct" },
 	},
 
 	d = {
