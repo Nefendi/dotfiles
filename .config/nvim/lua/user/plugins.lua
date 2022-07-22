@@ -72,7 +72,7 @@ return packer.startup(function(use)
 	use({ "is0n/jaq-nvim", commit = "051842d30357100e397dc6e904f813841c8edcb7" })
 
 	-- Colorschemes
-	use({ "lunarvim/onedarker.nvim", commit = "5552efce17cd68eff66353533dbe492a596ea840" })
+	use({ "lunarvim/onedarker.nvim", commit = "cd2e3aadde6eb590ad9bb9f7deb7b3854f2e0324" })
 	use({ "projekt0n/github-nvim-theme", commit = "1cc4a8d508bc6b846c72b9e629e8188ac24d0f13" })
 	use({ "ellisonleao/gruvbox.nvim", commit = "3352c12c083d0ab6285a9738b7679e24e7602411" })
 	use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" })
