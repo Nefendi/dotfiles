@@ -37,5 +37,6 @@ todo_comments.setup({
 	highlight = {
 		keyword = "fg", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
 		after = "fg", -- "fg" or "bg" or empty
+		exclude = { "markdown" },
 	},
 })
