@@ -39,7 +39,6 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
--- vim.opt.fillchars.eob = " "
--- vim.opt.colorcolumn = "120"
--- vim.opt.textwidth = 120
--- vim.opt.linebreak = true
+vim.opt.fillchars:append({
+	stl = " ",
+})
