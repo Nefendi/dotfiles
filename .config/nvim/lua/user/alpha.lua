@@ -43,9 +43,9 @@ end
 
 dashboard.section.footer.val = footer()
 
-dashboard.section.footer.opts.hl = "Constant"
+dashboard.section.footer.opts.hl = "Keyword"
 dashboard.section.header.opts.hl = "Macro"
-dashboard.section.buttons.opts.hl = "Macro"
+dashboard.section.buttons.opts.hl = "Type"
 
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
