@@ -1,6 +1,6 @@
 -- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/autocommands.lua
 
--- Use 'q' to quit from common plugins
+-- Use 'q' and '<esc>' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = {
 		"qf",
@@ -16,6 +16,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	callback = function()
 		vim.cmd([[
       nnoremap <silent> <buffer> q :close<CR> 
+      nnoremap <silent> <buffer> <esc> :close<CR>
       set nobuflisted 
     ]])
 	end,
