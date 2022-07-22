@@ -70,6 +70,12 @@ return packer.startup(function(use)
 	use({ "ChristianChiarulli/JABS.nvim", commit = "aa9966994fdabbd89a3d8b3b3505ccccdbe8125a" })
 	use({ "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" })
 	use({ "is0n/jaq-nvim", commit = "051842d30357100e397dc6e904f813841c8edcb7" })
+	use({
+		"iamcco/markdown-preview.nvim",
+		commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96",
+		run = "cd app && npm install",
+		ft = "markdown",
+	})
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "cd2e3aadde6eb590ad9bb9f7deb7b3854f2e0324" })

@@ -16,9 +16,10 @@ local mappings = {
 	L = {
 		name = "Markdown",
 		g = { "<cmd>Glow<cr>", "Glow Preview" },
+		p = { "<cmd>MarkdownPreviewToggle<cr>", "Browser Preview" },
 	},
 }
 
 which_key.register(mappings, opts)
 
-vim.cmd([[setlocal conceallevel=2]])
+-- vim.cmd([[setlocal conceallevel=2]])
