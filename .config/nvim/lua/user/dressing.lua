@@ -34,7 +34,7 @@ dressing.setup({
 		min_width = { 20, 0.2 },
 
 		-- Window transparency (0-100)
-		winblend = 10,
+		winblend = 0,
 		-- Change default highlight groups (see :help winhl)
 		winhighlight = "",
 
@@ -76,7 +76,7 @@ dressing.setup({
 				filetype = "DressingSelect",
 			},
 			win_options = {
-				winblend = 10,
+				winblend = 0,
 			},
 			max_width = 80,
 			max_height = 40,
@@ -93,7 +93,7 @@ dressing.setup({
 			relative = "editor",
 
 			-- Window transparency (0-100)
-			winblend = 10,
+			winblend = 0,
 			-- Change default highlight groups (see :help winhl)
 			winhighlight = "",
 

@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- 		"null-ls-info",
 -- 	},
 -- 	callback = function()
--- 		vim.api.nvim_win_set_config(vim.api.nvim_get_current_win(), { winblend = 10 })
+-- 		vim.api.nvim_win_set_config(vim.api.nvim_get_current_win(), { winblend = 0 })
 -- 	end,
 -- })
 

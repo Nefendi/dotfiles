@@ -9,7 +9,7 @@ local icons = require("user.icons")
 
 telescope.setup({
 	defaults = {
-		winblend = 10,
+		winblend = 0,
 		prompt_prefix = icons.ui.Telescope .. " ",
 		selection_caret = icons.ui.EnterArrow .. " ",
 		path_display = { "smart" },
