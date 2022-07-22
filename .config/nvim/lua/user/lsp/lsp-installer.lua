@@ -26,7 +26,12 @@ local servers = {
 	"hls",
 }
 
-lsp_installer.setup()
+lsp_installer.setup({
+    -- ensure_installed = servers,
+    ui = {
+        border = "rounded",
+    },
+})
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then

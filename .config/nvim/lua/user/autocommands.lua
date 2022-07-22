@@ -21,6 +21,30 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Set rounded border
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = {
+		"lspinfo",
+		"null-ls-info",
+	},
+	callback = function()
+		vim.api.nvim_win_set_config(vim.api.nvim_get_current_win(), { border = "rounded" })
+	end,
+})
+
+-- This does not work
+-- Set winblend
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+-- 	pattern = {
+-- 		"lspinfo",
+-- 		"lsp-installer",
+-- 		"null-ls-info",
+-- 	},
+-- 	callback = function()
+-- 		vim.api.nvim_win_set_config(vim.api.nvim_get_current_win(), { winblend = 10 })
+-- 	end,
+-- })
+
 -- Use 'q' to quit in non-buffer types
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = { "" },
