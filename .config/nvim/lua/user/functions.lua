@@ -48,4 +48,20 @@ function M.contains(t, value)
 	return false
 end
 
+function M.smart_quit()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local modified = vim.api.nvim_buf_get_option(bufnr, "modified")
+	if modified then
+		vim.ui.select({ "Yes", "No" }, {
+			prompt = "You have unsaved changes. Quit anyway?",
+		}, function(choice)
+			if choice == "Yes" then
+				vim.cmd("q!")
+			end
+		end)
+	else
+		vim.cmd("q")
+	end
+end
+
 return M
