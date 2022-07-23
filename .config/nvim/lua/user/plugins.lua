@@ -77,6 +77,7 @@ return packer.startup(function(use)
 		run = "cd app && npm install",
 		ft = "markdown",
 	})
+	use({ "kevinhwang91/nvim-bqf", commit = "8b62211ad7529c314e80b22968eef6ba275c781c", ft = "qf" })
 
 	-- Colorschemes
 	use({ "lunarvim/onedarker.nvim", commit = "b5292eb9f8ac6cebbc0321634cf735158847d8c1" })
