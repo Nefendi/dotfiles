@@ -9,9 +9,10 @@ local icons = require("user.icons")
 
 local error_red = "#F44747"
 local warning_orange = "#ff8800"
-local info_yellow = "#FFCC66"
+-- local info_yellow = "#FFCC66"
 local hint_blue = "#4FC1FF"
 local perf_purple = "#7C3AED"
+local note_green = "#10B981"
 
 todo_comments.setup({
 	keywords = {
@@ -28,7 +29,7 @@ todo_comments.setup({
 			color = perf_purple,
 			alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" },
 		},
-		NOTE = { icon = icons.ui.NoteCodicon .. " ", color = info_yellow, alt = { "INFO" } },
+		NOTE = { icon = icons.ui.NoteCodicon .. " ", color = note_green, alt = { "INFO" } },
 	},
 	-- highlighting of the line containing the todo comment
 	-- * before: highlights before the keyword (typically comment characters)
