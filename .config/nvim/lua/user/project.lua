@@ -19,6 +19,7 @@ project.setup({
 		"go.mod",
 		"Cargo.toml",
 		"stack.yaml",
+		"pyproject.toml",
 	},
 })
 
