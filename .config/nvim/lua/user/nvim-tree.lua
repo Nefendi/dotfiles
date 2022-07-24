@@ -13,6 +13,8 @@ local icons = require("user.icons")
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
+	respect_buf_cwd = true,
+	update_cwd = true,
 	hijack_directories = {
 		enable = true,
 	},
