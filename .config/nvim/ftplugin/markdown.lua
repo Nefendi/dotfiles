@@ -22,4 +22,6 @@ local mappings = {
 
 which_key.register(mappings, opts)
 
+vim.opt.textwidth = 80
+
 -- vim.cmd([[setlocal conceallevel=2]])
