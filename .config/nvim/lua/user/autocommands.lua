@@ -79,12 +79,12 @@ vim.api.nvim_create_autocmd({ "User" }, {
 })
 
 -- Set wrap in markdown and gitcommit
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "gitcommit", "markdown" },
-	callback = function()
-		vim.opt_local.wrap = true
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+-- 	pattern = { "gitcommit", "markdown" },
+-- 	callback = function()
+-- 		vim.opt_local.wrap = true
+-- 	end,
+-- })
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
