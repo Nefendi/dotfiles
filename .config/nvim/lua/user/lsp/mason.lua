@@ -26,6 +26,7 @@ local servers = {
     -- "cspell",
     -- "golangci-lint",
     -- "shellcheck",
+    -- "markdownlint",
     --
     -- -- Formatters
     -- "stylua",

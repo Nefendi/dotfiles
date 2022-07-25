@@ -63,5 +63,10 @@ null_ls.setup({
 
 		-- C++
 		formatting.clang_format,
+
+		-- Markdown
+		diagnostics.markdownlint.with({
+			cmd = mason_path .. "markdownlint",
+		}),
 	},
 })
