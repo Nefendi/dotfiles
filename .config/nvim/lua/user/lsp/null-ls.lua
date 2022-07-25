@@ -8,11 +8,14 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+local mason_path = vim.fn.stdpath("data") .. "/mason/bin/"
+
 null_ls.setup({
 	debug = false,
 	sources = {
 		-- Miscellaneous
 		formatting.prettier.with({
+			cmd = mason_path .. "prettier",
 			extra_filetypes = { "toml" },
 		}),
 
@@ -24,24 +27,36 @@ null_ls.setup({
 		diagnostics.mypy,
 
 		-- Lua
-		formatting.stylua,
+		formatting.stylua.with({
+			cmd = mason_path .. "stylua",
+		}),
 
 		-- Go
-		formatting.golines,
-		formatting.gofumpt,
+		formatting.golines.with({
+			cmd = mason_path .. "golines",
+		}),
+		formatting.gofumpt.with({
+			cmd = mason_path .. "gofumpt",
+		}),
 		diagnostics.golangci_lint.with({
+			cmd = mason_path .. "golangci-lint",
 			timeout = 10000,
 			args = { "run", "--fix=false", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" },
 		}),
 
 		-- Bash
-		formatting.shfmt,
+		formatting.shfmt.with({
+			cmd = mason_path .. "shfmt",
+		}),
 		diagnostics.shellcheck.with({
+			cmd = mason_path .. "shellcheck",
 			extra_args = { "--severity", "warning" },
 		}),
 
 		-- Dockerfile
-		diagnostics.hadolint,
+		diagnostics.hadolint.with({
+			cmd = mason_path .. "hadolint",
+		}),
 
 		-- LaTeX
 		formatting.latexindent,
