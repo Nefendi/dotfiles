@@ -195,7 +195,7 @@ local mappings = {
 		f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		I = { "<cmd>Mason<cr>", "Mason Installer Info" },
 		n = { "<cmd>NullLsInfo<cr>", "Null-ls Info" },
 		j = {
 			"<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",

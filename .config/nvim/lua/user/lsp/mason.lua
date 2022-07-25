@@ -1,9 +1,5 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
-	return
-end
-
 local servers = {
+    -- LSPs
 	"cssls",
 	"cssmodules_ls",
 	"html",
@@ -23,19 +19,43 @@ local servers = {
 	"rust_analyzer",
 	"emmet_ls",
 	"eslint",
-	"hls",
+    "hls",
+
+    -- -- Linters
+    -- "hadolint",
+    -- "cspell",
+    -- "golangci-lint",
+    -- "shellcheck",
+    --
+    -- -- Formatters
+    -- "stylua",
+    -- "gofumpt",
+    -- "golines",
+    -- "shfmt"
 }
 
-lsp_installer.setup({
-    -- ensure_installed = servers,
-    ui = {
-        border = "rounded",
+local settings = {
+  ui = {
+    border = "rounded",
+    icons = {
+      package_installed = "◍",
+      package_pending = "◍",
+      package_uninstalled = "◍",
     },
-})
+  },
+  log_level = vim.log.levels.INFO,
+  max_concurrent_installers = 4,
+}
+
+require("mason").setup(settings)
+require("mason-lspconfig").setup {
+  ensure_installed = servers,
+  automatic_installation = true,
+}
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
-	return
+    return
 end
 
 local opts = {}
