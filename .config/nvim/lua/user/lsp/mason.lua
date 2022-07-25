@@ -14,7 +14,7 @@ local servers = {
 	"taplo",
 	"clangd",
 	"ltex",
-	"remark_ls",
+	"marksman",
 	"gopls",
 	"rust_analyzer",
 	"emmet_ls",

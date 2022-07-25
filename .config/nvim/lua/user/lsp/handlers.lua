@@ -80,10 +80,6 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-	if client.name == "remark_ls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
 	if client.name == "gopls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
@@ -133,7 +129,6 @@ M.on_attach = function(client, bufnr)
 		"emmet_ls",
 		"cssls",
 		"bashls",
-		"remark_ls",
 		"ltex",
 	}
 
