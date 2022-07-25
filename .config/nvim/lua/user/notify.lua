@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/notify.lua
-
 local status_ok, notify = pcall(require, "notify")
 if not status_ok then
 	return

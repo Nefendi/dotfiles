@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/winbar.lua
-
 local icons = require("user.icons")
 
 local functions = require("user.functions")
@@ -37,11 +35,8 @@ local get_filename = function()
 	local extension = vim.fn.expand("%:e")
 
 	if not functions.isempty(filename) then
-		local file_icon, file_icon_color = require("nvim-web-devicons").get_icon_color(
-			filename,
-			extension,
-			{ default = true }
-		)
+		local file_icon, file_icon_color =
+			require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
 
 		local hl_group = "FileIconColor" .. extension
 

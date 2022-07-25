@@ -5,8 +5,6 @@ end
 
 local icons = require("user.icons")
 
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/whichkey.lua
-
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `

@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/keymaps.lua
-
 local M = {}
 
 local opts = { noremap = true, silent = true }

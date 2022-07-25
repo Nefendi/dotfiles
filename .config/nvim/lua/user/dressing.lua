@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/dressing.lua
-
 local status_ok, dressing = pcall(require, "dressing")
 if not status_ok then
 	return

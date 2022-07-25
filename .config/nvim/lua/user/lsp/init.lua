@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/29325c0537dafcbc6fda504c1bf975469197dfd7/lua/user/lsp/init.lua
-
 M = {}
 
 local status_ok, _ = pcall(require, "lspconfig")

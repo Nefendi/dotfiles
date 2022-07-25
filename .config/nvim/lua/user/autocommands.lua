@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/autocommands.lua
-
 -- Use 'q' and '<esc>' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = {
@@ -123,10 +121,3 @@ if vim.fn.has("nvim-0.8") == 1 then
 		}
 	)
 end
-
--- Format on save
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
---   callback = function()
---     vim.cmd "lua vim.lsp.buf.formatting()<cr>"
---   end,
--- })

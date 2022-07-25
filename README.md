@@ -39,4 +39,4 @@ The files are based on Jason Turner's ones which can be seen [here](https://gith
 
 ## Neovim config
 
-The configuration for Neovim was taken from [here]("https://github.com/LunarVim/nvim-basic-ide") and also from [ChristianChiarulli](https://github.com/ChristianChiarulli/nvim), and then tweaked according to my needs.
+The configuration for Neovim was taken from [here]("https://github.com/LunarVim/nvim-basic-ide"), [here](https://github.com/LunarVim/LunarVim) and also from [ChristianChiarulli](https://github.com/ChristianChiarulli/nvim), and then tweaked according to my needs.

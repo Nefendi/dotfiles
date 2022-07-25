@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/ftplugin/toml.lua
-
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	pattern = { "Cargo.toml" },
 	callback = function()

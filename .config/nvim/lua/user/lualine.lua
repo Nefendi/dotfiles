@@ -1,5 +1,3 @@
--- Sources: https://github.com/LunarVim/LunarVim and https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/lualine.lua
-
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return

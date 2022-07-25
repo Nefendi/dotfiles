@@ -1,5 +1,3 @@
--- Source: https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/functions.lua
-
 local M = {}
 
 function M.isempty(s)
