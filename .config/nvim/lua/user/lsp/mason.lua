@@ -27,6 +27,7 @@ local servers = {
     -- "golangci-lint",
     -- "shellcheck",
     -- "markdownlint",
+    -- "yamllint",
     --
     -- -- Formatters
     -- "stylua",
@@ -42,6 +43,8 @@ local servers = {
 --     "golangci-lint",
 --     "shellcheck",
 --     "markdownlint",
+--     "yamllint",
+
 -- }
 --
 -- local formatters = {

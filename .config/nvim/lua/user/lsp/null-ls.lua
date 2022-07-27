@@ -69,5 +69,7 @@ null_ls.setup {
         diagnostics.markdownlint.with {
             cmd = mason_path .. "markdownlint",
         },
+        -- YAML
+        diagnostics.yamllint,
     },
 }
