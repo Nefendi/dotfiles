@@ -4,180 +4,176 @@ local icons = require("user.icons")
 local functions = require("user.functions")
 
 M.setup = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = icons.diagnostics_codicons.Error },
-		{ name = "DiagnosticSignWarn", text = icons.diagnostics_codicons.Warning },
-		{ name = "DiagnosticSignHint", text = icons.diagnostics_codicons.Hint },
-		{ name = "DiagnosticSignInfo", text = icons.diagnostics_codicons.Info },
-	}
+    local signs = {
+        { name = "DiagnosticSignError", text = icons.diagnostics_codicons.Error },
+        { name = "DiagnosticSignWarn", text = icons.diagnostics_codicons.Warning },
+        { name = "DiagnosticSignHint", text = icons.diagnostics_codicons.Hint },
+        { name = "DiagnosticSignInfo", text = icons.diagnostics_codicons.Info },
+    }
 
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
+    for _, sign in ipairs(signs) do
+        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+    end
 
-	local config = {
-		virtual_text = false, -- disable virtual text
-		signs = {
-			active = signs, -- show signs
-		},
-		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
-		float = {
-			focusable = true,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-	}
+    local config = {
+        virtual_text = false, -- disable virtual text
+        virtual_lines = false,
+        signs = {
+            active = signs, -- show signs
+        },
+        update_in_insert = true,
+        underline = true,
+        severity_sort = true,
+        float = {
+            focusable = true,
+            style = "minimal",
+            border = "rounded",
+            source = "always",
+            header = "",
+            prefix = "",
+        },
+    }
 
-	vim.diagnostic.config(config)
+    vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = "rounded",
+    })
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = "rounded",
+    })
 end
 
 local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	local keymap = vim.api.nvim_buf_set_keymap
-	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	-- keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+    local opts = { noremap = true, silent = true }
+    local keymap = vim.api.nvim_buf_set_keymap
+    keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    -- keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+    keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
     keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>ln", "<cmd>NullLsInfo<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-	-- keymap(bufnr, "n", "<leader>lh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+    -- keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>ln", "<cmd>NullLsInfo<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+    -- keymap(bufnr, "n", "<leader>lh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    -- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
-	local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-	if not status_cmp_ok then
-		return
-	end
+    local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+    if not status_cmp_ok then
+        return
+    end
 
-	if client.name == "tsserver" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    if client.name == "tsserver" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
 
-	if client.name == "sumneko_lua" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    if client.name == "gopls" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
 
-	if client.name == "gopls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    if client.name == "taplo" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
 
-	if client.name == "taplo" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    if client.name == "html" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
 
-	if client.name == "html" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    if client.name == "jsonls" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
 
-	if client.name == "jsonls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    if client.name == "clangd" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
 
-	if client.name == "clangd" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+    M.capabilities = vim.lsp.protocol.make_client_capabilities()
+    M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+    M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
-	M.capabilities = vim.lsp.protocol.make_client_capabilities()
-	M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-	M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+    lsp_keymaps(bufnr)
 
-	lsp_keymaps(bufnr)
+    -- illuminate
+    local status_ok, illuminate = pcall(require, "illuminate")
+    if not status_ok then
+        return
+    end
 
-	-- illuminate
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
+    illuminate.on_attach(client)
 
-	illuminate.on_attach(client)
+    -- nvim-navic
+    local status_navic_ok, navic = pcall(require, "nvim-navic")
+    if not status_navic_ok then
+        return
+    end
 
-	-- nvim-navic
-	local status_navic_ok, navic = pcall(require, "nvim-navic")
-	if not status_navic_ok then
-		return
-	end
+    -- nvim-navic requires an LSP to support documentSymbol and old SymbolInformation format
+    local not_supported_navic_servers = {
+        "dockerls",
+        "cssmodules_ls",
+        "html",
+        "eslint",
+        "emmet_ls",
+        "cssls",
+        "bashls",
+        "ltex",
+    }
 
-	-- nvim-navic requires an LSP to support documentSymbol and old SymbolInformation format
-	local not_supported_navic_servers = {
-		"dockerls",
-		"cssmodules_ls",
-		"html",
-		"eslint",
-		"emmet_ls",
-		"cssls",
-		"bashls",
-		"ltex",
-	}
+    if functions.contains(not_supported_navic_servers, client.name) then
+        goto after_navic_setup
+    end
 
-	if functions.contains(not_supported_navic_servers, client.name) then
-		goto after_navic_setup
-	end
-
-	navic.attach(client, bufnr)
+    navic.attach(client, bufnr)
 
     ::after_navic_setup::
 end
 
 function M.enable_format_on_save(notify)
-	notify = notify or false
+    notify = notify or false
 
-	vim.cmd([[
+    vim.cmd([[
     augroup format_on_save
       autocmd! 
       autocmd BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 5000 })
     augroup end
-  ]])
+  ]] )
 
-	if notify then
-		vim.notify("Enabled format on save")
-	end
+    if notify then
+        vim.notify("Enabled format on save")
+    end
 end
 
 function M.remove_augroup(name)
-	if vim.fn.exists("#" .. name) == 1 then
-		vim.cmd("au! " .. name)
-	end
+    if vim.fn.exists("#" .. name) == 1 then
+        vim.cmd("au! " .. name)
+    end
 end
 
 function M.disable_format_on_save()
-	M.remove_augroup("format_on_save")
-	vim.notify("Disabled format on save")
+    M.remove_augroup("format_on_save")
+    vim.notify("Disabled format on save")
 end
 
 function M.toggle_format_on_save()
-	if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
-		M.enable_format_on_save(true)
-	else
-		M.disable_format_on_save()
-	end
+    if vim.fn.exists("#format_on_save#BufWritePre") == 0 then
+        M.enable_format_on_save(true)
+    else
+        M.disable_format_on_save()
+    end
 end
 
 vim.cmd([[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]])
 
 -- Enable format on save by default
 M.enable_format_on_save(false)
-
 return M

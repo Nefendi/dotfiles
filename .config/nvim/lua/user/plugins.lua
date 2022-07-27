@@ -58,7 +58,6 @@ return packer.startup(function(use)
 	use({ "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" })
 	use({ "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" })
 	use({ "folke/todo-comments.nvim", commit = "98b1ebf198836bdc226c0562b9f906584e6c400e" })
-	-- use({ "ggandor/lightspeed.nvim", commit = "8fb5ebb2c18db13bc17556376526068dce0803b5" })
 	use({ "ggandor/leap.nvim", commit = "539d6e6936462a4685bd6c895ce46b5ff1c1826b" })
 	use({ "NvChad/nvim-colorizer.lua", commit = "6c8b1495c3d2034188cc67c18e2ae5e8343cd504" })
 	use({ "nacro90/numb.nvim", commit = "453c50ab921fa066fb073d2fd0f826cb036eaf7b" })
@@ -69,7 +68,6 @@ return packer.startup(function(use)
 	use({ "stevearc/dressing.nvim", commit = "1e60c07ae9a8557ac6395144606c3a5335ad47e0" })
 	use({ "abecodes/tabout.nvim", commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca", wants = { "nvim-treesitter" } })
 	use({ "ghillb/cybu.nvim", commit = "aee926d1bc069194ae32e0e490d52fa3c1ed1bb7" })
-	use({ "ChristianChiarulli/JABS.nvim", commit = "aa9966994fdabbd89a3d8b3b3505ccccdbe8125a" })
 	use({ "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" })
 	use({ "is0n/jaq-nvim", commit = "051842d30357100e397dc6e904f813841c8edcb7" })
 	use({
@@ -81,7 +79,7 @@ return packer.startup(function(use)
 	use({ "kevinhwang91/nvim-bqf", commit = "8b62211ad7529c314e80b22968eef6ba275c781c", ft = "qf" })
 
 	-- Colorschemes
-	use({ "lunarvim/onedarker.nvim", commit = "d4e8281135f3cc6ced5f9159e9bd63d7c6b11b8e" })
+	use({ "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" })
 	use({ "projekt0n/github-nvim-theme", commit = "1cc4a8d508bc6b846c72b9e629e8188ac24d0f13" })
 	use({ "ellisonleao/gruvbox.nvim", commit = "3352c12c083d0ab6285a9738b7679e24e7602411" })
 	use({ "lunarvim/darkplus.nvim", commit = "93fb1fd7b2635192d909e11a77256d5822aed5c8" })
@@ -130,6 +128,8 @@ return packer.startup(function(use)
 		commit = "94bf6fcb1dc27bdad230d9385da085e72c390019",
 		requires = { "neovim/nvim-lspconfig" },
 	})
+	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" })
+	use({ "lvimuser/lsp-inlayhints.nvim", branch = "readme" })
 
 	-- Go
 	use({
@@ -142,6 +142,12 @@ return packer.startup(function(use)
 	use({
 		"simrat39/rust-tools.nvim",
 		commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
+	})
+
+	-- Lua
+	use({
+		"folke/lua-dev.nvim",
+		commit = "f5c31936fe06fcbeb59b98f69f74f9c2f91abaec",
 	})
 
 	-- Telescope

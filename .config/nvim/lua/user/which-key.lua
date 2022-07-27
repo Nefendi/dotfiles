@@ -211,10 +211,9 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
-		h = {
-			"<cmd>lua vim.lsp.buf.signature_help()<cr>",
-			"Signature Help",
-		},
+		v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle Virtual Lines" },
+		h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Inlay Hints" },
+		H = { "<cmd>lua require('lsp-inlayhints').reset()<cr>", "Clear Inlay Hints" },
 	},
 
 	T = {
