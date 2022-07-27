@@ -28,6 +28,7 @@ local servers = {
     -- "shellcheck",
     -- "markdownlint",
     -- "yamllint",
+    -- "gitlint",
     --
     -- -- Formatters
     -- "stylua",
@@ -44,6 +45,7 @@ local servers = {
 --     "shellcheck",
 --     "markdownlint",
 --     "yamllint",
+--     "gitlint",
 
 -- }
 --

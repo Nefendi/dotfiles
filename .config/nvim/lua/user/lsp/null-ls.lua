@@ -55,5 +55,8 @@ null_ls.setup {
 
         -- YAML
         diagnostics.yamllint,
+
+        -- Git
+        diagnostics.gitlint,
     },
 }
