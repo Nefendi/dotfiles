@@ -57,6 +57,8 @@ null_ls.setup {
         diagnostics.yamllint,
 
         -- Git
-        diagnostics.gitlint,
+        diagnostics.gitlint.with {
+            extra_args = { "-c", "title-max-length.line-length=50", "-c", "body-max-line-length.line-length=72" },
+        },
     },
 }
