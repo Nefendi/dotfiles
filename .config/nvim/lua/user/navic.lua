@@ -1,9 +1,9 @@
 local status_ok, navic = pcall(require, "nvim-navic")
 if not status_ok then
-	return
+    return
 end
 
-local icons = require("user.icons")
+local icons = require "user.icons"
 
 -- vim.api.nvim_set_hl(0, "NavicIconsFile", { default = true, bg = "#1e222a", fg = "#abb2bf" })
 -- vim.api.nvim_set_hl(0, "NavicIconsModule", { default = true, bg = "#1e222a", fg = "#abb2bf" })
@@ -34,38 +34,38 @@ local icons = require("user.icons")
 -- vim.api.nvim_set_hl(0, "NavicText", { default = true, bg = "#1e222a", fg = "#6b737f" })
 -- vim.api.nvim_set_hl(0, "NavicSeparator", { default = true, bg = "#1e222a", fg = "#6b737f" })
 
-navic.setup({
-	icons = {
-		File = icons.kind_codicons.File .. " %*",
-		Module = icons.kind_codicons.Module .. " %*",
-		Namespace = icons.kind_codicons.Namespace .. " %*",
-		Package = icons.kind_codicons.Package .. " %*",
-		Class = icons.kind_codicons.Class .. " %*",
-		Method = icons.kind_codicons.Method .. " %*",
-		Property = icons.kind_codicons.Property .. " %*",
-		Field = icons.kind_codicons.Field .. " %*",
-		Constructor = icons.kind_codicons.Constructor .. " %*",
-		Enum = icons.kind_codicons.Enum .. " %*",
-		Interface = icons.kind_codicons.Interface .. " %*",
-		Function = icons.kind_codicons.Function .. " %*",
-		Variable = icons.kind_codicons.Variable .. " %*",
-		Constant = icons.kind_codicons.Constant .. " %*",
-		String = icons.kind_codicons.String .. " %*",
-		Number = icons.kind_codicons.Number .. " %*",
-		Boolean = icons.kind_codicons.Boolean .. " %*",
-		Array = icons.kind_codicons.Array .. " %*",
-		Object = icons.kind_codicons.Object .. " %*",
-		Key = icons.kind_codicons.Key .. " %*",
-		Null = icons.kind_codicons.Null .. " %*",
-		EnumMember = icons.kind_codicons.EnumMember .. " %*",
-		Struct = icons.kind_codicons.Struct .. " %*",
-		Event = icons.kind_codicons.Event .. " %*",
-		Operator = icons.kind_codicons.Operator .. " %*",
-		TypeParameter = icons.kind_codicons.TypeParameter .. " %*",
-	},
+navic.setup {
+    icons = {
+        File = icons.kind_codicons.File .. " %*",
+        Module = icons.kind_codicons.Module .. " %*",
+        Namespace = icons.kind_codicons.Namespace .. " %*",
+        Package = icons.kind_codicons.Package .. " %*",
+        Class = icons.kind_codicons.Class .. " %*",
+        Method = icons.kind_codicons.Method .. " %*",
+        Property = icons.kind_codicons.Property .. " %*",
+        Field = icons.kind_codicons.Field .. " %*",
+        Constructor = icons.kind_codicons.Constructor .. " %*",
+        Enum = icons.kind_codicons.Enum .. " %*",
+        Interface = icons.kind_codicons.Interface .. " %*",
+        Function = icons.kind_codicons.Function .. " %*",
+        Variable = icons.kind_codicons.Variable .. " %*",
+        Constant = icons.kind_codicons.Constant .. " %*",
+        String = icons.kind_codicons.String .. " %*",
+        Number = icons.kind_codicons.Number .. " %*",
+        Boolean = icons.kind_codicons.Boolean .. " %*",
+        Array = icons.kind_codicons.Array .. " %*",
+        Object = icons.kind_codicons.Object .. " %*",
+        Key = icons.kind_codicons.Key .. " %*",
+        Null = icons.kind_codicons.Null .. " %*",
+        EnumMember = icons.kind_codicons.EnumMember .. " %*",
+        Struct = icons.kind_codicons.Struct .. " %*",
+        Event = icons.kind_codicons.Event .. " %*",
+        Operator = icons.kind_codicons.Operator .. " %*",
+        TypeParameter = icons.kind_codicons.TypeParameter .. " %*",
+    },
 
-	separator = " " .. icons.ui.NavicRightChevron .. " ",
-	depth = 0,
-	depth_limit_indicator = "..",
-	highlight = true,
-})
+    separator = " " .. icons.ui.NavicRightChevron .. " ",
+    depth = 0,
+    depth_limit_indicator = "..",
+    highlight = true,
+}

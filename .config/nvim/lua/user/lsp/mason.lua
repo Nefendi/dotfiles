@@ -82,10 +82,10 @@ end
 
 mason.setup(settings)
 
-mason_lspconfig.setup({
+mason_lspconfig.setup {
     ensure_installed = servers,
     automatic_installation = false,
-})
+}
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -107,12 +107,12 @@ for _, server in pairs(servers) do
             return
         end
 
-        local luadev = lua_dev.setup({
+        local luadev = lua_dev.setup {
             lspconfig = {
                 on_attach = opts.on_attach,
                 capabilities = opts.capabilities,
             },
-        })
+        }
 
         lspconfig.sumneko_lua.setup(luadev)
 
@@ -120,27 +120,27 @@ for _, server in pairs(servers) do
     end
 
     if server == "pyright" then
-        local pyright_opts = require("user.lsp.settings.pyright")
+        local pyright_opts = require "user.lsp.settings.pyright"
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end
 
     if server == "ltex" then
-        local ltex_opts = require("user.lsp.settings.ltex")
+        local ltex_opts = require "user.lsp.settings.ltex"
         opts = vim.tbl_deep_extend("force", ltex_opts, opts)
     end
 
     if server == "clangd" then
-        local clangd_opts = require("user.lsp.settings.clangd")
+        local clangd_opts = require "user.lsp.settings.clangd"
         opts = vim.tbl_deep_extend("force", clangd_opts, opts)
     end
 
     if server == "emmet_ls" then
-        local emmet_ls_opts = require("user.lsp.settings.emmet_ls")
+        local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
         opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
     end
 
     if server == "rust_analyzer" then
-        local rust_opts = require("user.lsp.settings.rust")
+        local rust_opts = require "user.lsp.settings.rust"
 
         local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
         if not rust_tools_status_ok then
@@ -153,12 +153,12 @@ for _, server in pairs(servers) do
     end
 
     if server == "tsserver" then
-        local tsserver_opts = require("user.lsp.settings.tsserver")
+        local tsserver_opts = require "user.lsp.settings.tsserver"
         opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
     end
 
     if server == "gopls" then
-        local gopls_opts = require("user.lsp.settings.gopls")
+        local gopls_opts = require "user.lsp.settings.gopls"
         opts = vim.tbl_deep_extend("force", gopls_opts, opts)
     end
 

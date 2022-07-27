@@ -1,9 +1,9 @@
 local status_ok, glow = pcall(require, "glow")
 if not status_ok then
-	return
+    return
 end
 
-glow.setup({
-	border = "rounded",
-	width = 200,
-})
+glow.setup {
+    border = "rounded",
+    width = 200,
+}

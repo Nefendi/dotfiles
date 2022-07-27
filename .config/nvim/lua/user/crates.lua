@@ -1,14 +1,14 @@
 local status_ok, crates = pcall(require, "crates")
 if not status_ok then
-	return
+    return
 end
 
-crates.setup({
-	popup = {
-		border = "rounded",
-	},
-	null_ls = {
-		enabled = true,
-		name = "crates.nvim",
-	},
-})
+crates.setup {
+    popup = {
+        border = "rounded",
+    },
+    null_ls = {
+        enabled = true,
+        name = "crates.nvim",
+    },
+}

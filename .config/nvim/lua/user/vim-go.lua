@@ -8,5 +8,5 @@ vim.g.go_doc_keywordprg_enabled = 0
 
 local status_ok, _ = pcall(require, "vim-go")
 if not status_ok then
-	return
+    return
 end

@@ -1,114 +1,114 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-	return
+    return
 end
 
-local actions = require("telescope.actions")
+local actions = require "telescope.actions"
 
-local icons = require("user.icons")
+local icons = require "user.icons"
 
-telescope.setup({
-	defaults = {
-		winblend = 0,
-		prompt_prefix = icons.ui.Telescope .. " ",
-		selection_caret = icons.ui.EnterArrow .. " ",
-		path_display = { "smart" },
-		-- Some directories, e.g. Haskell's .stack-work are not ignored in when put into this array. To mitigate that
-		-- issue put the directory directly in the command line options of a search programme
-		file_ignore_patterns = {
-			-- General
-			".git/",
-			".idea/",
-			".vscode/",
-			"htmlcov/",
+telescope.setup {
+    defaults = {
+        winblend = 0,
+        prompt_prefix = icons.ui.Telescope .. " ",
+        selection_caret = icons.ui.EnterArrow .. " ",
+        path_display = { "smart" },
+        -- Some directories, e.g. Haskell's .stack-work are not ignored in when put into this array. To mitigate that
+        -- issue put the directory directly in the command line options of a search programme
+        file_ignore_patterns = {
+            -- General
+            ".git/",
+            ".idea/",
+            ".vscode/",
+            "htmlcov/",
 
-			-- JavaScript
-			"node_modules/",
+            -- JavaScript
+            "node_modules/",
 
-			-- Python
-			".venv/",
-			"venv/",
-			".mypy_cache/",
-			".pytest_cache/",
-			"__pycache__",
+            -- Python
+            ".venv/",
+            "venv/",
+            ".mypy_cache/",
+            ".pytest_cache/",
+            "__pycache__",
 
-			-- Rust
-			"target/",
-		},
-		vimgrep_arguments = {
-			"rg",
-			"--color=never",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-			"-uu",
-			"--glob",
-			-- Haskell
-			"!.stack-work/",
-		},
-		mappings = {
-			i = {
-				["<C-n>"] = actions.cycle_history_next,
-				["<C-p>"] = actions.cycle_history_prev,
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-				["<C-h>"] = actions.which_key,
-			},
-			n = {
-				["q"] = actions.close,
-				["dd"] = actions.delete_buffer,
-				["s"] = actions.select_horizontal,
-				["v"] = actions.select_vertical,
-			},
-		},
-	},
-	pickers = {
-		find_files = {
-			find_command = {
-				"rg",
-				"--files",
-				"-uu",
-				"--glob",
-				-- Haskell
-				"!.stack-work/",
-			},
-			theme = "dropdown",
-			previewer = false,
-		},
-		live_grep = {
-			require("telescope.themes").get_dropdown(),
-		},
-		grep_string = {
-			require("telescope.themes").get_dropdown(),
-			only_sort_text = true,
-		},
-		buffers = {
-			theme = "dropdown",
-			previewer = false,
-			initial_mode = "normal",
-		},
-	},
-	extensions = {
-		["ui-select"] = {
-			require("telescope.themes").get_dropdown(),
-		},
-		fzf = {
-			fuzzy = true, -- false will only do exact matching
-			override_generic_sorter = true, -- override the generic sorter
-			override_file_sorter = true, -- override the file sorter
-			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
-		},
-		media_files = {
-			filetypes = { "png", "webp", "jpg", "jpeg" },
-			find_cmd = "rg",
-		},
-	},
-})
+            -- Rust
+            "target/",
+        },
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "-uu",
+            "--glob",
+            -- Haskell
+            "!.stack-work/",
+        },
+        mappings = {
+            i = {
+                ["<C-n>"] = actions.cycle_history_next,
+                ["<C-p>"] = actions.cycle_history_prev,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
+                ["<C-h>"] = actions.which_key,
+            },
+            n = {
+                ["q"] = actions.close,
+                ["dd"] = actions.delete_buffer,
+                ["s"] = actions.select_horizontal,
+                ["v"] = actions.select_vertical,
+            },
+        },
+    },
+    pickers = {
+        find_files = {
+            find_command = {
+                "rg",
+                "--files",
+                "-uu",
+                "--glob",
+                -- Haskell
+                "!.stack-work/",
+            },
+            theme = "dropdown",
+            previewer = false,
+        },
+        live_grep = {
+            require("telescope.themes").get_dropdown(),
+        },
+        grep_string = {
+            require("telescope.themes").get_dropdown(),
+            only_sort_text = true,
+        },
+        buffers = {
+            theme = "dropdown",
+            previewer = false,
+            initial_mode = "normal",
+        },
+    },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown(),
+        },
+        fzf = {
+            fuzzy = true, -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true, -- override the file sorter
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
+        },
+        media_files = {
+            filetypes = { "png", "webp", "jpg", "jpeg" },
+            find_cmd = "rg",
+        },
+    },
+}
 
-telescope.load_extension("ui-select")
-telescope.load_extension("notify")
-telescope.load_extension("fzf")
-telescope.load_extension("media_files")
+telescope.load_extension "ui-select"
+telescope.load_extension "notify"
+telescope.load_extension "fzf"
+telescope.load_extension "media_files"

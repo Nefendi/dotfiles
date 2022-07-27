@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-configs.setup({
+configs.setup {
     ensure_installed = "all", -- one of "all" or a list of languages
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
@@ -37,4 +37,4 @@ configs.setup({
         disable = { "html" },
     },
     playground = { enable = true },
-})
+}
