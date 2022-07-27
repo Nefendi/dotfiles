@@ -135,7 +135,7 @@ return packer.startup(function(use)
     use {
         "fatih/vim-go",
         commit = "b7506c6da8ea3a88e268a91aa6630be3e26a20a9",
-        run = ":GoUpdateBinaries",
+        run = ":GoUpdateBinaries errcheck fillstruct gomodifytags impl iferr",
     }
 
     -- Rust
