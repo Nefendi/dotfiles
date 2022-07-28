@@ -31,19 +31,19 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMonoNL NF
-    style: Regular
+    family: VictorMono NF
+    style: Medium
 
   bold:
-    family: JetBrainsMonoNL NF
+    family: VictorMono NF
     style: Bold
 
   italic:
-    family: JetBrainsMonoNL NF
-    style: Italic
+    family: VictorMono NF
+    style: Medium Italic
 
   bold_italic:
-    family: JetBrainsMonoNL NF
+    family: VictorMono NF
     style: Bold Italic
 
   size: 14.0
