@@ -8,6 +8,8 @@ return {
                 end,
             })
         end,
+        autoSetHints = false,
+
         inlay_hints = {
             -- Only show inlay hints for the current line
             only_current_line = false,
