@@ -77,6 +77,7 @@ return packer.startup(function(use)
         ft = "markdown",
     }
     use { "kevinhwang91/nvim-bqf", commit = "8b62211ad7529c314e80b22968eef6ba275c781c", ft = "qf" }
+    use { "junegunn/vim-slash", commit = "31aee09b7ea8893a18fa34f65e63e364fc998444" }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
