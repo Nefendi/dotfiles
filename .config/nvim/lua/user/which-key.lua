@@ -96,12 +96,6 @@ local mappings = {
         -- t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
     },
 
-    -- s = {
-    -- 	name = "Split",
-    -- 	s = { "<cmd>split<cr>", "Horizontal Split" },
-    -- 	v = { "<cmd>vsplit<cr>", "Vertical Split" },
-    -- },
-
     r = {
         name = "Replace",
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
@@ -246,6 +240,13 @@ local vopts = {
 
 local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+    l = {
+        name = "LSP",
+        a = {
+            "<esc><cmd>lua vim.lsp.buf.range_code_action()<CR>",
+            "Range Code Action",
+        },
+    },
 }
 
 which_key.setup(setup)
