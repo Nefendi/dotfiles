@@ -1,5 +1,4 @@
 local servers = {
-    -- LSPs
     "cssls",
     "cssmodules_ls",
     "html",
@@ -20,50 +19,33 @@ local servers = {
     "emmet_ls",
     "eslint",
     "hls",
-
-    -- -- Linters
-    -- "hadolint",
-    -- "cspell",
-    -- "golangci-lint",
-    -- "shellcheck",
-    -- "markdownlint",
-    -- "yamllint",
-    -- "gitlint",
-    -- "actionlint",
-    --
-    -- -- Formatters
-    -- "stylua",
-    -- "gofumpt",
-    -- "golines",
-    -- "shfmt",
-    -- "clang-format",
 }
 
--- TODO: Maybe someday linters and formatters could be automatically installed by mason-lspconfig?
--- local linters = {
---     "hadolint",
---     "cspell",
---     "golangci-lint",
---     "shellcheck",
---     "markdownlint",
---     "yamllint",
---     "gitlint",
---     "actionlint"
--- }
---
--- local formatters = {
---     "stylua",
---     "gofumpt",
---     "golines",
---     "shfmt",
---     "clang-format",
--- }
---
--- local mason_lspconfig_list_to_install = {}
---
--- vim.list_extend(mason_lspconfig_list_to_install, servers)
--- vim.list_extend(mason_lspconfig_list_to_install, linters)
--- vim.list_extend(mason_lspconfig_list_to_install, formatters)
+-- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
+local linters = {
+    "hadolint",
+    "cspell",
+    "golangci-lint",
+    "shellcheck",
+    "markdownlint",
+    "yamllint",
+    "gitlint",
+    "actionlint",
+}
+
+local formatters = {
+    "stylua",
+    "gofumpt",
+    "golines",
+    "shfmt",
+    "clang-format",
+}
+
+local tools_to_install = {}
+
+-- vim.list_extend(tools_to_install, servers)
+vim.list_extend(tools_to_install, linters)
+vim.list_extend(tools_to_install, formatters)
 
 local settings = {
     ui = {
@@ -88,11 +70,23 @@ if not mason_lspconfig_status_ok then
     return
 end
 
+local mason_tool_installer_status_ok, mason_tool_installer = pcall(require, "mason-tool-installer")
+if not mason_tool_installer_status_ok then
+    return
+end
+
 mason.setup(settings)
 
 mason_lspconfig.setup {
     ensure_installed = servers,
     automatic_installation = false,
+}
+
+mason_tool_installer.setup {
+    ensure_installed = tools_to_install,
+    auto_update = false,
+    run_on_start = true,
+    start_delay = 3000,
 }
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
