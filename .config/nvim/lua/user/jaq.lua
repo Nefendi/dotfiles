@@ -12,13 +12,14 @@ jaq_nvim.setup {
             cpp = "clang++ % -o $fileBase && ./$fileBase",
             go = "go run %",
             sh = "sh %",
+            lua = "lua %",
         },
     },
     behavior = {
         default = "float",
         startinsert = false,
         wincmd = false,
-        autosave = true,
+        autosave = false,
     },
     ui = {
         float = {
