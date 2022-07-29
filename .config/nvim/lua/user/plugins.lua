@@ -118,7 +118,7 @@ return packer.startup(function(use)
 
     -- LSP
     use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }
-    use { "williamboman/mason.nvim", commit = "269ee222f76e705619da2c0130c0a06e76419b88" }
+    use { "williamboman/mason.nvim", commit = "2680ff415265665de7c88b766818e34870f522c3" }
     use { "williamboman/mason-lspconfig.nvim", commit = "9dc0291fd9e3bdb56245f6bef95223cac9865231" }
     use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }
     use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }

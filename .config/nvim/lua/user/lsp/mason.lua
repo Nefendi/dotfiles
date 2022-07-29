@@ -29,12 +29,14 @@ local servers = {
     -- "markdownlint",
     -- "yamllint",
     -- "gitlint",
+    -- "actionlint",
     --
     -- -- Formatters
     -- "stylua",
     -- "gofumpt",
     -- "golines",
-    -- "shfmt"
+    -- "shfmt",
+    -- "clang-format",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by mason-lspconfig?
@@ -46,14 +48,15 @@ local servers = {
 --     "markdownlint",
 --     "yamllint",
 --     "gitlint",
-
+--     "actionlint"
 -- }
 --
 -- local formatters = {
 --     "stylua",
 --     "gofumpt",
 --     "golines",
---     "shfmt"
+--     "shfmt",
+--     "clang-format",
 -- }
 --
 -- local mason_lspconfig_list_to_install = {}

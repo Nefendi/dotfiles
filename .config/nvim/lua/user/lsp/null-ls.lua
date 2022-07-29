@@ -15,6 +15,7 @@ null_ls.setup {
         formatting.prettier.with {
             extra_filetypes = { "toml" },
         },
+        diagnostics.actionlint,
 
 
         -- Python
