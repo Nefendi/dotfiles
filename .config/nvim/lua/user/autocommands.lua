@@ -132,7 +132,10 @@ if vim.fn.has "nvim-0.8" == 1 then
         { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
         {
             callback = function()
-                require("user.winbar").get_winbar()
+                local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
+                if not status_ok then
+                    require("user.winbar").get_winbar()
+                end
             end,
         }
     )
