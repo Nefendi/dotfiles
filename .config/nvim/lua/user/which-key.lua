@@ -216,6 +216,17 @@ local mappings = {
         H = { "<cmd>lua require('lsp-inlayhints').reset()<cr>", "Clear Inlay Hints" },
     },
 
+    t = {
+        name = "Test",
+        s = { "<cmd>TestSuite<cr>", "Run Suite" },
+        f = { "<cmd>TestFile<cr>", "Run File" },
+        e = { "<cmd>TestEdit<cr>", "Edit Test File" },
+        n = { "<cmd>TestNearest<cr>", "Run Nearest Test" },
+        l = { "<cmd>TestLast<cr>", "Rerun Latest Test" },
+        v = { "<cmd>TestVisit<cr>", "Last Running Test" },
+        i = { "<cmd>TestInfo<cr>", "Test Info" },
+    },
+
     T = {
         name = "Treesitter",
         h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
