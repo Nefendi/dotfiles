@@ -14,6 +14,7 @@ null_ls.setup {
         -- Miscellaneous
         formatting.prettier.with {
             extra_filetypes = { "toml" },
+            extra_args = { "--prose-wrap", "always" },
         },
         diagnostics.actionlint,
 
