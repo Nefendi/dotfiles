@@ -129,13 +129,9 @@ M.on_attach = function(client, bufnr)
         "ltex",
     }
 
-    if functions.contains(not_supported_navic_servers, client.name) then
-        goto after_navic_setup
+    if not functions.contains(not_supported_navic_servers, client.name) then
+        navic.attach(client, bufnr)
     end
-
-    navic.attach(client, bufnr)
-
-    ::after_navic_setup::
 end
 
 function M.enable_format_on_save(notify)
