@@ -11,18 +11,18 @@ return {
             },
             hint = {
                 enable = true,
-                arrayIndex = "Enable", -- "Enable", "Auto", "Disable"
+                arrayIndex = "Disable", -- "Enable", "Auto", "Disable"
                 await = true,
-                paramName = "All", -- "All", "Literal", "Disable"
-                paramType = true,
-                semicolon = "All", -- "All", "SameLine", "Disable"
+                paramName = "Disable", -- "All", "Literal", "Disable"
+                paramType = false,
+                semicolon = "Disable", -- "All", "SameLine", "Disable"
                 setType = true,
             },
             -- spell = {"the"}
             runtime = {
                 version = "LuaJIT",
                 special = {
-                    include = "reload",
+                    reload = "require",
                 },
             },
             diagnostics = {
