@@ -97,6 +97,9 @@ keymap("n", "<S-l>", "<Plug>(CybuNext)")
 -- Jaq
 keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 
+-- Peek
+keymap("n", "gp", ":lua require('peek').Peek('definition')<CR>", opts)
+
 -- NvimTree
 -- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
