@@ -31,6 +31,7 @@ local linters = {
     "yamllint",
     "gitlint",
     "actionlint",
+    "buf",
     -- NOTE: Python tools are problematic because they can be extended with 3rd party plugins like pylint-pytest or flake8-bugbear and Mason right now does not provide an automatic way to install such extensions. The issue occurs due to Mason putting its bin directory in the PATH before anything else so manually installed plugins are not picked up.
     -- "flake8",
     -- "pylint",
@@ -47,11 +48,17 @@ local formatters = {
     -- "isort",
 }
 
+-- TODO: Find a way to use DAP with binaries installed by Mason
+-- local debuggers = {
+--     "debugpy",
+-- }
+
 local tools_to_install = {}
 
 -- vim.list_extend(tools_to_install, servers)
 vim.list_extend(tools_to_install, linters)
 vim.list_extend(tools_to_install, formatters)
+-- vim.list_extend(tools_to_install, debuggers)
 
 local settings = {
     ui = {
