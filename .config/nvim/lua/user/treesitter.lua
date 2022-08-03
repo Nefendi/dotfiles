@@ -30,9 +30,16 @@ configs.setup {
             -- "#88c0d0",
             -- "#5e81ac",
             -- "#b48ead",
+
+            -- Onedarker
             "#68a0b0",
             "#946EaD",
             "#c7aA6D",
+
+            -- Darkplus
+            -- "Gold",
+            -- "Orchid",
+            -- "DodgerBlue",
         },
         disable = { "html" },
     },
