@@ -126,17 +126,15 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
     end,
 })
 
--- Winbar
-if vim.fn.has "nvim-0.8" == 1 then
-    vim.api.nvim_create_autocmd(
-        { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
-        {
-            callback = function()
-                local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
-                if not status_ok then
-                    require("user.winbar").get_winbar()
-                end
-            end,
-        }
-    )
-end
+-- LuaSnip
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+    callback = function()
+        local status_ok, luasnip = pcall(require, "luasnip")
+        if not status_ok then
+            return
+        end
+        if luasnip.expand_or_jumpable() then
+            vim.cmd [[silent! lua require("luasnip").unlink_current()]]
+        end
+    end,
+})
