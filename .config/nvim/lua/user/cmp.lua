@@ -10,6 +10,15 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+local functions = require "user.functions"
+
+local buffer_fts = {
+    "markdown",
+    "toml",
+    "yaml",
+    "json",
+}
+
 local compare = require "cmp.config.compare"
 
 local check_backspace = function()
@@ -25,7 +34,16 @@ vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindPackage", { fg = "#F64D00" })
 vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
+vim.g.cmp_active = true
+
 cmp.setup {
+    enabled = function()
+        local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+        if buftype == "prompt" then
+            return false
+        end
+        return vim.g.cmp_active
+    end,
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -44,7 +62,7 @@ cmp.setup {
         },
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<CR>"] = cmp.mapping.confirm { select = false },
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -116,7 +134,15 @@ cmp.setup {
         { name = "nvim_lua", group_index = 2 },
         { name = "cmp_tabnine", group_index = 2 },
         { name = "luasnip", group_index = 2 },
-        { name = "buffer", group_index = 2 },
+        {
+            name = "buffer",
+            group_index = 2,
+            filter = function(_, ctx)
+                if not functions.contains(buffer_fts, ctx.prev_context.filetype) then
+                    return true
+                end
+            end,
+        },
         { name = "path", group_index = 2 },
         { name = "emoji", group_index = 2 },
     },
