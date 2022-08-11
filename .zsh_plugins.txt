@@ -36,3 +36,4 @@ zpm-zsh/material-colors
 zdharma/fast-syntax-highlighting
 lukechilds/zsh-nvm
 mattberther/zsh-pyenv
+ptavares/zsh-sdkman
