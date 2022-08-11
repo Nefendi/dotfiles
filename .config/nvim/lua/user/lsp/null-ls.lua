@@ -50,7 +50,9 @@ null_ls.setup {
         formatting.latexindent,
 
         -- C++
-        formatting.clang_format,
+        formatting.clang_format.with {
+            filetypes = { "c", "cpp", "cuda" },
+        },
 
         -- Markdown
         diagnostics.markdownlint,
