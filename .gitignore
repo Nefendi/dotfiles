@@ -2,3 +2,6 @@
 .vscode
 
 packer_compiled.lua
+
+.config/nvim/vscode-java-test
+.config/nvim/java-debug

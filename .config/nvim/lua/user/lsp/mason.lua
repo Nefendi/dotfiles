@@ -19,6 +19,7 @@ local servers = {
     "emmet_ls",
     "eslint",
     "hls",
+    "jdtls",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -178,6 +179,10 @@ for _, server in pairs(servers) do
     if server == "gopls" then
         local gopls_opts = require "user.lsp.settings.gopls"
         opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+    end
+
+    if server == "jdtls" then
+        goto continue
     end
 
     lspconfig[server].setup(opts)

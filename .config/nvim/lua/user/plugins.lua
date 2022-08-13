@@ -154,6 +154,9 @@ return packer.startup(function(use)
         commit = "f5c31936fe06fcbeb59b98f69f74f9c2f91abaec",
     }
 
+    -- Java
+    use { "mfussenegger/nvim-jdtls", commit = "87bdf2b216f3346abb099704c9bb45e5eb9df43a" }
+
     -- Telescope
     use { "nvim-telescope/telescope.nvim", commit = "b5833a682c511885887373aad76272ad70f7b3c2" }
     use { "nvim-telescope/telescope-ui-select.nvim", commit = "62ea5e58c7bbe191297b983a9e7e89420f581369" }
