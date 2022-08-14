@@ -119,10 +119,10 @@ return packer.startup(function(use)
 
     -- LSP
     use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }
-    use { "williamboman/mason.nvim", commit = "3458edb7e020c8e1249b307b084f85ec0230175e" }
-    use { "williamboman/mason-lspconfig.nvim", commit = "3cbd87f0824a88f61b3b8b986fa77428bbad4427" }
-    use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "09ca2e6c9ae074984a8b8195c568c0b86618996a" }
-    use { "jose-elias-alvarez/null-ls.nvim", commit = "5b745e5fa2a18a2c0df8966080f4321fad4f42d7" }
+    use { "williamboman/mason.nvim", commit = "49c7826ebca62374df44b20fcd0df7a287d4511d" }
+    use { "williamboman/mason-lspconfig.nvim", commit = "f0d0d62273b76fa0ef5154ce9d05b1a2a083e79b" }
+    use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "34b7228fa6e30f699f3421f982a2cc27c87bbf71" }
+    use { "jose-elias-alvarez/null-ls.nvim", commit = "8c90ccf7ffbdeb49da415837ec45e6ac457d5c60" }
     use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
     use { "folke/lsp-colors.nvim", commit = "517fe3ab6b63f9907b093bc9443ef06b56f804f3" }
     use { "ray-x/lsp_signature.nvim", commit = "3694c1f3020ae671069f9a36749d7fa7fbd68b15" }
