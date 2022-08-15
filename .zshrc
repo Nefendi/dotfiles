@@ -16,6 +16,12 @@ export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
 
+# YOU-SHOULD-USE
+# Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
+export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 3)\
+Found existing %alias_type for $(tput setaf 5)\"%command\"$(tput setaf 3). \
+You should use: $(tput setaf 5)\"%alias\"$(tput setaf sgr0)"
+
 # ANTIBODY
 source "${HOME}"/.zsh_plugins.sh
 
