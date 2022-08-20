@@ -123,7 +123,7 @@ return packer.startup(function(use)
     use { "williamboman/mason-lspconfig.nvim", commit = "f0d0d62273b76fa0ef5154ce9d05b1a2a083e79b" }
     use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "34b7228fa6e30f699f3421f982a2cc27c87bbf71" }
     use { "jose-elias-alvarez/null-ls.nvim", commit = "8c90ccf7ffbdeb49da415837ec45e6ac457d5c60" }
-    use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
+    use { "RRethy/vim-illuminate", commit = "59f69f90fbce5cf37741fb8e4aa040e78a0b3516" }
     use { "folke/lsp-colors.nvim", commit = "517fe3ab6b63f9907b093bc9443ef06b56f804f3" }
     use { "ray-x/lsp_signature.nvim", commit = "3694c1f3020ae671069f9a36749d7fa7fbd68b15" }
     use { "j-hui/fidget.nvim", commit = "46d1110435f1f023c22fa95bb10b3906aecd7bde" }
