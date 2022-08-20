@@ -73,7 +73,7 @@ local mappings = {
     a = { "<cmd>wa<CR>", "Write All" },
     h = { "<cmd>nohlsearch<CR>", "No HL" },
     q = { "<cmd>lua require('user.functions').smart_quit()<CR>", "Quit" },
-    ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
     c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     P = { "<cmd>Telescope projects<cr>", "Projects" },
     [" "] = {
@@ -244,7 +244,7 @@ local vopts = {
 }
 
 local vmappings = {
-    ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+    ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
     l = {
         name = "LSP",
         a = {
