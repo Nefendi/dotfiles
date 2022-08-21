@@ -25,8 +25,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Splits
-keymap("n", "<m-s>", "<cmd>split<cr>", opts)
-keymap("n", "<m-v>", "<cmd>vsplit<cr>", opts)
+-- keymap("n", "<m-s>", "<cmd>split<cr>", opts)
+-- keymap("n", "<m-v>", "<cmd>vsplit<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

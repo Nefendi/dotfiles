@@ -61,9 +61,46 @@ function _LAZYGIT_TOGGLE()
     lazygit:toggle()
 end
 
-local opts = { silent = true }
+local opts = { silent = true, noremap = true }
 
 local keymap = vim.keymap.set
+
+-- local vertical_term = Terminal:new {
+--     direction = "vertical",
+--     on_open = function(term)
+--         vim.cmd "startinsert!"
+--         vim.api.nvim_buf_set_keymap(
+--             term.bufnr,
+--             "n",
+--             "<m-v>",
+--             "<cmd>2ToggleTerm size=80 direction=vertical<cr>",
+--             { noremap = true, silent = true }
+--         )
+--         vim.api.nvim_buf_set_keymap(
+--             term.bufnr,
+--             "t",
+--             "<m-v>",
+--             "<cmd>2ToggleTerm size=80 direction=vertical<cr>",
+--             { noremap = true, silent = true }
+--         )
+--         vim.api.nvim_buf_set_keymap(
+--             term.bufnr,
+--             "i",
+--             "<m-v>",
+--             "<cmd>2ToggleTerm size=80 direction=vertical<cr>",
+--             { noremap = true, silent = true }
+--         )
+--         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-1>", "<nop>", { noremap = true, silent = true })
+--         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-2>", "<nop>", { noremap = true, silent = true })
+--         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-3>", "<nop>", { noremap = true, silent = true })
+--         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-4>", "<nop>", { noremap = true, silent = true })
+--     end,
+--     count = 5,
+-- }
+
+-- function _VERTICAL_TERM()
+--     vertical_term:toggle(80)
+-- end
 
 keymap("n", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
 keymap("t", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
@@ -85,6 +122,10 @@ keymap("i", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
 -- keymap("t", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
 -- keymap("i", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
 
--- keymap("n", "<m-3>", "<cmd>2ToggleTerm size=80 direction=vertical<cr>", opts)
--- keymap("t", "<m-3>", "<cmd>2ToggleTerm size=80 direction=vertical<cr>", opts)
--- keymap("i", "<m-3>", "<cmd>2ToggleTerm size=80 direction=vertical<cr>", opts)
+keymap("n", "<m-v>", "<cmd>5ToggleTerm direction=vertical size=80<cr>", opts)
+keymap("t", "<m-v>", "<cmd>5ToggleTerm direction=vertical size=80<cr>", opts)
+keymap("i", "<m-v>", "<cmd>5ToggleTerm direction=vertical size=80<cr>", opts)
+
+-- keymap("n", "<m-v>", "<cmd>lua _VERTICAL_TERM()<cr>", opts)
+-- keymap("t", "<m-v>", "<cmd>lua _VERTICAL_TERM()<cr>", opts)
+-- keymap("i", "<m-v>", "<cmd>lua _VERTICAL_TERM()<cr>", opts)
