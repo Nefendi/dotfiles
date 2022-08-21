@@ -25,7 +25,7 @@ todo_comments.setup {
         PERF = {
             icon = icons.ui.DashboardCodicon .. " ",
             color = perf_purple,
-            alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" },
+            alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "TEST" },
         },
         NOTE = { icon = icons.ui.NoteCodicon .. " ", color = note_green, alt = { "INFO" } },
     },
