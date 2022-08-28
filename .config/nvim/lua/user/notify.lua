@@ -38,4 +38,11 @@ notify.setup {
     },
 }
 
-vim.notify = notify
+-- FIXME: Ugly hack to disable notify pop-up with 'No information available' when executing vim.lsp.buf.hover() in JS/TS files
+vim.notify = function(msg, ...)
+    if msg:match "No information available" then
+        return
+    end
+
+    notify(msg, ...)
+end
