@@ -176,6 +176,7 @@ return packer.startup(function(use)
     use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "37a97a04c39f26fffe7745815517e1ce1a0eb3be" }
     use { "windwp/nvim-ts-autotag", commit = "044a05c4c51051326900a53ba98fddacd15fea22" }
     use { "nvim-treesitter/playground", commit = "ce7e4b757598f1c785ed0fd94fc65959acd7d39c" }
+    use { "nvim-treesitter/nvim-treesitter-context", commit = "245bb4381edf43ddb1fde7e78d4119dbfc12ea41" }
 
     -- Git
     use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
