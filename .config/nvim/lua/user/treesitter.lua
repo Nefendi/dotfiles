@@ -23,18 +23,18 @@ configs.setup {
         extended_mode = false,
         max_file_lines = nil,
         colors = {
-            -- "#bf616a",
-            -- "#d08770",
-            -- "#ebcb8b",
-            -- "#a3be8c",
-            -- "#88c0d0",
-            -- "#5e81ac",
-            -- "#b48ead",
+            "#bf616a",
+            "#d08770",
+            "#ebcb8b",
+            "#a3be8c",
+            "#88c0d0",
+            "#5e81ac",
+            "#b48ead",
 
             -- Onedarker
-            "#68a0b0",
-            "#946EaD",
-            "#c7aA6D",
+            -- "#68a0b0",
+            -- "#946EaD",
+            -- "#c7aA6D",
 
             -- Darkplus
             -- "Gold",

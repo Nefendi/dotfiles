@@ -3,13 +3,14 @@ if not status_ok then
     return
 end
 
--- local lualine_scheme = "darkplus_dark"
-local lualine_scheme = "onedarker_alt"
+local lualine_scheme = "nord"
 
 local status_theme_ok, theme = pcall(require, "lualine.themes." .. lualine_scheme)
 if not status_theme_ok then
     return
 end
+
+theme.normal.c.bg = "#2E3440"
 
 local icons = require "user.icons"
 
@@ -38,6 +39,8 @@ local indent = "#CE9178"
 local yellow = "#DCDCAA"
 local yellow_orange = "#D7BA7D"
 local purple = "#C586C0"
+local bg = "NONE"
+local dimmed_blue = "NONE"
 
 if lualine_scheme == "darkplus_dark" then
     gray = "#303030"
@@ -52,27 +55,40 @@ if lualine_scheme == "darkplus_dark" then
     purple = "#B48EAD"
 end
 
+if lualine_scheme == "nord" then
+    gray = "#4C566A"
+    dark_gray = "#3B4252"
+    red = "#BF616A"
+    blue = "#81A1C1"
+    green = "#A3BE8C"
+    cyan = "#88C0D0"
+    yellow = "#EBCB8B"
+    orange = "#D08770"
+    bg = "#2E3440"
+    purple = "#B48EAD"
+    dimmed_blue = "#5E81AC"
+end
+
 local sl_hl = vim.api.nvim_get_hl_by_name("StatusLine", true)
 -- local sl_hl_sep = vim.api.nvim_get_hl_by_name("StatusLineSeparator", true)
 
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = dark_gray })
-vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
+vim.api.nvim_set_hl(0, "SLTermIcon", { fg = orange, bg = dark_gray })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = dark_gray, bold = false })
-vim.api.nvim_set_hl(0, "SLProgress", { fg = purple, bg = gray })
-vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
-vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
-vim.api.nvim_set_hl(0, "SLIndent", { fg = indent, bg = gray })
+vim.api.nvim_set_hl(0, "SLProgress", { fg = orange, bg = dark_gray })
+vim.api.nvim_set_hl(0, "SLLocation", { fg = purple, bg = dark_gray })
+vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = dark_gray })
+vim.api.nvim_set_hl(0, "SLIndent", { fg = yellow, bg = dark_gray })
 vim.api.nvim_set_hl(0, "SLLSP", { fg = "#6b727f", bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLSep", { fg = dark_gray, bg = "NONE" })
 vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "NONE" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "NONE", italic = true })
-vim.api.nvim_set_hl(0, "SLError", { fg = "#bf616a", bg = sl_hl.background })
-vim.api.nvim_set_hl(0, "SLWarning", { fg = "#D7BA7D", bg = sl_hl.background })
 vim.api.nvim_set_hl(0, "SLCopilot", { fg = "#6CC644", bg = sl_hl.background })
-vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLWarning", { fg = orange, bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLInfo", { fg = yellow, bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLHint", { fg = blue, bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = bg })
+vim.api.nvim_set_hl(0, "SLWarning", { fg = purple, bg = bg })
+vim.api.nvim_set_hl(0, "SLInfo", { fg = dimmed_blue, bg = bg })
+vim.api.nvim_set_hl(0, "SLHint", { fg = blue, bg = bg })
+vim.api.nvim_set_hl(0, "SLBG", { bg = bg })
 
 local hl_str = function(str, hl)
     return "%#" .. hl .. "#" .. str .. "%*"
@@ -84,7 +100,7 @@ local left_pad = {
     end,
     padding = 0,
     color = function()
-        return { fg = gray }
+        return { fg = gray, bg = bg }
     end,
 }
 
@@ -94,7 +110,7 @@ local right_pad = {
     end,
     padding = 0,
     color = function()
-        return { fg = dark_gray }
+        return { fg = dark_gray, bg = bg }
     end,
 }
 
@@ -104,7 +120,7 @@ local left_pad_alt = {
     end,
     padding = 0,
     color = function()
-        return { fg = gray }
+        return { fg = gray, bg = bg }
     end,
 }
 
@@ -114,7 +130,7 @@ local right_pad_alt = {
     end,
     padding = 0,
     color = function()
-        return { fg = gray }
+        return { fg = gray, bg = bg }
     end,
 }
 
@@ -156,10 +172,10 @@ local diagnostics = {
     sources = { "nvim_diagnostic" },
     sections = { "error", "warn", "info", "hint" },
     symbols = {
-        error = "%#SLError#" .. icons.diagnostics_codicons.Error .. "%*" .. " ",
-        warn = "%#SLWarning#" .. icons.diagnostics_codicons.Warning .. "%*" .. " ",
-        info = "%#SLInfo#" .. icons.diagnostics_codicons.Info .. "%*" .. " ",
-        hint = "%#SLHint#" .. icons.diagnostics_codicons.Hint .. "%*" .. " ",
+        error = "%#SLError#" .. icons.diagnostics_codicons.Error .. "%*" .. "%#SLBG# ",
+        warn = "%#SLWarning#" .. icons.diagnostics_codicons.Warning .. "%*" .. "%#SLBG# ",
+        info = "%#SLInfo#" .. icons.diagnostics_codicons.Info .. "%*" .. "%#SLBG# ",
+        hint = "%#SLHint#" .. icons.diagnostics_codicons.Hint .. "%*" .. "%#SLBG# ",
     },
     colored = false,
     update_in_insert = false,
