@@ -7,7 +7,6 @@ local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
     return
 end
-
 local icons = require "user.icons"
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
@@ -26,13 +25,16 @@ nvim_tree.setup {
     },
     renderer = {
         add_trailing = false,
-        group_empty = false,
-        highlight_git = false,
-        highlight_opened_files = "none",
+        group_empty = true,
+        highlight_git = true,
+        highlight_opened_files = "all",
         root_folder_modifier = ":t",
+        indent_markers = {
+            enable = true,
+        },
         icons = {
             webdev_colors = true,
-            git_placement = "before",
+            git_placement = "after",
             padding = " ",
             symlink_arrow = " " .. icons.ui.ThinRightArrow .. " ",
             show = {
@@ -56,10 +58,10 @@ nvim_tree.setup {
                 },
                 git = {
                     unstaged = icons.misc.SmallDot,
-                    staged = "S",
+                    staged = icons.ui.CheckCodicon,
                     unmerged = icons.git.Unmerged,
                     renamed = icons.ui.RightArrow,
-                    untracked = "U",
+                    untracked = icons.git.Untracked,
                     deleted = icons.git.Removed,
                     ignored = icons.misc.EmptyDot,
                 },
@@ -86,6 +88,7 @@ nvim_tree.setup {
         timeout = 500,
     },
     view = {
+        adaptive_size = true,
         width = 50,
         height = 30,
         hide_root_folder = false,
@@ -96,6 +99,8 @@ nvim_tree.setup {
                 { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
                 { key = "h", cb = tree_cb "close_node" },
                 { key = "v", cb = tree_cb "vsplit" },
+                { key = "H", cb = tree_cb "dir_up" },
+                { key = "L", cb = tree_cb "cd" },
             },
         },
     },

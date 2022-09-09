@@ -46,7 +46,7 @@ return packer.startup(function(use)
     use { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
     use { "numToStr/Comment.nvim", commit = "350bf0cb47bfb2a48ddca79475888bc333c74a37" }
     use { "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" }
-    use { "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" }
+    use { "kyazdani42/nvim-tree.lua", commit = "3e49d9b7484e21f0b24ebdf21b8b7af227ea97a6" }
     use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
     use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" }
     use { "akinsho/toggleterm.nvim", tag = "v2.*" }

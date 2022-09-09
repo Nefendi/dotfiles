@@ -62,7 +62,15 @@ return {
         Key = "",
         Null = "",
     },
-    git = { Repo = "", Added = "", Modified = "", Removed = "", Branch = "", Unmerged = "" },
+    git = {
+        Repo = "",
+        Added = "",
+        Modified = "",
+        Removed = "",
+        Branch = "",
+        Unmerged = "",
+        Untracked = "★",
+    },
     diagnostics = {
         Error = "",
         Warning = "",
