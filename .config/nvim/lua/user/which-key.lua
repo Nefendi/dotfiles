@@ -80,6 +80,7 @@ local mappings = {
         "<cmd>Telescope find_files<cr>",
         "Find Files",
     },
+    u = { '<cmd>lua require("undotree").toggle()<cr>', "Undotree" },
 
     p = {
         name = "Packer",
