@@ -23,13 +23,13 @@ configs.setup {
         extended_mode = false,
         max_file_lines = nil,
         colors = {
-            "#bf616a",
-            "#d08770",
-            "#ebcb8b",
-            "#a3be8c",
-            "#88c0d0",
-            "#5e81ac",
-            "#b48ead",
+            -- "#bf616a",
+            -- "#d08770",
+            -- "#ebcb8b",
+            -- "#a3be8c",
+            -- "#88c0d0",
+            -- "#5e81ac",
+            -- "#b48ead",
 
             -- Onedarker
             -- "#68a0b0",
@@ -37,9 +37,9 @@ configs.setup {
             -- "#c7aA6D",
 
             -- Darkplus
-            -- "Gold",
-            -- "Orchid",
-            -- "DodgerBlue",
+            "Gold",
+            "Orchid",
+            "DodgerBlue",
         },
         disable = { "html" },
     },
@@ -47,6 +47,13 @@ configs.setup {
 }
 
 -- nvim-treesitter-context
+
 -- Nord palette
-vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#3B4252" })
-vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D8DEE9" })
+-- vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#3B4252" })
+-- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D8DEE9" })
+
+-- Darkplus palette
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D4D4D4" })
+
+-- Onedarker palette
+-- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#ABB2BF" })

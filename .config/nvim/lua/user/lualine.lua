@@ -3,14 +3,14 @@ if not status_ok then
     return
 end
 
-local lualine_scheme = "nord"
+local lualine_scheme = "darkplus_dark"
 
 local status_theme_ok, theme = pcall(require, "lualine.themes." .. lualine_scheme)
 if not status_theme_ok then
     return
 end
 
-theme.normal.c.bg = "#2E3440"
+-- theme.normal.c.bg = "#2E3440"
 
 local icons = require "user.icons"
 
@@ -69,24 +69,25 @@ if lualine_scheme == "nord" then
     dimmed_blue = "#5E81AC"
 end
 
-local sl_hl = vim.api.nvim_get_hl_by_name("StatusLine", true)
+-- local sl_hl = vim.api.nvim_get_hl_by_name("StatusLine", true)
 -- local sl_hl_sep = vim.api.nvim_get_hl_by_name("StatusLineSeparator", true)
 
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = dark_gray })
-vim.api.nvim_set_hl(0, "SLTermIcon", { fg = orange, bg = dark_gray })
+vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = dark_gray, bold = false })
-vim.api.nvim_set_hl(0, "SLProgress", { fg = orange, bg = dark_gray })
-vim.api.nvim_set_hl(0, "SLLocation", { fg = purple, bg = dark_gray })
-vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = dark_gray })
-vim.api.nvim_set_hl(0, "SLIndent", { fg = yellow, bg = dark_gray })
+vim.api.nvim_set_hl(0, "SLProgress", { fg = purple, bg = gray })
+vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
+vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
+vim.api.nvim_set_hl(0, "SLIndent", { fg = indent, bg = gray })
 vim.api.nvim_set_hl(0, "SLLSP", { fg = "#6b727f", bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLSep", { fg = dark_gray, bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = "NONE" })
 vim.api.nvim_set_hl(0, "SLFG", { fg = "#abb2bf", bg = "NONE" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "NONE", italic = true })
-vim.api.nvim_set_hl(0, "SLCopilot", { fg = "#6CC644", bg = sl_hl.background })
+vim.api.nvim_set_hl(0, "SLCopilot", { fg = "#6CC644", bg = "NONE" })
+
 vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = bg })
-vim.api.nvim_set_hl(0, "SLWarning", { fg = purple, bg = bg })
-vim.api.nvim_set_hl(0, "SLInfo", { fg = dimmed_blue, bg = bg })
+vim.api.nvim_set_hl(0, "SLWarning", { fg = orange, bg = bg })
+vim.api.nvim_set_hl(0, "SLInfo", { fg = yellow_orange, bg = bg })
 vim.api.nvim_set_hl(0, "SLHint", { fg = blue, bg = bg })
 vim.api.nvim_set_hl(0, "SLBG", { bg = bg })
 
