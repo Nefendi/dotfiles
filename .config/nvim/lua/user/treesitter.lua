@@ -45,3 +45,8 @@ configs.setup {
     },
     playground = { enable = true },
 }
+
+-- nvim-treesitter-context
+-- Nord palette
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#3B4252" })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D8DEE9" })

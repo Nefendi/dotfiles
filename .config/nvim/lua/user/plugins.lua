@@ -92,7 +92,7 @@ return packer.startup(function(use)
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
     use { "lunarvim/darkplus.nvim", commit = "bd8ab5fc71a3c85c41231b187a2add4a78129c4d" }
     use { "projekt0n/github-nvim-theme", commit = "b3f15193d1733cc4e9c9fe65fbfec329af4bdc2a" }
-    use { "shaunsingh/nord.nvim", commit = "6bfb0f7d6e4faf7cddedd34489efe2d2f586325c" }
+    use { "shaunsingh/nord.nvim", commit = "209e9b394879e80beeed7fb923a8bec239b7b327" }
     use { "andersevenrud/nordic.nvim", commit = "40c71de9596ad9e7a7c742ba969399790cadd711" }
 
     -- Cmp plugins
