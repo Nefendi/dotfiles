@@ -11,6 +11,21 @@ local icons = require "user.icons"
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+local utils = require "nvim-tree.utils"
+
+local function notify_level(_)
+    return function(msg)
+        vim.schedule(function()
+            vim.api.nvim_echo({ { msg, "WarningMsg" } }, false, {})
+        end)
+    end
+end
+
+utils.notify.warn = notify_level(vim.log.levels.WARN)
+utils.notify.error = notify_level(vim.log.levels.ERROR)
+utils.notify.info = notify_level(vim.log.levels.INFO)
+utils.notify.debug = notify_level(vim.log.levels.DEBUG)
+
 nvim_tree.setup {
     respect_buf_cwd = true,
     update_cwd = true,
