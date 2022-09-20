@@ -10,11 +10,9 @@ export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-i
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
+# FNM
+export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
+export ZSH_FNM_NODE_VERSION="16.17.0"
 
 # YOU-SHOULD-USE
 # Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
