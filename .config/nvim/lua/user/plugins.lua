@@ -87,6 +87,7 @@ return packer.startup(function(use)
         },
         commit = "6cb7e65e03871d2567d2c44745d3de57d07ca1fd",
     }
+    use { "tamago324/lir.nvim", commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396" }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
