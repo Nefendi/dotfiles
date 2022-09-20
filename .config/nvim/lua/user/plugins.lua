@@ -137,7 +137,7 @@ return packer.startup(function(use)
         requires = { "neovim/nvim-lspconfig" },
     }
     use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" }
-    use { "lvimuser/lsp-inlayhints.nvim", commit = "33b5360cde2c280ee1f0618d413b07e7f6622c23" }
+    use { "lvimuser/lsp-inlayhints.nvim", commit = "9bcd6fe25417b7808fe039ab63d4224f2071d24a" }
 
     -- Go
     use {
