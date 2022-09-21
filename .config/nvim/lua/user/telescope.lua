@@ -78,10 +78,10 @@ telescope.setup {
             previewer = false,
         },
         live_grep = {
-            require("telescope.themes").get_dropdown(),
+            theme = "dropdown",
         },
         grep_string = {
-            require("telescope.themes").get_dropdown(),
+            theme = "dropdown",
             only_sort_text = true,
         },
         buffers = {
