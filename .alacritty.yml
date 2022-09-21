@@ -535,7 +535,7 @@ schemes:
       foreground: "#d4d4d4"
 
     cursor:
-      text: "#d4d4d4"
+      text: "#1e1e1e"
       cursor: "#d4d4d4"
 
     normal:
