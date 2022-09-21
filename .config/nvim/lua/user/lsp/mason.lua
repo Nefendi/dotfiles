@@ -45,6 +45,7 @@ local formatters = {
     "golines",
     "shfmt",
     "clang-format",
+    "prettier",
     -- "black",
     -- "isort",
 }
