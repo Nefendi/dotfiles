@@ -25,6 +25,7 @@ ohmyzsh/ohmyzsh path:plugins/direnv
 
 
 Aloxaf/fzf-tab
+hlissner/zsh-autopair
 
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
