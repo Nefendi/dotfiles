@@ -12,9 +12,13 @@ null_ls.setup {
     debug = false,
     sources = {
         -- Miscellaneous
+        -- Prettier only for markdown because I don't know how to set --prose-wrap in prettierd here
         formatting.prettier.with {
-            extra_filetypes = { "toml" },
+            filetypes = { "markdown" },
             extra_args = { "--prose-wrap", "always" },
+        },
+        formatting.prettierd.with {
+            disabled_filetypes = { "markdown" },
         },
         diagnostics.actionlint,
 

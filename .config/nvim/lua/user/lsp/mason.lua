@@ -46,6 +46,7 @@ local formatters = {
     "shfmt",
     "clang-format",
     "prettier",
+    "prettierd",
     -- "black",
     -- "isort",
 }
