@@ -150,7 +150,7 @@ return packer.startup(function(use)
     -- Rust
     use {
         "simrat39/rust-tools.nvim",
-        commit = "11dcd674781ba68a951ab4c7b740553cae8fe671",
+        commit = "86a2b4e31f504c00715d0dd082a6b8b5d4afbf03",
     }
 
     -- Lua

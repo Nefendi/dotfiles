@@ -8,9 +8,9 @@ return {
                 end,
             })
         end,
-        autoSetHints = false,
-
         inlay_hints = {
+            auto = false,
+
             -- Only show inlay hints for the current line
             only_current_line = false,
 
