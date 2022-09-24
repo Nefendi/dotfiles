@@ -175,7 +175,10 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
-        commit = "365f0eb75f4b8de4655476388c99aaa97f149ded",
+        commit = "a60aa7b2e1dd9219c6356f65ba48bdbd50090abd",
+        run = function()
+            require("nvim-treesitter.install").update { with_sync = true }
+        end,
     }
     use { "p00f/nvim-ts-rainbow", commit = "18cb3a45e0ff843d48e8637a36b9cc6cd89d71b0" }
     use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "37a97a04c39f26fffe7745815517e1ce1a0eb3be" }
