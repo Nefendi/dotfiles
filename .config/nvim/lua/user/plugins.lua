@@ -62,7 +62,7 @@ return packer.startup(function(use)
     use { "NvChad/nvim-colorizer.lua", commit = "6c8b1495c3d2034188cc67c18e2ae5e8343cd504" }
     use { "nacro90/numb.nvim", commit = "453c50ab921fa066fb073d2fd0f826cb036eaf7b" }
     use { "ellisonleao/glow.nvim", commit = "764527caeb36cd68cbf3f6d905584750cb02229d" }
-    use { "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" }
+    use { "rcarriga/nvim-notify", commit = "3a8ec89e1918ea2acbb9b22c5ac2006d31773052" }
     use { "folke/which-key.nvim", commit = "6885b669523ff4238de99a7c653d47b081b5506d" }
     use { "nvim-pack/nvim-spectre", commit = "a52139da068ee4d0860810af7c6b6d48d3cde603" }
     use { "stevearc/dressing.nvim", commit = "1e60c07ae9a8557ac6395144606c3a5335ad47e0" }
