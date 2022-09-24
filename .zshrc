@@ -37,5 +37,8 @@ alias g='lazygit'
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
 
+# GVM
+[[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
+
 # STARSHIP
 eval "$(starship init zsh)"
