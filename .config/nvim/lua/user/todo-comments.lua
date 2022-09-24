@@ -5,12 +5,11 @@ end
 
 local icons = require "user.icons"
 
-local error_red = "#F44747"
-local warning_orange = "#ff8800"
--- local info_yellow = "#FFCC66"
-local hint_blue = "#4FC1FF"
+local error_red = "error"
+local warning_orange = "warning"
+local hint_blue = "hint"
 local perf_purple = "#7C3AED"
-local note_green = "#10B981"
+local note_yellow = "#e0af68"
 
 todo_comments.setup {
     keywords = {
@@ -27,14 +26,14 @@ todo_comments.setup {
             color = perf_purple,
             alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "TEST" },
         },
-        NOTE = { icon = icons.ui.NoteCodicon .. " ", color = note_green, alt = { "INFO" } },
+        NOTE = { icon = icons.ui.NoteCodicon .. " ", color = note_yellow, alt = { "INFO" } },
     },
     -- highlighting of the line containing the todo comment
     -- * before: highlights before the keyword (typically comment characters)
     -- * keyword: highlights of the keyword
     -- * after: highlights after the keyword (todo text)
     highlight = {
-        keyword = "fg", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+        keyword = "bg", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
         after = "fg", -- "fg" or "bg" or empty
         exclude = { "markdown" },
     },
