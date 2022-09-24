@@ -58,12 +58,12 @@ return packer.startup(function(use)
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
     use { "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" }
     use { "folke/todo-comments.nvim", commit = "02eb3019786d9083b93ab9457761899680c6f3ec" }
-    use { "ggandor/leap.nvim", commit = "054456aa7fa6ddbee23b6ee6d50ad9086c9d78cc" }
+    use { "ggandor/leap.nvim", commit = "aba53d7a8870426bea89eeca6c3b265d1f94c584" }
     use { "NvChad/nvim-colorizer.lua", commit = "6c8b1495c3d2034188cc67c18e2ae5e8343cd504" }
     use { "nacro90/numb.nvim", commit = "453c50ab921fa066fb073d2fd0f826cb036eaf7b" }
     use { "ellisonleao/glow.nvim", commit = "764527caeb36cd68cbf3f6d905584750cb02229d" }
     use { "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" }
-    use { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" }
+    use { "folke/which-key.nvim", commit = "6885b669523ff4238de99a7c653d47b081b5506d" }
     use { "nvim-pack/nvim-spectre", commit = "a52139da068ee4d0860810af7c6b6d48d3cde603" }
     use { "stevearc/dressing.nvim", commit = "1e60c07ae9a8557ac6395144606c3a5335ad47e0" }
     use { "abecodes/tabout.nvim", commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca", wants = { "nvim-treesitter" } }
@@ -120,7 +120,7 @@ return packer.startup(function(use)
 
     -- Snippets
     use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }
-    use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" }
+    use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }
 
     -- LSP
     use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }
@@ -188,7 +188,7 @@ return packer.startup(function(use)
     use { "nvim-treesitter/nvim-treesitter-textobjects", commit = "e63c2ff8e38fad77299dd74e14c7c9360e1b3181" }
 
     -- Git
-    use { "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }
+    use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
     use { "f-person/git-blame.nvim", commit = "1bb73289929107309d2d90f7582ece5e9436bfd8" }
     use { "akinsho/git-conflict.nvim", commit = "80bc8931d4ed8c8c4d289a08e1838fcf4741408d" }
 
