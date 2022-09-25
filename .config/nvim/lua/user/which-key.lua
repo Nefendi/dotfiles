@@ -184,7 +184,7 @@ local mappings = {
         c = { "<cmd>lua require('user.lsp').server_capabilities()<cr>", "Get Capabilities" },
         d = {
             "<cmd>Telescope diagnostics bufnr=0<cr>",
-            "Workspace Diagnostics",
+            "Document Diagnostics",
         },
         D = {
             "<cmd>Telescope diagnostics<cr>",
