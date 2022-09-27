@@ -123,6 +123,11 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
     end
 
+    if server == "yamlls" then
+        local yamlls_opts = require "user.lsp.settings.yamlls"
+        opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
+    end
+
     if server == "sumneko_lua" then
         -- local l_status_ok, lua_dev = pcall(require, "lua-dev")
         --
