@@ -118,6 +118,11 @@ for _, server in pairs(servers) do
         capabilities = require("user.lsp.handlers").capabilities,
     }
 
+    if server == "jsonls" then
+        local jsonls_opts = require "user.lsp.settings.jsonls"
+        opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+    end
+
     if server == "sumneko_lua" then
         -- local l_status_ok, lua_dev = pcall(require, "lua-dev")
         --
