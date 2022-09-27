@@ -3,6 +3,11 @@ if not status_ok then
     return
 end
 
+local status_ok_config, neoscroll_config = pcall(require, "neoscroll.config")
+if not status_ok_config then
+    return
+end
+
 neoscroll.setup {
     -- All these keys will be mapped to their corresponding default scrolling animation
     mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
@@ -15,3 +20,10 @@ neoscroll.setup {
     -- post_hook = nil, -- Function to run after the scrolling animation ends
     performance_mode = false, -- Disable "Performance Mode" on all buffers.)
 }
+
+local t = {}
+
+t["<c-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+t["<c-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+
+neoscroll_config.set_mappings(t)
