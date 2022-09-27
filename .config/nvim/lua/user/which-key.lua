@@ -143,6 +143,7 @@ local mappings = {
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         n = { "<cmd>Telescope notify initial_mode='normal'<cr>", "Find Notifications" },
+        s = { "<cmd>TodoTelescope initial_mode=normal<cr>", "TODO comments" },
     },
 
     g = {
