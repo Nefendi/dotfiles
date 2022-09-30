@@ -9,9 +9,7 @@ configs.setup {
     highlight = {
         enable = true, -- false will disable the whole extension
     },
-    autopairs = {
-        enable = true,
-    },
+    autopairs = { enable = true },
     autotag = {
         enable = true,
         disable = { "markdown" },
@@ -20,27 +18,28 @@ configs.setup {
     context_commentstring = { enable = true, disable = { "markdown" } },
     rainbow = {
         enable = true,
-        extended_mode = false,
+        extended_mode = true,
         max_file_lines = nil,
-        colors = {
-            -- "#bf616a",
-            -- "#d08770",
-            -- "#ebcb8b",
-            -- "#a3be8c",
-            -- "#88c0d0",
-            -- "#5e81ac",
-            -- "#b48ead",
+        -- colors = {
+        --     -- "#bf616a",
+        --     -- "#d08770",
+        --     -- "#ebcb8b",
+        --     -- "#a3be8c",
+        --     -- "#88c0d0",
+        --     -- "#5e81ac",
+        --     -- "#b48ead",
 
-            -- Onedarker
-            -- "#68a0b0",
-            -- "#946EaD",
-            -- "#c7aA6D",
+        --     -- Onedarker
+        --     -- "#68a0b0",
+        --     -- "#946EaD",
+        --     -- "#c7aA6D",
 
-            -- Darkplus
-            "Gold",
-            "Orchid",
-            "DodgerBlue",
-        },
+        --     -- Darkplus
+        --     -- "Gold",
+        --     -- "Orchid",
+        --     -- "DodgerBlue",
+
+        -- },
         disable = { "html" },
     },
     playground = { enable = true },
@@ -114,7 +113,11 @@ configs.setup {
 -- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D8DEE9" })
 
 -- Darkplus palette
-vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D4D4D4" })
+-- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#D4D4D4" })
 
 -- Onedarker palette
 -- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#ABB2BF" })
+
+-- Tokyonight palette
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#292e42" })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#a9b1d6" })
