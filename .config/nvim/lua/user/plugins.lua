@@ -87,6 +87,12 @@ return packer.startup(function(use)
         },
         commit = "6cb7e65e03871d2567d2c44745d3de57d07ca1fd",
     }
+    use {
+        "0x100101/lab.nvim",
+        run = "cd js && npm ci",
+        requires = { "nvim-lua/plenary.nvim" },
+        commit = "733b4dd2c1b87013291c21d80afbe5255712d1d3",
+    }
     use { "tamago324/lir.nvim", commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396" }
     use { "b0o/schemastore.nvim", commit = "687fc5aca8eef79278a01345f1a93dcc68453f29" }
 

@@ -234,6 +234,14 @@ local mappings = {
         p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
         r = { "<cmd>TSToggle rainbow<cr>", "Toggle Rainbow" },
     },
+
+    j = {
+        name = "Lab",
+        r = { "<cmd>Lab code run<cr>", "Run" },
+        s = { "<cmd>Lab code stop<cr>", "Stop" },
+        p = { "<cmd>Lab code panel<cr>", "Open Panel" },
+        c = { "<cmd>Lab code config<cr>", "Config" },
+    },
 }
 
 local vopts = {
