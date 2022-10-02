@@ -21,9 +21,9 @@ neoscroll.setup {
     performance_mode = false, -- Disable "Performance Mode" on all buffers.)
 }
 
-local t = {}
+-- local t = {}
 
-t["<c-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-t["<c-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+-- t["<c-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+-- t["<c-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
 
-neoscroll_config.set_mappings(t)
+-- neoscroll_config.set_mappings(t)
