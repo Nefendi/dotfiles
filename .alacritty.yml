@@ -579,9 +579,6 @@ cursor:
 
 live_config_reload: true
 
-shell:
-  program: /bin/zsh
-
 working_directory: None
 
 debug:
