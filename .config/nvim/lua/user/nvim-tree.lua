@@ -73,7 +73,7 @@ nvim_tree.setup {
                 },
                 git = {
                     unstaged = icons.misc.SmallDot,
-                    staged = icons.ui.CheckCodicon,
+                    staged = icons.ui.Check,
                     unmerged = icons.git.Unmerged,
                     renamed = icons.ui.RightArrow,
                     untracked = icons.git.Untracked,
@@ -87,9 +87,9 @@ nvim_tree.setup {
         enable = true,
         icons = {
             hint = icons.diagnostics.Hint,
-            info = icons.diagnostics_codicons.Info,
-            warning = icons.diagnostics_codicons.Warning,
-            error = icons.diagnostics_codicons.Error,
+            info = icons.diagnostics.Info,
+            warning = icons.diagnostics.Warning,
+            error = icons.diagnostics.Error,
         },
     },
     update_focused_file = {

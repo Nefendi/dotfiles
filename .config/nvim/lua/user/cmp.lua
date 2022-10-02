@@ -33,7 +33,7 @@ end
 
 local icons = require "user.icons"
 
-local kind_icons = icons.kind_codicons
+local kind_icons = icons.kind
 
 vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindPackage", { fg = "#F64D00" })
@@ -116,7 +116,7 @@ cmp.setup {
             end
 
             if entry.source.name == "emoji" then
-                vim_item.kind = icons.misc.SmileyCodicon .. "  Emoji"
+                vim_item.kind = icons.misc.Smiley .. "  Emoji"
                 vim_item.kind_hl_group = "CmpItemKindEmoji"
             end
 

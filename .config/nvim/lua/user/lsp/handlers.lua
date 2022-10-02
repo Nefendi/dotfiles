@@ -5,10 +5,10 @@ local functions = require "user.functions"
 
 M.setup = function()
     local signs = {
-        { name = "DiagnosticSignError", text = icons.diagnostics_codicons.Error },
-        { name = "DiagnosticSignWarn", text = icons.diagnostics_codicons.Warning },
-        { name = "DiagnosticSignHint", text = icons.diagnostics_codicons.Hint },
-        { name = "DiagnosticSignInfo", text = icons.diagnostics_codicons.Info },
+        { name = "DiagnosticSignError", text = icons.diagnostics.Error },
+        { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
+        { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
+        { name = "DiagnosticSignInfo", text = icons.diagnostics.Info },
     }
 
     for _, sign in ipairs(signs) do
