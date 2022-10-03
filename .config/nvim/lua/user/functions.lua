@@ -62,4 +62,9 @@ function M.smart_quit()
     end
 end
 
+function M.get_hl_by_name(name)
+    local ret = vim.api.nvim_get_hl_by_name(name.group, true)
+    return string.format("#%06x", ret[name.property])
+end
+
 return M
