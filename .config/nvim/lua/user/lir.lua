@@ -3,6 +3,8 @@ if not status_ok then
     return
 end
 
+local functions = require "user.functions"
+
 local actions = require "lir.actions"
 local mark_actions = require "lir.mark.actions"
 local clipboard_actions = require "lir.clipboard.actions"
@@ -73,11 +75,16 @@ lir.setup {
     end,
 }
 
+local found, icon_hl = pcall(functions.get_hl_by_name, { group = "NvimTreeFolderIcon", property = "foreground" })
+if not found then
+    icon_hl = "#42A5F5"
+end
+
 -- custom folder icon
 require("nvim-web-devicons").set_icon {
     lir_folder_icon = {
         icon = require("user.icons").ui.ClosedFullFolder,
-        color = "#42A5F5",
+        color = icon_hl,
         name = "LirFolderNode",
     },
 }
