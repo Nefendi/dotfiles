@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- For some reason the 'gl' keymap does not work out of the box in gitcommit.
 -- Probably it is some stupid mistake somewhere but this circumvents the issue.
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "gitcommit" },
+    pattern = { "gitcommit", "conf" },
     callback = function()
         vim.api.nvim_buf_set_keymap(
             0,
