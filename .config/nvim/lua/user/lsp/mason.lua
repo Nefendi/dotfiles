@@ -51,17 +51,16 @@ local formatters = {
     -- "isort",
 }
 
--- TODO: Find a way to use DAP with binaries installed by Mason
--- local debuggers = {
---     "debugpy",
--- }
+local debuggers = {
+    "debugpy",
+}
 
 local tools_to_install = {}
 
 -- vim.list_extend(tools_to_install, servers)
 vim.list_extend(tools_to_install, linters)
 vim.list_extend(tools_to_install, formatters)
--- vim.list_extend(tools_to_install, debuggers)
+vim.list_extend(tools_to_install, debuggers)
 
 local settings = {
     ui = {
