@@ -242,6 +242,14 @@ local mappings = {
         p = { "<cmd>Lab code panel<cr>", "Open Panel" },
         c = { "<cmd>Lab code config<cr>", "Config" },
     },
+
+    n = {
+        name = "Neogen",
+        f = { "<cmd>lua require('neogen').generate({ type = 'func' })<CR>", "Function" },
+        c = { "<cmd>lua require('neogen').generate({ type = 'class' })<CR>", "Class" },
+        t = { "<cmd>lua require('neogen').generate({ type = 'type' })<CR>", "Type" },
+        F = { "<cmd>lua require('neogen').generate({ type = 'file' })<CR>", "File" },
+    },
 }
 
 local vopts = {

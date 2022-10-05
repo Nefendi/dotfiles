@@ -95,6 +95,11 @@ return packer.startup(function(use)
     }
     use { "tamago324/lir.nvim", commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396" }
     use { "b0o/schemastore.nvim", commit = "687fc5aca8eef79278a01345f1a93dcc68453f29" }
+    use {
+        "danymat/neogen",
+        requires = "nvim-treesitter/nvim-treesitter",
+        commit = "967b280d7d7ade52d97d06e868ec4d9a0bc59282",
+    }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
