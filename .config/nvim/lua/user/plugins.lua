@@ -201,6 +201,7 @@ return packer.startup(function(use)
 
     -- DAP
     use { "mfussenegger/nvim-dap", commit = "764899df5ca39076acb08a447f7e5bd0b4fa3147" }
+    use { "mfussenegger/nvim-dap-python", commit = "52eb0830d3c8a7d283cc373c37ec78ebe0718d02" }
     use { "rcarriga/nvim-dap-ui", commit = "8d0768a83f7b89bd8cb8811800bc121b9353f0b2" }
 
     -- Automatically set up your configuration after cloning packer.nvim
