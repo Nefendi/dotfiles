@@ -77,10 +77,6 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     end
 
-    if client.name == "gopls" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
     if client.name == "taplo" then
         client.server_capabilities.documentFormattingProvider = false
     end
