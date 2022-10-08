@@ -15,16 +15,20 @@ local opts = {
 local mappings = {
     L = {
         name = "Go",
-        b = { "<cmd>GoBuild<cr>", "Build" },
-        r = { "<cmd>GoRun<cr>", "Run" },
-        t = { "<cmd>GoTest<cr>", "Test" },
-        c = { "<cmd>GoCoverageToggle<cr>", "Toggle coverage" },
-        g = { "<cmd>GoGenerate<cr>", "Generate" },
-        i = { "<cmd>GoImpl<cr>", "Implement" },
-        T = { "<cmd>GoAddTags<cr>", "Add tags" },
-        R = { "<cmd>GoRemoveTags<cr>", "Remove tags" },
-        e = { "<cmd>GoIfErr<cr>", "Add if-err statement" },
-        f = { "<cmd>GoFillStruct<cr>", "Fill struct" },
+        -- i = { "<cmd>GoImpl<Cr>", "Implement Interface" },
+        t = { "<cmd>GoMod tidy<cr>", "Tidy" },
+        a = { "<cmd>GoTestAdd<Cr>", "Add Test" },
+        A = { "<cmd>GoTestsAll<Cr>", "Add All Tests" },
+        e = { "<cmd>GoTestsExp<Cr>", "Add Exported Tests" },
+        g = { "<cmd>GoGenerate<Cr>", "Go Generate" },
+        f = { "<cmd>GoGenerate %<Cr>", "Go Generate File" },
+        J = { "<cmd>GoTagAdd json<Cr>", "Add JSON tags" },
+        j = { "<cmd>GoTagRm json<Cr>", "Remove JSON tags" },
+        Y = { "<cmd>GoTagAdd yaml<Cr>", "Add YAML tags" },
+        y = { "<cmd>GoTagRm yaml<Cr>", "Remove YAML tags" },
+    },
+    d = {
+        T = { "<cmd>lua require('dap-go').debug_test()<cr>", "Debug Test" },
     },
 }
 

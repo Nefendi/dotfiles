@@ -154,11 +154,7 @@ return packer.startup(function(use)
     use { "lvimuser/lsp-inlayhints.nvim", commit = "9bcd6fe25417b7808fe039ab63d4224f2071d24a" }
 
     -- Go
-    use {
-        "fatih/vim-go",
-        commit = "b7506c6da8ea3a88e268a91aa6630be3e26a20a9",
-        run = ":GoUpdateBinaries errcheck fillstruct gomodifytags impl iferr",
-    }
+    use { "olexsmir/gopher.nvim", commit = "f835464d7fb7791e2f8697d50ea6f585dfdc3849" }
 
     -- Rust
     use {
@@ -207,6 +203,7 @@ return packer.startup(function(use)
     -- DAP
     use { "mfussenegger/nvim-dap", commit = "764899df5ca39076acb08a447f7e5bd0b4fa3147" }
     use { "mfussenegger/nvim-dap-python", commit = "52eb0830d3c8a7d283cc373c37ec78ebe0718d02" }
+    use { "leoluz/nvim-dap-go", commit = "c2902bb96c45e872d947d7e174775e652439add4" }
     use { "rcarriga/nvim-dap-ui", commit = "8d0768a83f7b89bd8cb8811800bc121b9353f0b2" }
 
     -- Automatically set up your configuration after cloning packer.nvim

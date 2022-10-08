@@ -35,11 +35,6 @@ null_ls.setup {
 
         -- Go
         formatting.golines,
-        formatting.gofumpt,
-        diagnostics.golangci_lint.with {
-            timeout = 10000,
-            args = { "run", "--fix=false", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" },
-        },
 
         -- Bash
         formatting.shfmt,

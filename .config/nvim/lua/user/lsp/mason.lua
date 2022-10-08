@@ -15,6 +15,7 @@ local servers = {
     "ltex",
     "marksman",
     "gopls",
+    "golangci_lint_ls",
     "rust_analyzer",
     "emmet_ls",
     "eslint",
@@ -26,13 +27,13 @@ local servers = {
 local linters = {
     "hadolint",
     "cspell",
-    "golangci-lint",
     "shellcheck",
     "markdownlint",
     "yamllint",
     "gitlint",
     "actionlint",
     "buf",
+    "golangci-lint",
     -- NOTE: Python tools are problematic because they can be extended with 3rd party plugins like pylint-pytest or flake8-bugbear and Mason right now does not provide an automatic way to install such extensions. The issue occurs due to Mason putting its bin directory in the PATH before anything else so manually installed plugins are not picked up.
     -- "flake8",
     -- "pylint",
@@ -41,7 +42,6 @@ local linters = {
 
 local formatters = {
     "stylua",
-    "gofumpt",
     "golines",
     "shfmt",
     "clang-format",
@@ -53,6 +53,13 @@ local formatters = {
 
 local debuggers = {
     "debugpy",
+    "delve",
+}
+
+local others = {
+    "gomodifytags",
+    "gotests",
+    "impl",
 }
 
 local tools_to_install = {}
@@ -61,6 +68,7 @@ local tools_to_install = {}
 vim.list_extend(tools_to_install, linters)
 vim.list_extend(tools_to_install, formatters)
 vim.list_extend(tools_to_install, debuggers)
+vim.list_extend(tools_to_install, others)
 
 local settings = {
     ui = {
@@ -190,6 +198,11 @@ for _, server in pairs(servers) do
     if server == "gopls" then
         local gopls_opts = require "user.lsp.settings.gopls"
         opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+    end
+
+    if server == "golangci_lint_ls" then
+        local golangci_lint_ls_opts = require "user.lsp.settings.golangci_lint_ls"
+        opts = vim.tbl_deep_extend("force", golangci_lint_ls_opts, opts)
     end
 
     if server == "jdtls" then

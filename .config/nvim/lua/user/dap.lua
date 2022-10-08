@@ -13,6 +13,11 @@ if not dap_python_status_ok then
     return
 end
 
+local dap_go_ok, dap_go = pcall(require, "dap-go")
+if not dap_go_ok then
+    return
+end
+
 local icons = require "user.icons"
 
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
@@ -20,6 +25,9 @@ local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 -- Python
 dap_python.setup(mason_path .. "packages/debugpy/venv/bin/python")
 dap_python.test_runner = "pytest"
+
+-- Go
+dap_go.setup()
 
 dapui.setup {
     icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },

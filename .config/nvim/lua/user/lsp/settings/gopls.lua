@@ -9,6 +9,13 @@ return {
                 parameterNames = true,
                 rangeVariableTypes = true,
             },
+            gofumpt = true,
+            codelenses = {
+                generate = false,
+                gc_details = true,
+                test = true,
+                tidy = true,
+            },
         },
     },
 }

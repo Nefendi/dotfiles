@@ -93,6 +93,11 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     end
 
+    if client.name == "gopls" then
+        client.server_capabilities.documentFormattingProvider = false
+        vim.lsp.codelens.refresh()
+    end
+
     if client.name == "jdt.ls" then
         vim.lsp.codelens.refresh()
         if JAVA_DAP_ACTIVE then
@@ -123,6 +128,7 @@ M.on_attach = function(client, bufnr)
         "cssls",
         "bashls",
         "ltex",
+        "golangci_lint_ls",
     }
 
     if not functions.contains(not_supported_navic_servers, client.name) then
