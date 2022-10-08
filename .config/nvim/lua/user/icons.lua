@@ -86,6 +86,7 @@ if vim.g.use_nerd_icons then
             Fire = "",
             Clock = "",
             Note = "",
+            Planet = "◍",
         },
         misc = {
             Robot = "ﮧ",
@@ -188,6 +189,7 @@ else
             Fire = "",
             Clock = "",
             Note = "",
+            Planet = "◍",
         },
         misc = {
             Robot = "ﮧ",
