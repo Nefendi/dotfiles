@@ -28,7 +28,6 @@ local servers = {
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
 local linters = {
     "hadolint",
-    "cspell",
     "shellcheck",
     "markdownlint",
     "yamllint",

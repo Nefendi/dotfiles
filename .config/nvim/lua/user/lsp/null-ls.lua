@@ -22,7 +22,6 @@ null_ls.setup {
         },
         diagnostics.actionlint,
 
-
         -- Python
         formatting.black,
         formatting.isort,
