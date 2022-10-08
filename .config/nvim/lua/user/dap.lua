@@ -70,20 +70,17 @@ dapui.setup {
     },
 }
 
-vim.fn.sign_define(
-    "DapBreakpoint",
-    { text = icons.misc.SmallDot, texthl = "DiagnosticSignError", linehl = "", numhl = "" }
-)
+vim.fn.sign_define("DapBreakpoint", { text = icons.misc.Bug, texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
 vim.fn.sign_define(
     "DapBreakpointRejected",
-    { text = icons.misc.SmallDot, texthl = "DiagnosticSignHint", linehl = "", numhl = "" }
+    { text = icons.misc.Bug, texthl = "DiagnosticSignWarn", linehl = "", numhl = "" }
 )
 
 vim.fn.sign_define("DapStopped", {
     text = icons.ui.BoldArrowRight,
     texthl = "DiagnosticSignInfo",
-    linehl = "DiagnosticUnderlineInfo",
+    linehl = "Visual",
     numhl = "DiagnosticSignInfo",
 })
 

@@ -20,13 +20,10 @@ M.winbar_filetype_exclude = {
     "DressingSelect",
     "Jaq",
     "glowpreview",
-    "dapui_scopes",
-    "dapui_breakpoints",
-    "dapui_stacks",
-    "dapui_watches",
     "dap-repl",
     "dap-terminal",
     "dapui_console",
+    "lab",
     "",
 }
 
@@ -44,13 +41,36 @@ local get_filename = function()
 
         if functions.isempty(file_icon) then
             file_icon = icons.kind.File
-            file_icon_color = ""
+        end
+
+        local buf_ft = vim.bo.filetype
+
+        local prefix = " "
+
+        if buf_ft == "dapui_breakpoints" then
+            file_icon = icons.misc.Bug
+            prefix = ""
+        end
+
+        if buf_ft == "dapui_stacks" then
+            file_icon = icons.ui.Stacks
+            prefix = ""
+        end
+
+        if buf_ft == "dapui_scopes" then
+            file_icon = icons.ui.Scopes
+            prefix = ""
+        end
+
+        if buf_ft == "dapui_watches" then
+            file_icon = icons.ui.Watches
+            prefix = ""
         end
 
         local navic_text = vim.api.nvim_get_hl_by_name("NavicText", true)
         vim.api.nvim_set_hl(0, "Winbar", { fg = navic_text.foreground })
 
-        return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#Winbar#" .. filename .. "%*"
+        return prefix .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#Winbar#" .. filename .. "%*"
     end
 end
 
