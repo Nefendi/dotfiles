@@ -100,6 +100,7 @@ return packer.startup(function(use)
         requires = "nvim-treesitter/nvim-treesitter",
         commit = "967b280d7d7ade52d97d06e868ec4d9a0bc59282",
     }
+    use { "monaqa/dial.nvim", commit = "d2d7a57fb030c82b8b0d6712d9c35dfb49d9aa3c" }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
