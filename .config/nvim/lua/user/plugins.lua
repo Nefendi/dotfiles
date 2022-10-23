@@ -58,7 +58,8 @@ return packer.startup(function(use)
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
     use { "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" }
     use { "folke/todo-comments.nvim", commit = "02eb3019786d9083b93ab9457761899680c6f3ec" }
-    use { "ggandor/leap.nvim", commit = "aba53d7a8870426bea89eeca6c3b265d1f94c584" }
+    use { "ggandor/leap.nvim", commit = "ef9d34620fa52d1c144fb41f838eea7bb06e61f9" }
+    use { "ggandor/flit.nvim", commit = "dd43846edca345075a60d2f749bcca71cd47a17f" }
     use { "NvChad/nvim-colorizer.lua", commit = "6c8b1495c3d2034188cc67c18e2ae5e8343cd504" }
     use { "nacro90/numb.nvim", commit = "453c50ab921fa066fb073d2fd0f826cb036eaf7b" }
     use { "ellisonleao/glow.nvim", commit = "764527caeb36cd68cbf3f6d905584750cb02229d" }
