@@ -7,12 +7,12 @@ local augend = require "dial.augend"
 
 dial_config.augends:register_group {
     default = {
-        augend.integer.alias.decimal,
+        augend.integer.alias.decimal_int,
         augend.integer.alias.hex,
         augend.date.alias["%Y/%m/%d"],
     },
     typescript = {
-        augend.integer.alias.decimal,
+        augend.integer.alias.decimal_int,
         augend.integer.alias.hex,
         augend.constant.new { elements = { "let", "const" } },
         augend.constant.new {
@@ -22,7 +22,7 @@ dial_config.augends:register_group {
         },
     },
     visual = {
-        augend.integer.alias.decimal,
+        augend.integer.alias.decimal_int,
         augend.integer.alias.hex,
         augend.date.alias["%Y/%m/%d"],
         augend.constant.alias.alpha,
@@ -56,7 +56,7 @@ dial_config.augends:register_group {
         },
         augend.date.alias["%m/%d/%Y"], -- date (02/19/2022, etc.)
         augend.constant.alias.bool, -- boolean value (true <-> false)
-        augend.integer.alias.decimal,
+        augend.integer.alias.decimal_int,
         augend.integer.alias.hex,
         augend.semver.alias.semver,
     },
