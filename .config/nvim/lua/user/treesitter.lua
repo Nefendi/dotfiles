@@ -117,7 +117,3 @@ configs.setup {
 
 -- Onedarker palette
 -- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#ABB2BF" })
-
--- Tokyonight palette
-vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#292e42" })
-vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#a9b1d6" })
