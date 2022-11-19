@@ -82,6 +82,7 @@ local settings = {
     },
     log_level = vim.log.levels.INFO,
     max_concurrent_installers = 4,
+    PATH = "append",
 }
 
 local mason_status_ok, mason = pcall(require, "mason")
