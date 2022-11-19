@@ -57,7 +57,7 @@ local debuggers = {
     "delve",
 }
 
-local others = {
+local other = {
     "gomodifytags",
     "gotests",
     "impl",
@@ -69,7 +69,7 @@ local tools_to_install = {}
 vim.list_extend(tools_to_install, linters)
 vim.list_extend(tools_to_install, formatters)
 vim.list_extend(tools_to_install, debuggers)
-vim.list_extend(tools_to_install, others)
+vim.list_extend(tools_to_install, other)
 
 local settings = {
     ui = {
