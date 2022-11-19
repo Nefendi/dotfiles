@@ -34,6 +34,7 @@ null_ls.setup {
 
         -- Go
         formatting.golines,
+        formatting.gofumpt,
 
         -- Bash
         formatting.shfmt,

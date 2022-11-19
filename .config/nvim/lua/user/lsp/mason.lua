@@ -43,6 +43,7 @@ local linters = {
 local formatters = {
     "stylua",
     "golines",
+    "gofumpt",
     "shfmt",
     "clang-format",
     "prettier",
