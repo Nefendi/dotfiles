@@ -35,10 +35,9 @@ local linters = {
     "actionlint",
     "buf",
     "golangci-lint",
-    -- NOTE: Python tools are problematic because they can be extended with 3rd party plugins like pylint-pytest or flake8-bugbear and Mason right now does not provide an automatic way to install such extensions. The issue occurs due to Mason putting its bin directory in the PATH before anything else so manually installed plugins are not picked up.
-    -- "flake8",
-    -- "pylint",
-    -- "mypy",
+    "flake8",
+    "pylint",
+    "mypy",
 }
 
 local formatters = {
@@ -48,8 +47,8 @@ local formatters = {
     "clang-format",
     "prettier",
     "prettierd",
-    -- "black",
-    -- "isort",
+    "black",
+    "isort",
 }
 
 local debuggers = {
