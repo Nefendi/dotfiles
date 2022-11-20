@@ -138,7 +138,7 @@ return packer.startup(function(use)
     use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }
 
     -- LSP
-    use { "neovim/nvim-lspconfig", commit = "d4eb971db353ccf78cefb3be1b05483b69ec1e69" }
+    use { "neovim/nvim-lspconfig", commit = "04b672b68d80fd81d41079de101d2be31f761e15" }
     use { "williamboman/mason.nvim", commit = "c2097239657769e3ab9eae27b7bb2f40d7eca1ee" }
     use { "williamboman/mason-lspconfig.nvim", commit = "a1e2219ecea273d52b1ce1d527dd3a93cfe5b396" }
     use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "27f61f75a71bb3c2504a17e02b571f79cae43676" }
@@ -146,10 +146,10 @@ return packer.startup(function(use)
     use { "RRethy/vim-illuminate", commit = "59f69f90fbce5cf37741fb8e4aa040e78a0b3516" }
     use { "folke/lsp-colors.nvim", commit = "517fe3ab6b63f9907b093bc9443ef06b56f804f3" }
     use { "ray-x/lsp_signature.nvim", commit = "3694c1f3020ae671069f9a36749d7fa7fbd68b15" }
-    use { "j-hui/fidget.nvim", commit = "46d1110435f1f023c22fa95bb10b3906aecd7bde" }
+    use { "j-hui/fidget.nvim", commit = "2cf9997d3bde2323a1a0934826ec553423005a26" }
     use {
         "SmiteshP/nvim-navic",
-        commit = "94bf6fcb1dc27bdad230d9385da085e72c390019",
+        commit = "40c0ab2640a0e17c4fad7e17f260414d18852ce6",
         requires = { "neovim/nvim-lspconfig" },
     }
     use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" }
