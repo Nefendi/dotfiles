@@ -186,17 +186,17 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
-        commit = "a60aa7b2e1dd9219c6356f65ba48bdbd50090abd",
+        commit = "370546d2833982c3082f4ac4c6e2dc111a5baf23",
         run = function()
             require("nvim-treesitter.install").update { with_sync = true }
         end,
     }
-    use { "p00f/nvim-ts-rainbow", commit = "fad8badcd9baa4deb2cf2a5376ab412a1ba41797" }
-    use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "37a97a04c39f26fffe7745815517e1ce1a0eb3be" }
-    use { "windwp/nvim-ts-autotag", commit = "044a05c4c51051326900a53ba98fddacd15fea22" }
-    use { "nvim-treesitter/playground", commit = "ce7e4b757598f1c785ed0fd94fc65959acd7d39c" }
-    use { "nvim-treesitter/nvim-treesitter-context", commit = "245bb4381edf43ddb1fde7e78d4119dbfc12ea41" }
-    use { "nvim-treesitter/nvim-treesitter-textobjects", commit = "e63c2ff8e38fad77299dd74e14c7c9360e1b3181" }
+    use { "p00f/nvim-ts-rainbow", commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "32d9627123321db65a4f158b72b757bcaef1a3f4" }
+    use { "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" }
+    use { "nvim-treesitter/playground", commit = "1290fdf6f2f0189eb3b4ce8073d3fda6a3658376" }
+    use { "nvim-treesitter/nvim-treesitter-context", commit = "0dd5eae6dbf226107da2c2041ffbb695d9e267c1" }
+    use { "nvim-treesitter/nvim-treesitter-textobjects", commit = "1435ea532a3c9e6ea48ed3438fdf48bb37277578" }
 
     -- Git
     use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
