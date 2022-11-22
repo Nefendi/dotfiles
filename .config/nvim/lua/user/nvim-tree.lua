@@ -117,4 +117,12 @@ nvim_tree.setup {
             },
         },
     },
+    filters = {
+        custom = {
+            --[[ Some null-ls builtins create temporary files with long names and their sudden
+                 appearance and disappearance with view.adaptive_size = true is extremely annoying
+            --]]
+            "^\\.null-ls_",
+        },
+    },
 }
