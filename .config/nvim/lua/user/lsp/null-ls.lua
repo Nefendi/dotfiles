@@ -38,8 +38,6 @@ null_ls.setup {
 
         -- Bash
         formatting.shfmt,
-        diagnostics.shellcheck.with {
-            extra_args = { "--severity", "warning" },
         },
 
         -- Dockerfile
