@@ -37,7 +37,8 @@ null_ls.setup {
         formatting.gofumpt,
 
         -- Bash
-        formatting.shfmt,
+        formatting.shfmt.with {
+            filetypes = { "sh", "zsh" },
         },
 
         -- Dockerfile
