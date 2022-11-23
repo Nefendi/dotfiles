@@ -211,6 +211,11 @@ for _, server in pairs(servers) do
         goto continue
     end
 
+    if server == "bashls" then
+        local bashls_opts = require "user.lsp.settings.bashls"
+        opts = vim.tbl_deep_extend("force", bashls_opts, opts)
+    end
+
     lspconfig[server].setup(opts)
 
     ::continue::
