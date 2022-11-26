@@ -1,3 +1,13 @@
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+local codelldb_adapter = {
+    type = "server",
+    port = "${port}",
+    executable = {
+        command = mason_path .. "bin/codelldb",
+        args = { "--port", "${port}" },
+    },
+}
+
 return {
     tools = {
         on_initialized = function()
@@ -59,8 +69,10 @@ return {
             border = "rounded",
         },
     },
+    dap = {
+        adapter = codelldb_adapter,
+    },
     server = {
-        -- cmd = { "/usr/bin/rust-analyzer" },
         on_attach = require("user.lsp.handlers").on_attach,
         capabilities = require("user.lsp.handlers").capabilities,
 
@@ -70,6 +82,7 @@ return {
                     enable = true,
                 },
                 checkOnSave = {
+                    enable = true,
                     command = "clippy",
                 },
             },
