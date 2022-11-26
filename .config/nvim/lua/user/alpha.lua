@@ -9,9 +9,11 @@ local icons = require "user.icons"
 
 local function button(sc, txt, keybind, keybind_opts)
     local b = dashboard.button(sc, txt, keybind, keybind_opts)
-    b.opts.hl_shortcut = "Macro"
+    b.opts.hl_shortcut = "AlphaShortcut"
     return b
 end
+
+dashboard.section.header.opts.hl = "AlphaHeader"
 
 dashboard.section.header.val = {
     [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
@@ -32,18 +34,17 @@ dashboard.section.buttons.val = {
     button("q", icons.ui.Leave .. "  Quit", ":qa<CR>"),
 }
 
-local function footer()
-    -- NOTE: requires the fortune-mod package to work
-    local handle = io.popen "fortune"
-    if not handle then
-        return "No fortune cookies for you :("
-    end
-    local fortune = handle:read "*a"
-    handle:close()
-    return fortune
-end
+dashboard.section.footer.opts.hl = "AlphaFooter"
 
-dashboard.section.footer.val = footer()
+dashboard.section.footer.val = {
+    "",
+    "",
+    "I swear, by my life and my love of it,",
+    "that I will never live for the sake of another man,",
+    "nor ask another man to live for mine.",
+    "",
+    "                                       -- John Galt",
+}
 
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)
