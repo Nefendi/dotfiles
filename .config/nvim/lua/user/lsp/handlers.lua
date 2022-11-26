@@ -129,6 +129,7 @@ M.on_attach = function(client, bufnr)
         "bashls",
         "ltex",
         "golangci_lint_ls",
+        "cmake",
     }
 
     if not functions.contains(not_supported_navic_servers, client.name) then
