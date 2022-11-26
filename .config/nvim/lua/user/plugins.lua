@@ -53,7 +53,7 @@ return packer.startup(function(use)
     use { "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }
     use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
     use { "lukas-reineke/indent-blankline.nvim", commit = "4a58fe6e9854ccfe6c6b0f59abb7cb8301e23025" }
-    use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
+    use { "goolord/alpha-nvim", commit = "a858e4e7b0805835e61fab2b54704450427d47c3" }
     use { "kylechui/nvim-surround", commit = "a498d10222e8712b42d9115b9748449c2d1cf645" }
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
     use { "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" }
