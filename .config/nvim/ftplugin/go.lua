@@ -1,3 +1,10 @@
+local dap_go_ok, dap_go = pcall(require, "dap-go")
+if not dap_go_ok then
+    return
+end
+
+dap_go.setup()
+
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
     return
