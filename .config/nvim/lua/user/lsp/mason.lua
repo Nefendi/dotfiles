@@ -55,6 +55,7 @@ local formatters = {
 local debuggers = {
     "debugpy",
     "delve",
+    "codelldb",
 }
 
 local other = {
