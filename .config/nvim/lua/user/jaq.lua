@@ -10,6 +10,7 @@ jaq_nvim.setup {
             python = "python3 %",
             rust = "cargo run",
             cpp = "clang++ % -o $fileBase && ./$fileBase",
+            c = "gcc % -o $fileBase && ./$fileBase",
             go = "go run %",
             sh = "sh %",
             lua = "lua %",
