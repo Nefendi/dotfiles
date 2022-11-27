@@ -10,7 +10,7 @@ export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # FNM
 export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
-export ZSH_FNM_NODE_VERSION="16.17.0"
+export ZSH_FNM_NODE_VERSION="18.12.1"
 
 # YOU-SHOULD-USE
 # Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
