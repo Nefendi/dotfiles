@@ -106,7 +106,7 @@ return packer.startup(function(use)
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
     use { "lunarvim/darkplus.nvim", commit = "aa1f0a582dc897259b9cb8bebad64110da4d4cc4" }
-    use { "folke/tokyonight.nvim", commit = "62b4e89ea1766baa3b5343ca77d62c817f5f48d0" }
+    use { "folke/tokyonight.nvim", commit = "171aface9bb47b48fbe71ef98ac5574d04812501" }
 
     -- Cmp plugins
     use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
@@ -138,9 +138,9 @@ return packer.startup(function(use)
     use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }
 
     -- LSP
-    use { "neovim/nvim-lspconfig", commit = "04b672b68d80fd81d41079de101d2be31f761e15" }
-    use { "williamboman/mason.nvim", commit = "c2097239657769e3ab9eae27b7bb2f40d7eca1ee" }
-    use { "williamboman/mason-lspconfig.nvim", commit = "a1e2219ecea273d52b1ce1d527dd3a93cfe5b396" }
+    use { "neovim/nvim-lspconfig", commit = "9f49f35cf04edcf11fc23d849467d51f462be141" }
+    use { "williamboman/mason.nvim", commit = "22129c714fcb0acd2cebba77980e6461a2c69d6b" }
+    use { "williamboman/mason-lspconfig.nvim", commit = "4674ed145fd0e72c9bfdb32b647f968b221bf2f2" }
     use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "27f61f75a71bb3c2504a17e02b571f79cae43676" }
     use { "jose-elias-alvarez/null-ls.nvim", commit = "c333ecce37ee5f096f17754901e4ec4827041166" }
     use { "RRethy/vim-illuminate", commit = "59f69f90fbce5cf37741fb8e4aa040e78a0b3516" }
