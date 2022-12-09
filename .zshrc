@@ -33,6 +33,7 @@ alias la='exa -galFh --color=always --group-directories-first --icons'
 alias lt='exa -gaTFh --color=always --group-directories-first --icons'
 alias n='nordvpn'
 alias g='lazygit'
+alias updateall='sudo apt update && sudo apt upgrade && sudo snap refresh && flatpak update'
 
 # GHCUP
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env"
