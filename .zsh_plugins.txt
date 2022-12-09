@@ -1,5 +1,3 @@
-# Run antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh any time there is a new plugin added
-
 ohmyzsh/ohmyzsh
 
 ohmyzsh/ohmyzsh path:plugins/gitfast
@@ -8,8 +6,6 @@ ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/sudo
 ohmyzsh/ohmyzsh path:plugins/rust
-# ohmyzsh/ohmyzsh path:plugins/poetry
-ohmyzsh/ohmyzsh path:plugins/ripgrep
 ohmyzsh/ohmyzsh path:plugins/fzf
 ohmyzsh/ohmyzsh path:plugins/copyfile
 ohmyzsh/ohmyzsh path:plugins/docker
@@ -33,7 +29,7 @@ zsh-users/zsh-history-substring-search
 wookayin/fzf-fasd
 MichaelAquilina/zsh-you-should-use
 zpm-zsh/material-colors
-zdharma-continuum/fast-syntax-highlighting
+zdharma-continuum/fast-syntax-highlighting kind:defer
 mattberther/zsh-pyenv
 ptavares/zsh-sdkman
 dominik-schwabe/zsh-fnm

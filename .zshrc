@@ -18,8 +18,10 @@ export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 3)\
 Found existing %alias_type for $(tput setaf 5)\"%command\"$(tput setaf 3). \
 You should use: $(tput setaf 5)\"%alias\"$(tput sgr0)"
 
-# ANTIBODY
-source "${HOME}"/.zsh_plugins.sh
+# ANTIDOTE
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+
+antidote load
 
 # BINDKEYS
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
