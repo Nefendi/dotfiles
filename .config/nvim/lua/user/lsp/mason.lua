@@ -21,7 +21,6 @@ local servers = {
     "rust_analyzer",
     "emmet_ls",
     "eslint",
-    "hls",
     "jdtls",
 }
 
