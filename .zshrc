@@ -8,6 +8,8 @@ export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-i
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
+export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+
 # FNM
 export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
 export ZSH_FNM_NODE_VERSION="18.12.1"
