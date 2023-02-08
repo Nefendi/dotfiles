@@ -36,6 +36,9 @@ null_ls.setup {
         formatting.golines,
         formatting.gofumpt,
 
+        -- C#
+        formatting.csharpier,
+
         -- Bash
         formatting.shfmt.with {
             filetypes = { "sh", "zsh" },

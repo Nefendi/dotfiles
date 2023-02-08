@@ -50,6 +50,7 @@ local formatters = {
     "prettierd",
     "black",
     "isort",
+    "csharpier",
 }
 
 local debuggers = {
