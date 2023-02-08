@@ -14,6 +14,7 @@ jaq_nvim.setup {
             go = "go run %",
             sh = "sh %",
             lua = "lua %",
+            cs = "dotnet run",
         },
     },
     behavior = {
