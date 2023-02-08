@@ -102,6 +102,15 @@ return packer.startup(function(use)
         commit = "967b280d7d7ade52d97d06e868ec4d9a0bc59282",
     }
     use { "monaqa/dial.nvim", commit = "d2d7a57fb030c82b8b0d6712d9c35dfb49d9aa3c" }
+    use {
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons",
+        },
+        commit = "3be07ad2a6c8e3307466a762f1e7fe9fa1856f9b",
+    }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
