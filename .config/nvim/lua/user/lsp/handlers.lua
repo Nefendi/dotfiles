@@ -98,6 +98,10 @@ M.on_attach = function(client, bufnr)
         vim.lsp.codelens.refresh()
     end
 
+    if client.name == "csharp_ls" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
+
     if client.name == "jdt.ls" then
         vim.lsp.codelens.refresh()
         if JAVA_DAP_ACTIVE then
