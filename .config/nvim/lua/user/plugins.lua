@@ -58,8 +58,8 @@ return packer.startup(function(use)
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
     use { "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" }
     use { "folke/todo-comments.nvim", commit = "02eb3019786d9083b93ab9457761899680c6f3ec" }
-    use { "ggandor/leap.nvim", commit = "ef9d34620fa52d1c144fb41f838eea7bb06e61f9" }
-    use { "ggandor/flit.nvim", commit = "dd43846edca345075a60d2f749bcca71cd47a17f" }
+    use { "ggandor/leap.nvim", commit = "f565a9c4d92245d8b619235bebeaa73cc38aa40e" }
+    use { "ggandor/flit.nvim", commit = "be110f9814a45788d10537fd59b3c76d956bb7ad" }
     use { "NvChad/nvim-colorizer.lua", commit = "6c8b1495c3d2034188cc67c18e2ae5e8343cd504" }
     use { "nacro90/numb.nvim", commit = "453c50ab921fa066fb073d2fd0f826cb036eaf7b" }
     use { "ellisonleao/glow.nvim", commit = "764527caeb36cd68cbf3f6d905584750cb02229d" }
@@ -106,7 +106,7 @@ return packer.startup(function(use)
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
     use { "lunarvim/darkplus.nvim", commit = "aa1f0a582dc897259b9cb8bebad64110da4d4cc4" }
-    use { "folke/tokyonight.nvim", commit = "171aface9bb47b48fbe71ef98ac5574d04812501" }
+    use { "folke/tokyonight.nvim", commit = "e52c41314e83232840d6970e6b072f9fba242eb9" }
 
     -- Cmp plugins
     use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
@@ -138,11 +138,11 @@ return packer.startup(function(use)
     use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }
 
     -- LSP
-    use { "neovim/nvim-lspconfig", commit = "9f49f35cf04edcf11fc23d849467d51f462be141" }
-    use { "williamboman/mason.nvim", commit = "22129c714fcb0acd2cebba77980e6461a2c69d6b" }
-    use { "williamboman/mason-lspconfig.nvim", commit = "4674ed145fd0e72c9bfdb32b647f968b221bf2f2" }
-    use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "27f61f75a71bb3c2504a17e02b571f79cae43676" }
-    use { "jose-elias-alvarez/null-ls.nvim", commit = "c333ecce37ee5f096f17754901e4ec4827041166" }
+    use { "neovim/nvim-lspconfig", commit = "aeb76066212b09c7c01a3abb42fe82f0130ef402" }
+    use { "williamboman/mason.nvim", commit = "0efc7ceb29a933317e625544d3eb160e7c46dc81" }
+    use { "williamboman/mason-lspconfig.nvim", commit = "7a97a77eee486ae152d2c559a459eda7c8aa12aa" }
+    use { "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "6ca38efeb0406dea8da6c97f61d6f6ef30ab0576" }
+    use { "jose-elias-alvarez/null-ls.nvim", commit = "60b4a7167c79c7d04d1ff48b55f2235bf58158a7" }
     use { "RRethy/vim-illuminate", commit = "59f69f90fbce5cf37741fb8e4aa040e78a0b3516" }
     use { "folke/lsp-colors.nvim", commit = "517fe3ab6b63f9907b093bc9443ef06b56f804f3" }
     use { "ray-x/lsp_signature.nvim", commit = "3694c1f3020ae671069f9a36749d7fa7fbd68b15" }
@@ -153,7 +153,7 @@ return packer.startup(function(use)
         requires = { "neovim/nvim-lspconfig" },
     }
     use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" }
-    use { "lvimuser/lsp-inlayhints.nvim", commit = "439b4811276a149e3fccb226cc9a43ff2fb0e33b" }
+    use { "lvimuser/lsp-inlayhints.nvim", commit = "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c" }
 
     -- Go
     use { "olexsmir/gopher.nvim", commit = "e8fe6c5b153646c28d0e63026083374bbdecb9e2" }
@@ -161,7 +161,7 @@ return packer.startup(function(use)
     -- Rust
     use {
         "simrat39/rust-tools.nvim",
-        commit = "86a2b4e31f504c00715d0dd082a6b8b5d4afbf03",
+        commit = "bd1aa99ffb911a1cf99b3fcf3b44c0391c57e3ef",
     }
 
     -- Lua
