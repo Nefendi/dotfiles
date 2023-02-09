@@ -119,7 +119,7 @@ return packer.startup(function(use)
     use { "folke/tokyonight.nvim", commit = "e52c41314e83232840d6970e6b072f9fba242eb9" }
 
     -- Cmp plugins
-    use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
+    use { "hrsh7th/nvim-cmp", commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d" } -- The completion plugin
     use { "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" } -- buffer completions
     use { "hrsh7th/cmp-path", commit = "466b6b8270f7ba89abd59f402c73f63c7331ff6e" } -- path completions
     use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
@@ -184,7 +184,7 @@ return packer.startup(function(use)
     use { "mfussenegger/nvim-jdtls", commit = "87bdf2b216f3346abb099704c9bb45e5eb9df43a" }
 
     -- Telescope
-    use { "nvim-telescope/telescope.nvim", commit = "7a4ffef931769c3fe7544214ed7ffde5852653f6" }
+    use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
     use { "nvim-telescope/telescope-ui-select.nvim", commit = "62ea5e58c7bbe191297b983a9e7e89420f581369" }
     use {
         "nvim-telescope/telescope-fzf-native.nvim",
