@@ -26,6 +26,7 @@ barbecue.setup {
         "dap-terminal",
         "dapui_console",
         "lab",
+        "cabal",
         "",
     },
 }
