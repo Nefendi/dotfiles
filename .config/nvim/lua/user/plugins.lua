@@ -111,6 +111,7 @@ return packer.startup(function(use)
         },
         commit = "3be07ad2a6c8e3307466a762f1e7fe9fa1856f9b",
     }
+    use { "folke/neodev.nvim", commit = "bb70e41640238b989bb6c2f94802851ff260f68d" }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
