@@ -23,6 +23,7 @@ local servers = {
     "eslint",
     "jdtls",
     "csharp_ls",
+    "hls",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
