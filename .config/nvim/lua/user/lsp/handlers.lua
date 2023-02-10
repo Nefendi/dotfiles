@@ -56,39 +56,46 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 end
 
+local FORMAT_ON_SAVE_ON = true
+
+local function lsp_formatting(bufnr)
+    if FORMAT_ON_SAVE_ON then
+        vim.lsp.buf.format {
+            filter = function(client)
+                -- This list is needed, because sometimes formatters provided by null-ls
+                -- should be used instead of LSP formatting capabilities
+                local servers_to_turn_off_formatting_capabilities =
+                    { "tsserver", "taplo", "html", "jsonls", "clangd", "gopls", "csharp_ls" }
+
+                return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
+            end,
+            bufnr = bufnr,
+            timeout_ms = 5000,
+        }
+    end
+end
+
+local format_on_save_augroup = vim.api.nvim_create_augroup("FormatOnSave", {})
+
 M.on_attach = function(client, bufnr)
     local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
     if not status_cmp_ok then
         return
     end
 
-    if client.name == "tsserver" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if client.name == "taplo" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if client.name == "html" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if client.name == "jsonls" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if client.name == "clangd" then
-        client.server_capabilities.documentFormattingProvider = false
+    if client.supports_method "textDocument/formatting" then
+        vim.api.nvim_clear_autocmds { group = format_on_save_augroup, buffer = bufnr }
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = format_on_save_augroup,
+            buffer = bufnr,
+            callback = function()
+                lsp_formatting(bufnr)
+            end,
+        })
     end
 
     if client.name == "gopls" then
-        client.server_capabilities.documentFormattingProvider = false
         vim.lsp.codelens.refresh()
-    end
-
-    if client.name == "csharp_ls" then
-        client.server_capabilities.documentFormattingProvider = false
     end
 
     if client.name == "jdt.ls" then
@@ -130,42 +137,16 @@ M.on_attach = function(client, bufnr)
     end
 end
 
-function M.enable_format_on_save(notify)
-    notify = notify or false
-
-    vim.cmd [[
-    augroup format_on_save
-      autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 5000 })
-    augroup end
-  ]]
-
-    if notify then
+local function toggle_format_on_save()
+    if not FORMAT_ON_SAVE_ON then
+        FORMAT_ON_SAVE_ON = true
         vim.notify "Enabled format on save"
-    end
-end
-
-function M.remove_augroup(name)
-    if vim.fn.exists("#" .. name) == 1 then
-        vim.cmd("au! " .. name)
-    end
-end
-
-function M.disable_format_on_save()
-    M.remove_augroup "format_on_save"
-    vim.notify "Disabled format on save"
-end
-
-function M.toggle_format_on_save()
-    if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
-        M.enable_format_on_save(true)
     else
-        M.disable_format_on_save()
+        FORMAT_ON_SAVE_ON = false
+        vim.notify "Disabled format on save"
     end
 end
 
-vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
+vim.api.nvim_create_user_command("LspToggleAutoFormat", toggle_format_on_save, {})
 
--- Enable format on save by default
-M.enable_format_on_save(false)
 return M
