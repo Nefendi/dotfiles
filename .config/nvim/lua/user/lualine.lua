@@ -176,7 +176,7 @@ local mode_color = {
 
 local mode = {
     function()
-        return " "
+        return " "
     end,
     color = function()
         return { fg = mode_color[vim.fn.mode()], bg = gray }
