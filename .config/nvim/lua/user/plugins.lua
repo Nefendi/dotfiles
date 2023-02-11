@@ -117,6 +117,7 @@ return packer.startup(function(use)
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
     use { "lunarvim/darkplus.nvim", commit = "aa1f0a582dc897259b9cb8bebad64110da4d4cc4" }
     use { "folke/tokyonight.nvim", commit = "e52c41314e83232840d6970e6b072f9fba242eb9" }
+    use { "fladson/vim-kitty", commit = "d4c60f096b751c1462c80cbf42550e29c8cd2983" }
 
     -- Cmp plugins
     use { "hrsh7th/nvim-cmp", commit = "cfafe0a1ca8933f7b7968a287d39904156f2c57d" } -- The completion plugin
