@@ -203,11 +203,11 @@ return packer.startup(function(use)
         end,
     }
     use { "p00f/nvim-ts-rainbow", commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750" }
-    use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "32d9627123321db65a4f158b72b757bcaef1a3f4" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "a0f89563ba36b3bacd62cf967b46beb4c2c29e52" }
     use { "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" }
     use { "nvim-treesitter/playground", commit = "1290fdf6f2f0189eb3b4ce8073d3fda6a3658376" }
     use { "nvim-treesitter/nvim-treesitter-context", commit = "0dd5eae6dbf226107da2c2041ffbb695d9e267c1" }
-    use { "nvim-treesitter/nvim-treesitter-textobjects", commit = "1435ea532a3c9e6ea48ed3438fdf48bb37277578" }
+    use { "nvim-treesitter/nvim-treesitter-textobjects", commit = "13edf91f47c91b390bb00e1df2f7cc1ca250af3a" }
 
     -- Git
     use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
