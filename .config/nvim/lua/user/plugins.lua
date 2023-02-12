@@ -104,12 +104,12 @@ return packer.startup(function(use)
     use { "monaqa/dial.nvim", commit = "d2d7a57fb030c82b8b0d6712d9c35dfb49d9aa3c" }
     use {
         "utilyre/barbecue.nvim",
-        tag = "*",
         requires = {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
         },
-        commit = "3be07ad2a6c8e3307466a762f1e7fe9fa1856f9b",
+        -- commit = "3be07ad2a6c8e3307466a762f1e7fe9fa1856f9b",
+        branch = "fix/E36",
     }
     use { "folke/neodev.nvim", commit = "bb70e41640238b989bb6c2f94802851ff260f68d" }
 
