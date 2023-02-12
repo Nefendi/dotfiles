@@ -41,7 +41,7 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-    use { "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
+    use { "wbthomason/packer.nvim", commit = "1d0cf98a561f7fd654c970c49f917d74fafe1530" } -- Have packer manage itself
     use { "nvim-lua/plenary.nvim", commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9" } -- Useful lua functions used by lots of plugins
     use { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
     use { "numToStr/Comment.nvim", commit = "350bf0cb47bfb2a48ddca79475888bc333c74a37" }
@@ -197,7 +197,7 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
-        commit = "370546d2833982c3082f4ac4c6e2dc111a5baf23",
+        commit = "4e26fec0747c4d507bbd068c9c5584eb2de6e839",
         run = function()
             require("nvim-treesitter.install").update { with_sync = true }
         end,
@@ -211,7 +211,7 @@ return packer.startup(function(use)
 
     -- Git
     use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
-    use { "akinsho/git-conflict.nvim", commit = "80bc8931d4ed8c8c4d289a08e1838fcf4741408d" }
+    use { "akinsho/git-conflict.nvim", commit = "c92604a64a2cce15a6e6a753f4501bcee06fa00a" }
 
     -- DAP
     use { "mfussenegger/nvim-dap", commit = "764899df5ca39076acb08a447f7e5bd0b4fa3147" }
