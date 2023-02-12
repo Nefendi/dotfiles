@@ -266,7 +266,7 @@ local vmappings = {
     l = {
         name = "LSP",
         a = {
-            "<esc><cmd>lua vim.lsp.buf.range_code_action()<CR>",
+            "<esc><cmd>lua vim.lsp.buf.code_action()<CR>",
             "Range Code Action",
         },
     },
