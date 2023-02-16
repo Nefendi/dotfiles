@@ -58,20 +58,24 @@ end
 
 local FORMAT_ON_SAVE_ON = true
 
-local function lsp_formatting(bufnr)
-    if FORMAT_ON_SAVE_ON then
-        vim.lsp.buf.format {
-            filter = function(client)
-                -- This list is needed, because sometimes formatters provided by null-ls
-                -- should be used instead of LSP formatting capabilities
-                local servers_to_turn_off_formatting_capabilities =
-                    { "tsserver", "taplo", "html", "jsonls", "clangd", "gopls", "csharp_ls" }
+M.lsp_format = function(bufnr)
+    vim.lsp.buf.format {
+        filter = function(client)
+            -- This list is needed, because sometimes formatters provided by null-ls
+            -- should be used instead of LSP formatting capabilities
+            local servers_to_turn_off_formatting_capabilities =
+                { "tsserver", "taplo", "html", "jsonls", "clangd", "gopls", "csharp_ls" }
 
-                return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
-            end,
-            bufnr = bufnr,
-            timeout_ms = 5000,
-        }
+            return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
+        end,
+        bufnr = bufnr,
+        timeout_ms = 5000,
+    }
+end
+
+local function lsp_format_on_save(bufnr)
+    if FORMAT_ON_SAVE_ON then
+        M.lsp_format(bufnr)
     end
 end
 
@@ -89,7 +93,7 @@ M.on_attach = function(client, bufnr)
             group = format_on_save_augroup,
             buffer = bufnr,
             callback = function()
-                lsp_formatting(bufnr)
+                lsp_format_on_save(bufnr)
             end,
         })
     end
@@ -130,6 +134,7 @@ M.on_attach = function(client, bufnr)
         "ltex",
         "golangci_lint_ls",
         "cmake",
+        "null-ls",
     }
 
     if not functions.contains(not_supported_navic_servers, client.name) then

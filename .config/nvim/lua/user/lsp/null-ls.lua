@@ -9,6 +9,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup {
+    on_attach = require("user.lsp.handlers").on_attach,
     debug = false,
     sources = {
         -- Miscellaneous
