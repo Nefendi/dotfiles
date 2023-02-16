@@ -191,7 +191,7 @@ local mappings = {
             "<cmd>Telescope diagnostics<cr>",
             "Workspace Diagnostics",
         },
-        f = { "<cmd>lua vim.lsp.buf.format({ timeout_ms = 5000 })<cr>", "Format" },
+        f = { "<cmd>lua require('user.lsp.handlers').lsp_format(0)<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
         i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>Mason<cr>", "Mason Installer Info" },
