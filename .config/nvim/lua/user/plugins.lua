@@ -112,6 +112,11 @@ return packer.startup(function(use)
         branch = "fix/E36",
     }
     use { "folke/neodev.nvim", commit = "bb70e41640238b989bb6c2f94802851ff260f68d" }
+    use {
+        "kosayoda/nvim-lightbulb",
+        requires = "antoinemadec/FixCursorHold.nvim",
+        commit = "56b9ce31ec9d09d560fe8787c0920f76bc208297",
+    }
 
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }

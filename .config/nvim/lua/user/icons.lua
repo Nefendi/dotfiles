@@ -90,6 +90,7 @@ if vim.g.use_nerd_icons then
             Stacks = "",
             Scopes = "",
             Watches = "",
+            GlowingLightbulb = "󰛨",
         },
         misc = {
             Robot = "ﮧ",
@@ -196,6 +197,7 @@ else
             Stacks = "",
             Scopes = "",
             Watches = "",
+            GlowingLightbulb = "󰛨",
         },
         misc = {
             Robot = "ﮧ",
