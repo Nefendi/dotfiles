@@ -72,6 +72,7 @@ keymap("n", "gx", [[:silent execute '!xdg-open ' . shellescape(expand('<cfile>')
 
 M.show_documentation = function()
     local filetype = vim.bo.filetype
+
     if vim.tbl_contains({ "vim", "help" }, filetype) then
         vim.cmd("h " .. vim.fn.expand "<cword>")
     elseif vim.tbl_contains({ "man" }, filetype) then
@@ -79,7 +80,11 @@ M.show_documentation = function()
     elseif vim.fn.expand "%:t" == "Cargo.toml" then
         require("crates").show_popup()
     else
-        vim.lsp.buf.hover()
+        local winid = require("ufo").peekFoldedLinesUnderCursor()
+
+        if not winid then
+            vim.lsp.buf.hover()
+        end
     end
 end
 

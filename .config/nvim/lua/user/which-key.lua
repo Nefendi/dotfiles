@@ -250,6 +250,10 @@ local mappings = {
         t = { "<cmd>lua require('neogen').generate({ type = 'type' })<CR>", "Type" },
         F = { "<cmd>lua require('neogen').generate({ type = 'file' })<CR>", "File" },
     },
+    z = {
+        R = { "<cmd>lua require('ufo').openAllFolds<CR>" },
+        M = { "<cmd>lua require('ufo').closeAllFolds<CR>" },
+    },
 }
 
 local vopts = {

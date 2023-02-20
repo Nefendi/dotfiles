@@ -170,6 +170,11 @@ return packer.startup(function(use)
     }
     use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" }
     use { "lvimuser/lsp-inlayhints.nvim", commit = "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c" }
+    use {
+        "kevinhwang91/nvim-ufo",
+        requires = "kevinhwang91/promise-async",
+        commit = "b70c9ef0f8e2673a11387a39185ff249e00df19f",
+    }
 
     -- Go
     use { "olexsmir/gopher.nvim", commit = "e8fe6c5b153646c28d0e63026083374bbdecb9e2" }
