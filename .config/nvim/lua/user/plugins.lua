@@ -65,7 +65,7 @@ return packer.startup(function(use)
     use { "ellisonleao/glow.nvim", commit = "764527caeb36cd68cbf3f6d905584750cb02229d" }
     use { "rcarriga/nvim-notify", commit = "3a8ec89e1918ea2acbb9b22c5ac2006d31773052" }
     use { "folke/which-key.nvim", commit = "6885b669523ff4238de99a7c653d47b081b5506d" }
-    use { "nvim-pack/nvim-spectre", commit = "a52139da068ee4d0860810af7c6b6d48d3cde603" }
+    use { "nvim-pack/nvim-spectre", commit = "ce73d505fdc45f16c1a04f6a98c1c1e114841708" }
     use { "stevearc/dressing.nvim", commit = "1e60c07ae9a8557ac6395144606c3a5335ad47e0" }
     use { "abecodes/tabout.nvim", commit = "be655cc7ce0f5d6d24eeaf8b36e82693fd2facca", wants = { "nvim-treesitter" } }
     use { "ghillb/cybu.nvim", commit = "aee926d1bc069194ae32e0e490d52fa3c1ed1bb7" }
@@ -150,8 +150,8 @@ return packer.startup(function(use)
     }
 
     -- Snippets
-    use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }
-    use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }
+    use { "L3MON4D3/LuaSnip", commit = "37ffce053d4e20236efd43cecf7800e8ef40a997" }
+    use { "rafamadriz/friendly-snippets", commit = "1645e7cd98ed99e766c84ab3cf13a1612c77dcee" }
 
     -- LSP
     use { "neovim/nvim-lspconfig", commit = "aeb76066212b09c7c01a3abb42fe82f0130ef402" }
@@ -165,7 +165,7 @@ return packer.startup(function(use)
     use { "j-hui/fidget.nvim", commit = "2cf9997d3bde2323a1a0934826ec553423005a26" }
     use {
         "SmiteshP/nvim-navic",
-        commit = "40c0ab2640a0e17c4fad7e17f260414d18852ce6",
+        commit = "7e9d2b2b601149fecdccd11b516acb721e571fe6",
         requires = { "neovim/nvim-lspconfig" },
     }
     use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" }
