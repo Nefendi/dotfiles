@@ -27,7 +27,6 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 
-wookayin/fzf-fasd
 MichaelAquilina/zsh-you-should-use
 zpm-zsh/material-colors
 zdharma-continuum/fast-syntax-highlighting kind:defer
