@@ -81,12 +81,17 @@ end
 
 local format_on_save_augroup = vim.api.nvim_create_augroup("FormatOnSave", {})
 
-M.on_attach = function(client, bufnr)
-    local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-    if not status_cmp_ok then
-        return
-    end
+local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp_ok then
+    return
+end
 
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+
+M.on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
         vim.api.nvim_clear_autocmds { group = format_on_save_augroup, buffer = bufnr }
         vim.api.nvim_create_autocmd("BufWritePre", {
@@ -109,11 +114,6 @@ M.on_attach = function(client, bufnr)
             require("jdtls.dap").setup_dap_main_class_configs()
         end
     end
-
-    M.capabilities = vim.lsp.protocol.make_client_capabilities()
-    M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-    M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
-    M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
     lsp_keymaps(bufnr)
 
