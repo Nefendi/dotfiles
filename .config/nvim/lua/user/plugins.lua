@@ -175,6 +175,10 @@ return packer.startup(function(use)
         requires = "kevinhwang91/promise-async",
         commit = "b70c9ef0f8e2673a11387a39185ff249e00df19f",
     }
+    use {
+        "luukvbaal/statuscol.nvim",
+        commit = "49a3bdab3e9cf23982724c1e888a6296fca4c8b9",
+    }
 
     -- Go
     use { "olexsmir/gopher.nvim", commit = "e8fe6c5b153646c28d0e63026083374bbdecb9e2" }
