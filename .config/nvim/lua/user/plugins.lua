@@ -121,7 +121,7 @@ return packer.startup(function(use)
     -- Colorschemes
     use { "lunarvim/onedarker.nvim", commit = "4eaa5e8760832d23a84f8ad4e0ff012eacd2c01f" }
     use { "lunarvim/darkplus.nvim", commit = "aa1f0a582dc897259b9cb8bebad64110da4d4cc4" }
-    use { "folke/tokyonight.nvim", commit = "e52c41314e83232840d6970e6b072f9fba242eb9" }
+    use { "folke/tokyonight.nvim", commit = "a0abe53df53616d13da327636cb0bcac3ea7f5af" }
     use { "fladson/vim-kitty", commit = "d4c60f096b751c1462c80cbf42550e29c8cd2983" }
 
     -- Cmp plugins
@@ -211,7 +211,7 @@ return packer.startup(function(use)
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
-        commit = "4e26fec0747c4d507bbd068c9c5584eb2de6e839",
+        commit = "598b878a2b44e7e7a981acc5fc99bf8273cd1d0f",
         run = function()
             require("nvim-treesitter.install").update { with_sync = true }
         end,
