@@ -19,6 +19,7 @@ barbecue.setup {
         "spectre_panel",
         "toggleterm",
         "gitcommit",
+        "gitrebase",
         "DressingSelect",
         "Jaq",
         "glowpreview",
