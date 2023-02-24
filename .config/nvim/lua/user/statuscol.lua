@@ -6,7 +6,7 @@ end
 statuscol.setup {
     foldfunc = "builtin",
     setopt = true,
-    order = "sSsNsFs",
+    order = "SsNsFs",
     ft_ignore = {
         "help",
         "spectre_panel",
