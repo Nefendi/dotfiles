@@ -216,7 +216,7 @@ return packer.startup(function(use)
             require("nvim-treesitter.install").update { with_sync = true }
         end,
     }
-    use { "p00f/nvim-ts-rainbow", commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750" }
+    use { "p00f/nvim-ts-rainbow", commit = "ef95c15a935f97c65a80e48e12fe72d49aacf9b9" }
     use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "a0f89563ba36b3bacd62cf967b46beb4c2c29e52" }
     use { "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" }
     use { "nvim-treesitter/playground", commit = "1290fdf6f2f0189eb3b4ce8073d3fda6a3658376" }
