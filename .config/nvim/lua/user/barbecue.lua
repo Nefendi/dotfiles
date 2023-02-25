@@ -28,6 +28,7 @@ barbecue.setup {
         "dapui_console",
         "lab",
         "cabal",
+        "bzl",
         "",
     },
 }
