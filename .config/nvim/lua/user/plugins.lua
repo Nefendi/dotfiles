@@ -54,7 +54,7 @@ return packer.startup(function(use)
     use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
     use { "lukas-reineke/indent-blankline.nvim", commit = "4a58fe6e9854ccfe6c6b0f59abb7cb8301e23025" }
     use { "goolord/alpha-nvim", commit = "a858e4e7b0805835e61fab2b54704450427d47c3" }
-    use { "kylechui/nvim-surround", commit = "a498d10222e8712b42d9115b9748449c2d1cf645" }
+    use { "kylechui/nvim-surround", commit = "ebdd22d2040798d0b5a5e50d72d940e95f308121" }
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
     use { "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" }
     use { "folke/todo-comments.nvim", commit = "02eb3019786d9083b93ab9457761899680c6f3ec" }
@@ -144,7 +144,7 @@ return packer.startup(function(use)
     }
     use {
         "tzachar/cmp-tabnine",
-        commit = "e23d32a76304496aade4e4b285751a6a8b505491",
+        commit = "a6cb553143573861d2d98da86ceb3074c87fc536",
         requires = { "hrsh7th/nvim-cmp" },
         run = "./install.sh",
     }
