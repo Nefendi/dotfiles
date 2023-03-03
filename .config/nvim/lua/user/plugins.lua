@@ -134,7 +134,7 @@ return packer.startup(function(use)
     use { "hrsh7th/cmp-emoji", commit = "19075c36d5820253d32e2478b6aaf3734aeaafa0" }
     use {
         "Saecki/crates.nvim",
-        commit = "cceea1a4f2d0131f43b6d17ad5c793aded19443b",
+        tag = "v0.3.0",
         requires = { "nvim-lua/plenary.nvim" },
     }
     use {
@@ -186,7 +186,7 @@ return packer.startup(function(use)
     -- Rust
     use {
         "simrat39/rust-tools.nvim",
-        commit = "bd1aa99ffb911a1cf99b3fcf3b44c0391c57e3ef",
+        commit = "71d2cf67b5ed120a0e31b2c8adb210dd2834242f",
     }
 
     -- Lua
