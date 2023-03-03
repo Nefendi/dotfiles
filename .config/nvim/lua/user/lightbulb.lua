@@ -10,16 +10,16 @@ lightbulb.setup {
     autocmd = { enabled = true },
     float = {
         enabled = false,
-        text = icons.ui.GlowingLightbulb,
-        win_opts = { anchor = "SW", offset_y = 1 },
+        text = icons.diagnostics.Hint,
+        win_opts = { anchor = "SE", border = "none", style = "minimal" },
     },
-    virtual_text = { enabled = false, text = icons.ui.GlowingLightbulb, hl_mode = "replace" },
+    virtual_text = { enabled = false, text = icons.diagnostics.Hint, hl_mode = "replace" },
 }
 
 vim.fn.sign_define(
     "LightBulbSign",
-    { text = icons.ui.GlowingLightbulb, texthl = "CmpItemKindEmoji", linehl = "", numhl = "" }
+    { text = icons.diagnostics.Hint, texthl = "CmpItemKindEmoji", linehl = "", numhl = "" }
 )
 
-vim.api.nvim_set_hl(0, "LightBulbFloatWin", { fg = "#fde030" })
-vim.api.nvim_set_hl(0, "LightBulbVirtualText", { fg = "#fde030", bg = "#292e42" })
+vim.api.nvim_set_hl(0, "LightBulbFloatWin", { fg = "#fde030", bg = "#1a1b26" })
+vim.api.nvim_set_hl(0, "LightBulbVirtualText", { fg = "#fde030", bg = "#1a1b26" })
