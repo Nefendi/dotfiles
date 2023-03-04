@@ -1,3 +1,11 @@
 return {
-    filetypes = { "bib", "org", "plaintex", "rst", "rnoweb", "tex" },
+    settings = {
+        ltex = {
+            language = "en-GB",
+            additionalRules = {
+                enablePickyRules = true,
+                motherTongue = "pl-PL",
+            },
+        },
+    },
 }
