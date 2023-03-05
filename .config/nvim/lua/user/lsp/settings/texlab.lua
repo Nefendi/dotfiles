@@ -4,7 +4,7 @@ return {
             auxDirectory = ".",
             bibtexFormatter = "texlab",
             build = {
-                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                args = { "--interaction=nonstopmode", "--synctex=1", "--shell-escape", "%f" },
                 executable = "lualatex",
                 forwardSearchAfter = false,
                 onSave = true,
