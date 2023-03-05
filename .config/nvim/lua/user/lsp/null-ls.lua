@@ -48,9 +48,6 @@ null_ls.setup {
         -- Dockerfile
         diagnostics.hadolint,
 
-        -- LaTeX
-        formatting.latexindent,
-
         -- C++
         formatting.clang_format.with {
             filetypes = { "c", "cpp", "cuda" },

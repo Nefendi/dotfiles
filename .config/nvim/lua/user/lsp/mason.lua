@@ -15,6 +15,7 @@ local servers = {
     "taplo",
     "clangd",
     "ltex",
+    "texlab",
     "marksman",
     "gopls",
     "golangci_lint_ls",
@@ -180,6 +181,11 @@ for _, server in pairs(servers) do
     if server == "ltex" then
         local ltex_opts = require "user.lsp.settings.ltex"
         opts = vim.tbl_deep_extend("force", ltex_opts, opts)
+    end
+
+    if server == "texlab" then
+        local texlab_opts = require "user.lsp.settings.texlab"
+        opts = vim.tbl_deep_extend("force", texlab_opts, opts)
     end
 
     if server == "clangd" then
