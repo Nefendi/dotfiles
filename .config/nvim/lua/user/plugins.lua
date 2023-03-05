@@ -56,7 +56,7 @@ return packer.startup(function(use)
     use { "goolord/alpha-nvim", commit = "a858e4e7b0805835e61fab2b54704450427d47c3" }
     use { "kylechui/nvim-surround", commit = "ebdd22d2040798d0b5a5e50d72d940e95f308121" }
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" }
-    use { "lervag/vimtex", commit = "61eb22574b0234ded1ec9cfeecf140999865285b" }
+    use { "lervag/vimtex", commit = "336032a2f1b826365e6fc27667d55c273ec8cf99" }
     use { "folke/todo-comments.nvim", commit = "02eb3019786d9083b93ab9457761899680c6f3ec" }
     use { "ggandor/leap.nvim", commit = "f565a9c4d92245d8b619235bebeaa73cc38aa40e" }
     use { "ggandor/flit.nvim", commit = "be110f9814a45788d10537fd59b3c76d956bb7ad" }
@@ -151,7 +151,7 @@ return packer.startup(function(use)
 
     -- Snippets
     use { "L3MON4D3/LuaSnip", commit = "37ffce053d4e20236efd43cecf7800e8ef40a997" }
-    use { "rafamadriz/friendly-snippets", commit = "1645e7cd98ed99e766c84ab3cf13a1612c77dcee" }
+    use { "rafamadriz/friendly-snippets", commit = "009887b76f15d16f69ae1341f86a7862f61cf2a1" }
 
     -- LSP
     use { "neovim/nvim-lspconfig", commit = "aeb76066212b09c7c01a3abb42fe82f0130ef402" }
