@@ -168,7 +168,7 @@ return packer.startup(function(use)
         commit = "7e9d2b2b601149fecdccd11b516acb721e571fe6",
         requires = { "neovim/nvim-lspconfig" },
     }
-    use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "db67e94c813aae166c3d2f119ea7d2e85164922a" }
+    use { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", commit = "ec98b45c8280e5ef8c84028d4f38aa447276c002" }
     use { "lvimuser/lsp-inlayhints.nvim", commit = "84ca3abe8aaecbb5b30ad89e4701d4a9c821b72c" }
     use {
         "kevinhwang91/nvim-ufo",
@@ -181,7 +181,7 @@ return packer.startup(function(use)
     }
 
     -- Go
-    use { "olexsmir/gopher.nvim", commit = "e8fe6c5b153646c28d0e63026083374bbdecb9e2" }
+    use { "olexsmir/gopher.nvim", commit = "cc46546a93c7ccea39f1e008e6804b93559bec29" }
 
     -- Rust
     use {
