@@ -29,6 +29,9 @@ barbecue.setup {
         "lab",
         "cabal",
         "bzl",
+        "gomod",
+        "gosum",
+        "gowork",
         "",
     },
 }
