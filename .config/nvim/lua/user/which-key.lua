@@ -219,13 +219,20 @@ local mappings = {
 
     t = {
         name = "Test",
-        s = { "<cmd>TestSuite<cr>", "Run Suite" },
-        f = { "<cmd>TestFile<cr>", "Run File" },
-        e = { "<cmd>TestEdit<cr>", "Edit Test File" },
-        n = { "<cmd>TestNearest<cr>", "Run Nearest Test" },
-        l = { "<cmd>TestLast<cr>", "Rerun Latest Test" },
-        v = { "<cmd>TestVisit<cr>", "Last Running Test" },
-        i = { "<cmd>TestInfo<cr>", "Test Info" },
+        -- s = { "<cmd>TestSuite<cr>", "Run Suite" },
+        -- f = { "<cmd>TestFile<cr>", "Run File" },
+        -- e = { "<cmd>TestEdit<cr>", "Edit Test File" },
+        -- n = { "<cmd>TestNearest<cr>", "Run Nearest Test" },
+        -- l = { "<cmd>TestLast<cr>", "Rerun Latest Test" },
+        -- v = { "<cmd>TestVisit<cr>", "Last Running Test" },
+        -- i = { "<cmd>TestInfo<cr>", "Test Info" },
+        f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
+        n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest Test" },
+        a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach To Nearest Test" },
+        S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop Running Tests" },
+        s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary Window" },
+        p = { "<cmd>lua require('neotest').output_panel.toggle()<cr>", "Toggle Output Panel" },
+        o = { "<cmd>lua require('neotest').output.open()<cr>", "Open Output" },
     },
 
     T = {

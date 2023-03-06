@@ -232,6 +232,8 @@ local filetype = {
             "DressingSelect",
             "",
             "nil",
+            "neotest-summary",
+            "neotest-attach",
         }
 
         local return_val = function(str)

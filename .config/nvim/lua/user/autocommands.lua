@@ -10,6 +10,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         "DressingSelect",
         "null-ls-info",
         "tsplayground",
+        "neotest-output",
+        "neotest-attach",
     },
     callback = function()
         vim.cmd [[

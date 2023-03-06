@@ -79,7 +79,6 @@ return packer.startup(function(use)
     }
     use { "kevinhwang91/nvim-bqf", commit = "8b62211ad7529c314e80b22968eef6ba275c781c", ft = "qf" }
     use { "junegunn/vim-slash", commit = "31aee09b7ea8893a18fa34f65e63e364fc998444" }
-    use { "klen/nvim-test", commit = "32f162c27045fc712664b9ddbd33d3c550cb2bfc" }
     use { "LunarVim/peek.lua", commit = "7e63517c232bf8d4c78b83b0b897c5d53c7fd569" }
     use {
         "jiaoshijie/undotree",
@@ -232,6 +231,25 @@ return packer.startup(function(use)
     use { "mfussenegger/nvim-dap-python", commit = "52eb0830d3c8a7d283cc373c37ec78ebe0718d02" }
     use { "leoluz/nvim-dap-go", commit = "c2902bb96c45e872d947d7e174775e652439add4" }
     use { "rcarriga/nvim-dap-ui", commit = "8d0768a83f7b89bd8cb8811800bc121b9353f0b2" }
+
+    -- nvim-test
+    -- use { "klen/nvim-test", commit = "32f162c27045fc712664b9ddbd33d3c550cb2bfc" }
+
+    -- Neotest
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+        },
+        commit = "568feb5e9c7c5b7386886ecd4520389153aa7c7d",
+    }
+    use { "rouge8/neotest-rust", commit = "53db2f682e337c2188d81e8ecdf779bff869fb74" }
+    use { "nvim-neotest/neotest-python", commit = "a76fb6760fc2f653c2088f79152338cc99380cf1" }
+    use { "nvim-neotest/neotest-go", commit = "981406c12bd3c77eb434211a1b85b964ab5bbdd5" }
+    use { "haydenmeade/neotest-jest", commit = "821bb227e31259307db30c88671a1c3724f78637" }
+    use { "marilari88/neotest-vitest", commit = "8790a65f2a2dc4eb32551c908c2dbf3e02757701" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
