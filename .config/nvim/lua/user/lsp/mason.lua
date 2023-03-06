@@ -46,6 +46,7 @@ local formatters = {
     "stylua",
     "golines",
     "gofumpt",
+    "goimports",
     "shfmt",
     "clang-format",
     "prettier",
