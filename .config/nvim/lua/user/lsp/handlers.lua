@@ -123,22 +123,7 @@ M.on_attach = function(client, bufnr)
         return
     end
 
-    -- nvim-navic requires an LSP to support documentSymbol and old SymbolInformation format
-    local not_supported_navic_servers = {
-        "dockerls",
-        "cssmodules_ls",
-        "html",
-        "eslint",
-        "emmet_ls",
-        "cssls",
-        "bashls",
-        "ltex",
-        "golangci_lint_ls",
-        "cmake",
-        "null-ls",
-    }
-
-    if not functions.contains(not_supported_navic_servers, client.name) then
+    if client.server_capabilities["documentSymbolProvider"] then
         navic.attach(client, bufnr)
     end
 end
