@@ -32,6 +32,7 @@ barbecue.setup {
         "gomod",
         "gosum",
         "gowork",
+        "asciidoc",
         "",
     },
 }
