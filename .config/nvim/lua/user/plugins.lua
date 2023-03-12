@@ -94,7 +94,7 @@ return packer.startup(function(use)
         commit = "733b4dd2c1b87013291c21d80afbe5255712d1d3",
     }
     use { "tamago324/lir.nvim", commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396" }
-    use { "b0o/schemastore.nvim", commit = "687fc5aca8eef79278a01345f1a93dcc68453f29" }
+    use { "b0o/schemastore.nvim", commit = "1dc606bf07e1419d785e04d6dbb8585987d817cc" }
     use {
         "danymat/neogen",
         requires = "nvim-treesitter/nvim-treesitter",
