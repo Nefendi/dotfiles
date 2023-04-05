@@ -107,8 +107,7 @@ return packer.startup(function(use)
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
         },
-        -- commit = "3be07ad2a6c8e3307466a762f1e7fe9fa1856f9b",
-        branch = "fix/E36",
+        commit = "a0e19486ccc1fb134f6ef7bf914d07bbb462e346",
     }
     use { "folke/neodev.nvim", commit = "bb70e41640238b989bb6c2f94802851ff260f68d" }
     use {
