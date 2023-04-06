@@ -5,7 +5,7 @@ local servers = {
     "cssmodules_ls",
     "html",
     "jsonls",
-    "sumneko_lua",
+    "lua_ls",
     "tsserver",
     "pyright",
     "yamlls",
@@ -152,26 +152,9 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
     end
 
-    if server == "sumneko_lua" then
-        -- local l_status_ok, lua_dev = pcall(require, "lua-dev")
-        --
-        -- if not l_status_ok then
-        --     return
-        -- end
-        --
-        -- local luadev = lua_dev.setup {
-        --     lspconfig = {
-        --         on_attach = opts.on_attach,
-        --         capabilities = opts.capabilities,
-        --     },
-        -- }
-        --
-        -- lspconfig.sumneko_lua.setup(luadev)
-        --
-        -- goto continue
-
-        local sumneko_lua_opts = require "user.lsp.settings.sumneko_lua"
-        opts = vim.tbl_deep_extend("force", sumneko_lua_opts, opts)
+    if server == "lua_ls" then
+        local lua_ls_opts = require "user.lsp.settings.lua_ls"
+        opts = vim.tbl_deep_extend("force", lua_ls_opts, opts)
     end
 
     if server == "pyright" then
