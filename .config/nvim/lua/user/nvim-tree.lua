@@ -99,7 +99,7 @@ nvim_tree.setup {
     },
     git = {
         enable = true,
-        ignore = false,
+        ignore = true,
         timeout = 500,
     },
     view = {
