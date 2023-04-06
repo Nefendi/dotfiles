@@ -83,12 +83,16 @@ local mappings = {
     u = { '<cmd>lua require("undotree").toggle()<cr>', "Undotree" },
 
     p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
+        name = "Plugins",
+        i = { "<cmd>Lazy install<cr>", "Install" },
+        s = { "<cmd>Lazy sync<cr>", "Sync" },
+        C = { "<cmd>Lazy clear<cr>", "Clear finished tasks" },
+        c = { "<cmd>Lazy clean<cr>", "Clean" },
+        u = { "<cmd>Lazy update<cr>", "Update" },
+        p = { "<cmd>Lazy profile<cr>", "Profile" },
+        l = { "<cmd>Lazy log<cr>", "Log" },
+        L = { "<cmd>Lazy home<cr>", "Launch Lazy" },
+        d = { "<cmd>Lazy debug<cr>", "Debug" },
     },
 
     o = {
