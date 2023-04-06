@@ -6,6 +6,7 @@ return {
                 diagnosticMode = "workspace",
                 useLibraryCodeForTypes = true,
                 autoImportCompletions = true,
+                autoSearchPaths = true,
             },
         },
     },
