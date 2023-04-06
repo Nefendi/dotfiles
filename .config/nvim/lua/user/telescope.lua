@@ -21,6 +21,7 @@ telescope.setup {
             ".idea/",
             ".vscode/",
             "htmlcov/",
+            ".direnv/",
 
             -- JavaScript
             "node_modules/",
