@@ -54,10 +54,6 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
     keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-
-    vim.keymap.set("n", "<leader>lr", function()
-        return ":IncRename " .. vim.fn.expand "<cword>"
-    end, { expr = true })
 end
 
 local FORMAT_ON_SAVE_ON = true
