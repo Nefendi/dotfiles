@@ -133,7 +133,8 @@ local right_pad = {
 
 local left_pad_alt = {
     function()
-        return "  "
+        -- return "  "
+        return "  "
     end,
     padding = 0,
     color = function()
@@ -143,7 +144,8 @@ local left_pad_alt = {
 
 local right_pad_alt = {
     function()
-        return "  "
+        -- return "  "
+        return "  "
     end,
     padding = 0,
     color = function()
@@ -187,7 +189,7 @@ local mode = {
 local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    sections = { "error", "warn", "info", "hint" },
+    sections = { "error", "warn" },
     symbols = {
         error = "%#SLError#" .. icons.diagnostics.Error .. "%*" .. "%#SLBG# ",
         warn = "%#SLWarning#" .. icons.diagnostics.Warning .. "%*" .. "%#SLBG# ",
@@ -502,7 +504,7 @@ lualine.setup {
     sections = {
         lualine_a = { left_pad, mode, branch, right_pad },
         lualine_b = { left_pad_alt, diagnostics, right_pad_alt },
-        lualine_c = { python_env, current_signature },
+        lualine_c = { python_env },
         -- lualine_x = { diff, spaces, encoding, fileformat, filetype },
         lualine_x = { lsp, spaces, encoding, fileformat, filetype },
         lualine_y = { location },
