@@ -9,7 +9,6 @@ local icons = require "user.icons"
 
 local function button(sc, txt, keybind, keybind_opts)
     local b = dashboard.button(sc, txt, keybind, keybind_opts)
-    b.opts.hl_shortcut = "AlphaShortcut"
     return b
 end
 
@@ -34,8 +33,6 @@ dashboard.section.buttons.val = {
     button("q", icons.ui.Leave .. "  Quit", ":qa<CR>"),
 }
 
-dashboard.section.footer.opts.hl = "AlphaFooter"
-
 dashboard.section.footer.val = {
     "",
     "",
@@ -47,4 +44,5 @@ dashboard.section.footer.val = {
 }
 
 dashboard.opts.opts.noautocmd = true
+
 alpha.setup(dashboard.opts)
