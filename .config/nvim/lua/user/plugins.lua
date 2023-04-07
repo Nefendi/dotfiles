@@ -88,6 +88,14 @@ require("lazy").setup({
         dependencies = "antoinemadec/FixCursorHold.nvim",
         commit = "56b9ce31ec9d09d560fe8787c0920f76bc208297",
     },
+    {
+        "folke/noice.nvim",
+        lazy = true,
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+    },
 
     -- Colorschemes
     { "lunarvim/onedarker.nvim" },
@@ -134,7 +142,6 @@ require("lazy").setup({
     { "RRethy/vim-illuminate" },
     { "folke/lsp-colors.nvim" },
     { "ray-x/lsp_signature.nvim" },
-    { "j-hui/fidget.nvim" },
     {
         "SmiteshP/nvim-navic",
         commit = "7e9d2b2b601149fecdccd11b516acb721e571fe6",
