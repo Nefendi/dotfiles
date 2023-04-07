@@ -200,7 +200,8 @@ require("lazy").setup({
             require("nvim-treesitter.install").update { with_sync = true }
         end,
     },
-    { "p00f/nvim-ts-rainbow", lazy = false },
+    -- { "p00f/nvim-ts-rainbow", lazy = false },
+    { "mrjones2014/nvim-ts-rainbow", lazy = false },
     { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
     { "windwp/nvim-ts-autotag", lazy = true },
     { "nvim-treesitter/playground", lazy = true },
