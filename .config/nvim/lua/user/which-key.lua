@@ -213,7 +213,7 @@ local mappings = {
         -- r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         r = {
             function()
-                return ":IncRename " .. vim.fn.expand "<cword>"
+                return ":Rename " .. vim.fn.expand "<cword>"
             end,
             "Rename",
             expr = true,

@@ -4,4 +4,4 @@ if not status_ok then
     return
 end
 
-inc_rename.setup {}
+inc_rename.setup { cmd_name = "Rename" }
