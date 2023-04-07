@@ -23,6 +23,31 @@ noice.setup {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
     },
+    routes = {
+        -- To show macro recording messages
+        {
+            view = "notify",
+            filter = { event = "msg_showmode" },
+        },
+        -- To disable messages about writing to files
+        {
+            filter = {
+                event = "msg_show",
+                kind = "",
+                find = "written",
+            },
+            opts = { skip = true },
+        },
+        -- To disable warnings about search hitting TOP or BOTTOM
+        {
+            filter = {
+                event = "msg_show",
+                kind = "wmsg",
+                find = "search hit",
+            },
+            opts = { skip = true },
+        },
+    },
     views = {
         hover = {
             size = {
