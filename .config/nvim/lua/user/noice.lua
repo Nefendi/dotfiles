@@ -17,8 +17,8 @@ noice.setup {
     },
     -- you can enable a preset for easier configuration
     presets = {
-        bottom_search = true, -- use a classic bottom cmdline for search
         command_palette = true, -- position the cmdline and popupmenu together
+        bottom_search = true, -- use a classic bottom cmdline for search
         long_message_to_split = true, -- long messages will be sent to a split
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
@@ -44,6 +44,53 @@ noice.setup {
                 event = "msg_show",
                 kind = "wmsg",
                 find = "search hit",
+            },
+            opts = { skip = true },
+        },
+        -- To disable messages about undoing changes
+        {
+            filter = {
+                event = "msg_show",
+                find = "more line",
+            },
+            opts = { skip = true },
+        },
+        {
+            filter = {
+                event = "msg_show",
+                find = "line less",
+            },
+            opts = { skip = true },
+        },
+        -- To disable messages about redoing changes
+        {
+            filter = {
+                event = "msg_show",
+                find = " change;",
+            },
+            opts = { skip = true },
+        },
+        -- To disable messages about multiline deletions
+        {
+            filter = {
+                event = "msg_show",
+                find = "fewer lines",
+            },
+            opts = { skip = true },
+        },
+        -- To disable messages about multiline yanks
+        {
+            filter = {
+                event = "msg_show",
+                find = "lines yanked",
+            },
+            opts = { skip = true },
+        },
+        -- To disable messages about moving lines
+        {
+            filter = {
+                event = "msg_show",
+                find = "lines moved",
             },
             opts = { skip = true },
         },
