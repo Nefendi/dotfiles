@@ -23,4 +23,14 @@ noice.setup {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
     },
+    views = {
+        hover = {
+            size = {
+                -- FIXME: Ugly hack to make hover popups not extend the border on my monitor.
+                -- Maybe this can be nicer if some day percentages are supported.
+                -- Something like '90%' or '95%' could work.
+                max_width = 100,
+            },
+        },
+    },
 }
