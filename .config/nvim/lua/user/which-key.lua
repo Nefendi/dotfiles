@@ -132,10 +132,7 @@ local mappings = {
     f = {
         name = "Find",
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        f = {
-            "<cmd>Telescope find_files<cr>",
-            "Find Files",
-        },
+        f = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Fuzzy Find" },
         t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
         T = { "<cmd>Telescope grep_string<cr>", "Find Current Word" },
         i = { "<cmd>Telescope media_files<cr>", "Media" },

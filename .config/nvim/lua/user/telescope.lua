@@ -90,6 +90,9 @@ telescope.setup {
             previewer = false,
             initial_mode = "normal",
         },
+        current_buffer_fuzzy_find = {
+            theme = "dropdown",
+        },
     },
     extensions = {
         fzf = {
