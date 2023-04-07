@@ -17,18 +17,18 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { "nvim-lua/plenary.nvim", lazy = true }, -- Useful lua functions used by lots of plugins
     { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
-    { "numToStr/Comment.nvim" },
+    { "numToStr/Comment.nvim", lazy = true },
     { "kyazdani42/nvim-tree.lua" },
     { "nvim-tree/nvim-web-devicons", lazy = true },
     { "moll/vim-bbye" },
     { "nvim-lualine/lualine.nvim" },
     { "akinsho/toggleterm.nvim", version = "v2.*" },
     { "ahmedkhalf/project.nvim", event = "VimEnter" },
-    { "lukas-reineke/indent-blankline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", lazy = true },
     { "goolord/alpha-nvim" },
     { "kylechui/nvim-surround" },
     { "tpope/vim-repeat" },
-    { "lervag/vimtex" },
+    { "lervag/vimtex", lazy = true },
     { "folke/todo-comments.nvim" },
     { "ggandor/leap.nvim" },
     { "ggandor/flit.nvim" },
@@ -37,8 +37,8 @@ require("lazy").setup({
     { "ellisonleao/glow.nvim" },
     { "rcarriga/nvim-notify" },
     { "folke/which-key.nvim", event = "VeryLazy" },
-    { "nvim-pack/nvim-spectre" },
-    { "stevearc/dressing.nvim" },
+    { "nvim-pack/nvim-spectre", lazy = true },
+    { "stevearc/dressing.nvim", lazy = true },
     { "abecodes/tabout.nvim" },
     { "ghillb/cybu.nvim" },
     { "karb94/neoscroll.nvim" },
@@ -73,9 +73,10 @@ require("lazy").setup({
         dependencies = "nvim-treesitter/nvim-treesitter",
         commit = "967b280d7d7ade52d97d06e868ec4d9a0bc59282",
     },
-    { "monaqa/dial.nvim" },
+    { "monaqa/dial.nvim", lazy = true },
     {
         "utilyre/barbecue.nvim",
+        lazy = true,
         dependencies = {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
@@ -98,8 +99,8 @@ require("lazy").setup({
     },
 
     -- Colorschemes
-    { "lunarvim/onedarker.nvim" },
-    { "lunarvim/darkplus.nvim" },
+    { "lunarvim/onedarker.nvim", lazy = true },
+    { "lunarvim/darkplus.nvim", lazy = true },
     { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
     { "fladson/vim-kitty" },
 
@@ -124,6 +125,7 @@ require("lazy").setup({
     },
     {
         "tzachar/cmp-tabnine",
+        lazy = true,
         commit = "a6cb553143573861d2d98da86ceb3074c87fc536",
         dependencies = { "hrsh7th/nvim-cmp" },
         build = "./install.sh",
@@ -139,12 +141,13 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim", lazy = true },
     { "WhoIsSethDaniel/mason-tool-installer.nvim", lazy = true },
     { "jose-elias-alvarez/null-ls.nvim", lazy = true },
-    { "RRethy/vim-illuminate" },
+    { "RRethy/vim-illuminate", lazy = true },
     { "folke/lsp-colors.nvim" },
     { "ray-x/lsp_signature.nvim" },
     { "smjonas/inc-rename.nvim", lazy = true },
     {
         "SmiteshP/nvim-navic",
+        lazy = true,
         commit = "7e9d2b2b601149fecdccd11b516acb721e571fe6",
         dependencies = { "neovim/nvim-lspconfig" },
     },
@@ -191,6 +194,7 @@ require("lazy").setup({
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
+        lazy = true,
         commit = "89e5fa66cf53854f45cfcfae45afb93171cf5c05",
         build = function()
             require("nvim-treesitter.install").update { with_sync = true }
@@ -219,6 +223,7 @@ require("lazy").setup({
     -- Neotest
     {
         "nvim-neotest/neotest",
+        lazy = true,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
@@ -226,11 +231,11 @@ require("lazy").setup({
         },
         commit = "568feb5e9c7c5b7386886ecd4520389153aa7c7d",
     },
-    { "rouge8/neotest-rust" },
-    { "nvim-neotest/neotest-python" },
-    { "nvim-neotest/neotest-go" },
-    { "haydenmeade/neotest-jest" },
-    { "marilari88/neotest-vitest" },
+    { "rouge8/neotest-rust", lazy = true },
+    { "nvim-neotest/neotest-python", lazy = true },
+    { "nvim-neotest/neotest-go", lazy = true },
+    { "haydenmeade/neotest-jest", lazy = true },
+    { "marilari88/neotest-vitest", lazy = true },
 }, {
     ui = {
         border = "rounded",
