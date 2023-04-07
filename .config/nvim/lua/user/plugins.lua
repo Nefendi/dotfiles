@@ -142,6 +142,7 @@ require("lazy").setup({
     { "RRethy/vim-illuminate" },
     { "folke/lsp-colors.nvim" },
     { "ray-x/lsp_signature.nvim" },
+    { "smjonas/inc-rename.nvim", lazy = true },
     {
         "SmiteshP/nvim-navic",
         commit = "7e9d2b2b601149fecdccd11b516acb721e571fe6",
