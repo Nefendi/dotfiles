@@ -16,7 +16,7 @@ end
 function M.toggle_option(option)
     local value = not vim.api.nvim_get_option_value(option, {})
     vim.opt[option] = value
-    vim.notify(option .. " set to " .. tostring(value))
+    vim.notify(string.upper(option) .. " set to " .. tostring(value))
 end
 
 function M.list_registered_null_ls_providers(file_type, kind)
