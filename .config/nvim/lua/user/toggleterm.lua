@@ -49,10 +49,10 @@ local lazygit = Terminal:new {
     },
     on_open = function(_)
         vim.cmd "startinsert!"
-        -- vim.cmd("set laststatus=0")
+        vim.cmd "set laststatus=0"
     end,
     on_close = function(_)
-        -- vim.cmd("set laststatus=3")
+        vim.cmd "set laststatus=3"
     end,
     count = 99,
 }
