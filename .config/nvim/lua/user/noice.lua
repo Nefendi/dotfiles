@@ -70,6 +70,13 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        {
+            filter = {
+                event = "msg_show",
+                find = " changes;",
+            },
+            opts = { skip = true },
+        },
         -- To disable messages about multiline deletions
         {
             filter = {
