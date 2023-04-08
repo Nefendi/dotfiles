@@ -15,6 +15,15 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+-- LuaSnip
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+    callback = function()
+        if luasnip.expand_or_jumpable() then
+            vim.cmd [[silent! lua require("luasnip").unlink_current()]]
+        end
+    end,
+})
+
 local functions = require "user.functions"
 
 local buffer_fts = {
