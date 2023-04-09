@@ -77,9 +77,11 @@ lir.setup {
     end,
 }
 
+-- TODO: This does not work with lazy loading, NvimTrooFolderIcon is probably not found
 local found, icon_hl = pcall(functions.get_hl_by_name, { group = "NvimTreeFolderIcon", property = "foreground" })
 if not found then
-    icon_hl = "#42A5F5"
+    -- icon_hl = "#42A5F5"
+    icon_hl = "#7aa2f7"
 end
 
 -- custom folder icon
