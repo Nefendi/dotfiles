@@ -290,11 +290,6 @@ require("lazy").setup({
             "hrsh7th/cmp-path", -- path completions
             "saadparwaiz1/cmp_luasnip", -- snippet completions
             "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-emoji",
-            "Saecki/crates.nvim",
-            "David-Kunz/cmp-npm",
-            "tzachar/cmp-tabnine",
             "hrsh7th/cmp-cmdline",
         },
     }, -- The completion plugin
@@ -302,8 +297,7 @@ require("lazy").setup({
     { "hrsh7th/cmp-path" }, -- path completions
     { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
     { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-nvim-lua" },
-    { "hrsh7th/cmp-emoji" },
+    { "hrsh7th/cmp-emoji", event = "InsertEnter" },
     { "hrsh7th/cmp-cmdline" },
     {
         "Saecki/crates.nvim",
@@ -311,20 +305,20 @@ require("lazy").setup({
         config = function()
             require "user.crates"
         end,
-
         version = "v0.3.0",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     {
         "David-Kunz/cmp-npm",
+        ft = "json",
         config = function()
             require "user.cmp-npm"
         end,
-
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     {
         "tzachar/cmp-tabnine",
+        event = "InsertEnter",
         config = function()
             require "user.tabnine"
         end,
@@ -333,8 +327,15 @@ require("lazy").setup({
     },
 
     -- Snippets
-    { "L3MON4D3/LuaSnip" },
-    { "rafamadriz/friendly-snippets", event = "VeryLazy" },
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = "rafamadriz/friendly-snippets",
+        event = "InsertEnter",
+        config = function()
+            require "user.luasnip"
+        end,
+    },
+    { "rafamadriz/friendly-snippets" },
 
     -- LSP
     {
