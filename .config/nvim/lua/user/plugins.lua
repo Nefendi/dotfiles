@@ -299,7 +299,7 @@ require("lazy").setup({
     { "hrsh7th/cmp-emoji", event = "InsertEnter" },
     {
         "Saecki/crates.nvim",
-        ft = "toml",
+        event = "BufRead Cargo.toml",
         config = function()
             require "user.crates"
         end,
@@ -308,7 +308,7 @@ require("lazy").setup({
     },
     {
         "David-Kunz/cmp-npm",
-        ft = "json",
+        event = "BufRead package.json",
         config = function()
             require "user.cmp-npm"
         end,
