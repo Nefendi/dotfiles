@@ -10,32 +10,35 @@ end
 
 comment.setup {
     ignore = "^$",
-    pre_hook = function(ctx)
-        -- Inlay hints
-        local line_start = (ctx.srow or ctx.range.srow) - 1
-        local line_end = ctx.erow or ctx.range.erow
-        require("lsp-inlayhints.core").clear(0, line_start, line_end)
+    pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 
-        require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+    -- FIXME: This stopped working or maybe it never did?
+    -- pre_hook = function(ctx)
+    --     -- Inlay hints
+    --     local line_start = (ctx.range.srow or ctx.range.srow) - 1
+    --     local line_end = ctx.range.erow or ctx.range.erow
+    --     require("lsp-inlayhints.core").clear(0, line_start, line_end)
 
-        if vim.bo.filetype == "javascript" or vim.bo.filetype == "typescript" then
-            local U = require "Comment.utils"
+    --     require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
 
-            -- Determine whether to use linewise or blockwise commentstring
-            local type = ctx.ctype == U.ctype.linewise and "__default" or "__multiline"
+    --     if vim.bo.filetype == "javascript" or vim.bo.filetype == "typescript" then
+    --         local U = require "Comment.utils"
 
-            -- Determine the location where to calculate commentstring from
-            local location = nil
-            if ctx.ctype == U.ctype.blockwise then
-                location = require("ts_context_commentstring.utils").get_cursor_location()
-            elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-                location = require("ts_context_commentstring.utils").get_visual_start_location()
-            end
+    --         -- Determine whether to use linewise or blockwise commentstring
+    --         local type = ctx.ctype == U.ctype.linewise and "__default" or "__multiline"
 
-            return require("ts_context_commentstring.internal").calculate_commentstring {
-                key = type,
-                location = location,
-            }
-        end
-    end,
+    --         -- Determine the location where to calculate commentstring from
+    --         local location = nil
+    --         if ctx.ctype == U.ctype.blockwise then
+    --             location = require("ts_context_commentstring.utils").get_cursor_location()
+    --         elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+    --             location = require("ts_context_commentstring.utils").get_visual_start_location()
+    --         end
+
+    --         return require("ts_context_commentstring.internal").calculate_commentstring {
+    --             key = type,
+    --             location = location,
+    --         }
+    --     end
+    -- end,
 }

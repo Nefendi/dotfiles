@@ -15,7 +15,7 @@ configs.setup {
         disable = { "markdown" },
     },
     indent = { enable = true, disable = { "python", "css", "markdown" } },
-    context_commentstring = { enable = true, disable = { "markdown" } },
+    context_commentstring = { enable = true, enable_autocmd = false, disable = { "markdown" } },
     rainbow = {
         enable = true,
         extended_mode = true,
