@@ -60,8 +60,8 @@ tokyonight.setup {
     end,
 }
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+vim.cmd("colorscheme " .. colorscheme)
 
-if not status_ok then
-    return
+if package.loaded.lir then
+    require("user.lir").icon_setup()
 end

@@ -1,3 +1,5 @@
+local M = {}
+
 local status_ok, lir = pcall(require, "lir")
 if not status_ok then
     return
@@ -77,18 +79,20 @@ lir.setup {
     end,
 }
 
--- TODO: This does not work with lazy loading, NvimTrooFolderIcon is probably not found
-local found, icon_hl = pcall(functions.get_hl_by_name, { group = "NvimTreeFolderIcon", property = "foreground" })
-if not found then
-    -- icon_hl = "#42A5F5"
-    icon_hl = "#7aa2f7"
+function M.icon_setup()
+    local found, icon_hl = pcall(functions.get_hl_by_name, { group = "NvimTreeFolderIcon", property = "foreground" })
+    if not found then
+        icon_hl = "#42A5F5"
+    end
+
+    -- custom folder icon
+    require("nvim-web-devicons").set_icon {
+        lir_folder_icon = {
+            icon = require("user.icons").ui.ClosedFullFolder,
+            color = icon_hl,
+            name = "LirFolderNode",
+        },
+    }
 end
 
--- custom folder icon
-require("nvim-web-devicons").set_icon {
-    lir_folder_icon = {
-        icon = require("user.icons").ui.ClosedFullFolder,
-        color = icon_hl,
-        name = "LirFolderNode",
-    },
-}
+return M
