@@ -101,6 +101,21 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        -- To disable messages saying simply "true" and "false"
+        {
+            filter = {
+                event = "msg_show",
+                find = "true",
+            },
+            opts = { skip = true },
+        },
+        {
+            filter = {
+                event = "msg_show",
+                find = "false",
+            },
+            opts = { skip = true },
+        },
     },
     views = {
         hover = {
