@@ -319,31 +319,3 @@ cmp.setup {
         ghost_text = true,
     },
 }
-
-local cmdline = {
-    enable = true,
-    options = {
-        -- {
-        --     type = ":",
-        --     sources = {
-        --         { name = "path" },
-        --         { name = "cmdline" },
-        --     },
-        -- },
-        {
-            type = { "/", "?" },
-            sources = {
-                { name = "buffer" },
-            },
-        },
-    },
-}
-
-if cmdline.enable then
-    for _, option in ipairs(cmdline.options) do
-        cmp.setup.cmdline(option.type, {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = option.sources,
-        })
-    end
-end

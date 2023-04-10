@@ -290,7 +290,6 @@ require("lazy").setup({
             "hrsh7th/cmp-path", -- path completions
             "saadparwaiz1/cmp_luasnip", -- snippet completions
             "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-cmdline",
         },
     }, -- The completion plugin
     { "hrsh7th/cmp-buffer" }, -- buffer completions
@@ -298,7 +297,6 @@ require("lazy").setup({
     { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-emoji", event = "InsertEnter" },
-    { "hrsh7th/cmp-cmdline" },
     {
         "Saecki/crates.nvim",
         ft = "toml",
