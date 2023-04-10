@@ -179,7 +179,7 @@ require("lazy").setup({
     },
     {
         "is0n/jaq-nvim",
-        event = "BufReadPost",
+        cmd = "Jaq",
         config = function()
             require "user.jaq"
         end,
