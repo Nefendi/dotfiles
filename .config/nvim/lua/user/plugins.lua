@@ -210,7 +210,8 @@ require("lazy").setup({
     },
     {
         "0x100101/lab.nvim",
-        event = "VeryLazy",
+        enabled = false,
+        cmd = "Lab",
         config = function()
             require "user.lab"
         end,
