@@ -504,7 +504,14 @@ lualine.setup {
     sections = {
         lualine_a = { left_pad, mode, branch, right_pad },
         lualine_b = { left_pad_alt, diagnostics, right_pad_alt },
-        lualine_c = { python_env },
+        lualine_c = {
+            {
+                require("lazy.status").updates,
+                cond = require("lazy.status").has_updates,
+                color = { fg = "#ff9e64" },
+            },
+            python_env,
+        },
         -- lualine_x = { diff, spaces, encoding, fileformat, filetype },
         lualine_x = { lsp, spaces, encoding, fileformat, filetype },
         lualine_y = { location },
