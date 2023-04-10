@@ -74,7 +74,7 @@ local mappings = {
     h = { "<cmd>nohlsearch<CR>", "No HL" },
     q = { "<cmd>lua require('user.functions').smart_quit()<CR>", "Quit" },
     ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
-    c = { "<cmd>bd<CR>", "Close Buffer" },
+    c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     P = { "<cmd>Telescope projects<cr>", "Projects" },
     [" "] = {
         "<cmd>Telescope find_files<cr>",
