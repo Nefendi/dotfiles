@@ -62,6 +62,7 @@ if vim.g.use_nerd_icons then
         ui = {
             Cog = "",
             Cogs = " ",
+            Ellipsis = " ",
             History = "",
             List = "",
             Leave = "",
@@ -169,6 +170,7 @@ else
         ui = {
             Cog = "",
             Cogs = " ",
+            Ellipsis = " ",
             History = "",
             List = "",
             Leave = "",
