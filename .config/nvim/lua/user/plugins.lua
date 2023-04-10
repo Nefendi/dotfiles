@@ -85,7 +85,6 @@ require("lazy").setup({
             require "user.surround"
         end,
     },
-    { "tpope/vim-repeat" },
     { "lervag/vimtex", ft = "tex" },
     {
         "folke/todo-comments.nvim",
@@ -252,7 +251,6 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
-    { "folke/neodev.nvim" },
     {
         "kosayoda/nvim-lightbulb",
         event = "BufReadPost",
@@ -354,7 +352,6 @@ require("lazy").setup({
             require "user.illuminate"
         end,
     },
-    { "folke/lsp-colors.nvim" },
     { "ray-x/lsp_signature.nvim" },
     {
         "smjonas/inc-rename.nvim",
@@ -410,9 +407,7 @@ require("lazy").setup({
     },
 
     -- Lua
-    {
-        "folke/lua-dev.nvim",
-    },
+    { "folke/neodev.nvim" },
 
     -- Java
     { "mfussenegger/nvim-jdtls" },
