@@ -14,11 +14,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         "neotest-attach",
     },
     callback = function()
-        vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      nnoremap <silent> <buffer> <esc> :close<CR>
-      set nobuflisted 
-    ]]
+        vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true })
+        vim.keymap.set("n", "<esc>", "<cmd>close<cr>", { buffer = true })
+        vim.opt_local.buflisted = false
     end,
 })
 
