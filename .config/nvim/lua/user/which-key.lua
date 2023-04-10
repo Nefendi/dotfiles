@@ -74,7 +74,7 @@ local mappings = {
     h = { "<cmd>nohlsearch<CR>", "No HL" },
     q = { "<cmd>lua require('user.functions').smart_quit()<CR>", "Quit" },
     ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
-    c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    c = { "<cmd>bd<CR>", "Close Buffer" },
     P = { "<cmd>Telescope projects<cr>", "Projects" },
     [" "] = {
         "<cmd>Telescope find_files<cr>",
@@ -89,9 +89,9 @@ local mappings = {
         C = { "<cmd>Lazy clear<cr>", "Clear finished tasks" },
         c = { "<cmd>Lazy clean<cr>", "Clean" },
         u = { "<cmd>Lazy update<cr>", "Update" },
-        p = { "<cmd>Lazy profile<cr>", "Profile" },
+        P = { "<cmd>Lazy profile<cr>", "Profile" },
         l = { "<cmd>Lazy log<cr>", "Log" },
-        L = { "<cmd>Lazy home<cr>", "Launch Lazy" },
+        p = { "<cmd>Lazy home<cr>", "Launch Lazy" },
         d = { "<cmd>Lazy debug<cr>", "Debug" },
     },
 
@@ -150,7 +150,10 @@ local mappings = {
     g = {
         name = "Git",
         g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-        l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Blame" },
+        L = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Blame" },
+        l = { "<cmd>Gitsigns blame_line<cr>", "Blame Line" },
+        p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+        d = { "<cmd>Gitsigns diffthis<cr>", "Diff" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout Branch" },
         c = {
             name = "+Conflicts",
