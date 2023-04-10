@@ -295,6 +295,7 @@ require("lazy").setup({
             "Saecki/crates.nvim",
             "David-Kunz/cmp-npm",
             "tzachar/cmp-tabnine",
+            "hrsh7th/cmp-cmdline",
         },
     }, -- The completion plugin
     { "hrsh7th/cmp-buffer" }, -- buffer completions
@@ -303,6 +304,7 @@ require("lazy").setup({
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lua" },
     { "hrsh7th/cmp-emoji" },
+    { "hrsh7th/cmp-cmdline" },
     {
         "Saecki/crates.nvim",
         ft = "toml",
