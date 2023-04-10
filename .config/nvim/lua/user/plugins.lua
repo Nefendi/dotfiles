@@ -41,7 +41,7 @@ require("lazy").setup({
     {
         "nvim-tree/nvim-web-devicons",
     },
-    { "moll/vim-bbye" },
+    { "moll/vim-bbye", event = "BufReadPost" },
     {
         "nvim-lualine/lualine.nvim",
         event = "BufReadPost",
@@ -80,7 +80,7 @@ require("lazy").setup({
     },
     {
         "kylechui/nvim-surround",
-        event = "BufReadPost",
+        event = "VeryLazy",
         config = function()
             require "user.surround"
         end,
@@ -198,10 +198,10 @@ require("lazy").setup({
             require "user.vim-slash"
         end,
     },
-    { "LunarVim/peek.lua" },
+    { "LunarVim/peek.lua", event = "BufReadPost" },
     {
         "jiaoshijie/undotree",
-        keys = { "<leader>u" },
+        event = "VeryLazy",
         config = function()
             require "user.undotree"
         end,
@@ -277,7 +277,7 @@ require("lazy").setup({
     { "lunarvim/onedarker.nvim" },
     { "lunarvim/darkplus.nvim" },
     { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
-    { "fladson/vim-kitty" },
+    { "fladson/vim-kitty", ft = "kitty" },
 
     -- Cmp plugins
     {
@@ -333,7 +333,7 @@ require("lazy").setup({
 
     -- Snippets
     { "L3MON4D3/LuaSnip" },
-    { "rafamadriz/friendly-snippets" },
+    { "rafamadriz/friendly-snippets", event = "VeryLazy" },
 
     -- LSP
     {
@@ -447,10 +447,10 @@ require("lazy").setup({
     -- { "p00f/nvim-ts-rainbow", lazy = false },
     { "mrjones2014/nvim-ts-rainbow", event = "BufReadPre" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "windwp/nvim-ts-autotag" },
-    { "nvim-treesitter/playground" },
-    { "nvim-treesitter/nvim-treesitter-context" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    { "windwp/nvim-ts-autotag", event = "BufReadPost" },
+    { "nvim-treesitter/playground", event = "BufReadPost" },
+    { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
+    { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
 
     -- Git
     {
