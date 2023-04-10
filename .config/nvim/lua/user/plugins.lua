@@ -338,6 +338,7 @@ require("lazy").setup({
     {
         "neovim/nvim-lspconfig",
         event = "VeryLazy",
+        ft = "markdown",
         config = function()
             require "user.lsp"
         end,
