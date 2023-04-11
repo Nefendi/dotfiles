@@ -1,4 +1,6 @@
-local colorscheme = "tokyonight"
+local M = {}
+
+M.colorscheme = "tokyonight"
 
 -- vim.g.onedarker_italic_keywords = true
 -- vim.g.onedarker_italic_functions = false
@@ -60,8 +62,10 @@ tokyonight.setup {
     end,
 }
 
-vim.cmd("colorscheme " .. colorscheme)
+vim.cmd("colorscheme " .. M.colorscheme)
 
 if package.loaded.lir then
     require("user.lir").icon_setup()
 end
+
+return M
