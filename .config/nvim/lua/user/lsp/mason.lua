@@ -8,6 +8,7 @@ local servers = {
     "lua_ls",
     "tsserver",
     "pyright",
+    "pylyzer",
     "yamlls",
     "bashls",
     "dockerls",
@@ -160,6 +161,11 @@ for _, server in pairs(servers) do
     if server == "pyright" then
         local pyright_opts = require "user.lsp.settings.pyright"
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+    end
+
+    -- TODO: Get pylyzer to work (right now it works only in the shell)
+    if server == "pylyzer" then
+        goto continue
     end
 
     if server == "ltex" then
