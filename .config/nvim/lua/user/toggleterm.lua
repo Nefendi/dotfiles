@@ -49,9 +49,15 @@ local lazygit = Terminal:new {
     },
     on_open = function(_)
         vim.cmd "startinsert!"
+        -- FIXME: A not so nice workaround for removing the last line of visible
+        -- text under the terminal with Lazygit. This is probably caused by noice.nvim
+        -- hijacking cmdheight and setting it to 0.
+        vim.cmd ":Noice disable"
         vim.cmd "set laststatus=0"
+        vim.cmd "set cmdheight=1"
     end,
     on_close = function(_)
+        vim.cmd ":Noice enable"
         vim.cmd "set laststatus=3"
     end,
     count = 99,
