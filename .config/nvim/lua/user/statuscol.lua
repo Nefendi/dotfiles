@@ -22,7 +22,6 @@ statuscol.setup {
     ft_ignore = {
         "help",
         "spectre_panel",
-        "neotest-summary",
         "neotest-attach",
     },
 }
