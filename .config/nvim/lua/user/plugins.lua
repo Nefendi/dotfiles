@@ -449,6 +449,13 @@ require("lazy").setup({
     { "nvim-treesitter/playground", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
+    {
+        "IndianBoy42/tree-sitter-just",
+        config = function()
+            require("tree-sitter-just").setup {}
+        end,
+        event = "BufReadPost",
+    },
 
     -- Git
     {
