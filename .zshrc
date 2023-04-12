@@ -1,6 +1,6 @@
 # ENVIRONMENT VARIABLES
 export ZSH="${HOME}"/.oh-my-zsh
-export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${PATH}"
+export PATH="${HOME}/antibody:${HOME}/.local/bin:${HOME}/.emacs.d/bin:${HOME}/.poetry/bin:/usr/local/go/bin:${HOME}/go/bin:${HOME}/.erg/bin:${PATH}"
 
 export EDITOR="nvim"
 
@@ -13,6 +13,9 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # FNM
 export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
 export ZSH_FNM_NODE_VERSION="18.15.0"
+
+# ERG
+export ERG_PATH="${HOME}/.erg"
 
 # YOU-SHOULD-USE
 # Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
