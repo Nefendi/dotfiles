@@ -193,6 +193,16 @@ local branch = {
     "branch",
     icons_enabled = true,
     icon = "%#SLGitIcon#" .. " " .. icons.git.Branch .. "%*" .. "%#SLBranchName#",
+    fmt = function(str)
+        local max_width = 40
+        local abbr_mark = "..."
+
+        if #str > max_width then
+            str = string.sub(str, 1, max_width - #abbr_mark) .. abbr_mark
+        end
+
+        return str
+    end,
     colored = false,
     padding = { right = 1 },
 }
