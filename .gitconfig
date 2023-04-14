@@ -3,6 +3,7 @@
 	ci = commit
 	st = status
 	br = branch
+	sw = switch
 
 [push]
 	default = upstream
