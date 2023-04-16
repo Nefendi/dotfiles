@@ -23,5 +23,6 @@ statuscol.setup {
         "help",
         "spectre_panel",
         "neotest-attach",
+        "neotest-summary",
     },
 }
