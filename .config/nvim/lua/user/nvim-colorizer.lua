@@ -15,6 +15,6 @@ colorizer.setup {
         css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
         css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
         names = false,
-        mode = "virtualtext",
+        mode = "background",
     },
 }
