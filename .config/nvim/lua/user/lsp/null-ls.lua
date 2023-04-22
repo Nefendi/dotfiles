@@ -53,6 +53,9 @@ null_ls.setup {
             filetypes = { "c", "cpp", "cuda" },
         },
 
+        -- Haskell
+        formatting.fourmolu,
+
         -- Markdown
         diagnostics.markdownlint,
 

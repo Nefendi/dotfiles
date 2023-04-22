@@ -64,7 +64,7 @@ M.lsp_format = function(bufnr)
             -- This list is needed, because sometimes formatters provided by null-ls
             -- should be used instead of LSP formatting capabilities
             local servers_to_turn_off_formatting_capabilities =
-                { "tsserver", "html", "jsonls", "clangd", "gopls", "csharp_ls" }
+                { "tsserver", "html", "jsonls", "clangd", "gopls", "csharp_ls", "hls" }
 
             return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
         end,
