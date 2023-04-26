@@ -41,9 +41,8 @@ antidote load
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
 # COMPLETIONS
-if command -v kubectl &>/dev/null; then
-	source <(kubectl completion zsh)
-fi
+autoload -U compinit
+compinit
 
 # ALIASES
 alias ls='exa -gF --color=always --group-directories-first --icons'
