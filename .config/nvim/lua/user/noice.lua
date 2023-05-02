@@ -116,6 +116,15 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        -- To disable annoying messages in C#
+        {
+            filter = {
+                event = "msg_show",
+                kind = "",
+                find = "at Microsoft.FSharp.Control.Trampoline.Execute(FSharpFunc`2 firstAction) in",
+            },
+            opts = { skip = true },
+        },
     },
     views = {
         hover = {
