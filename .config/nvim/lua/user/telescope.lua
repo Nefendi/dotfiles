@@ -35,6 +35,10 @@ telescope.setup {
 
             -- Rust
             "target/",
+
+            -- C#
+            "bin/",
+            "obj/",
         },
         vimgrep_arguments = {
             "rg",
