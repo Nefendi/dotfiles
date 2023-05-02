@@ -94,7 +94,7 @@ if vim.g.use_nerd_icons then
             GlowingLightbulb = "󰛨",
         },
         misc = {
-            Robot = "ﮧ",
+            Robot = "󰚩",
             Package = "",
             Smiley = "ﲃ",
             SmallDot = "",
@@ -202,7 +202,7 @@ else
             GlowingLightbulb = "󰛨",
         },
         misc = {
-            Robot = "ﮧ",
+            Robot = "󰚩",
             Package = "",
             Smiley = "",
             SmallDot = "",
