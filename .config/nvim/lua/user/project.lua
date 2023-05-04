@@ -22,5 +22,7 @@ project.setup {
         "Cargo.toml",
         "stack.yaml",
         "pyproject.toml",
+        -- Custom marker file
+        ".project.nvim",
     },
 }
