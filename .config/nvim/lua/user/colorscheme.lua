@@ -50,12 +50,6 @@ tokyonight.setup {
         hl.IndentBlanklineContextChar = {
             fg = c.dark5,
         }
-        hl.TSConstructor = {
-            fg = c.blue1,
-        }
-        hl.TSTagDelimiter = {
-            fg = c.dark5,
-        }
         hl.WinSeparator = {
             fg = c.dark5,
         }
