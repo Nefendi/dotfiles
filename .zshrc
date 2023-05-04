@@ -54,6 +54,7 @@ alias g='lazygit'
 alias updateall='sudo apt update && sudo apt upgrade && sudo snap refresh && flatpak update'
 alias bat='batcat'
 alias k='kubectl'
+alias tldr='tldr -t base16'
 
 # GHCUP
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
