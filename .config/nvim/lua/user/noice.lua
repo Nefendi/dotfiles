@@ -116,6 +116,28 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        -- To disable messages about indenting lines
+        {
+            filter = {
+                event = "msg_show",
+                find = "indent",
+            },
+            opts = { skip = true },
+        },
+        {
+            filter = {
+                event = "msg_show",
+                find = "<ed",
+            },
+            opts = { skip = true },
+        },
+        {
+            filter = {
+                event = "msg_show",
+                find = ">ed",
+            },
+            opts = { skip = true },
+        },
         -- To disable annoying messages in C#
         {
             filter = {
