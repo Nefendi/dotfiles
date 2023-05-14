@@ -8,7 +8,7 @@ local servers = {
     "lua_ls",
     "tsserver",
     "pyright",
-    "pylyzer",
+    -- "pylyzer",
     "yamlls",
     "bashls",
     "dockerls",
