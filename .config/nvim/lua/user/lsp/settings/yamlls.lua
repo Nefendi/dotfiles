@@ -5,6 +5,9 @@ end
 
 return {
     settings = {
+        schemaStore = {
+            enable = false,
+        },
         yaml = {
             schemas = schemastore.yaml.schemas(),
         },
