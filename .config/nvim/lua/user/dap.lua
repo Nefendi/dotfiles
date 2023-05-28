@@ -11,6 +11,7 @@ end
 local icons = require "user.icons"
 
 dapui.setup {
+    auto_open = true,
     icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },
     mappings = {
         expand = { "<CR>", "<2-LeftMouse>" },
@@ -20,7 +21,7 @@ dapui.setup {
         repl = "r",
         toggle = "t",
     },
-    expand_lines = vim.fn.has "nvim-0.7",
+    expand_lines = true,
     layouts = {
         {
             elements = {
@@ -48,6 +49,11 @@ dapui.setup {
         mappings = {
             close = { "q", "<Esc>" },
         },
+    },
+    windows = { indent = 1 },
+    render = {
+        max_type_length = nil,
+        max_value_lines = 100,
     },
 }
 
