@@ -24,5 +24,8 @@ statuscol.setup {
         "spectre_panel",
         "neotest-attach",
         "neotest-summary",
+        "dap-repl",
+        "dapui_watches",
+        "dapui_console",
     },
 }
