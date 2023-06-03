@@ -8,6 +8,9 @@ if not dap_ui_status_ok then
     return
 end
 
+-- NOTE: Do not forget to :TSInstall dap_repl for the highlights to work
+require("nvim-dap-repl-highlights").setup()
+
 local icons = require "user.icons"
 
 dapui.setup {

@@ -484,6 +484,7 @@ require("lazy").setup({
     { "mfussenegger/nvim-dap-python" },
     { "leoluz/nvim-dap-go" },
     { "rcarriga/nvim-dap-ui" },
+    { "LiadOz/nvim-dap-repl-highlights" },
 
     -- nvim-test
     -- {
