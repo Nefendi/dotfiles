@@ -8,6 +8,7 @@ PATH="$HOME/.poetry/bin:$PATH"
 PATH="/usr/local/go/bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
 PATH="$HOME/.erg/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH
 
