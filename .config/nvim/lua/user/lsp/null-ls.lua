@@ -28,6 +28,14 @@ null_ls.setup {
         formatting.isort,
         diagnostics.flake8,
         diagnostics.pylint,
+        -- NOTE: It is handy in projects with nested configuration files
+        -- diagnostics.pylint.with {
+        --     cwd = function(_)
+        --         -- return params.root:match ".null-ls-root"
+        --         -- return params.root:match ".git"
+        --         return nil
+        --     end,
+        -- },
         diagnostics.mypy,
 
         -- Lua
