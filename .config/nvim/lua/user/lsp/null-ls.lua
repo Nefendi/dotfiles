@@ -74,5 +74,8 @@ null_ls.setup {
         diagnostics.gitlint.with {
             extra_args = { "-c", "title-max-length.line-length=50", "-c", "body-max-line-length.line-length=72" },
         },
+
+        -- LaTeX
+        formatting.latexindent,
     },
 }

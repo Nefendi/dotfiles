@@ -56,6 +56,7 @@ local formatters = {
     "isort",
     "csharpier",
     "fourmolu",
+    "latexindent",
 }
 
 local debuggers = {
