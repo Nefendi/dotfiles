@@ -437,10 +437,7 @@ require("lazy").setup({
         config = function()
             require "user.treesitter"
         end,
-
-        build = function()
-            require("nvim-treesitter.install").update { with_sync = true }
-        end,
+        build = ":TSUpdate",
     },
     -- { "p00f/nvim-ts-rainbow", lazy = false },
     { "mrjones2014/nvim-ts-rainbow", event = "BufReadPre" },
@@ -449,13 +446,7 @@ require("lazy").setup({
     { "nvim-treesitter/playground", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
-    {
-        "IndianBoy42/tree-sitter-just",
-        config = function()
-            require("tree-sitter-just").setup {}
-        end,
-        event = "BufReadPost",
-    },
+    { "IndianBoy42/tree-sitter-just" },
 
     -- Git
     {

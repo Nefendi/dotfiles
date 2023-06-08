@@ -3,6 +3,9 @@ if not status_ok then
     return
 end
 
+require("nvim-dap-repl-highlights").setup()
+require("tree-sitter-just").setup {}
+
 configs.setup {
     ensure_installed = "all", -- one of "all" or a list of languages
     ignore_install = { "" }, -- List of parsers to ignore installing
