@@ -2,12 +2,12 @@ return {
     settings = {
         texlab = {
             auxDirectory = ".",
-            bibtexFormatter = "texlab",
+            bibtexFormatter = "latexindent",
             build = {
                 args = { "--interaction=nonstopmode", "--synctex=1", "--shell-escape", "%f" },
                 executable = "lualatex",
                 forwardSearchAfter = false,
-                onSave = true,
+                onSave = false,
             },
             chktex = {
                 onOpenAndSave = true,
