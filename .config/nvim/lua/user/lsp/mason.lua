@@ -24,7 +24,7 @@ local servers = {
     "emmet_ls",
     "eslint",
     "jdtls",
-    "csharp_ls",
+    -- "csharp_ls",
     "hls",
 }
 
