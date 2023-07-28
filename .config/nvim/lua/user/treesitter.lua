@@ -19,32 +19,6 @@ configs.setup {
     },
     indent = { enable = true, disable = { "python", "css", "markdown" } },
     context_commentstring = { enable = true, enable_autocmd = false, disable = { "markdown" } },
-    rainbow = {
-        enable = true,
-        extended_mode = true,
-        max_file_lines = nil,
-        -- colors = {
-        --     -- "#bf616a",
-        --     -- "#d08770",
-        --     -- "#ebcb8b",
-        --     -- "#a3be8c",
-        --     -- "#88c0d0",
-        --     -- "#5e81ac",
-        --     -- "#b48ead",
-
-        --     -- Onedarker
-        --     -- "#68a0b0",
-        --     -- "#946EaD",
-        --     -- "#c7aA6D",
-
-        --     -- Darkplus
-        --     -- "Gold",
-        --     -- "Orchid",
-        --     -- "DodgerBlue",
-
-        -- },
-        disable = { "html" },
-    },
     playground = { enable = true },
     textobjects = {
         select = {
@@ -120,3 +94,26 @@ configs.setup {
 
 -- Onedarker palette
 -- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#ABB2BF" })
+
+local rainbow_delimiters = require "rainbow-delimiters"
+
+vim.g.rainbow_delimiters = {
+    strategy = {
+        [""] = rainbow_delimiters.strategy["global"],
+        vim = rainbow_delimiters.strategy["local"],
+    },
+    query = {
+        [""] = "rainbow-delimiters",
+        lua = "rainbow-blocks",
+    },
+    highlight = {
+        "RainbowDelimiterRed",
+        "RainbowDelimiterYellow",
+        "RainbowDelimiterBlue",
+        "RainbowDelimiterOrange",
+        "RainbowDelimiterGreen",
+        "RainbowDelimiterViolet",
+        "RainbowDelimiterCyan",
+    },
+    blacklist = { "html" },
+}
