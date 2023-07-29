@@ -19,7 +19,7 @@ M.server_capabilities = function()
             return "capabilites for: " .. item
         end,
     }, function(choice)
-        vim.pretty_print(vim.lsp.get_active_clients()[active_client_map[choice]].server_capabilities)
+        vim.print(vim.lsp.get_active_clients()[active_client_map[choice]].server_capabilities)
     end)
 end
 
