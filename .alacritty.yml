@@ -1,3 +1,4 @@
+---
 env:
   LC_ALL: "en_US.UTF-8"
 
@@ -31,22 +32,22 @@ scrolling:
 
 font:
   normal:
-    family: CaskaydiaMono NF
-    style: SemiLight
+    family: Comic Code Ligatures
+    style: Medium
 
   bold:
-    family: CaskaydiaMono NF
-    style: SemiBold
+    family: Comic Code Ligatures
+    style: Bold
 
   italic:
-    family: CaskaydiaMono NF
-    style: SemiLight Italic
+    family: Comic Code Ligatures
+    style: MediumItalic
 
   bold_italic:
-    family: CaskaydiaMono NF
-    style: SemiBold Italic
+    family: Comic Code Ligatures
+    style: BoldItalic
 
-  size: 14.0
+  size: 13.5
 
   offset:
     x: 0
@@ -563,7 +564,7 @@ colors: *tokyo_night_dark
 bell:
   animation: EaseOutExpo
   duration: 0
-  color: "0xffffff"
+  color: "#ffffff"
 
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
@@ -573,7 +574,8 @@ selection:
 window.dynamic_title: true
 
 cursor:
-  style: Block
+  style:
+    shape: Block
 
   unfocused_hollow: true
 
@@ -586,11 +588,9 @@ debug:
 
   persistent_logging: false
 
-  log_level: OFF
+  log_level: Off
 
   print_events: false
-
-  ref_test: false
 
 mouse:
   double_click: { threshold: 300 }
