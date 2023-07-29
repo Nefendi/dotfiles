@@ -29,6 +29,12 @@ noice.setup {
             view = "notify",
             filter = { event = "msg_showmode" },
         },
+        -- To disable showing "Not information available" messages
+        {
+            view = "notify",
+            filter = { find = "No information available" },
+            opts = { skip = true },
+        },
         -- To disable messages about writing to files
         {
             filter = {
