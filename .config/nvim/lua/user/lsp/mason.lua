@@ -26,6 +26,7 @@ local servers = {
     "jdtls",
     -- "csharp_ls",
     "hls",
+    "tailwindcss",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
