@@ -14,6 +14,8 @@ export PATH
 
 export EDITOR="nvim"
 
+export MANPAGER="nvim +Man!"
+
 export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -22,7 +24,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
 # FNM
 export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
-export ZSH_FNM_NODE_VERSION="18.15.0"
+export ZSH_FNM_NODE_VERSION="18.17.0"
 
 # ERG
 export ERG_PATH="$HOME/.erg"
@@ -52,10 +54,21 @@ alias la='exa -galFh --color=always --group-directories-first --icons'
 alias lt='exa -gaTFh --color=always --group-directories-first --icons'
 alias n='nordvpn'
 alias g='lazygit'
-alias updateall='sudo apt update && sudo apt upgrade && sudo snap refresh && flatpak update'
 alias bat='batcat'
 alias k='kubectl'
 alias tldr='tldr -t base16'
+alias pip='noglob pip'
+alias poetry='noglob poetry'
+
+# alias updatesystem='sudo apt update && sudo apt upgrade && sudo snap refresh && flatpak update'
+alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
+alias updatetools='
+    poetry self update &&
+    antidote update &&
+    pyenv update &&
+    rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
+    cargo install-update -a'
+alias updateall='updatesystem && updatetools'
 
 # GHCUP
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
