@@ -110,6 +110,7 @@ nvim_tree.setup {
                 git = true,
             },
         },
+        root_folder_label = "",
     },
     diagnostics = {
         enable = true,
@@ -132,7 +133,6 @@ nvim_tree.setup {
     },
     view = {
         width = {},
-        hide_root_folder = false,
         side = "left",
     },
     filters = {

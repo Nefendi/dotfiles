@@ -1,9 +1,21 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
+local status_ok, indent_blankline = pcall(require, "ibl")
 if not status_ok then
     return
 end
 
+local hooks = require "ibl.hooks"
+
 local icons = require "user.icons"
+
+local highlights = {
+    "RainbowDelimiterRed",
+    "RainbowDelimiterYellow",
+    "RainbowDelimiterBlue",
+    "RainbowDelimiterOrange",
+    "RainbowDelimiterGreen",
+    "RainbowDelimiterViolet",
+    "RainbowDelimiterCyan",
+}
 
 vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {
@@ -50,4 +62,7 @@ vim.g.indent_blankline_show_current_context = true
 
 indent_blankline.setup {
     show_current_context = true,
+    scope = { highlight = highlights },
 }
+
+hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
