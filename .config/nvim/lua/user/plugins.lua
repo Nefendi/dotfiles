@@ -347,7 +347,7 @@ require("lazy").setup({
     { "williamboman/mason.nvim", build = ":MasonUpdate" },
     { "williamboman/mason-lspconfig.nvim" },
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-    { "jose-elias-alvarez/null-ls.nvim" },
+    { "nvimtools/none-ls.nvim" },
     {
         "RRethy/vim-illuminate",
         event = "BufReadPost",
