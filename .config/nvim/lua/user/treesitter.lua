@@ -95,6 +95,12 @@ configs.setup {
 -- Onedarker palette
 -- vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = "#ABB2BF" })
 
+require("treesitter-context").setup {
+    enable = true,
+    max_lines = 0,
+    min_window_height = 40, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+}
+
 local rainbow_delimiters = require "rainbow-delimiters"
 
 vim.g.rainbow_delimiters = {
