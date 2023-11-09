@@ -252,6 +252,7 @@ local mappings = {
         h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
         p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
         r = { "<cmd>TSToggle rainbow<cr>", "Toggle Rainbow" },
+        c = { "<cmd>TSContextToggle<cr>", "Toggle Context" },
     },
 
     -- j = {
