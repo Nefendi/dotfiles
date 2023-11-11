@@ -16,9 +16,14 @@ export EDITOR="nvim"
 
 export MANPAGER="nvim +Man!"
 
-export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:hidden:wrap' --bind='f2:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-y:execute-silent(echo{+} | xclip)'"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_DEFAULT_OPTS="--no-mouse --height 75% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window right:hidden:wrap --bind='ctrl-/:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-\\:change-preview-window(down|right)'"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --no-ignore'
+
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview-window nohidden"
+
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --no-ignore"
+export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {}' --preview-window nohidden"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
@@ -44,7 +49,7 @@ antidote load
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
 # COMPLETIONS
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 # ALIASES
