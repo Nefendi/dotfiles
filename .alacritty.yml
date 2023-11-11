@@ -588,7 +588,7 @@ debug:
 
   persistent_logging: false
 
-  log_level: Off
+  log_level: "Off"
 
   print_events: false
 
