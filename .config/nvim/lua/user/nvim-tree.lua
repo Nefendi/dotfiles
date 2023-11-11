@@ -126,6 +126,9 @@ nvim_tree.setup {
         update_cwd = true,
         ignore_list = {},
     },
+    filesystem_watchers = {
+        ignore_dirs = { "node_modules" },
+    },
     git = {
         enable = true,
         ignore = true,
