@@ -68,7 +68,12 @@ null_ls.setup {
         diagnostics.markdownlint,
 
         -- YAML
-        diagnostics.yamllint,
+        diagnostics.yamllint.with {
+            extra_args = {
+                "-d",
+                "{extends: default, rules: {braces: {max-spaces-inside: 1}, comments: {min-spaces-from-content: 1}}}",
+            },
+        },
 
         -- XML
         formatting.xmlformat,
