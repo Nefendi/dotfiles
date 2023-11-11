@@ -186,7 +186,10 @@ require("lazy").setup({
     },
     {
         "iamcco/markdown-preview.nvim",
-        build = "cd app && npm install",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = function()
+            vim.fn["mkdp#util#install"]()
+        end,
         ft = "markdown",
     },
     { "kevinhwang91/nvim-bqf", ft = "qf" },
