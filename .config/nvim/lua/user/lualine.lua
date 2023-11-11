@@ -343,7 +343,8 @@ local location = {
         return { fg = mode_color[vim.fn.mode()], bg = colors.gray }
     end,
     padding = 1,
-    separator = { left = "", right = "" },
+    -- separator = { left = "", right = "" },
+    separator = { left = " ", right = "" },
 }
 
 local progress = {
@@ -354,8 +355,8 @@ local progress = {
     color = function()
         return { fg = mode_color[vim.fn.mode()] }
     end,
-    padding = { left = 0, right = 1 },
-    separator = { left = "", right = "" },
+    padding = { left = 1, right = 1 },
+    separator = { left = "", right = "" },
 }
 
 local plugin_updates = {
@@ -375,7 +376,7 @@ local time = {
     color = function()
         return { bg = mode_color[vim.fn.mode()] }
     end,
-    separator = { left = "", right = "" },
+    separator = { left = " ", right = "" },
 }
 
 lualine.setup {
