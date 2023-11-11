@@ -4,22 +4,22 @@ NEEDED_SOFTWARE=("zsh" "curl" "tmux" "nvim" "npm" "git" "ctags" "cmake" "xclip" 
 
 # https://raymii.org/s/snippets/Bash_Bits_Check_if_command_is_available.html
 command_exists() {
-    command -v "$1" >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
-        printf "\n%s is required for this setup to work correctly. Please, install it before running the script.\n" "$1"
-        AT_LEAST_ONE_PACKAGE_IS_NOT_INSTALLED=1
-    fi
+	command -v "$1" >/dev/null 2>&1
+	if [[ $? -ne 0 ]]; then
+		printf "\n%s is required for this setup to work correctly. Please, install it before running the script.\n" "$1"
+		AT_LEAST_ONE_PACKAGE_IS_NOT_INSTALLED=1
+	fi
 }
 
 # PREREQUISITES
 printf "\nChecking for the existence of needed software...\n"
 
 for COMMAND in "${NEEDED_SOFTWARE[@]}"; do
-    command_exists "${COMMAND}"
+	command_exists "${COMMAND}"
 done
 
 if [[ -v AT_LEAST_ONE_PACKAGE_IS_NOT_INSTALLED ]]; then
-    exit 1
+	exit 1
 fi
 
 set -e
@@ -33,9 +33,9 @@ chsh -s /bin/zsh
 printf "\nInstalling Oh-My-Zsh...\n\n"
 
 if [[ ! -d "${HOME}"/.oh-my-zsh ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 else
-    printf "Oh-My-Zsh is already installed, skipping...\n\n"
+	printf "Oh-My-Zsh is already installed, skipping...\n\n"
 fi
 
 # SYMBOLIC LINKS
@@ -63,6 +63,7 @@ ln -fs "$(realpath .config/fish/config.fish)" ~/.config/fish/config.fish
 ln -fs "$(realpath .config/fish/fish_plugins)" ~/.config/fish/fish_plugins
 ln -fs "$(realpath .config/pulse/daemon.conf)" ~/.config/pulse/daemon.conf
 ln -fs "$(realpath .tmux.conf)" ~/.tmux.conf
+ln -fs "$(realpath .config/fontconfig/conf.d/99-alias-fonts.conf)" ~/.config/fontconfig/conf.d/99-alias-fonts.conf
 
 # ANTIBODY
 printf "\nDownloading and initialising Antibody...\n\n"
@@ -85,10 +86,10 @@ bash ~/miniconda.sh -f -b -p "${HOME}"/miniconda3
 printf "\nDownloading and installing fzf...\n\n"
 
 if [[ ! -d "${HOME}"/.fzf ]]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf
-    "${HOME}"/.fzf/install --key-bindings --completion --no-update-rc
+	git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf
+	"${HOME}"/.fzf/install --key-bindings --completion --no-update-rc
 else
-    printf "fzf is already installed, skipping...\n\n"
+	printf "fzf is already installed, skipping...\n\n"
 fi
 
 # DRACULA THEME FOR ALACRITTY
