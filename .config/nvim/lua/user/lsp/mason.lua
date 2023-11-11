@@ -27,6 +27,7 @@ local servers = {
     -- "csharp_ls",
     "hls",
     "tailwindcss",
+    "lemminx",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -58,6 +59,7 @@ local formatters = {
     "csharpier",
     "fourmolu",
     "latexindent",
+    "xmlformatter",
 }
 
 local debuggers = {

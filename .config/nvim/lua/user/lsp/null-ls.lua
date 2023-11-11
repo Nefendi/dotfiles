@@ -70,6 +70,9 @@ null_ls.setup {
         -- YAML
         diagnostics.yamllint,
 
+        -- XML
+        formatting.xmlformat,
+
         -- Git
         diagnostics.gitlint.with {
             extra_args = { "-c", "title-max-length.line-length=50", "-c", "body-max-line-length.line-length=72" },
