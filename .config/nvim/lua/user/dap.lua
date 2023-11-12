@@ -11,6 +11,23 @@ end
 local icons = require "user.icons"
 
 dapui.setup {
+    controls = {
+        element = "repl",
+        enabled = true,
+        icons = {
+            disconnect = "",
+            pause = "",
+            play = "",
+            run_last = "",
+            step_back = "",
+            step_into = "",
+            step_out = "",
+            step_over = "",
+            terminate = "",
+        },
+    },
+    element_mappings = {},
+    force_buffers = true,
     auto_open = true,
     icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },
     mappings = {
@@ -52,7 +69,7 @@ dapui.setup {
     },
     windows = { indent = 1 },
     render = {
-        max_type_length = nil,
+        indent = 1,
         max_value_lines = 100,
     },
 }
