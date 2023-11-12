@@ -274,6 +274,10 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         },
     },
+    {
+        "fedepujol/move.nvim",
+        event = "VeryLazy",
+    },
 
     -- Colorschemes
     { "lunarvim/onedarker.nvim" },
