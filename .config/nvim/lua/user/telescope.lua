@@ -72,12 +72,11 @@ telescope.setup {
     pickers = {
         find_files = {
             find_command = {
-                "rg",
-                "--files",
+                "fd",
+                "--type=f",
                 "-uu",
-                "--glob",
                 -- Haskell
-                "!.stack-work/",
+                "--exclude=.stack-work/",
             },
             theme = "dropdown",
             previewer = false,
@@ -108,7 +107,7 @@ telescope.setup {
         },
         media_files = {
             filetypes = { "png", "webp", "jpg", "jpeg" },
-            find_cmd = "rg",
+            find_cmd = "fd",
         },
     },
 }
