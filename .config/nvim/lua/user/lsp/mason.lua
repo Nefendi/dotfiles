@@ -56,7 +56,7 @@ local formatters = {
     "prettierd",
     "black",
     "isort",
-    "csharpier",
+    -- "csharpier",
     "fourmolu",
     "latexindent",
     "xmlformatter",
