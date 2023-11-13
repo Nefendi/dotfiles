@@ -16,12 +16,10 @@ project.setup {
         ".hg",
         ".bzr",
         ".svn",
-        "Makefile",
         "package.json",
         "go.mod",
         "Cargo.toml",
         "stack.yaml",
-        "pyproject.toml",
         -- Custom marker file
         ".project.nvim",
     },
