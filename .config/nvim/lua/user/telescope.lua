@@ -23,6 +23,10 @@ telescope.setup {
             "htmlcov/",
             ".direnv/",
 
+            -- Vim
+            ".project.nvim",
+            ".null-ls-root",
+
             -- JavaScript
             "node_modules/",
 
@@ -39,6 +43,9 @@ telescope.setup {
             -- C#
             "bin/",
             "obj/",
+
+            -- PHP
+            "vendor/",
         },
         vimgrep_arguments = {
             "rg",
