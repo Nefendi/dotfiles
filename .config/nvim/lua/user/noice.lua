@@ -153,6 +153,22 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        -- To disable code_action and "Resolving code actions" in lsp_progress
+        -- It gets super annoying when it triggers on every h,j,k,l key press
+        {
+            view = "mini",
+            filter = {
+                find = "code_action",
+            },
+            opts = { skip = true },
+        },
+        {
+            view = "mini",
+            filter = {
+                find = "Resolving code actions",
+            },
+            opts = { skip = true },
+        },
     },
     views = {
         hover = {
