@@ -18,7 +18,6 @@ configs.setup {
         disable = { "markdown" },
     },
     indent = { enable = true, disable = { "python", "css", "markdown" } },
-    context_commentstring = { enable = true, enable_autocmd = false, disable = { "markdown" } },
     playground = { enable = true },
     textobjects = {
         select = {
@@ -122,4 +121,11 @@ vim.g.rainbow_delimiters = {
         "RainbowDelimiterCyan",
     },
     blacklist = { "html" },
+}
+
+vim.g.skip_ts_context_commentstring_module = true
+
+require("ts_context_commentstring").setup {
+    enable_autocmd = false,
+    disable = { "markdown" },
 }
