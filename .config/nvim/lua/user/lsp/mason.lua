@@ -28,6 +28,8 @@ local servers = {
     "hls",
     "tailwindcss",
     "lemminx",
+    "phpactor",
+    "solargraph",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
