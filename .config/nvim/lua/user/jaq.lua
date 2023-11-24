@@ -15,6 +15,8 @@ jaq_nvim.setup {
             sh = "sh %",
             lua = "lua %",
             cs = "dotnet run",
+            php = "php %",
+            ruby = "ruby %",
         },
     },
     behavior = {
