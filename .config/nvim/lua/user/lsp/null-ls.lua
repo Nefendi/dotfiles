@@ -89,5 +89,8 @@ null_ls.setup {
 
         -- LaTeX
         formatting.latexindent,
+
+        -- PHP
+        formatting.pint,
     },
 }
