@@ -25,10 +25,10 @@ null_ls.setup {
         diagnostics.actionlint,
 
         -- Python
-        formatting.black,
-        formatting.isort,
-        diagnostics.flake8,
-        diagnostics.pylint,
+        -- formatting.black,
+        -- formatting.isort,
+        -- diagnostics.flake8,
+        -- diagnostics.pylint,
         -- NOTE: It is handy in projects with nested configuration files
         -- diagnostics.pylint.with {
         --     cwd = function(_)
@@ -38,6 +38,9 @@ null_ls.setup {
         --     end,
         -- },
         diagnostics.mypy,
+        diagnostics.ruff,
+        formatting.ruff,
+        formatting.ruff_format,
 
         -- Lua
         formatting.stylua,

@@ -40,9 +40,8 @@ local linters = {
     "actionlint",
     "buf",
     "golangci-lint",
-    "flake8",
-    "pylint",
     "mypy",
+    "ruff",
 }
 
 local formatters = {
@@ -54,8 +53,6 @@ local formatters = {
     "clang-format",
     "prettier",
     "prettierd",
-    "black",
-    "isort",
     -- "csharpier",
     "fourmolu",
     "latexindent",
