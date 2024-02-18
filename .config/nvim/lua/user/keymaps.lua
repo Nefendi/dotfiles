@@ -104,6 +104,19 @@ keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
 
 -- Plugins --
 
+-- Noice
+keymap("n", "<c-d>", function()
+    if not require("noice.lsp").scroll(4) then
+        return "<c-d>"
+    end
+end, { silent = true, expr = true })
+
+keymap("n", "<c-u>", function()
+    if not require("noice.lsp").scroll(-4) then
+        return "<c-u>"
+    end
+end, { silent = true, expr = true })
+
 -- Cybu
 keymap("n", "<S-h>", "<Plug>(CybuPrev)")
 keymap("n", "<S-l>", "<Plug>(CybuNext)")
