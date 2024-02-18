@@ -276,7 +276,10 @@ require("lazy").setup({
     },
     {
         "fedepujol/move.nvim",
-        event = "VeryLazy",
+        lazy = false,
+        config = function()
+            require("move").setup {}
+        end,
     },
 
     -- Colorschemes
