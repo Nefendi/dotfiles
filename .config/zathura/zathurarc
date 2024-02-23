@@ -1,3 +1,5 @@
+set guioptions none
 set sandbox none
 
 map i recolor
+map b adjust_window best-fit
