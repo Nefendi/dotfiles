@@ -65,7 +65,6 @@ alias tldr='tldr -t base16'
 alias pip='noglob pip'
 alias poetry='noglob poetry'
 
-# alias updatesystem='sudo apt update && sudo apt upgrade && sudo snap refresh && flatpak update'
 alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
 alias updatetools='
     poetry self update &&
@@ -73,6 +72,9 @@ alias updatetools='
     pyenv update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a'
+# &&
+# sudo phpbrew self-update &&
+# sudo composer self-update
 alias updateall='updatesystem && updatetools'
 
 # GHCUP
@@ -80,6 +82,12 @@ alias updateall='updatesystem && updatetools'
 
 # GVM
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# PHPBREW
+# [[ -e "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
+
+# RVM
+# [[ -e "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"
 
 # STARSHIP
 eval "$(starship init zsh)"
