@@ -25,10 +25,6 @@ null_ls.setup {
         diagnostics.actionlint,
 
         -- Python
-        -- formatting.black,
-        -- formatting.isort,
-        -- diagnostics.flake8,
-        -- diagnostics.pylint,
         -- NOTE: It is handy in projects with nested configuration files
         -- diagnostics.pylint.with {
         --     cwd = function(_)
@@ -38,9 +34,6 @@ null_ls.setup {
         --     end,
         -- },
         diagnostics.mypy,
-        diagnostics.ruff,
-        formatting.ruff,
-        formatting.ruff_format,
 
         -- Lua
         formatting.stylua,
@@ -65,9 +58,6 @@ null_ls.setup {
             filetypes = { "c", "cpp", "cuda" },
         },
 
-        -- Haskell
-        formatting.fourmolu,
-
         -- Markdown
         diagnostics.markdownlint,
 
@@ -79,16 +69,10 @@ null_ls.setup {
             },
         },
 
-        -- XML
-        formatting.xmlformat,
-
         -- Git
         diagnostics.gitlint.with {
             extra_args = { "-c", "title-max-length.line-length=50", "-c", "body-max-line-length.line-length=72" },
         },
-
-        -- LaTeX
-        formatting.latexindent,
 
         -- PHP
         formatting.pint,

@@ -30,6 +30,7 @@ local servers = {
     "lemminx",
     "phpactor",
     "solargraph",
+    "ruff_lsp",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -43,7 +44,6 @@ local linters = {
     "buf",
     "golangci-lint",
     "mypy",
-    "ruff",
 }
 
 local formatters = {
@@ -56,9 +56,6 @@ local formatters = {
     "prettier",
     "prettierd",
     -- "csharpier",
-    "fourmolu",
-    "latexindent",
-    "xmlformatter",
 }
 
 local debuggers = {

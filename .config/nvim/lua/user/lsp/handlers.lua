@@ -14,7 +14,6 @@ M.setup = function()
     for _, sign in ipairs(signs) do
         vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
     end
-
     local config = {
         virtual_text = false, -- disable virtual text
         virtual_lines = false,
@@ -64,7 +63,7 @@ M.lsp_format = function(bufnr)
             -- This list is needed, because sometimes formatters provided by null-ls
             -- should be used instead of LSP formatting capabilities
             local servers_to_turn_off_formatting_capabilities =
-                { "tsserver", "html", "jsonls", "clangd", "gopls", "csharp_ls", "hls" }
+                { "tsserver", "html", "jsonls", "clangd", "gopls", "csharp_ls" }
 
             return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
         end,
@@ -113,6 +112,10 @@ M.on_attach = function(client, bufnr)
             require("jdtls").setup_dap { hotcodereplace = "auto" }
             require("jdtls.dap").setup_dap_main_class_configs()
         end
+    end
+
+    if client.name == "ruff_lsp" then
+        client.server_capabilities.hoverProvider = false
     end
 
     lsp_keymaps(bufnr)
