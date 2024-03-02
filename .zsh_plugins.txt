@@ -27,9 +27,10 @@ zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 
 MichaelAquilina/zsh-you-should-use
-zpm-zsh/dircolors-neutral
+zpm-zsh/theme-neutral
 zdharma-continuum/fast-syntax-highlighting kind:defer
 mattberther/zsh-pyenv
 ptavares/zsh-sdkman
 dominik-schwabe/zsh-fnm
 ajeetdsouza/zoxide
+darvid/zsh-poetry
