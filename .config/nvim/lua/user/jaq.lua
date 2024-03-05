@@ -17,6 +17,7 @@ jaq_nvim.setup {
             cs = "dotnet run",
             php = "php %",
             ruby = "ruby %",
+            java = "java %",
         },
     },
     behavior = {
