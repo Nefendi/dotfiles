@@ -56,6 +56,7 @@ local formatters = {
     "prettier",
     "prettierd",
     -- "csharpier",
+    "google-java-format",
 }
 
 local debuggers = {

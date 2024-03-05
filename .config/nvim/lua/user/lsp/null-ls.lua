@@ -76,5 +76,8 @@ null_ls.setup {
 
         -- PHP
         formatting.pint,
+
+        -- Java
+        formatting.google_java_format,
     },
 }
