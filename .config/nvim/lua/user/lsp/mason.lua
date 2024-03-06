@@ -227,6 +227,11 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", bashls_opts, opts)
     end
 
+    if server == "ruff_lsp" then
+        local ruff_lsp_opts = require "user.lsp.settings.ruff_lsp"
+        opts = vim.tbl_deep_extend("force", ruff_lsp_opts, opts)
+    end
+
     lspconfig[server].setup(opts)
 
     ::continue::
