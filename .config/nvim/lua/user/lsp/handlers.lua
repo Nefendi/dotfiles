@@ -72,8 +72,23 @@ M.lsp_format = function(bufnr)
     }
 end
 
+local function get_client_by_name(bufnr, name)
+    return require("lspconfig.util").get_active_client_by_name(bufnr, name)
+end
+
 local function lsp_format_on_save(bufnr)
     if FORMAT_ON_SAVE_ON then
+        local ruff_lsp = get_client_by_name(bufnr, "ruff_lsp")
+
+        if ruff_lsp then
+            ruff_lsp.request("workspace/executeCommand", {
+                command = "ruff.applyOrganizeImports",
+                arguments = {
+                    { uri = vim.uri_from_bufnr(bufnr) },
+                },
+            }, nil, bufnr)
+        end
+
         M.lsp_format(bufnr)
     end
 end
