@@ -42,7 +42,6 @@ telescope.setup {
             "target/",
 
             -- C#
-            "bin/",
             "obj/",
 
             -- PHP
