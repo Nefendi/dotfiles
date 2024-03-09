@@ -53,10 +53,10 @@ autoload -Uz compinit
 compinit
 
 # ALIASES
-alias ls='exa -gF --color=always --group-directories-first --icons'
-alias ll='exa -glFh --color=always --group-directories-first --icons'
-alias la='exa -galFh --color=always --group-directories-first --icons'
-alias lt='exa -gaTFh --color=always --group-directories-first --icons'
+alias ls='eza -gF --color=always --group-directories-first --icons'
+alias ll='eza -glhF --color=always --group-directories-first --icons'
+alias la='eza -galhF --color=always --group-directories-first --icons'
+alias lt='eza -gaThF --color=always --group-directories-first --icons'
 alias n='nordvpn'
 alias g='lazygit'
 alias bat='batcat'
