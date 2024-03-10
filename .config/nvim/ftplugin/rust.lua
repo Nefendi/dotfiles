@@ -44,13 +44,12 @@ local opts = {
 local mappings = {
     L = {
         name = "Rust",
-        h = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Inlay Hints" },
-        r = { "<cmd>RustRunnables<Cr>", "Runnables" },
-        e = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
-        c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
-        p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
-        g = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
-        w = { "<cmd>RustReloadWorkspace<Cr>", "Reload Workspace" },
+        r = { "<cmd>RustLsp runnables<Cr>", "Runnables" },
+        e = { "<cmd>RustLsp expandMacro<Cr>", "Expand Macro" },
+        c = { "<cmd>RustLsp openCargo<Cr>", "Open Cargo" },
+        p = { "<cmd>RustLsp parentModule<Cr>", "Parent Module" },
+        g = { "<cmd>RustLsp crateGraph<Cr>", "View Crate Graph" },
+        w = { "<cmd>RustLsp reloadWorkspace<Cr>", "Reload Workspace" },
     },
 }
 

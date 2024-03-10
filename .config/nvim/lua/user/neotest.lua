@@ -3,11 +3,6 @@ if not status_ok then
     return
 end
 
-local neotest_rust_status_ok, neotest_rust = pcall(require, "neotest-rust")
-if not neotest_rust_status_ok then
-    return
-end
-
 local neotest_python_status_ok, neotest_python = pcall(require, "neotest-python")
 if not neotest_python_status_ok then
     return
@@ -30,7 +25,7 @@ end
 
 neotest.setup {
     adapters = {
-        neotest_rust,
+        require "rustaceanvim.neotest",
         neotest_python,
         neotest_go,
         neotest_jest,

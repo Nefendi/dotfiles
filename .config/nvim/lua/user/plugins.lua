@@ -415,7 +415,9 @@ require("lazy").setup({
 
     -- Rust
     {
-        "simrat39/rust-tools.nvim",
+        "mrcjkb/rustaceanvim",
+        version = "^4",
+        ft = { "rust" },
     },
 
     -- Lua
@@ -508,7 +510,6 @@ require("lazy").setup({
             "antoinemadec/FixCursorHold.nvim",
         },
     },
-    { "rouge8/neotest-rust" },
     { "nvim-neotest/neotest-python" },
     { "nvim-neotest/neotest-go" },
     { "haydenmeade/neotest-jest" },
