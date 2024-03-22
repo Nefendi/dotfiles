@@ -16,6 +16,7 @@ ohmyzsh/ohmyzsh path:plugins/yarn
 ohmyzsh/ohmyzsh path:plugins/direnv
 ohmyzsh/ohmyzsh path:plugins/thefuck
 ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/asdf
 
 
 Aloxaf/fzf-tab
@@ -29,8 +30,6 @@ zsh-users/zsh-history-substring-search
 MichaelAquilina/zsh-you-should-use
 zpm-zsh/theme-neutral
 zdharma-continuum/fast-syntax-highlighting kind:defer
-mattberther/zsh-pyenv
 ptavares/zsh-sdkman
-dominik-schwabe/zsh-fnm
 ajeetdsouza/zoxide
 darvid/zsh-poetry

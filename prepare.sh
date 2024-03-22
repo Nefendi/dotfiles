@@ -43,11 +43,11 @@ printf "\nMaking symbolic links...\n"
 
 mkdir -p "${HOME}"/.config/nvim
 mkdir -p "${HOME}"/.config/pypoetry
-mkdir -p "${HOME}"/.config/fish
+# mkdir -p "${HOME}"/.config/fish
 mkdir -p "${HOME}"/.config/pulse
 
-ln -fs "$(realpath .config/nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
-ln -fs "$(realpath .config/nvim/init.vim)" ~/.config/nvim/init.vim
+# ln -fs "$(realpath .config/nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
+# ln -fs "$(realpath .config/nvim/init.vim)" ~/.config/nvim/init.vim
 ln -fs "$(realpath .zsh_plugins.txt)" ~/.zsh_plugins.txt
 ln -fs "$(realpath .config/starship.toml)" ~/.config/starship.toml
 ln -fs "$(realpath .bashrc)" ~/.bashrc
@@ -56,14 +56,15 @@ ln -fs "$(realpath .latexmkrc)" ~/.latexmkrc
 ln -fs "$(realpath .global_gitignore)" ~/.global_gitignore
 ln -fs "$(realpath .gitconfig)" ~/.gitconfig
 ln -fs "$(realpath .alacritty.yml)" ~/.alacritty.yml
-ln -fs "$(realpath .condarc)" ~/.condarc
+# ln -fs "$(realpath .condarc)" ~/.condarc
 ln -fs "$(realpath .ghci)" ~/.ghci
 ln -fs "$(realpath .config/pypoetry/config.toml)" ~/.config/pypoetry/config.toml
-ln -fs "$(realpath .config/fish/config.fish)" ~/.config/fish/config.fish
-ln -fs "$(realpath .config/fish/fish_plugins)" ~/.config/fish/fish_plugins
+# ln -fs "$(realpath .config/fish/config.fish)" ~/.config/fish/config.fish
+# ln -fs "$(realpath .config/fish/fish_plugins)" ~/.config/fish/fish_plugins
 ln -fs "$(realpath .config/pulse/daemon.conf)" ~/.config/pulse/daemon.conf
-ln -fs "$(realpath .tmux.conf)" ~/.tmux.conf
+# ln -fs "$(realpath .tmux.conf)" ~/.tmux.conf
 ln -fs "$(realpath .config/fontconfig/conf.d/99-alias-fonts.conf)" ~/.config/fontconfig/conf.d/99-alias-fonts.conf
+ln -fs "$(realpath .tool-versions)" ~/.tool-versions
 
 # ANTIBODY
 printf "\nDownloading and initialising Antibody...\n\n"

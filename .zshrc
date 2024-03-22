@@ -27,10 +27,6 @@ export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {}' --preview-wind
 
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
-# FNM
-export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
-export ZSH_FNM_NODE_VERSION="18.17.0"
-
 # ERG
 export ERG_PATH="$HOME/.erg"
 
@@ -57,7 +53,6 @@ alias ls='eza -gF --color=always --group-directories-first --icons'
 alias ll='eza -glhF --color=always --group-directories-first --icons'
 alias la='eza -galhF --color=always --group-directories-first --icons'
 alias lt='eza -gaThF --color=always --group-directories-first --icons'
-alias n='nordvpn'
 alias g='lazygit'
 alias bat='batcat'
 alias k='kubectl'
@@ -69,25 +64,14 @@ alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
 alias updatetools='
     poetry self update &&
     antidote update &&
-    pyenv update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
-    cargo install-update -a'
-# &&
-# sudo phpbrew self-update &&
-# sudo composer self-update
+    cargo install-update -a &&
+    asdf update &&
+    asdf plugin-update --all'
 alias updateall='updatesystem && updatetools'
 
 # GHCUP
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
-
-# GVM
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-# PHPBREW
-# [[ -e "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
-
-# RVM
-# [[ -e "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"
 
 # STARSHIP
 eval "$(starship init zsh)"
