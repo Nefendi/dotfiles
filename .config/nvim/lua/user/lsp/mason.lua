@@ -224,6 +224,11 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", ruff_lsp_opts, opts)
     end
 
+    if server == "solargraph" then
+        local solargraph_opts = require "user.lsp.settings.solargraph"
+        opts = vim.tbl_deep_extend("force", solargraph_opts, opts)
+    end
+
     lspconfig[server].setup(opts)
 
     ::continue::
