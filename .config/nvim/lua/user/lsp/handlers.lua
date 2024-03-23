@@ -93,7 +93,7 @@ local function lsp_format_on_save(bufnr)
     end
 end
 
-local format_on_save_augroup = vim.api.nvim_create_augroup("FormatOnSave", {})
+-- local format_on_save_augroup = vim.api.nvim_create_augroup("FormatOnSave", {})
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
@@ -107,9 +107,9 @@ M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFo
 
 M.on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
-        vim.api.nvim_clear_autocmds { group = format_on_save_augroup, buffer = bufnr }
+        -- vim.api.nvim_clear_autocmds { group = format_on_save_augroup, buffer = bufnr }
         vim.api.nvim_create_autocmd("BufWritePre", {
-            group = format_on_save_augroup,
+            -- group = format_on_save_augroup,
             buffer = bufnr,
             callback = function()
                 lsp_format_on_save(bufnr)
@@ -117,12 +117,16 @@ M.on_attach = function(client, bufnr)
         })
     end
 
-    if client.name == "gopls" then
-        vim.lsp.codelens.refresh()
+    if client.supports_method "textDocument/codeLens" then
+        vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.codelens.refresh()
+            end,
+        })
     end
 
     if client.name == "jdt.ls" then
-        vim.lsp.codelens.refresh()
         if JAVA_DAP_ACTIVE then
             require("jdtls").setup_dap { hotcodereplace = "auto" }
             require("jdtls.dap").setup_dap_main_class_configs()
