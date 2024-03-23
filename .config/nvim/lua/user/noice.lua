@@ -169,6 +169,17 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        -- To disable showing Cargo workspace reload information
+        {
+            view = "notify",
+            filter = { find = "Reloading Cargo Workspace" },
+            opts = { skip = true },
+        },
+        {
+            view = "notify",
+            filter = { find = "Cargo workspace reloaded" },
+            opts = { skip = true },
+        },
     },
     views = {
         hover = {
