@@ -302,7 +302,7 @@ cmp.setup {
         { name = "cmp_tabnine" },
         { name = "nvim_lua" },
         { name = "buffer" },
-        { name = "emoji" },
+        -- { name = "emoji" },
         { name = "crates" },
         { name = "npm" },
     },
