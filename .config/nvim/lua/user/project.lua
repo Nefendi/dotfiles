@@ -20,6 +20,7 @@ project.setup {
         "go.mod",
         "Cargo.toml",
         "stack.yaml",
+        "mix.exs",
         -- Custom marker file
         ".project.nvim",
     },

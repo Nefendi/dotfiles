@@ -40,6 +40,18 @@ require("lazy").setup({
     },
     {
         "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("nvim-web-devicons").setup {
+                override_by_extension = {
+                    ["exs"] = {
+                        icon = "",
+                        color = "#a074c4",
+                        cterm_color = "140",
+                        name = "Exs",
+                    },
+                },
+            }
+        end,
     },
     { "moll/vim-bbye", event = "BufReadPost" },
     {
@@ -514,6 +526,7 @@ require("lazy").setup({
     { "nvim-neotest/neotest-go" },
     { "haydenmeade/neotest-jest" },
     { "marilari88/neotest-vitest" },
+    { "jfpedroza/neotest-elixir" },
 }, {
     ui = {
         border = "rounded",

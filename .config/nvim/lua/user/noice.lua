@@ -169,6 +169,12 @@ noice.setup {
             },
             opts = { skip = true },
         },
+        -- To disable showing "Workspace edit @spec in Elixir"
+        {
+            view = "notify",
+            filter = { find = "Workspace edit Add @spec" },
+            opts = { skip = true },
+        },
         -- To disable showing Cargo workspace reload information
         {
             view = "notify",

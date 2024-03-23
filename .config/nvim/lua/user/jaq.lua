@@ -18,6 +18,7 @@ jaq_nvim.setup {
             php = "php %",
             ruby = "ruby %",
             java = "java %",
+            elixir = "elixir %",
         },
     },
     behavior = {

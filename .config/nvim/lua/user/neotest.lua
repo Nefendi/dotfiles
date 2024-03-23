@@ -23,6 +23,11 @@ if not neotest_vitest_status_ok then
     return
 end
 
+local neotest_elixir_status_ok, neotest_elixir = pcall(require, "neotest-elixir")
+if not neotest_elixir_status_ok then
+    return
+end
+
 neotest.setup {
     adapters = {
         require "rustaceanvim.neotest",
@@ -30,6 +35,7 @@ neotest.setup {
         neotest_go,
         neotest_jest,
         neotest_vitest,
+        neotest_elixir,
     },
     output_panel = {
         open = "botright split | resize 30",

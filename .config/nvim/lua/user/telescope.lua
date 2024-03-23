@@ -46,6 +46,11 @@ telescope.setup {
 
             -- PHP
             "vendor/",
+
+            -- Elixir
+            ".elixir_ls/",
+            "_build/",
+            "deps/",
         },
         vimgrep_arguments = {
             "rg",
