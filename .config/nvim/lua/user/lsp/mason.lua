@@ -14,22 +14,22 @@ local servers = {
     "dockerls",
     "cmake",
     "taplo",
-    "clangd",
+    -- "clangd",
     "ltex",
     "texlab",
     "marksman",
-    "gopls",
-    "golangci_lint_ls",
+    -- "gopls",
+    -- "golangci_lint_ls",
     "rust_analyzer",
     "emmet_language_server",
     "eslint",
-    "jdtls",
+    -- "jdtls",
     -- "csharp_ls",
-    "hls",
+    -- "hls",
     "tailwindcss",
     "lemminx",
-    "phpactor",
-    "solargraph",
+    -- "phpactor",
+    -- "solargraph",
     "ruff_lsp",
 }
 
@@ -41,34 +41,34 @@ local linters = {
     "yamllint",
     "gitlint",
     "actionlint",
-    "buf",
-    "golangci-lint",
+    -- "buf",
+    -- "golangci-lint",
     "mypy",
 }
 
 local formatters = {
     "stylua",
-    "golines",
-    "gofumpt",
-    "goimports",
+    -- "golines",
+    -- "gofumpt",
+    -- "goimports",
     "shfmt",
-    "clang-format",
+    -- "clang-format",
     "prettier",
     "prettierd",
     -- "csharpier",
-    "google-java-format",
+    -- "google-java-format",
 }
 
 local debuggers = {
     "debugpy",
-    "delve",
+    -- "delve",
     "codelldb",
 }
 
 local other = {
-    "gomodifytags",
-    "gotests",
-    "impl",
+    -- "gomodifytags",
+    -- "gotests",
+    -- "impl",
 }
 
 local tools_to_install = {}
