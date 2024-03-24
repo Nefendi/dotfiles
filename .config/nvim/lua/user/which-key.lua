@@ -119,6 +119,21 @@ local mappings = {
     d = {
         name = "Debug",
         b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Breakpoint" },
+        B = {
+            function()
+                local input = vim.fn.input "Enter condition: "
+                require("dap").set_breakpoint(input)
+            end,
+            "Conditional Breakpoint",
+        },
+        L = {
+            function()
+                require("dap").list_breakpoints()
+                vim.cmd "copen"
+            end,
+            "List Breakpoints",
+        },
+        C = { "<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear Breakpoints" },
         c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
         i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
         o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
