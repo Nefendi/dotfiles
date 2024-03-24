@@ -206,6 +206,10 @@ require("lazy").setup({
     },
     { "kevinhwang91/nvim-bqf", ft = "qf" },
     {
+        "junegunn/fzf",
+        lazy = false,
+    },
+    {
         "junegunn/vim-slash",
         event = "BufReadPost",
         config = function()
