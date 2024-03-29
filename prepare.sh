@@ -45,11 +45,13 @@ mkdir -p "${HOME}"/.config/nvim
 mkdir -p "${HOME}"/.config/pypoetry
 # mkdir -p "${HOME}"/.config/fish
 mkdir -p "${HOME}"/.config/pulse
+mkdir -p "${HOME}"/.config/lazygit
 
 # ln -fs "$(realpath .config/nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
 # ln -fs "$(realpath .config/nvim/init.vim)" ~/.config/nvim/init.vim
 ln -fs "$(realpath .zsh_plugins.txt)" ~/.zsh_plugins.txt
 ln -fs "$(realpath .config/starship.toml)" ~/.config/starship.toml
+ln -fs "$(realpath .config/lazygit/config.yml)" ~/.config/lazygit/config.yml
 ln -fs "$(realpath .bashrc)" ~/.bashrc
 ln -fs "$(realpath .zshrc)" ~/.zshrc
 ln -fs "$(realpath .latexmkrc)" ~/.latexmkrc

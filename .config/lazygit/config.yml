@@ -1,0 +1,11 @@
+# $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+---
+gui:
+  nerdFontsVersion: "3"
+  enlargedSideViewLocation: top
+  commitLength:
+    show: true
+git:
+  commit:
+    autoWrapCommitMessage: true
+    autoWrapWidth: 72
