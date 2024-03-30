@@ -1,13 +1,16 @@
 return {
     settings = {
-        python = {
+        basedpyright = {
             analysis = {
-                typeCheckingMode = "strict",
+                typeCheckingMode = "all",
                 diagnosticMode = "openFilesOnly",
                 useLibraryCodeForTypes = true,
                 autoImportCompletions = true,
                 autoSearchPaths = true,
-                diagnosticSeverityOverrides = {},
+                diagnosticSeverityOverrides = {
+                    reportAny = false,
+                    reportMissingSuperCall = false,
+                },
             },
         },
     },

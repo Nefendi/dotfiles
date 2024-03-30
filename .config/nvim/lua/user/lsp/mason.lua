@@ -7,7 +7,8 @@ local servers = {
     "jsonls",
     "lua_ls",
     "tsserver",
-    "pyright",
+    -- "pyright",
+    "basedpyright",
     -- "pylyzer",
     "yamlls",
     "bashls",
@@ -164,6 +165,11 @@ for _, server in pairs(servers) do
     if server == "pyright" then
         local pyright_opts = require "user.lsp.settings.pyright"
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+    end
+
+    if server == "basedpyright" then
+        local basedpyright_opts = require "user.lsp.settings.basedpyright"
+        opts = vim.tbl_deep_extend("force", basedpyright_opts, opts)
     end
 
     -- TODO: Get pylyzer to work (right now it works only in the shell)
