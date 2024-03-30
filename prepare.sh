@@ -60,6 +60,7 @@ ln -fs "$(realpath .gitconfig)" ~/.gitconfig
 ln -fs "$(realpath .alacritty.yml)" ~/.alacritty.yml
 # ln -fs "$(realpath .condarc)" ~/.condarc
 ln -fs "$(realpath .ghci)" ~/.ghci
+ln -fs "$(realpath .iex.exs)" ~/.iex.exs
 ln -fs "$(realpath .config/pypoetry/config.toml)" ~/.config/pypoetry/config.toml
 # ln -fs "$(realpath .config/fish/config.fish)" ~/.config/fish/config.fish
 # ln -fs "$(realpath .config/fish/fish_plugins)" ~/.config/fish/fish_plugins
