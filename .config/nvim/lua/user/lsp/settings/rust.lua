@@ -1,6 +1,6 @@
 return {
     -- Plugin configuration
-    tools = {},
+    tools = { hover_actions = { replace_builtin_hover = false } },
 
     -- LSP configuration
     server = {
