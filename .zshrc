@@ -3,11 +3,11 @@ export ZSH="$HOME"/.oh-my-zsh
 
 PATH="$HOME/antibody:$PATH"
 PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.emacs.d/bin:$PATH"
+# PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.poetry/bin:$PATH"
-PATH="/usr/local/go/bin:$PATH"
-PATH="$HOME/go/bin:$PATH"
-PATH="$HOME/.erg/bin:$PATH"
+# PATH="/usr/local/go/bin:$PATH"
+# PATH="$HOME/go/bin:$PATH"
+# PATH="$HOME/.erg/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH
@@ -34,7 +34,7 @@ export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --no-ignore"
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
 # ERG
-export ERG_PATH="$HOME/.erg"
+# export ERG_PATH="$HOME/.erg"
 
 # YOU-SHOULD-USE
 # Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
