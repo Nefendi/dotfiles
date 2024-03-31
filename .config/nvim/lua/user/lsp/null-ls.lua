@@ -40,7 +40,6 @@ null_ls.setup {
 
         -- Go
         formatting.golines,
-        formatting.gofumpt,
 
         -- C#
         formatting.csharpier,

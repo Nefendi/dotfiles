@@ -19,8 +19,8 @@ local servers = {
     "ltex",
     "texlab",
     "marksman",
-    -- "gopls",
-    -- "golangci_lint_ls",
+    "gopls",
+    "golangci_lint_ls",
     "rust_analyzer",
     "emmet_language_server",
     "eslint",
@@ -43,16 +43,15 @@ local linters = {
     "yamllint",
     "gitlint",
     "actionlint",
-    -- "buf",
-    -- "golangci-lint",
+    "buf",
+    "golangci-lint",
     "mypy",
 }
 
 local formatters = {
     "stylua",
-    -- "golines",
-    -- "gofumpt",
-    -- "goimports",
+    "golines",
+    "goimports",
     "shfmt",
     -- "clang-format",
     "prettier",
@@ -63,14 +62,14 @@ local formatters = {
 
 local debuggers = {
     "debugpy",
-    -- "delve",
+    "delve",
     "codelldb",
 }
 
 local other = {
-    -- "gomodifytags",
-    -- "gotests",
-    -- "impl",
+    "gomodifytags",
+    "gotests",
+    "impl",
 }
 
 local tools_to_install = {}

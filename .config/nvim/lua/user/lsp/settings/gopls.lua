@@ -15,6 +15,7 @@ return {
                 test = true,
                 tidy = true,
             },
+            gofumpt = true,
         },
     },
 }
