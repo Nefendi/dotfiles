@@ -47,6 +47,9 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
 antidote load
 
+# GOLANG
+source "$HOME/.asdf/plugins/golang/set-env.zsh"
+
 # BINDKEYS
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
