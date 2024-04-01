@@ -65,7 +65,6 @@ alias lt='eza -gaThF --color=always --group-directories-first --icons'
 alias g='lazygit'
 alias bat='batcat'
 alias k='kubectl'
-alias tldr='tldr -t base16'
 alias pip='noglob pip'
 alias poetry='noglob poetry'
 
