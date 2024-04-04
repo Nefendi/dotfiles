@@ -302,12 +302,19 @@ local vopts = {
 
 local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
+
     l = {
         name = "LSP",
         a = {
             "<esc><cmd>lua vim.lsp.buf.code_action()<CR>",
             "Range Code Action",
         },
+    },
+
+    c = {
+        name = "CodeSnap",
+        s = { "<cmd>CodeSnap<cr>", "Save to Clipboard" },
+        S = { "<cmd>CodeSnapSave<cr>", "Save to File" },
     },
 }
 

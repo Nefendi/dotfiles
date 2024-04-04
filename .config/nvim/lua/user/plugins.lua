@@ -99,6 +99,14 @@ require("lazy").setup({
     },
     { "lervag/vimtex", ft = "tex" },
     {
+        "mistricky/codesnap.nvim",
+        build = "make",
+        event = "VeryLazy",
+        config = function()
+            require "user.codesnap"
+        end,
+    },
+    {
         "folke/todo-comments.nvim",
         event = "BufReadPost",
         config = function()

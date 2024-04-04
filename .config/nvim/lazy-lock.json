@@ -11,6 +11,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp-tabnine": { "branch": "main", "commit": "d52aae40ee86b62960c31a003352ddfc9e31c8d2" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+  "codesnap.nvim": { "branch": "main", "commit": "985e60931d196f3e1eb05ee2ad2a5c52e47bbe88" },
   "crates.nvim": { "branch": "main", "commit": "1dffccc0a95f656ebe00cacb4de282473430c5a1" },
   "cybu.nvim": { "branch": "main", "commit": "c0866ef6735a85f85d4cf77ed6d9bc92046b5a99" },
   "darkplus.nvim": { "branch": "master", "commit": "fb0ac9cb20b11cef4b42f89ea5dc23f3b3abf534" },
