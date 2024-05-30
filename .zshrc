@@ -16,7 +16,7 @@ export EDITOR="nvim"
 
 export MANPAGER="nvim +Man!"
 
-FZF_DEFAULT_OPTS="--no-mouse --height 75% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (batcat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window right:hidden:wrap --bind='ctrl-/:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-\\:change-preview-window(down|right)'"
+FZF_DEFAULT_OPTS="--no-mouse --height 75% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window right:hidden:wrap --bind='ctrl-/:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-\\:change-preview-window(down|right)'"
 # Tokyonight Night theme
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=fg:#c0caf5,hl:#ff9e64 \
@@ -63,7 +63,6 @@ alias ll='eza -glhF --color=always --group-directories-first --icons'
 alias la='eza -galhF --color=always --group-directories-first --icons'
 alias lt='eza -gaThF --color=always --group-directories-first --icons'
 alias g='lazygit'
-alias bat='batcat'
 alias k='kubectl'
 alias pip='noglob pip'
 alias poetry='noglob poetry'
