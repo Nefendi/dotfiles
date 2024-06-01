@@ -67,6 +67,7 @@ ln -fs "$(realpath .config/pypoetry/config.toml)" ~/.config/pypoetry/config.toml
 ln -fs "$(realpath .config/pulse/daemon.conf)" ~/.config/pulse/daemon.conf
 # ln -fs "$(realpath .tmux.conf)" ~/.tmux.conf
 ln -fs "$(realpath .config/fontconfig/conf.d/99-alias-fonts.conf)" ~/.config/fontconfig/conf.d/99-alias-fonts.conf
+ln -sf "$(realpath .config/fontconfig/conf.d/80-maplemono-fontfeatures.conf)" ~/.config/fontconfig/conf.d/80-maplemono-fontfeatures.conf
 ln -fs "$(realpath .tool-versions)" ~/.tool-versions
 
 # ANTIBODY

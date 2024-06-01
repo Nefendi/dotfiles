@@ -57,27 +57,43 @@ render_timer = false
 LC_ALL = "en_US.UTF-8"
 
 [font]
-size = 13.5
+size = 14
+
+# [font.bold]
+# family = "Comic Code Ligatures"
+# style = "Bold"
+
+# [font.bold_italic]
+# family = "Comic Code Ligatures"
+# style = "BoldItalic"
+
+# [font.italic]
+# family = "Comic Code Ligatures"
+# style = "MediumItalic"
+
+# [font.normal]
+# family = "Comic Code Ligatures"
+# style = "Medium"
 
 [font.bold]
-family = "Comic Code Ligatures"
+family = "Maple Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Comic Code Ligatures"
+family = "Maple Mono"
 style = "BoldItalic"
+
+[font.italic]
+family = "Maple Mono"
+style = "Italic"
+
+[font.normal]
+family = "Maple Mono"
+style = "Medium"
 
 [font.glyph_offset]
 x = 0
 y = 0
-
-[font.italic]
-family = "Comic Code Ligatures"
-style = "MediumItalic"
-
-[font.normal]
-family = "Comic Code Ligatures"
-style = "Medium"
 
 [font.offset]
 x = 0
