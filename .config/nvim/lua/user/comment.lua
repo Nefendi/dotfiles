@@ -3,11 +3,6 @@ if not status_ok then
     return
 end
 
-local inlay_hints_status_ok, _ = pcall(require, "lsp-inlayhints")
-if not inlay_hints_status_ok then
-    return
-end
-
 comment.setup {
     ignore = "^$",
     pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),

@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
     vim.fn.system {
         "git",
         "clone",
@@ -406,13 +406,6 @@ require("lazy").setup({
     },
     { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
     {
-        "lvimuser/lsp-inlayhints.nvim",
-        event = "LspAttach",
-        config = function()
-            require "user.lsp.lsp-inlay-hints"
-        end,
-    },
-    {
         "kevinhwang91/nvim-ufo",
         event = "BufReadPost",
         config = function()
@@ -445,7 +438,18 @@ require("lazy").setup({
     },
 
     -- Lua
-    { "folke/neodev.nvim" },
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "luvit-meta/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
 
     -- Java
     { "mfussenegger/nvim-jdtls" },

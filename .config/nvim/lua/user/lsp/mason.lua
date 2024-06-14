@@ -123,16 +123,6 @@ mason_tool_installer.setup {
     start_delay = 3000,
 }
 
--- Neodev has to be set up before the call to lspconfig.setup()
-local status_ok, neodev = pcall(require, "neodev")
-if not status_ok then
-    return
-end
-
-neodev.setup {
-    library = { plugins = true, types = true },
-}
-
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
     return

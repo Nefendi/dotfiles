@@ -125,6 +125,10 @@ M.on_attach = function(client, bufnr)
         })
     end
 
+    if client.supports_method "textDocument/inlayHint" then
+        vim.lsp.inlay_hint.enable(true)
+    end
+
     if client.name == "jdt.ls" then
         if JAVA_DAP_ACTIVE then
             require("jdtls").setup_dap { hotcodereplace = "auto" }

@@ -240,8 +240,7 @@ local mappings = {
             "Workspace Symbols",
         },
         v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle Virtual Lines" },
-        h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Inlay Hints" },
-        H = { "<cmd>lua require('lsp-inlayhints').reset()<cr>", "Clear Inlay Hints" },
+        h = { "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", "Toggle Inlay Hints" },
     },
 
     t = {

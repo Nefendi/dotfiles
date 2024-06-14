@@ -305,6 +305,7 @@ cmp.setup {
         -- { name = "emoji" },
         { name = "crates" },
         { name = "npm" },
+        { name = "lazydev", group_index = 0 },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
