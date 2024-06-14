@@ -5,6 +5,8 @@ end
 
 local icons = require "user.icons"
 
+local neotest = require "neotest"
+
 local setup = {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
@@ -257,6 +259,14 @@ local mappings = {
         a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach To Nearest Test" },
         S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop Running Tests" },
         s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary Window" },
+        A = {
+            function()
+                for _, adapter_id in ipairs(neotest.state.adapter_ids()) do
+                    neotest.run.run { suite = true, adapter = adapter_id }
+                end
+            end,
+            "Run Suite",
+        },
         p = { "<cmd>lua require('neotest').output_panel.toggle()<cr>", "Toggle Output Panel" },
         o = { "<cmd>lua require('neotest').output.open()<cr>", "Open Output" },
     },
