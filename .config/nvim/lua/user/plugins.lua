@@ -16,13 +16,15 @@ vim.opt.rtp:prepend(lazypath)
 -- Install your plugins here
 require("lazy").setup({
     { "nvim-lua/plenary.nvim" }, -- Useful lua functions used by lots of plugins
-    -- Autopairs, integrates with both cmp and treesitter
     {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = function()
-            require "user.autopairs"
-        end,
+        "altermo/ultimate-autopair.nvim",
+        event = { "InsertEnter", "CmdlineEnter" },
+        branch = "v0.6", --recommended as each new version will have breaking changes
+        opts = {
+            tabout = {
+                enable = true,
+            },
+        },
     },
     {
         "numToStr/Comment.nvim",
@@ -224,7 +226,6 @@ require("lazy").setup({
             require "user.vim-slash"
         end,
     },
-    { "LunarVim/peek.lua", event = "BufReadPost" },
     {
         "jiaoshijie/undotree",
         event = "VeryLazy",
@@ -234,16 +235,6 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-    },
-    {
-        "0x100101/lab.nvim",
-        enabled = false,
-        cmd = "Lab",
-        config = function()
-            require "user.lab"
-        end,
-        build = "cd js && npm ci",
-        dependencies = { "nvim-lua/plenary.nvim" },
     },
     {
         "tamago324/lir.nvim",
@@ -307,8 +298,6 @@ require("lazy").setup({
     },
 
     -- Colorschemes
-    { "lunarvim/onedarker.nvim" },
-    { "lunarvim/darkplus.nvim" },
     { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
     { "fladson/vim-kitty", ft = "kitty" },
 
@@ -330,15 +319,13 @@ require("lazy").setup({
     { "hrsh7th/cmp-path" }, -- path completions
     { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
     { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-emoji", event = "InsertEnter" },
     {
         "Saecki/crates.nvim",
         event = "BufRead Cargo.toml",
         config = function()
             require "user.crates"
         end,
-        version = "v0.3.0",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        tag = "stable",
     },
     {
         "David-Kunz/cmp-npm",
@@ -388,7 +375,6 @@ require("lazy").setup({
             require "user.illuminate"
         end,
     },
-    { "ray-x/lsp_signature.nvim" },
     {
         "smjonas/inc-rename.nvim",
         event = "BufReadPost",
@@ -514,15 +500,6 @@ require("lazy").setup({
     { "leoluz/nvim-dap-go" },
     { "rcarriga/nvim-dap-ui" },
     { "LiadOz/nvim-dap-repl-highlights" },
-
-    -- nvim-test
-    -- {
-    --     "klen/nvim-test",
-    --     event = "VeryLazy",
-    --     config = function()
-    --         require "user.nvim-test"
-    --     end,
-    -- },
 
     -- Neotest
     {
