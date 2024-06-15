@@ -17,6 +17,9 @@ configs.setup {
         enable = true,
         disable = { "markdown" },
     },
+    endwise = {
+        enable = true,
+    },
     indent = { enable = true, disable = { "python", "css", "markdown" } },
     playground = { enable = true },
     textobjects = {

@@ -470,6 +470,7 @@ require("lazy").setup({
     { "nvim-treesitter/playground", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
+    { "RRethy/nvim-treesitter-endwise", event = "BufReadPost" },
     { "IndianBoy42/tree-sitter-just" },
 
     -- Git
