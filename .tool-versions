@@ -5,3 +5,4 @@ golang 1.22.1
 nodejs 20.11.1
 php 8.3.4
 python system
+lua 5.4.6
