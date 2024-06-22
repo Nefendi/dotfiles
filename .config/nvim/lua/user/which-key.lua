@@ -236,6 +236,12 @@ local mappings = {
             "Rename",
             expr = true,
         },
+        R = {
+            function()
+                require("telescope").extensions.refactoring.refactors()
+            end,
+            "Refactor",
+        },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -317,6 +323,12 @@ local vmappings = {
         a = {
             "<esc><cmd>lua vim.lsp.buf.code_action()<CR>",
             "Range Code Action",
+        },
+        R = {
+            function()
+                require("telescope").extensions.refactoring.refactors()
+            end,
+            "Refactor",
         },
     },
 
