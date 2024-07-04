@@ -78,5 +78,9 @@ null_ls.setup {
 
         -- Java
         formatting.google_java_format,
+
+        -- Protobuf
+        diagnostics.buf,
+        formatting.buf,
     },
 }
