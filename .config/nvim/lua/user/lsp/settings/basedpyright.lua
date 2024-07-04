@@ -10,6 +10,9 @@ return {
                 diagnosticSeverityOverrides = {
                     reportAny = false,
                     reportMissingSuperCall = false,
+                    reportUnusedCallResult = false,
+                    reportCallIssue = false,
+                    reportUninitializedInstanceVariable = false,
                 },
             },
         },
