@@ -4,3 +4,4 @@ golang 1.22.5
 nodejs 20.11.1
 python system
 lua 5.4.6
+zig 0.13.0
