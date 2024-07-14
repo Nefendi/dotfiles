@@ -6,7 +6,7 @@ if not status_ok then
 end
 
 M.server_capabilities = function()
-    local active_clients = vim.lsp.get_active_clients()
+    local active_clients = vim.lsp.get_clients()
     local active_client_map = {}
 
     for index, value in ipairs(active_clients) do
@@ -19,7 +19,7 @@ M.server_capabilities = function()
             return "capabilites for: " .. item
         end,
     }, function(choice)
-        vim.print(vim.lsp.get_active_clients()[active_client_map[choice]].server_capabilities)
+        vim.print(vim.lsp.get_clients()[active_client_map[choice]].server_capabilities)
     end)
 end
 
