@@ -33,6 +33,7 @@ local servers = {
     -- "solargraph",
     "ruff",
     "elixirls",
+    "zls",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -228,6 +229,11 @@ for _, server in pairs(servers) do
     if server == "elixirls" then
         local elixirls_opts = require "user.lsp.settings.elixirls"
         opts = vim.tbl_deep_extend("force", elixirls_opts, opts)
+    end
+
+    if server == "zls" then
+        local zls_opts = require "user.lsp.settings.zls"
+        opts = vim.tbl_deep_extend("force", zls_opts, opts)
     end
 
     lspconfig[server].setup(opts)

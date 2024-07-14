@@ -51,6 +51,9 @@ telescope.setup {
             ".elixir_ls/",
             "_build/",
             "deps/",
+
+            -- Zig
+            ".zig-cache/",
         },
         vimgrep_arguments = {
             "rg",
@@ -64,6 +67,9 @@ telescope.setup {
             "--glob",
             -- Haskell
             "!.stack-work/",
+            -- Zig
+            "--glob",
+            "!.zig-cache/",
         },
         mappings = {
             i = {
@@ -89,6 +95,8 @@ telescope.setup {
                 "-uu",
                 -- Haskell
                 "--exclude=.stack-work/",
+                -- Zig
+                "--exclude=.zig-cache/",
             },
             theme = "dropdown",
             previewer = false,

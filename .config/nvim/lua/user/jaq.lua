@@ -19,6 +19,7 @@ jaq_nvim.setup {
             ruby = "ruby %",
             java = "java %",
             elixir = "elixir %",
+            zig = "zig run %",
         },
     },
     behavior = {
