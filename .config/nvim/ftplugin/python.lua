@@ -13,37 +13,34 @@ if not status_ok then
     return
 end
 
-local opts = {
-    mode = "n",
-    prefix = "<leader>",
-    buffer = nil,
-    silent = true,
-    noremap = true,
-    nowait = true,
-}
-
-local vopts = {
-    mode = "v",
-    prefix = "<leader>",
-    buffer = nil,
-    silent = true,
-    noremap = true,
-    nowait = true,
-}
-
 local mappings = {
-    d = {
-        m = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" },
-        f = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" },
+    {
+        "<leader>df",
+        "<cmd>lua require('dap-python').test_class()<cr>",
+        desc = "Test Class",
+        nowait = true,
+        remap = false,
+    },
+    {
+        "<leader>dm",
+        "<cmd>lua require('dap-python').test_method()<cr>",
+        desc = "Test Method",
+        nowait = true,
+        remap = false,
     },
 }
 
 local vmappings = {
-    d = {
-        name = "Debug",
-        s = { "<esc><cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
+    { "<leader>d", group = "Debug", mode = "v", nowait = true, remap = false },
+    {
+        "<leader>ds",
+        "<esc><cmd>lua require('dap-python').debug_selection()<cr>",
+        desc = "Debug Selection",
+        mode = "v",
+        nowait = true,
+        remap = false,
     },
 }
 
-which_key.register(mappings, opts)
-which_key.register(vmappings, vopts)
+which_key.add(mappings)
+which_key.add(vmappings)

@@ -32,25 +32,14 @@ if not status_ok then
     return
 end
 
-local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
 local mappings = {
-    L = {
-        name = "Rust",
-        r = { "<cmd>RustLsp runnables<Cr>", "Runnables" },
-        e = { "<cmd>RustLsp expandMacro<Cr>", "Expand Macro" },
-        c = { "<cmd>RustLsp openCargo<Cr>", "Open Cargo" },
-        p = { "<cmd>RustLsp parentModule<Cr>", "Parent Module" },
-        g = { "<cmd>RustLsp crateGraph<Cr>", "View Crate Graph" },
-        w = { "<cmd>RustLsp reloadWorkspace<Cr>", "Reload Workspace" },
-    },
+    { "<leader>L", group = "Rust", nowait = true, remap = false },
+    { "<leader>Lc", "<cmd>RustLsp openCargo<Cr>", desc = "Open Cargo", nowait = true, remap = false },
+    { "<leader>Le", "<cmd>RustLsp expandMacro<Cr>", desc = "Expand Macro", nowait = true, remap = false },
+    { "<leader>Lg", "<cmd>RustLsp crateGraph<Cr>", desc = "View Crate Graph", nowait = true, remap = false },
+    { "<leader>Lp", "<cmd>RustLsp parentModule<Cr>", desc = "Parent Module", nowait = true, remap = false },
+    { "<leader>Lr", "<cmd>RustLsp runnables<Cr>", desc = "Runnables", nowait = true, remap = false },
+    { "<leader>Lw", "<cmd>RustLsp reloadWorkspace<Cr>", desc = "Reload Workspace", nowait = true, remap = false },
 }
 
-which_key.register(mappings, opts)
+which_key.add(mappings)

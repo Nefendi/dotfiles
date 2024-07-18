@@ -3,24 +3,13 @@ if not status_ok then
     return
 end
 
-local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
 local mappings = {
-    L = {
-        name = "Markdown",
-        g = { "<cmd>Glow<cr>", "Glow Preview" },
-        p = { "<cmd>MarkdownPreviewToggle<cr>", "Browser Preview" },
-    },
+    { "<leader>L", group = "Markdown", nowait = true, remap = false },
+    { "<leader>Lg", "<cmd>Glow<cr>", desc = "Glow Preview", nowait = true, remap = false },
+    { "<leader>Lp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Browser Preview", nowait = true, remap = false },
 }
 
-which_key.register(mappings, opts)
+which_key.add(mappings)
 
 vim.opt.textwidth = 80
 

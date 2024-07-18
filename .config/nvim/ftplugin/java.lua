@@ -217,47 +217,70 @@ if not status_ok then
     return
 end
 
-local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
-local vopts = {
-    mode = "v", -- VISUAL mode
-    prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
 local mappings = {
-    L = {
-        name = "Java",
-        o = { "<Cmd>lua require'jdtls'.organize_imports()<CR>", "Organize Imports" },
-        v = { "<Cmd>lua require('jdtls').extract_variable()<CR>", "Extract Variable" },
-        c = { "<Cmd>lua require('jdtls').extract_constant()<CR>", "Extract Constant" },
-        t = { "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", "Test Method" },
-        T = { "<Cmd>lua require'jdtls'.test_class()<CR>", "Test Class" },
-        u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
+    { "<leader>L", group = "Java", nowait = true, remap = false },
+    { "<leader>LT", "<Cmd>lua require'jdtls'.test_class()<CR>", desc = "Test Class", nowait = true, remap = false },
+    {
+        "<leader>Lc",
+        "<Cmd>lua require('jdtls').extract_constant()<CR>",
+        desc = "Extract Constant",
+        nowait = true,
+        remap = false,
+    },
+    {
+        "<leader>Lo",
+        "<Cmd>lua require'jdtls'.organize_imports()<CR>",
+        desc = "Organize Imports",
+        nowait = true,
+        remap = false,
+    },
+    {
+        "<leader>Lt",
+        "<Cmd>lua require'jdtls'.test_nearest_method()<CR>",
+        desc = "Test Method",
+        nowait = true,
+        remap = false,
+    },
+    { "<leader>Lu", "<Cmd>JdtUpdateConfig<CR>", desc = "Update Config", nowait = true, remap = false },
+    {
+        "<leader>Lv",
+        "<Cmd>lua require('jdtls').extract_variable()<CR>",
+        desc = "Extract Variable",
+        nowait = true,
+        remap = false,
     },
 }
 
 local vmappings = {
-    L = {
-        name = "Java",
-        v = { "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", "Extract Variable" },
-        c = { "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", "Extract Constant" },
-        m = { "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", "Extract Method" },
+    {
+        mode = { "v" },
+        { "<leader>L", group = "Java", nowait = true, remap = false },
+        {
+            "<leader>Lc",
+            "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",
+            desc = "Extract Constant",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>Lm",
+            "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",
+            desc = "Extract Method",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>Lv",
+            "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",
+            desc = "Extract Variable",
+            nowait = true,
+            remap = false,
+        },
     },
 }
 
-which_key.register(mappings, opts)
-which_key.register(vmappings, vopts)
+which_key.add(mappings)
+which_key.add(vmappings)
 
 -- debugging
 -- git clone git@github.com:microsoft/java-debug.git

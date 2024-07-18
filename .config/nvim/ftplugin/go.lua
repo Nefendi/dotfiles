@@ -10,33 +10,20 @@ if not status_ok then
     return
 end
 
-local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
 local mappings = {
-    L = {
-        name = "Go",
-        i = { "<cmd>GoImpl<Cr>", "Implement Interface" },
-        t = { "<cmd>GoMod tidy<cr>", "Tidy" },
-        a = { "<cmd>GoTestAdd<Cr>", "Add Test" },
-        A = { "<cmd>GoTestsAll<Cr>", "Add All Tests" },
-        e = { "<cmd>GoTestsExp<Cr>", "Add Exported Tests" },
-        g = { "<cmd>GoGenerate<Cr>", "Go Generate" },
-        f = { "<cmd>GoGenerate %<Cr>", "Go Generate File" },
-        J = { "<cmd>GoTagAdd json<Cr>", "Add JSON tags" },
-        j = { "<cmd>GoTagRm json<Cr>", "Remove JSON tags" },
-        Y = { "<cmd>GoTagAdd yaml<Cr>", "Add YAML tags" },
-        y = { "<cmd>GoTagRm yaml<Cr>", "Remove YAML tags" },
-    },
-    d = {
-        T = { "<cmd>lua require('dap-go').debug_test()<cr>", "Debug Test" },
-    },
+    { "<leader>L", group = "Go", nowait = true, remap = false },
+    { "<leader>LA", "<cmd>GoTestsAll<Cr>", desc = "Add All Tests", nowait = true, remap = false },
+    { "<leader>LJ", "<cmd>GoTagAdd json<Cr>", desc = "Add JSON tags", nowait = true, remap = false },
+    { "<leader>LY", "<cmd>GoTagAdd yaml<Cr>", desc = "Add YAML tags", nowait = true, remap = false },
+    { "<leader>La", "<cmd>GoTestAdd<Cr>", desc = "Add Test", nowait = true, remap = false },
+    { "<leader>Le", "<cmd>GoTestsExp<Cr>", desc = "Add Exported Tests", nowait = true, remap = false },
+    { "<leader>Lf", "<cmd>GoGenerate %<Cr>", desc = "Go Generate File", nowait = true, remap = false },
+    { "<leader>Lg", "<cmd>GoGenerate<Cr>", desc = "Go Generate", nowait = true, remap = false },
+    { "<leader>Li", "<cmd>GoImpl<Cr>", desc = "Implement Interface", nowait = true, remap = false },
+    { "<leader>Lj", "<cmd>GoTagRm json<Cr>", desc = "Remove JSON tags", nowait = true, remap = false },
+    { "<leader>Lt", "<cmd>GoMod tidy<cr>", desc = "Tidy", nowait = true, remap = false },
+    { "<leader>Ly", "<cmd>GoTagRm yaml<Cr>", desc = "Remove YAML tags", nowait = true, remap = false },
+    { "<leader>dT", "<cmd>lua require('dap-go').debug_test()<cr>", desc = "Debug Test", nowait = true, remap = false },
 }
 
-which_key.register(mappings, opts)
+which_key.add(mappings)
