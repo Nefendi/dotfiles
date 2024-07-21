@@ -99,7 +99,6 @@ require("lazy").setup({
             require "user.surround"
         end,
     },
-    { "lervag/vimtex", ft = "tex" },
     {
         "mistricky/codesnap.nvim",
         build = "make",

@@ -100,6 +100,5 @@
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-kitty": { "branch": "main", "commit": "9cc594a634308aa3bfaf3da5b5e741da1c0144c1" },
   "vim-slash": { "branch": "master", "commit": "31aee09b7ea8893a18fa34f65e63e364fc998444" },
-  "vimtex": { "branch": "master", "commit": "80c9bc179784c30192d482741a43f176c859daa1" },
   "which-key.nvim": { "branch": "main", "commit": "8600b0029896ad2e36eb27a0808614ab8a0c057a" }
 }
