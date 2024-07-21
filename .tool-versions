@@ -1,7 +1,7 @@
 erlang 27.0
 elixir 1.17.0-otp-27
 golang 1.22.5
-nodejs 20.11.1
+nodejs 20.15.1
 python system
 lua 5.4.6
 zig 0.13.0
