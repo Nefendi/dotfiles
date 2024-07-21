@@ -151,6 +151,15 @@ require("lazy").setup({
         end,
     },
     {
+        "MeanderingProgrammer/markdown.nvim",
+        name = "render-markdown",
+        ft = "markdown",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require "user.render-markdown"
+        end,
+    },
+    {
         "rcarriga/nvim-notify",
         event = "VeryLazy",
         config = function()
