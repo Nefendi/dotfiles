@@ -160,6 +160,17 @@ require("lazy").setup({
         end,
     },
     {
+        "3rd/image.nvim",
+        ft = "markdown",
+        dependencies = {
+            "leafo/magick",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require "user.image"
+        end,
+    },
+    {
         "rcarriga/nvim-notify",
         event = "VeryLazy",
         config = function()
