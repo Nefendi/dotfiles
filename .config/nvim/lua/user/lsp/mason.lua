@@ -15,7 +15,7 @@ local servers = {
     "dockerls",
     "cmake",
     "taplo",
-    -- "clangd",
+    "clangd",
     "ltex",
     "texlab",
     "marksman",
