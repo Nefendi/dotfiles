@@ -22,6 +22,7 @@ telescope.setup {
             ".vscode/",
             "htmlcov/",
             ".direnv/",
+            ".cache/",
 
             -- Vim
             ".project.nvim",
