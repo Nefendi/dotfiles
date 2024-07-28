@@ -5,6 +5,9 @@ gui:
   enlargedSideViewLocation: top
   commitLength:
     show: true
+  showDivergenceFromBaseBranch: arrowAndNumber
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 3
   theme:
     activeBorderColor:
       - "#ff9e64"
