@@ -54,8 +54,7 @@ source "$HOME/.asdf/plugins/golang/set-env.zsh"
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
 # COMPLETIONS
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # ALIASES
 alias ls='eza -gF --color=always --group-directories-first --icons'
