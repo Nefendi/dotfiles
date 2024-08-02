@@ -133,7 +133,11 @@ M.on_attach = function(client, bufnr)
         return
     end
 
-    if client.server_capabilities["documentSymbolProvider"] then
+    if client.server_capabilities.documentSymbolProvider then
+        if client.name == "templ" then
+            return
+        end
+
         navic.attach(client, bufnr)
     end
 end

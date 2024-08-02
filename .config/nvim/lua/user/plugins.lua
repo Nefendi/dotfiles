@@ -501,6 +501,7 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
     { "RRethy/nvim-treesitter-endwise", event = "BufReadPost" },
     { "IndianBoy42/tree-sitter-just" },
+    { "vrischmann/tree-sitter-templ" },
 
     -- Git
     {

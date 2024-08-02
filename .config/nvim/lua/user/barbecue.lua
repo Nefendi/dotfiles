@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 barbecue.setup {
+    attach_navic = false,
     show_modified = true,
     exclude_filetypes = {
         "help",

@@ -35,6 +35,9 @@ local icons = require "user.icons"
 -- vim.api.nvim_set_hl(0, "NavicSeparator", { default = true, bg = "#2E3440", fg = "#6b737f" })
 
 navic.setup {
+    lsp = {
+        auto_attach = false,
+    },
     icons = {
         File = icons.kind.File .. " %*",
         Module = icons.kind.Module .. " %*",

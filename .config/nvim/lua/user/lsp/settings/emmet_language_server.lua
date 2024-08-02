@@ -10,6 +10,7 @@ return {
         "scss",
         "svelte",
         "pug",
+        "templ",
         "typescriptreact",
         "vue",
     },

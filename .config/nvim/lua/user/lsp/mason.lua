@@ -20,6 +20,7 @@ local servers = {
     "texlab",
     "marksman",
     "gopls",
+    "templ",
     "golangci_lint_ls",
     "rust_analyzer",
     "emmet_language_server",
