@@ -1,7 +1,14 @@
 return {
-    -- init_options = {
-    --     settings = {
-    --         path = { "$VIRTUAL_ENV/bin/ruff" },
-    --     },
-    -- },
+    -- Different command to disable the implicit --preview flag
+    cmd = { "ruff", "server" },
+    init_options = {
+        settings = {
+            lint = {
+                preview = true,
+            },
+            format = {
+                preview = false,
+            },
+        },
+    },
 }
