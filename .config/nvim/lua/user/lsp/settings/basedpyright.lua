@@ -13,6 +13,8 @@ return {
                     reportUnusedCallResult = false,
                     reportCallIssue = false,
                     reportUninitializedInstanceVariable = false,
+                    -- mypy takes care of import cycles
+                    reportImportCycles = false,
                 },
             },
         },
