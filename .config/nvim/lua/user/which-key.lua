@@ -114,6 +114,7 @@ local mappings = {
     { "<leader>dr", "<cmd>lua require'dap'.restart()<cr>", desc = "Restart", nowait = true, remap = false },
     { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", desc = "UI", nowait = true, remap = false },
     { "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", desc = "Exit", nowait = true, remap = false },
+    { "<leader>de", "<cmd>lua require'dapui'.eval()<cr>", desc = "Evaluate expression", nowait = true, remap = false },
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", nowait = true, remap = false },
     { "<leader>f", group = "Find", nowait = true, remap = false },
     { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands", nowait = true, remap = false },

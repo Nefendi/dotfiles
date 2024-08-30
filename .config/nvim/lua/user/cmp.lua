@@ -141,11 +141,10 @@ local max_width = 0
 
 cmp.setup {
     enabled = function()
-        local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-        if buftype == "prompt" then
-            return false
-        end
         return vim.g.cmp_active
+            and (
+                vim.api.nvim_get_option_value("buftype", { buf = 0 }) ~= "prompt" or require("cmp_dap").is_dap_buffer()
+            )
     end,
     preselect = cmp.PreselectMode.Item,
     snippet = {
@@ -319,3 +318,9 @@ cmp.setup {
         ghost_text = true,
     },
 }
+
+cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+    sources = {
+        { name = "dap" },
+    },
+})
