@@ -72,17 +72,27 @@ local mappings = {
     { "<leader>c", "<cmd>Bdelete!<CR>", desc = "Close Buffer", nowait = true, remap = false },
     { "<leader>d", group = "Debug", nowait = true, remap = false },
     {
-        "<leader>dB",
+        "<leader>dC",
         function()
-            local input = vim.fn.input "Enter condition: "
-            require("dap").set_breakpoint(input)
+            local condition = vim.fn.input "Condition: "
+            require("dap").set_breakpoint(condition)
         end,
         desc = "Conditional Breakpoint",
         nowait = true,
         remap = false,
     },
     {
-        "<leader>dC",
+        "<leader>dg",
+        function()
+            local log_message = vim.fn.input "Log message: "
+            require("dap").set_breakpoint(nil, nil, log_message)
+        end,
+        desc = "Logpoint",
+        nowait = true,
+        remap = false,
+    },
+    {
+        "<leader>dX",
         "<cmd>lua require'dap'.clear_breakpoints()<cr>",
         desc = "Clear Breakpoints",
         nowait = true,

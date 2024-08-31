@@ -81,10 +81,15 @@ vim.fn.sign_define(
     { text = icons.misc.Bug, texthl = "DiagnosticSignWarn", linehl = "", numhl = "" }
 )
 
-vim.api.nvim_set_hl(0, "DapBreakpointRejected", { fg = "#FFA500" })
+vim.api.nvim_set_hl(0, "DapBreakpointRejected", { fg = "#BBBBBB" })
 vim.fn.sign_define(
     "DapBreakpointRejected",
     { text = icons.misc.Bug, texthl = "DapBreakpointRejected", linehl = "", numhl = "" }
+)
+
+vim.fn.sign_define(
+    "DapLogPoint",
+    { text = icons.misc.Diamond, texthl = "DiagnosticSignError", linehl = "", numhl = "" }
 )
 
 vim.fn.sign_define("DapStopped", {

@@ -110,6 +110,7 @@ if vim.g.use_nerd_icons then
             Tree = "",
             Bug = "",
             Pencil = "",
+            Diamond = " ",
         },
     }
 else
@@ -218,6 +219,7 @@ else
             Tree = "",
             Bug = "",
             Pencil = "",
+            Diamond = " ",
         },
     }
 end
