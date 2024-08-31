@@ -388,16 +388,6 @@ require("lazy").setup({
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     { "nvimtools/none-ls.nvim" },
     {
-        "ThePrimeagen/refactoring.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        config = function()
-            require("refactoring").setup()
-        end,
-    },
-    {
         "RRethy/vim-illuminate",
         event = "BufReadPost",
         config = function()

@@ -192,15 +192,6 @@ local mappings = {
     { "<leader>lF", "<cmd>LspToggleAutoFormat<cr>", desc = "Toggle Autoformat", nowait = true, remap = false },
     { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Installer Info", nowait = true, remap = false },
     {
-        "<leader>lR",
-        function()
-            require("telescope").extensions.refactoring.refactors()
-        end,
-        desc = "Refactor",
-        nowait = true,
-        remap = false,
-    },
-    {
         "<leader>lS",
         "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
         desc = "Workspace Symbols",
@@ -432,15 +423,6 @@ local vmappings = {
         { "<leader>cS", "<cmd>CodeSnapSave<cr>", desc = "Save to File", nowait = true, remap = false },
         { "<leader>cs", "<cmd>CodeSnap<cr>", desc = "Save to Clipboard", nowait = true, remap = false },
         { "<leader>l", group = "LSP", nowait = true, remap = false },
-        {
-            "<leader>lR",
-            function()
-                require("telescope").extensions.refactoring.refactors()
-            end,
-            desc = "Refactor",
-            nowait = true,
-            remap = false,
-        },
         {
             "<leader>la",
             "<esc><cmd>lua vim.lsp.buf.code_action()<CR>",
