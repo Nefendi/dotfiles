@@ -43,3 +43,6 @@ vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append {
     stl = " ",
 }
+
+-- Annoying format on save turned on for the Zig plugin shipping with Neovim
+vim.g.zig_fmt_autosave = 0
