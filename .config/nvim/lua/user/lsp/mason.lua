@@ -55,11 +55,11 @@ local formatters = {
     "golines",
     "goimports",
     "shfmt",
-    -- "clang-format",
+    "clang-format",
     "prettier",
     "prettierd",
     -- "csharpier",
-    -- "google-java-format",
+    "google-java-format",
 }
 
 local debuggers = {
@@ -72,6 +72,7 @@ local other = {
     "gomodifytags",
     "gotests",
     "impl",
+    "iferr",
 }
 
 local tools_to_install = {}
