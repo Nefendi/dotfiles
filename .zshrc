@@ -36,12 +36,6 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 # ERG
 # export ERG_PATH="$HOME/.erg"
 
-# YOU-SHOULD-USE
-# Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
-export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 3)\
-Found existing %alias_type for $(tput setaf 5)\"%command\"$(tput setaf 3). \
-You should use: $(tput setaf 5)\"%alias\"$(tput sgr0)"
-
 # ANTIDOTE
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
