@@ -68,7 +68,8 @@ alias updatetools='
     cargo install-update -a &&
     asdf update &&
     asdf plugin-update --all &&
-    tldr --update'
+    tldr --update &&
+    (cd ~/.fzf && git pull && ./install --bin)'
 alias updateall='updatesystem && updatetools'
 
 # GHCUP
