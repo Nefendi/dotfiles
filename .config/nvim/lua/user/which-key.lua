@@ -229,6 +229,20 @@ local mappings = {
     },
     { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", nowait = true, remap = false },
     {
+        "<leader>lm",
+        "<cmd>Telescope lsp_implementations<cr>",
+        desc = "Find Implementations",
+        nowait = true,
+        remap = false,
+    },
+    {
+        "<leader>lg",
+        "<cmd>Telescope lsp_definitions<cr>",
+        desc = "Find Definitions",
+        nowait = true,
+        remap = false,
+    },
+    {
         "<leader>lj",
         "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
         desc = "Next Diagnostic",
@@ -255,6 +269,7 @@ local mappings = {
         remap = false,
         replace_keycodes = false,
     },
+    { "<leader>lR", "<cmd>Telescope lsp_references<cr>", desc = "Find Usage", nowait = true, remap = false },
     {
         "<leader>ls",
         "<cmd>Telescope lsp_document_symbols<cr>",
