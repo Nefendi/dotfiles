@@ -167,6 +167,13 @@ local mappings = {
         nowait = true,
         remap = false,
     },
+    {
+        "<leader>gh",
+        "<cmd>Gitsigns toggle_linehl<cr>",
+        desc = "Toggle Line Highlights",
+        nowait = true,
+        remap = false,
+    },
     { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout Branch", nowait = true, remap = false },
     { "<leader>gc", group = "Conflicts", nowait = true, remap = false },
     { "<leader>gcb", "<cmd>GitConflictChooseBoth<cr>", desc = "Accept Both Changes", nowait = true, remap = false },
