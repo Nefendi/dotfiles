@@ -543,6 +543,13 @@ require("lazy").setup({
     { "haydenmeade/neotest-jest" },
     { "marilari88/neotest-vitest" },
     { "jfpedroza/neotest-elixir" },
+    {
+        "andythigpen/nvim-coverage",
+        event = "VeryLazy",
+        config = function()
+            require("coverage").setup()
+        end,
+    },
 }, {
     ui = {
         border = "rounded",
