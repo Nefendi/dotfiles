@@ -15,14 +15,14 @@ end
 
 local mappings = {
     {
-        "<leader>df",
+        "<leader>dm",
         "<cmd>lua require('dap-python').test_class()<cr>",
         desc = "Test Class",
         nowait = true,
         remap = false,
     },
     {
-        "<leader>dm",
+        "<leader>dT",
         "<cmd>lua require('dap-python').test_method()<cr>",
         desc = "Test Method",
         nowait = true,
