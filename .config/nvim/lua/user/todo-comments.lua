@@ -10,6 +10,7 @@ local warning_orange = "warning"
 local hint_blue = "hint"
 local perf_purple = "#7C3AED"
 local note_yellow = "#e0af68"
+local test = "#FF00FF"
 
 todo_comments.setup {
     keywords = {
@@ -22,11 +23,12 @@ todo_comments.setup {
         HACK = { icon = icons.ui.Fire .. " ", color = warning_orange },
         WARN = { icon = icons.diagnostics.Warning .. " ", color = warning_orange, alt = { "WARNING", "XXX" } },
         PERF = {
-            icon = icons.ui.Clock .. " ",
+            icon = " ",
             color = perf_purple,
             alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "TEST" },
         },
         NOTE = { icon = icons.ui.Note .. " ", color = note_yellow, alt = { "INFO" } },
+        TEST = { icon = icons.ui.Clock .. " ", color = test, alt = { "TESTING", "PASSED", "FAILED" } },
     },
     -- highlighting of the line containing the todo comment
     -- * before: highlights before the keyword (typically comment characters)
