@@ -192,6 +192,8 @@ for _, server in pairs(servers) do
     if server == "tsserver" then
         local tsserver_opts = require "user.lsp.settings.tsserver"
         opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
+        -- XXX: Temporary workaround before mason starts supporting the new name of the server
+        server = "ts_ls"
     end
 
     if server == "emmet_language_server" then
