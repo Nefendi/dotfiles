@@ -5,3 +5,4 @@ nodejs 20.15.1
 python system
 lua 5.4.6
 zig 0.13.0
+git 2.46.0
