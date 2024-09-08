@@ -6,7 +6,7 @@ local servers = {
     "html",
     "jsonls",
     "lua_ls",
-    "tsserver",
+    "ts_ls",
     -- "pyright",
     "basedpyright",
     -- "pylyzer",
@@ -189,11 +189,9 @@ for _, server in pairs(servers) do
         goto continue
     end
 
-    if server == "tsserver" then
+    if server == "ts_ls" then
         local tsserver_opts = require "user.lsp.settings.tsserver"
         opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
-        -- XXX: Temporary workaround before mason starts supporting the new name of the server
-        server = "ts_ls"
     end
 
     if server == "emmet_language_server" then
