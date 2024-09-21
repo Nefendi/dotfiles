@@ -291,6 +291,15 @@ local mappings = {
         nowait = true,
         remap = false,
     },
+    {
+        "<leader>lV",
+        function()
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+        end,
+        desc = "Toggle Diagnostics",
+        nowait = true,
+        remap = false,
+    },
     { "<leader>n", group = "Neogen", nowait = true, remap = false },
     {
         "<leader>nF",
