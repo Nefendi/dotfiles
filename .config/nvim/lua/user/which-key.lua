@@ -276,7 +276,13 @@ local mappings = {
         remap = false,
         replace_keycodes = false,
     },
-    { "<leader>lR", "<cmd>Telescope lsp_references<cr>", desc = "Find Usage", nowait = true, remap = false },
+    {
+        "<leader>lR",
+        "<cmd>Telescope lsp_references initial_mode=normal<cr>",
+        desc = "Find Usage",
+        nowait = true,
+        remap = false,
+    },
     {
         "<leader>ls",
         "<cmd>Telescope lsp_document_symbols<cr>",
