@@ -38,6 +38,7 @@ telescope.setup {
             ".pytest_cache/",
             "__pycache__",
             ".ruff_cache/",
+            ".hypothesis/",
 
             -- Rust
             "target/",
