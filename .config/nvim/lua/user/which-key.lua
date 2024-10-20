@@ -234,7 +234,7 @@ local mappings = {
         nowait = true,
         remap = false,
     },
-    { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", nowait = true, remap = false },
+    { "<leader>li", "<cmd>che lspconfig<cr>", desc = "Info", nowait = true, remap = false },
     {
         "<leader>lm",
         "<cmd>Telescope lsp_implementations<cr>",
