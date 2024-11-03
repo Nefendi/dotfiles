@@ -561,4 +561,5 @@ require("lazy").setup({
     checker = {
         enabled = false,
     },
+    rockes = { hererocks = true },
 })
