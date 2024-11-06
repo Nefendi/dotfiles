@@ -35,6 +35,7 @@ local servers = {
     "ruff",
     "elixirls",
     "zls",
+    "ansiblels",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -48,6 +49,7 @@ local linters = {
     "buf",
     "golangci-lint",
     "mypy",
+    "ansible-lint",
 }
 
 local formatters = {
@@ -236,6 +238,11 @@ for _, server in pairs(servers) do
     if server == "zls" then
         local zls_opts = require "user.lsp.settings.zls"
         opts = vim.tbl_deep_extend("force", zls_opts, opts)
+    end
+
+    if server == "ansiblels" then
+        local ansiblels_opts = require "user.lsp.settings.ansiblels"
+        opts = vim.tbl_deep_extend("force", ansiblels_opts, opts)
     end
 
     lspconfig[server].setup(opts)
