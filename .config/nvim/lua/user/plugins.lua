@@ -551,6 +551,10 @@ require("lazy").setup({
             require("coverage").setup()
         end,
     },
+    {
+        "mfussenegger/nvim-ansible",
+        event = "VimEnter",
+    },
 }, {
     ui = {
         border = "rounded",
