@@ -37,8 +37,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Move lines
 keymap("n", "<A-j>", ":MoveLine(1)<CR>", opts)
 keymap("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
-keymap("n", "<A-h>", ":MoveHChar(-1)<CR>", opts)
-keymap("n", "<A-l>", ":MoveHChar(1)<CR>", opts)
+-- keymap("n", "<A-h>", ":MoveHChar(-1)<CR>", opts)
+-- keymap("n", "<A-l>", ":MoveHChar(1)<CR>", opts)
 -- keymap("n", "<leader>wf", ":MoveWord(1)<CR>", opts)
 -- keymap("n", "<leader>wb", ":MoveWord(-1)<CR>", opts)
 
@@ -118,8 +118,10 @@ keymap({ "n", "i", "s" }, "<c-u>", function()
 end, { silent = true, expr = true })
 
 -- Cybu
-keymap("n", "<S-h>", "<Plug>(CybuPrev)")
-keymap("n", "<S-l>", "<Plug>(CybuNext)")
+keymap("n", "<a-S-h>", "<Plug>(CybuPrev)")
+keymap("n", "<a-S-l>", "<Plug>(CybuNext)")
+keymap("n", "<s-h>", "<Plug>(CybuLastusedPrev)")
+keymap("n", "<s-l>", "<Plug>(CybuLastusedNext)")
 
 -- JABS
 -- keymap("n", "<m-b>", "<cmd>JABSOpen<cr>", opts)
