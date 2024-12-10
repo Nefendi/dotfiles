@@ -9,6 +9,7 @@ return {
                 autoSearchPaths = true,
                 diagnosticSeverityOverrides = {
                     reportAny = false,
+                    reportExplicitAny = false,
                     reportMissingSuperCall = false,
                     reportUnusedCallResult = false,
                     reportCallIssue = false,
