@@ -4,7 +4,7 @@ return {
     init_options = {
         settings = {
             lint = {
-                preview = true,
+                preview = false,
             },
             format = {
                 preview = false,
