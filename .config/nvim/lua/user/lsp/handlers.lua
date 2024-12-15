@@ -3,6 +3,10 @@ local M = {}
 local icons = require "user.icons"
 local functions = require "user.functions"
 
+-- This list is needed, because sometimes formatters provided by null-ls
+-- should be used instead of LSP formatting capabilities
+local servers_to_turn_off_formatting_capabilities = { "ts_ls", "html", "jsonls", "clangd", "csharp_ls" }
+
 M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = icons.diagnostics.Error },
@@ -57,27 +61,22 @@ end
 
 local FORMAT_ON_SAVE_ON = true
 
-M.lsp_format = function(bufnr)
+M.lsp_format = function(bufnr, client_id)
     vim.lsp.buf.format {
         filter = function(client)
-            -- This list is needed, because sometimes formatters provided by null-ls
-            -- should be used instead of LSP formatting capabilities
-            local servers_to_turn_off_formatting_capabilities = { "ts_ls", "html", "jsonls", "clangd", "csharp_ls" }
-
             return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
         end,
         bufnr = bufnr,
+        id = client_id,
         timeout_ms = 5000,
     }
 end
 
-local function lsp_format_on_save(bufnr)
+local function lsp_format_on_save(bufnr, client_id)
     if FORMAT_ON_SAVE_ON then
-        M.lsp_format(bufnr)
+        M.lsp_format(bufnr, client_id)
     end
 end
-
--- local format_on_save_augroup = vim.api.nvim_create_augroup("FormatOnSave", {})
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
@@ -91,12 +90,10 @@ M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFo
 
 M.on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
-        -- vim.api.nvim_clear_autocmds { group = format_on_save_augroup, buffer = bufnr }
         vim.api.nvim_create_autocmd("BufWritePre", {
-            -- group = format_on_save_augroup,
             buffer = bufnr,
             callback = function()
-                lsp_format_on_save(bufnr)
+                lsp_format_on_save(bufnr, client.id)
             end,
         })
     end
