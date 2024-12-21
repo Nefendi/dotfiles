@@ -72,10 +72,10 @@ alias updatetools='
     antidote update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
-    asdf update &&
     asdf plugin-update --all &&
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --bin)'
+# asdf update &&
 alias updateall='updatesystem && updatetools'
 
 # GHCUP
