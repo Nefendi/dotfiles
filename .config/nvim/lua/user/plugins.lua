@@ -486,7 +486,6 @@ require("lazy").setup({
     { "HiPhish/rainbow-delimiters.nvim", event = "BufReadPre" },
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "windwp/nvim-ts-autotag", event = "BufReadPost" },
-    { "nvim-treesitter/playground", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
     { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
     { "RRethy/nvim-treesitter-endwise", event = "BufReadPost" },
