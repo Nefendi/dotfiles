@@ -62,6 +62,15 @@ local mappings = {
         remap = false,
     },
     { "<leader>P", "<cmd>Telescope projects<cr>", desc = "Projects", nowait = true, remap = false },
+    {
+        "<leader>E",
+        function()
+            require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
+        end,
+        desc = "Edit Neovim Config",
+        nowait = true,
+        remap = false,
+    },
     { "<leader>T", group = "Treesitter", nowait = true, remap = false },
     { "<leader>Tc", "<cmd>TSContextToggle<cr>", desc = "Toggle Context", nowait = true, remap = false },
     { "<leader>Ti", "<cmd>Inspect<cr>", desc = "Inspect", nowait = true, remap = false },
