@@ -167,7 +167,7 @@ local mappings = {
         nowait = true,
         remap = false,
     },
-    { "<leader>ft", "<cmd>Telescope live_grep<cr>", desc = "Find Text", nowait = true, remap = false },
+    { "<leader>ft", require("user.multigrep").live_multigrep, desc = "Find Text", nowait = true, remap = false },
     { "<leader>g", group = "Git", nowait = true, remap = false },
     {
         "<leader>gL",
