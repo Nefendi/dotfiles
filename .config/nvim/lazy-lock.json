@@ -23,6 +23,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "abcd00a7d5bc1a9470cb21b023c575acade3e4db" },
   "glow.nvim": { "branch": "main", "commit": "238070a686c1da3bccccf1079700eb4b5e19aea4" },
   "gopher.nvim": { "branch": "main", "commit": "0ed14a40d9799ac8d92aaf9eb1cd9be22ffd6b14" },
+  "hererocks": { "branch": "master", "commit": "c9c5444dea1e07e005484014a8231aa667be30b6" },
   "image.nvim": { "branch": "master", "commit": "f1163cc2f6fff5b0de7c23c7502eee0df23a3e0e" },
   "inc-rename.nvim": { "branch": "main", "commit": "4d00cd5029e99f176128bc37ef245e2dd348191d" },
   "indent-blankline.nvim": { "branch": "master", "commit": "259357fa4097e232730341fa60988087d189193a" },
