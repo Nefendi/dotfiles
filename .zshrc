@@ -74,12 +74,15 @@ alias updatetools='
     cargo install-update -a &&
     asdf plugin-update --all &&
     tldr --update &&
-    (cd ~/.fzf && git pull && ./install --bin)'
+    (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
 # asdf update &&
 alias updateall='updatesystem && updatetools'
 
 # GHCUP
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+
+# FZF
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 # STARSHIP
 eval "$(starship init zsh)"
