@@ -10,8 +10,6 @@ PATH="$HOME/.poetry/bin:$PATH"
 # PATH="$HOME/.erg/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 
-export PATH
-
 export EDITOR="nvim"
 
 export MANPAGER="nvim +Man!"
@@ -32,6 +30,12 @@ export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {}' --preview-wind
 export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --no-ignore"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
+
+export ASDF_DATA_DIR="$HOME/.asdf"
+
+PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+export PATH
 
 # ERG
 # export ERG_PATH="$HOME/.erg"
@@ -54,6 +58,8 @@ source "$HOME/.asdf/plugins/golang/set-env.zsh"
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
 # COMPLETIONS
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 autoload -Uz compinit && compinit
 
 # ALIASES
@@ -75,7 +81,6 @@ alias updatetools='
     asdf plugin-update --all &&
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
-# asdf update &&
 alias updateall='updatesystem && updatetools'
 
 # GHCUP
