@@ -78,7 +78,7 @@ alias updatetools='
     antidote update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
-    asdf plugin-update --all &&
+    asdf plugin update --all &&
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
 alias updateall='updatesystem && updatetools'
