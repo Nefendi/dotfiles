@@ -199,6 +199,7 @@ local mappings = {
     { "<leader>gcr", "<cmd>GitConflictChooseNone<cr>", desc = "Reject Both Changes", nowait = true, remap = false },
     { "<leader>gcs", "<cmd>GitConflictListQf<cr>", desc = "Show Conflicts", nowait = true, remap = false },
     { "<leader>gd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff", nowait = true, remap = false },
+    { "<leader>gD", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Word Diff", nowait = true, remap = false },
     { "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", desc = "Lazygit", nowait = true, remap = false },
     { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line", nowait = true, remap = false },
     { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk", nowait = true, remap = false },

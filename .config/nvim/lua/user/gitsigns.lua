@@ -34,4 +34,5 @@ gitsigns.setup {
         .. " <author_time:%Y-%m-%d> "
         .. icons.misc.VerySmallDot
         .. " <summary>",
+    word_diff = false,
 }
