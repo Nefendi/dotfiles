@@ -87,7 +87,7 @@ alias updateall='updatesystem && updatetools'
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # FZF
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+# [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 # STARSHIP
 eval "$(starship init zsh)"
