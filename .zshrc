@@ -58,7 +58,7 @@ source "$HOME/.asdf/plugins/golang/set-env.zsh"
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
 # COMPLETIONS
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 autoload -Uz compinit && compinit
 
