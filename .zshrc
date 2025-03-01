@@ -57,9 +57,6 @@ source "$HOME/.asdf/plugins/golang/set-env.zsh"
 # BINDKEYS
 bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
-# COMPLETIONS
-# fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-
 autoload -Uz compinit && compinit
 
 # ALIASES
@@ -82,12 +79,6 @@ alias updatetools='
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
 alias updateall='updatesystem && updatetools'
-
-# GHCUP
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
-
-# FZF
-# [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 # STARSHIP
 eval "$(starship init zsh)"
