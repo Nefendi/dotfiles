@@ -5,7 +5,7 @@ local functions = require "user.functions"
 
 -- This list is needed, because sometimes formatters provided by null-ls
 -- should be used instead of LSP formatting capabilities
-local servers_to_turn_off_formatting_capabilities = { "ts_ls", "html", "jsonls", "clangd", "csharp_ls" }
+local servers_to_turn_off_formatting_capabilities = { "ts_ls", "html", "jsonls", "csharp_ls" }
 
 M.setup = function()
     local signs = {
