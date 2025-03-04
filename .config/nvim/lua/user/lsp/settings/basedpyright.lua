@@ -17,6 +17,10 @@ return {
                     -- mypy takes care of import cycles
                     reportImportCycles = false,
                 },
+                inlayHints = {
+                    genericTypes = true,
+                    useTypingExtensions = true,
+                },
             },
         },
     },
