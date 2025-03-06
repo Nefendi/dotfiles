@@ -13,32 +13,30 @@ telescope.setup {
         prompt_prefix = icons.ui.Telescope .. " ",
         selection_caret = icons.ui.EnterArrow .. " ",
         path_display = { "truncate" },
-        -- Some directories, e.g. Haskell's .stack-work are not ignored in when put into this array. To mitigate that
-        -- issue put the directory directly in the command line options of a search programme
         file_ignore_patterns = {
             -- General
-            ".git/",
-            ".idea/",
-            ".vscode/",
+            "%.git/",
+            "%.idea/",
+            "%.vscode/",
             "htmlcov/",
-            ".direnv/",
-            ".cache/",
+            "%.direnv/",
+            "%.cache/",
 
             -- Vim
-            ".project.nvim",
-            ".null-ls-root",
+            "%.project%.nvim",
+            "%.null%-ls%-root",
 
             -- JavaScript
             "node_modules/",
 
             -- Python
-            ".venv/",
+            "%.venv/",
             "venv/",
-            ".mypy_cache/",
-            ".pytest_cache/",
+            "%.mypy_cache/",
+            "%.pytest_cache/",
             "__pycache__",
-            ".ruff_cache/",
-            ".hypothesis/",
+            "%.ruff_cache/",
+            "%.hypothesis/",
 
             -- Rust
             "target/",
@@ -50,12 +48,15 @@ telescope.setup {
             "vendor/",
 
             -- Elixir
-            ".elixir_ls/",
+            "%.elixir_ls/",
             "_build/",
             "deps/",
 
             -- Zig
-            ".zig-cache/",
+            "%.zig%-cache/",
+
+            -- Haskell
+            "%.stack%-work/",
         },
         vimgrep_arguments = {
             "rg",
@@ -66,12 +67,6 @@ telescope.setup {
             "--column",
             "--smart-case",
             "-uu",
-            "--glob",
-            -- Haskell
-            "!.stack-work/",
-            -- Zig
-            "--glob",
-            "!.zig-cache/",
         },
         mappings = {
             i = {
@@ -95,10 +90,6 @@ telescope.setup {
                 "fd",
                 "--type=f",
                 "-uu",
-                -- Haskell
-                "--exclude=.stack-work/",
-                -- Zig
-                "--exclude=.zig-cache/",
             },
             theme = "dropdown",
             previewer = false,
