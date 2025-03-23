@@ -13,6 +13,7 @@ barbecue.setup {
         "packer",
         "neogitstatus",
         "NvimTree",
+        "oil",
         "Trouble",
         "alpha",
         "lir",

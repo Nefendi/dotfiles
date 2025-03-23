@@ -53,8 +53,8 @@ keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
 -- keymap("x", "<A-k>", ":m '<-2<CR>gv-gv", opts)
 
 -- Navigate buffers
--- keymap("n", "<S-l>", ":bnext<CR>", opts)
--- keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
 -- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -117,23 +117,11 @@ keymap({ "n", "i", "s" }, "<c-u>", function()
     end
 end, { silent = true, expr = true })
 
--- Cybu
-keymap("n", "<a-S-h>", "<Plug>(CybuPrev)")
-keymap("n", "<a-S-l>", "<Plug>(CybuNext)")
-keymap("n", "<s-h>", "<Plug>(CybuLastusedPrev)")
-keymap("n", "<s-l>", "<Plug>(CybuLastusedNext)")
-
 -- JABS
 -- keymap("n", "<m-b>", "<cmd>JABSOpen<cr>", opts)
 
 -- Jaq
 keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
-
--- Lir
-keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
-
--- NvimTree
--- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 -- keymap("n", "<m-g>", ":Telescope git_branches<CR>", opts)

@@ -34,13 +34,6 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        event = "VeryLazy",
-        config = function()
-            require "user.nvim-tree"
-        end,
-    },
-    {
         "nvim-tree/nvim-web-devicons",
         config = function()
             require("nvim-web-devicons").setup {
@@ -97,14 +90,6 @@ require("lazy").setup({
         event = "VeryLazy",
         config = function()
             require "user.surround"
-        end,
-    },
-    {
-        "mistricky/codesnap.nvim",
-        build = "make",
-        event = "VeryLazy",
-        config = function()
-            require "user.codesnap"
         end,
     },
     {
@@ -205,20 +190,6 @@ require("lazy").setup({
         end,
     },
     {
-        "ghillb/cybu.nvim",
-        event = "VeryLazy",
-        config = function()
-            require "user.cybu"
-        end,
-    },
-    {
-        "karb94/neoscroll.nvim",
-        event = "BufReadPost",
-        config = function()
-            require "user.neoscroll"
-        end,
-    },
-    {
         "is0n/jaq-nvim",
         cmd = "Jaq",
         config = function()
@@ -254,13 +225,6 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-    },
-    {
-        "tamago324/lir.nvim",
-        lazy = false,
-        config = function()
-            require "user.lir"
-        end,
     },
     { "b0o/schemastore.nvim" },
     {
@@ -553,6 +517,18 @@ require("lazy").setup({
     {
         "mfussenegger/nvim-ansible",
         event = "VimEnter",
+    },
+    {
+        "stevearc/oil.nvim",
+        ---@module 'oil'
+        ---@type oil.SetupOpts
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+        config = function()
+            require "user.oil"
+        end,
+        lazy = false,
     },
 }, {
     ui = {

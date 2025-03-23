@@ -134,7 +134,7 @@ local mappings = {
     { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", desc = "UI", nowait = true, remap = false },
     { "<leader>dx", "<cmd>lua require'dap'.terminate()<cr>", desc = "Exit", nowait = true, remap = false },
     { "<leader>de", "<cmd>lua require'dapui'.eval()<cr>", desc = "Evaluate expression", nowait = true, remap = false },
-    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", nowait = true, remap = false },
+    { "<leader>e", "<cmd>Oil<cr>", desc = "Explorer", nowait = true, remap = false },
     { "<leader>f", group = "Find", nowait = true, remap = false },
     { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands", nowait = true, remap = false },
     { "<leader>fH", "<cmd>Telescope highlights<cr>", desc = "Highlights", nowait = true, remap = false },
@@ -488,9 +488,6 @@ local vmappings = {
             nowait = true,
             remap = false,
         },
-        { "<leader>c", group = "CodeSnap", nowait = true, remap = false },
-        { "<leader>cS", "<cmd>CodeSnapSave<cr>", desc = "Save to File", nowait = true, remap = false },
-        { "<leader>cs", "<cmd>CodeSnap<cr>", desc = "Save to Clipboard", nowait = true, remap = false },
         { "<leader>l", group = "LSP", nowait = true, remap = false },
         {
             "<leader>la",
