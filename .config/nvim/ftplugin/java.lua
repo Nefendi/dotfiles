@@ -104,7 +104,7 @@ local config = {
         workspace_dir,
     },
 
-    on_attach = require("user.lsp.handlers").on_attach,
+    on_attach = require("config.lsp.handlers").on_attach,
     capabilities = capabilities,
 
     -- 💀
