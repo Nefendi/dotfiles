@@ -476,6 +476,20 @@ local mappings = {
     { "<leader>w", "<cmd>w<CR>", desc = "Write", nowait = true, remap = false },
     { "<leader>zM", desc = "<cmd>lua require('ufo').closeAllFolds<CR>", nowait = true, remap = false },
     { "<leader>zR", desc = "<cmd>lua require('ufo').openAllFolds<CR>", nowait = true, remap = false },
+    {
+        "<leader>x",
+        ":.lua<CR>",
+        desc = "Execute Lua code",
+        nowait = true,
+        remap = false,
+    },
+    {
+        "<leader>s",
+        "<cmd>source %<CR>",
+        desc = "Source file",
+        nowait = true,
+        remap = false,
+    },
 }
 
 local vmappings = {
@@ -493,6 +507,13 @@ local vmappings = {
             "<leader>la",
             "<esc><cmd>lua vim.lsp.buf.code_action()<CR>",
             desc = "Range Code Action",
+            nowait = true,
+            remap = false,
+        },
+        {
+            "<leader>x",
+            ":lua<CR>",
+            desc = "Execute Lua code",
             nowait = true,
             remap = false,
         },
