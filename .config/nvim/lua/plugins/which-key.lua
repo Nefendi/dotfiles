@@ -65,7 +65,7 @@ return {
                 },
                 { "<leader>P", "<cmd>Telescope projects<cr>", desc = "Projects", nowait = true, remap = false },
                 {
-                    "<leader>E",
+                    "<leader>C",
                     function()
                         require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
                     end,
@@ -154,7 +154,24 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                { "<leader>e", "<cmd>Oil<cr>", desc = "Explorer", nowait = true, remap = false },
+                {
+                    "<leader>e",
+                    function()
+                        require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+                    end,
+                    desc = "Open Explorer (directory of current file)",
+                    nowait = true,
+                    remap = false,
+                },
+                {
+                    "<leader>E",
+                    function()
+                        require("mini.files").open(vim.uv.cwd(), true)
+                    end,
+                    desc = "Open Explorer (current working directory)",
+                    nowait = true,
+                    remap = false,
+                },
                 { "<leader>f", group = "Find", nowait = true, remap = false },
                 { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands", nowait = true, remap = false },
                 { "<leader>fH", "<cmd>Telescope highlights<cr>", desc = "Highlights", nowait = true, remap = false },
