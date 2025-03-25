@@ -62,13 +62,6 @@ require("lazy").setup {
             lazy = false,
         },
         { "b0o/schemastore.nvim" },
-        {
-            "fedepujol/move.nvim",
-            lazy = false,
-            config = function()
-                require("move").setup {}
-            end,
-        },
         { "fladson/vim-kitty", ft = "kitty" },
         {
             "neovim/nvim-lspconfig",
