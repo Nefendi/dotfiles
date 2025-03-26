@@ -34,18 +34,16 @@ require("lazy").setup {
         },
         {
             "nvim-tree/nvim-web-devicons",
-            config = function()
-                require("nvim-web-devicons").setup {
-                    override_by_extension = {
-                        ["exs"] = {
-                            icon = "",
-                            color = "#a074c4",
-                            cterm_color = "140",
-                            name = "Exs",
-                        },
+            opts = {
+                override_by_extension = {
+                    ["exs"] = {
+                        icon = "",
+                        color = "#a074c4",
+                        cterm_color = "140",
+                        name = "Exs",
                     },
-                }
-            end,
+                },
+            },
         },
         { "moll/vim-bbye", event = "BufReadPost" },
         {

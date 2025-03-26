@@ -14,6 +14,10 @@ return {
                     enabled = true,
                     name = "crates.nvim",
                 },
+                completion = {
+                    crates = { enabled = true },
+                    cmp = { enabled = true },
+                },
             }
         end,
     },
