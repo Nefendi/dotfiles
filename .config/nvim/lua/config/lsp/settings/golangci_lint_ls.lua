@@ -4,9 +4,8 @@ return {
         command = {
             "golangci-lint",
             "run",
-            "--out-format",
-            "json",
-            "--issues-exit-code=1",
+            "--output.json.path=stdout",
+            "--show-stats=false",
         },
     },
 }
