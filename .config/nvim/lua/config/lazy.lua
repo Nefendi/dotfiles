@@ -45,7 +45,6 @@ require("lazy").setup {
                 },
             },
         },
-        { "moll/vim-bbye", event = "BufReadPost" },
         {
             "iamcco/markdown-preview.nvim",
             cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -93,6 +92,17 @@ require("lazy").setup {
         {
             "mfussenegger/nvim-ansible",
             event = "VimEnter",
+        },
+        {
+            "folke/snacks.nvim",
+            priority = 1000,
+            lazy = false,
+            ---@type snacks.Config
+            opts = {
+                bufdelete = { enabled = true },
+                image = { enabled = true },
+                picker = { enabled = true },
+            },
         },
     },
     ui = {

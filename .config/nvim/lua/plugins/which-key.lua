@@ -80,7 +80,7 @@ return {
                 { "<leader>Tr", "<cmd>TSToggle rainbow<cr>", desc = "Toggle Rainbow", nowait = true, remap = false },
                 { "<leader>a", "<cmd>wa<CR>", desc = "Write All", nowait = true, remap = false },
                 { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers", nowait = true, remap = false },
-                { "<leader>c", "<cmd>Bdelete!<CR>", desc = "Close Buffer", nowait = true, remap = false },
+                { "<leader>c", "<cmd>lua Snacks.bufdelete()<CR>", desc = "Close Buffer", nowait = true, remap = false },
                 { "<leader>d", group = "Debug", nowait = true, remap = false },
                 {
                     "<leader>dC",
@@ -193,7 +193,13 @@ return {
                     remap = false,
                 },
                 { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help", nowait = true, remap = false },
-                { "<leader>fi", "<cmd>Telescope media_files<cr>", desc = "Media", nowait = true, remap = false },
+                {
+                    "<leader>fp",
+                    "<cmd>lua Snacks.picker.files()<CR>",
+                    desc = "Files with preview",
+                    nowait = true,
+                    remap = false,
+                },
                 { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps", nowait = true, remap = false },
                 {
                     "<leader>fn",

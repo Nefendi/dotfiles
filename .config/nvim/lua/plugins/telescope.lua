@@ -7,7 +7,6 @@ return {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
             },
-            "nvim-telescope/telescope-media-files.nvim",
         },
         config = function()
             local telescope = require "telescope"
@@ -127,17 +126,12 @@ return {
                         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
                         -- the default case_mode is "smart_case"
                     },
-                    media_files = {
-                        filetypes = { "png", "webp", "jpg", "jpeg" },
-                        find_cmd = "fd",
-                    },
                 },
             }
 
             telescope.load_extension "projects"
             telescope.load_extension "notify"
             telescope.load_extension "fzf"
-            telescope.load_extension "media_files"
         end,
     },
 }
