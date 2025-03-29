@@ -133,6 +133,74 @@ require("lazy").setup {
                 dim = { enabled = true },
                 toggle = { enabled = true },
                 notifier = { enabled = true },
+                dashboard = {
+                    enabled = true,
+                    preset = {
+                        keys = {
+                            {
+                                icon = " ",
+                                key = "f",
+                                desc = "Find File",
+                                action = "<cmd> Telescope find_files <CR>",
+                            },
+                            { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                            {
+                                icon = " ",
+                                key = "p",
+                                desc = "Find Project",
+                                action = ":lua require('telescope').extensions.projects.projects()",
+                            },
+                            {
+                                icon = " ",
+                                key = "r",
+                                desc = "Recent Files",
+                                action = "<cmd> Telescope oldfiles <CR>",
+                            },
+                            {
+                                icon = " ",
+                                key = "t",
+                                desc = "Find Text",
+                                action = ":lua require('config.multigrep').live_multigrep()",
+                            },
+                            {
+                                icon = " ",
+                                key = "c",
+                                desc = "Config",
+                                action = ":lua require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }",
+                            },
+                            -- { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                            {
+                                icon = "󰒲 ",
+                                key = "L",
+                                desc = "Lazy",
+                                action = ":Lazy",
+                                enabled = package.loaded.lazy ~= nil,
+                            },
+                            { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                        },
+                    },
+                    sections = {
+                        { section = "header" },
+                        { section = "keys", gap = 1, padding = 1 },
+                        { section = "startup" },
+                        {
+                            align = "right",
+                            text = {
+                                {
+                                    [[
+
+
+I swear, by my life and my love of it,
+that I will never live for the sake of another man,
+nor ask another man to live for mine.
+
+                                       -- John Galt]],
+                                    hl = "SnacksDashboardKey",
+                                },
+                            },
+                        },
+                    },
+                },
             },
         },
     },

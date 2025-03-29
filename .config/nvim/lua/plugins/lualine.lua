@@ -377,7 +377,7 @@ return {
                 options = {
                     theme = "auto",
                     globalstatus = true,
-                    disabled_filetypes = { statusline = { "dashboard", "alpha" } },
+                    disabled_filetypes = { statusline = { "dashboard" } },
                     component_separators = hl_str("|", "SLSeparator"),
                     section_separators = { left = "", right = "" },
                 },

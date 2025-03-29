@@ -18,7 +18,6 @@ return {
                 filetypes_denylist = {
                     "dirvish",
                     "fugitive",
-                    "alpha",
                     "NvimTree",
                     "packer",
                     "neogitstatus",

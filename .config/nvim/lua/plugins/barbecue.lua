@@ -20,7 +20,6 @@ return {
                     "NvimTree",
                     "oil",
                     "Trouble",
-                    "alpha",
                     "lir",
                     "Outline",
                     "toggleterm",

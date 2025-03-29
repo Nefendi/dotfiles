@@ -91,16 +91,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     end,
 })
 
--- Remove statusline and tabline when in Alpha
-vim.api.nvim_create_autocmd({ "User" }, {
-    pattern = { "AlphaReady" },
-    callback = function()
-        vim.cmd [[
-      set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
-    ]]
-    end,
-})
-
 -- Set wrap in markdown and gitcommit
 -- vim.api.nvim_create_autocmd({ "FileType" }, {
 -- 	pattern = { "gitcommit", "markdown" },
@@ -135,10 +125,10 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- Deatch Ufo and disable folding
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "neotest-summary" },
+    pattern = { "neotest-summary", "snacks_dashboard" },
     callback = function()
         require("ufo").detach()
         vim.opt_local.foldenable = false
-        vim.wo.foldcolumn = "0"
+        vim.opt_local.foldcolumn = "0"
     end,
 })
