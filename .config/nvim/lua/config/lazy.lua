@@ -118,6 +118,7 @@ require("lazy").setup {
                         git_hl = false,
                     },
                 },
+                scroll = { enabled = true },
             },
         },
     },
