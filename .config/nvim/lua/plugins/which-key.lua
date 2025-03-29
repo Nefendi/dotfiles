@@ -512,7 +512,6 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                { "<leader>r", group = "Replace", nowait = true, remap = false },
                 { "<leader>t", group = "Test", nowait = true, remap = false },
                 {
                     "<leader>tA",
