@@ -7,7 +7,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         "lspinfo",
         "spectre_panel",
         "lir",
-        "DressingSelect",
         "null-ls-info",
         "tsplayground",
         "neotest-output",
@@ -21,14 +20,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- No numbers in lir
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "lir" },
-    callback = function()
-        vim.opt_local.number = false
-        vim.opt_local.relativenumber = false
-        vim.opt_local.statuscolumn = ""
-    end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--     pattern = { "lir" },
+--     callback = function()
+--         vim.opt_local.number = false
+--         vim.opt_local.relativenumber = false
+--         vim.opt_local.statuscolumn = ""
+--     end,
+-- })
 
 -- Set rounded border
 vim.api.nvim_create_autocmd({ "FileType" }, {

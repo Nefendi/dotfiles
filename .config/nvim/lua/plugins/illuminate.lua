@@ -27,7 +27,6 @@ return {
                     "Outline",
                     "spectre_panel",
                     "toggleterm",
-                    "DressingSelect",
                     "TelescopePrompt",
                 },
                 -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist

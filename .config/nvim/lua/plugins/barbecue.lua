@@ -27,7 +27,6 @@ return {
                     "toggleterm",
                     "gitcommit",
                     "gitrebase",
-                    "DressingSelect",
                     "Jaq",
                     "glowpreview",
                     "dap-repl",

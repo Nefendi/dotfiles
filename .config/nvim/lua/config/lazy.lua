@@ -101,7 +101,14 @@ require("lazy").setup {
             opts = {
                 bufdelete = { enabled = true },
                 image = { enabled = true },
-                picker = { enabled = true },
+                picker = {
+                    enabled = true,
+                    sources = {
+                        select = {
+                            focus = "list",
+                        },
+                    },
+                },
             },
         },
     },
