@@ -97,6 +97,14 @@ require("lazy").setup {
             "folke/snacks.nvim",
             priority = 1000,
             lazy = false,
+            init = function()
+                vim.api.nvim_create_autocmd("User", {
+                    pattern = "VeryLazy",
+                    callback = function()
+                        Snacks.toggle.dim():map "<leader>D"
+                    end,
+                })
+            end,
             ---@type snacks.Config
             opts = {
                 bufdelete = { enabled = true },
@@ -119,6 +127,8 @@ require("lazy").setup {
                     },
                 },
                 scroll = { enabled = true },
+                dim = { enabled = true },
+                toggle = { enabled = true },
             },
         },
     },
