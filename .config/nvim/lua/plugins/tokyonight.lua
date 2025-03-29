@@ -22,7 +22,6 @@ return {
                     "vista_kind",
                     "terminal",
                     "packer",
-                    "spectre_panel",
                     "NeogitStatus",
                     "help",
                 }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`

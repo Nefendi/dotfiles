@@ -513,27 +513,6 @@ return {
                     remap = false,
                 },
                 { "<leader>r", group = "Replace", nowait = true, remap = false },
-                {
-                    "<leader>rf",
-                    "<cmd>lua require('spectre').open_file_search()<cr>",
-                    desc = "Replace Buffer",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>rr",
-                    "<cmd>lua require('spectre').open()<cr>",
-                    desc = "Replace",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>rw",
-                    "<cmd>lua require('spectre').open_visual({select_word=true, is_insert_mode=false})<cr>",
-                    desc = "Replace Word",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>t", group = "Test", nowait = true, remap = false },
                 {
                     "<leader>tA",

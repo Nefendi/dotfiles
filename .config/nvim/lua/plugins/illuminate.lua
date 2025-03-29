@@ -25,7 +25,6 @@ return {
                     "Trouble",
                     "lir",
                     "Outline",
-                    "spectre_panel",
                     "toggleterm",
                     "TelescopePrompt",
                 },

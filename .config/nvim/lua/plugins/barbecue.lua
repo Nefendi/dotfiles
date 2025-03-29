@@ -23,7 +23,6 @@ return {
                     "alpha",
                     "lir",
                     "Outline",
-                    "spectre_panel",
                     "toggleterm",
                     "gitcommit",
                     "gitrebase",
