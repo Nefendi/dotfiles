@@ -109,6 +109,15 @@ require("lazy").setup {
                         },
                     },
                 },
+                statuscolumn = {
+                    enabled = true,
+                    left = { "mark", "git", "sign" },
+                    right = { "fold" },
+                    folds = {
+                        open = true,
+                        git_hl = false,
+                    },
+                },
             },
         },
     },
