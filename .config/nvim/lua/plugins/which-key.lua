@@ -203,7 +203,7 @@ return {
                 { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps", nowait = true, remap = false },
                 {
                     "<leader>fn",
-                    "<cmd>Telescope notify initial_mode=normal<cr>",
+                    "<cmd>lua Snacks.picker.notifications()<cr>",
                     desc = "Find Notifications",
                     nowait = true,
                     remap = false,

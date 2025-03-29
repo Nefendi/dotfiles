@@ -115,6 +115,9 @@ require("lazy").setup {
                         select = {
                             focus = "list",
                         },
+                        notifications = {
+                            focus = "list",
+                        },
                     },
                 },
                 statuscolumn = {
@@ -129,6 +132,7 @@ require("lazy").setup {
                 scroll = { enabled = true },
                 dim = { enabled = true },
                 toggle = { enabled = true },
+                notifier = { enabled = true },
             },
         },
     },
