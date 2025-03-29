@@ -67,4 +67,22 @@ function M.get_hl_by_name(name)
     return string.format("#%06x", ret[name.property])
 end
 
+-- Stolen from https://github.com/LazyVim/LazyVim/blob/ec5981dfb1222c3bf246d9bcaa713d5cfa486fbd/lua/lazyvim/util/ui.lua
+function M.foldexpr()
+    local buf = vim.api.nvim_get_current_buf()
+    if vim.b[buf].ts_folds == nil then
+        -- as long as we don't have a filetype, don't bother
+        -- checking if treesitter is available (it won't)
+        if vim.bo[buf].filetype == "" then
+            return "0"
+        end
+        if vim.bo[buf].filetype:find "dashboard" then
+            vim.b[buf].ts_folds = false
+        else
+            vim.b[buf].ts_folds = pcall(vim.treesitter.get_parser, buf)
+        end
+    end
+    return vim.b[buf].ts_folds and vim.treesitter.foldexpr() or "0"
+end
+
 return M

@@ -79,12 +79,6 @@ M.show_documentation = function()
         vim.cmd("Man " .. vim.fn.expand "<cword>")
     elseif vim.fn.expand "%:t" == "Cargo.toml" then
         require("crates").show_popup()
-    else
-        local winid = require("ufo").peekFoldedLinesUnderCursor()
-
-        if not winid then
-            vim.lsp.buf.hover()
-        end
     end
 end
 

@@ -40,10 +40,20 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.opt.iskeyword:append "-"
 vim.opt.relativenumber = true -- set relative numbered lines
-vim.opt.fillchars = vim.opt.fillchars + "eob: "
-vim.opt.fillchars:append {
-    stl = " ",
+vim.opt.foldcolumn = "1"
+vim.opt.fillchars = {
+    foldopen = "",
+    foldclose = "",
+    fold = " ",
+    foldsep = " ",
+    diff = "╱",
+    eob = " ",
 }
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.require'config.functions'.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.smoothscroll = true
 
 -- Annoying format on save turned on for the Zig plugin shipping with Neovim
 vim.g.zig_fmt_autosave = 0

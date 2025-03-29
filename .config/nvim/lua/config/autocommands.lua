@@ -122,13 +122,3 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
         vim.highlight.on_yank { higroup = "Visual", timeout = 200 }
     end,
 })
-
--- Deatch Ufo and disable folding
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "neotest-summary", "snacks_dashboard" },
-    callback = function()
-        require("ufo").detach()
-        vim.opt_local.foldenable = false
-        vim.opt_local.foldcolumn = "0"
-    end,
-})

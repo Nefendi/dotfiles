@@ -603,8 +603,6 @@ return {
                     remap = false,
                 },
                 { "<leader>w", "<cmd>w<CR>", desc = "Write", nowait = true, remap = false },
-                { "<leader>zM", desc = "<cmd>lua require('ufo').closeAllFolds<CR>", nowait = true, remap = false },
-                { "<leader>zR", desc = "<cmd>lua require('ufo').openAllFolds<CR>", nowait = true, remap = false },
                 {
                     "<leader>x",
                     ":.lua<CR>",
