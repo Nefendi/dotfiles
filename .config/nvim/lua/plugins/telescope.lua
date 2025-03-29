@@ -130,7 +130,6 @@ return {
             }
 
             telescope.load_extension "projects"
-            telescope.load_extension "notify"
             telescope.load_extension "fzf"
         end,
     },
