@@ -51,6 +51,9 @@ return {
                     },
                     notifications = {
                         focus = "list",
+                        layout = {
+                            preview = false,
+                        },
                     },
                 },
             },
