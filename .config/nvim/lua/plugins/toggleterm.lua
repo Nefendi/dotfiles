@@ -1,113 +1,50 @@
 return {
     {
         "akinsho/toggleterm.nvim",
-        version = "v2.*",
-        config = function()
-            local toggleterm = require "toggleterm"
-
-            toggleterm.setup {
-                size = 20,
-                open_mapping = [[<m-\>]],
-                hide_numbers = true,
-                shade_terminals = true,
-                shading_factor = 2,
-                start_in_insert = true,
-                insert_mappings = true,
-                persist_size = true,
-                direction = "float",
-                close_on_exit = true,
-                shell = vim.o.shell,
-                float_opts = {
-                    border = "curved",
-                    winblend = 0,
-                    highlights = {
-                        border = "Normal",
-                        background = "Normal",
-                    },
+        version = "*",
+        cmd = "ToggleTerm",
+        opts = {
+            open_mapping = [[<m-\>]],
+            hide_numbers = true,
+            shade_filetypes = {},
+            start_in_insert = true,
+            direction = "float",
+            close_on_exit = true,
+            float_opts = {
+                border = "curved",
+            },
+            highlights = {
+                FloatBorder = {
+                    guifg = "#27a1b9",
+                    guibg = "#16161e",
                 },
-            }
-
-            function _G.set_terminal_keymaps()
-                local opts = { noremap = true }
-                -- vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-                vim.api.nvim_buf_set_keymap(0, "t", "<m-h>", [[<C-\><C-n><C-W>h]], opts)
-                vim.api.nvim_buf_set_keymap(0, "t", "<m-j>", [[<C-\><C-n><C-W>j]], opts)
-                vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
-                vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
-            end
-
-            vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
-
-            local Terminal = require("toggleterm.terminal").Terminal
-
-            local opts = { silent = true, noremap = true }
-
-            local keymap = vim.keymap.set
-
-            -- local vertical_term = Terminal:new {
-            --     direction = "vertical",
-            --     on_open = function(term)
-            --         vim.cmd "startinsert!"
-            --         vim.api.nvim_buf_set_keymap(
-            --             term.bufnr,
-            --             "n",
-            --             "<m-v>",
-            --             "<cmd>2ToggleTerm size=80 direction=vertical<cr>",
-            --             { noremap = true, silent = true }
-            --         )
-            --         vim.api.nvim_buf_set_keymap(
-            --             term.bufnr,
-            --             "t",
-            --             "<m-v>",
-            --             "<cmd>2ToggleTerm size=80 direction=vertical<cr>",
-            --             { noremap = true, silent = true }
-            --         )
-            --         vim.api.nvim_buf_set_keymap(
-            --             term.bufnr,
-            --             "i",
-            --             "<m-v>",
-            --             "<cmd>2ToggleTerm size=80 direction=vertical<cr>",
-            --             { noremap = true, silent = true }
-            --         )
-            --         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-1>", "<nop>", { noremap = true, silent = true })
-            --         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-2>", "<nop>", { noremap = true, silent = true })
-            --         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-3>", "<nop>", { noremap = true, silent = true })
-            --         vim.api.nvim_buf_set_keymap(term.bufnr, "", "<m-4>", "<nop>", { noremap = true, silent = true })
-            --     end,
-            --     count = 5,
-            -- }
-
-            -- function _VERTICAL_TERM()
-            --     vertical_term:toggle(80)
-            -- end
-
-            keymap("n", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
-            keymap("t", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
-            keymap("i", "<m-1>", "<cmd>1ToggleTerm direction=float<cr>", opts)
-
-            keymap("n", "<m-2>", "<cmd>2ToggleTerm direction=float<cr>", opts)
-            keymap("t", "<m-2>", "<cmd>2ToggleTerm direction=float<cr>", opts)
-            keymap("i", "<m-2>", "<cmd>2ToggleTerm direction=float<cr>", opts)
-
-            keymap("n", "<m-3>", "<cmd>3ToggleTerm direction=float<cr>", opts)
-            keymap("t", "<m-3>", "<cmd>3ToggleTerm direction=float<cr>", opts)
-            keymap("i", "<m-3>", "<cmd>3ToggleTerm direction=float<cr>", opts)
-
-            keymap("n", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
-            keymap("t", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
-            keymap("i", "<m-4>", "<cmd>4ToggleTerm direction=float<cr>", opts)
-
-            -- keymap("n", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
-            -- keymap("t", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
-            -- keymap("i", "<m-2>", "<cmd>3ToggleTerm size=20 direction=horizontal | set cmdheight=1<cr>", opts)
-
-            keymap("n", "<m-v>", "<cmd>5ToggleTerm direction=vertical size=80<cr>", opts)
-            keymap("t", "<m-v>", "<cmd>5ToggleTerm direction=vertical size=80<cr>", opts)
-            keymap("i", "<m-v>", "<cmd>5ToggleTerm direction=vertical size=80<cr>", opts)
-
-            -- keymap("n", "<m-v>", "<cmd>lua _VERTICAL_TERM()<cr>", opts)
-            -- keymap("t", "<m-v>", "<cmd>lua _VERTICAL_TERM()<cr>", opts)
-            -- keymap("i", "<m-v>", "<cmd>lua _VERTICAL_TERM()<cr>", opts)
-        end,
+            },
+        },
+        keys = {
+            {
+                "<m-1>",
+                "<cmd>1ToggleTerm<cr>",
+                desc = "Toggle floating terminal 1",
+                mode = { "n", "t" },
+            },
+            {
+                "<m-2>",
+                "<cmd>2ToggleTerm<cr>",
+                desc = "Toggle floating terminal 2",
+                mode = { "n", "t" },
+            },
+            {
+                "<m-3>",
+                "<cmd>3ToggleTerm<cr>",
+                desc = "Toggle floating terminal 3",
+                mode = { "n", "t" },
+            },
+            {
+                "<m-4>",
+                "<cmd>4ToggleTerm<cr>",
+                desc = "Toggle floating terminal 4",
+                mode = { "n", "t" },
+            },
+        },
     },
 }
