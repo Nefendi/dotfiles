@@ -121,7 +121,6 @@ keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 -- keymap("n", "<leader>fn", ":Telescope notify<CR>", opts)
 
 -- Git
--- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
 
 -- Glow

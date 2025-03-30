@@ -114,6 +114,15 @@ require("lazy").setup {
                     end,
                 })
             end,
+            keys = {
+                {
+                    "<leader>gg",
+                    function()
+                        Snacks.lazygit()
+                    end,
+                    desc = "Lazygit",
+                },
+            },
             ---@type snacks.Config
             opts = {
                 bufdelete = { enabled = true },
@@ -142,6 +151,9 @@ require("lazy").setup {
                 dim = { enabled = true },
                 toggle = { enabled = true },
                 notifier = { enabled = true },
+                lazygit = {
+                    enabled = true,
+                },
                 dashboard = {
                     enabled = true,
                     preset = {

@@ -297,7 +297,6 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                { "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", desc = "Lazygit", nowait = true, remap = false },
                 { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line", nowait = true, remap = false },
                 { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk", nowait = true, remap = false },
                 { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No HL", nowait = true, remap = false },
