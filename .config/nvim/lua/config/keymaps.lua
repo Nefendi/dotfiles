@@ -79,6 +79,8 @@ M.show_documentation = function()
         vim.cmd("Man " .. vim.fn.expand "<cword>")
     elseif vim.fn.expand "%:t" == "Cargo.toml" then
         require("crates").show_popup()
+    else
+        vim.lsp.buf.hover()
     end
 end
 
