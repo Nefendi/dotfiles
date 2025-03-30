@@ -41,6 +41,7 @@ return {
                     height = 0,
                 },
             },
+            debug = { enabled = true },
             bufdelete = { enabled = true },
             image = { enabled = true },
             picker = {
@@ -71,6 +72,25 @@ return {
             toggle = { enabled = true },
             notifier = { enabled = true },
             lazygit = { enabled = true },
+            indent = {
+                enabled = true,
+                indent = {
+                    char = "╎",
+                },
+                scope = {
+                    hl = {
+                        "SnacksIndent1",
+                        "SnacksIndent2",
+                        "SnacksIndent3",
+                        "SnacksIndent4",
+                        "SnacksIndent5",
+                        "SnacksIndent6",
+                        "SnacksIndent7",
+                        "SnacksIndent8",
+                    },
+                    char = "╎",
+                },
+            },
             dashboard = {
                 enabled = true,
                 preset = {
