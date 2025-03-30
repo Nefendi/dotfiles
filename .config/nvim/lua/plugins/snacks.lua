@@ -31,6 +31,11 @@ return {
         },
         ---@type snacks.Config
         opts = {
+            styles = {
+                notification = {
+                    wo = { wrap = true },
+                },
+            },
             bufdelete = { enabled = true },
             image = { enabled = true },
             picker = {
