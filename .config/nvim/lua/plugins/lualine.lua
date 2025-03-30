@@ -266,7 +266,7 @@ return {
                         return ""
                     end
 
-                    local buf_clients = vim.lsp.get_active_clients()
+                    local buf_clients = vim.lsp.get_clients()
                     local buf_client_names = {}
 
                     for _, client in pairs(buf_clients) do
