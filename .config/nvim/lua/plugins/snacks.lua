@@ -35,6 +35,11 @@ return {
                 notification = {
                     wo = { wrap = true },
                 },
+                lazygit = {
+                    -- Fullscreen mode
+                    width = 0,
+                    height = 0,
+                },
             },
             bufdelete = { enabled = true },
             image = { enabled = true },
