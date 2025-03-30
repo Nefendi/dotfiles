@@ -8,21 +8,16 @@ local functions = require "config.functions"
 local servers_to_turn_off_formatting_capabilities = { "ts_ls", "html", "jsonls", "csharp_ls" }
 
 M.setup = function()
-    local signs = {
-        { name = "DiagnosticSignError", text = icons.diagnostics.Error },
-        { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
-        { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-        { name = "DiagnosticSignInfo", text = icons.diagnostics.Info },
-    }
-
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-    end
     local config = {
-        virtual_text = false, -- disable virtual text
+        virtual_text = false,
         virtual_lines = false,
         signs = {
-            active = signs, -- show signs
+            text = {
+                [vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
+                [vim.diagnostic.severity.WARN] = icons.diagnostics.Warning,
+                [vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
+                [vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
+            },
         },
         update_in_insert = true,
         underline = true,
