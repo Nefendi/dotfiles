@@ -28,6 +28,48 @@ return {
                 end,
                 desc = "Lazygit",
             },
+            {
+                "<leader> ",
+                function()
+                    Snacks.picker.files()
+                end,
+                desc = "Find Files",
+            },
+            {
+                "<leader>C",
+                function()
+                    Snacks.picker.files { cwd = vim.fn.stdpath "config" }
+                end,
+                desc = "Find Config File",
+            },
+            {
+                "<leader>P",
+                function()
+                    Snacks.picker.projects()
+                end,
+                desc = "Projects",
+            },
+            {
+                "<leader>b",
+                function()
+                    Snacks.picker.buffers()
+                end,
+                desc = "Buffers",
+            },
+            {
+                "<leader>lR",
+                function()
+                    Snacks.picker.lsp_references()
+                end,
+                desc = "References",
+            },
+            -- {
+            --     "gd",
+            --     function()
+            --         Snacks.picker.lsp_definitions()
+            --     end,
+            --     desc = "Goto Definition",
+            -- },
         },
         ---@type snacks.Config
         opts = {
@@ -54,6 +96,87 @@ return {
                         focus = "list",
                         layout = {
                             preview = false,
+                        },
+                    },
+                    projects = {
+                        dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories/" },
+                        patterns = {
+                            ".git",
+                            "_darcs",
+                            ".hg",
+                            ".bzr",
+                            ".svn",
+                            "package.json",
+                            "go.mod",
+                            "Cargo.toml",
+                            "stack.yaml",
+                            "mix.exs",
+                            -- Custom marker file
+                            ".project.nvim",
+                        },
+                    },
+                    buffers = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    lsp_references = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    lsp_definitions = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    files = {
+                        hidden = true,
+                        ignored = true,
+                        exclude = {
+                            -- General
+                            ".git/",
+                            ".idea/",
+                            ".vscode/",
+                            "htmlcov/",
+                            ".direnv/",
+                            ".cache/",
+
+                            -- Vim
+                            ".project.nvim",
+                            ".null-ls-root",
+
+                            -- JavaScript
+                            "node_modules/",
+
+                            -- Python
+                            ".venv/",
+                            "venv/",
+                            ".mypy_cache/",
+                            ".pytest_cache/",
+                            "__pycache__",
+                            ".ruff_cache/",
+                            ".hypothesis/",
+
+                            -- Rust
+                            "target/",
+
+                            -- C#
+                            "obj/",
+
+                            -- PHP
+                            "vendor/",
+
+                            -- Elixir
+                            ".elixir_ls/",
+                            "_build/",
+                            "deps/",
+
+                            -- Zig
+                            ".zig-cache/",
+
+                            -- Haskell
+                            ".stack-work/",
                         },
                     },
                 },
@@ -99,14 +222,14 @@ return {
                             icon = " ",
                             key = "f",
                             desc = "Find File",
-                            action = "<cmd> Telescope find_files <CR>",
+                            action = ":lua Snacks.picker.files()",
                         },
                         { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                         {
                             icon = " ",
                             key = "p",
                             desc = "Find Project",
-                            action = ":lua require('telescope').extensions.projects.projects()",
+                            action = ":lua Snacks.picker.projects()",
                         },
                         {
                             icon = " ",
@@ -124,7 +247,7 @@ return {
                             icon = " ",
                             key = "c",
                             desc = "Config",
-                            action = ":lua require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }",
+                            action = ":lua Snacks.picker.files { cwd = vim.fn.stdpath 'config' } ",
                         },
                         -- { icon = " ", key = "s", desc = "Restore Session", section = "session" },
                         {

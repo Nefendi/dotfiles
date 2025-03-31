@@ -55,21 +55,10 @@ return {
             }
 
             local mappings = {
-                { "<leader> ", "<cmd>Telescope find_files<cr>", desc = "Find Files", nowait = true, remap = false },
                 {
                     "<leader>/",
                     '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
                     desc = "Comment",
-                    nowait = true,
-                    remap = false,
-                },
-                { "<leader>P", "<cmd>Telescope projects<cr>", desc = "Projects", nowait = true, remap = false },
-                {
-                    "<leader>C",
-                    function()
-                        require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
-                    end,
-                    desc = "Edit Neovim Config",
                     nowait = true,
                     remap = false,
                 },
@@ -79,7 +68,6 @@ return {
                 { "<leader>Tt", "<cmd>InspectTree<cr>", desc = "Inspect Tree", nowait = true, remap = false },
                 { "<leader>Tr", "<cmd>TSToggle rainbow<cr>", desc = "Toggle Rainbow", nowait = true, remap = false },
                 { "<leader>a", "<cmd>wa<CR>", desc = "Write All", nowait = true, remap = false },
-                { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers", nowait = true, remap = false },
                 { "<leader>c", "<cmd>lua Snacks.bufdelete()<CR>", desc = "Close Buffer", nowait = true, remap = false },
                 { "<leader>d", group = "Debug", nowait = true, remap = false },
                 {
@@ -405,13 +393,6 @@ return {
                     nowait = true,
                     remap = false,
                     replace_keycodes = false,
-                },
-                {
-                    "<leader>lR",
-                    "<cmd>Telescope lsp_references initial_mode=normal<cr>",
-                    desc = "Find Usage",
-                    nowait = true,
-                    remap = false,
                 },
                 {
                     "<leader>ls",
