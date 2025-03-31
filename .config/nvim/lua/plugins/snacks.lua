@@ -63,13 +63,105 @@ return {
                 end,
                 desc = "References",
             },
-            -- {
-            --     "gd",
-            --     function()
-            --         Snacks.picker.lsp_definitions()
-            --     end,
-            --     desc = "Goto Definition",
-            -- },
+            {
+                "gd",
+                function()
+                    Snacks.picker.lsp_definitions()
+                end,
+                desc = "Goto Definition",
+            },
+            {
+                "<leader>fc",
+                function()
+                    Snacks.picker.commands()
+                end,
+                desc = "Commands",
+            },
+            {
+                "<leader>fH",
+                function()
+                    Snacks.picker.highlights()
+                end,
+                desc = "Highlights",
+            },
+            {
+                "<leader>fM",
+                function()
+                    Snacks.picker.man()
+                end,
+                desc = "Man Pages",
+            },
+            {
+                '<leader>f"',
+                function()
+                    Snacks.picker.registers()
+                end,
+                desc = "Registers",
+            },
+            {
+                "<leader>fw",
+                function()
+                    Snacks.picker.grep_word()
+                end,
+                desc = "Visual selection or word",
+                mode = { "n", "x" },
+            },
+            {
+                "<leader>fC",
+                function()
+                    Snacks.picker.colorschemes()
+                end,
+                desc = "Colorschemes",
+            },
+            {
+                "<leader>fb",
+                function()
+                    Snacks.picker.lines()
+                end,
+                desc = "Buffer Lines",
+            },
+            {
+                "<leader>fh",
+                function()
+                    Snacks.picker.help()
+                end,
+                desc = "Help Pages",
+            },
+            {
+                "<leader>fk",
+                function()
+                    Snacks.picker.keymaps()
+                end,
+                desc = "Keymaps",
+            },
+            {
+                "<leader>fn",
+                function()
+                    Snacks.picker.notifications()
+                end,
+                desc = "Notification History",
+            },
+            {
+                "<leader>fr",
+                function()
+                    Snacks.picker.recent()
+                end,
+                desc = "Recent Files",
+            },
+            {
+                "<leader>fs",
+                function()
+                    Snacks.picker.todo_comments()
+                end,
+                desc = "Todo",
+            },
+            {
+                "<leader>fg",
+                function()
+                    Snacks.picker.grep()
+                end,
+                desc = "Grep",
+            },
         },
         ---@type snacks.Config
         opts = {
@@ -99,7 +191,7 @@ return {
                         },
                     },
                     projects = {
-                        dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories/" },
+                        dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories" },
                         patterns = {
                             ".git",
                             "_darcs",
@@ -116,6 +208,13 @@ return {
                         },
                     },
                     buffers = {
+                        win = {
+                            input = {
+                                keys = {
+                                    ["dd"] = { "bufdelete", mode = { "n" } },
+                                },
+                            },
+                        },
                         on_show = function(_picker)
                             vim.cmd "stopinsert"
                         end,
@@ -126,6 +225,22 @@ return {
                         end,
                     },
                     lsp_definitions = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    grep = { hidden = true, ignored = true },
+                    grep_word = { hidden = true, ignored = true },
+                    lines = {
+                        layout = {
+                            -- The default ivy setting is great, but it messes up barbecue
+                            preset = "default",
+                            preview = "preview",
+                        },
+                    },
+                    todo_comments = {
+                        hidden = true,
+                        ignored = true,
                         on_show = function(_picker)
                             vim.cmd "stopinsert"
                         end,
@@ -235,13 +350,13 @@ return {
                             icon = " ",
                             key = "r",
                             desc = "Recent Files",
-                            action = "<cmd> Telescope oldfiles <CR>",
+                            action = ":lua Snacks.picker.recent()",
                         },
                         {
                             icon = " ",
                             key = "t",
                             desc = "Find Text",
-                            action = ":lua require('config.multigrep').live_multigrep()",
+                            action = ":lua Snacks.picker.grep()",
                         },
                         {
                             icon = " ",
