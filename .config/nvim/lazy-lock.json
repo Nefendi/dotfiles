@@ -82,8 +82,8 @@
   "tree-sitter-templ": { "branch": "master", "commit": "7f7f06b3931ca00e8ddfbeab3fc08ad00d297fad" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "b24b97c538b71b6de0ce9d84e47df27b6ecafd76" },
   "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" },
+  "vim-cool": { "branch": "master", "commit": "9ea940c0d537e55de0de4c0298c04b976960fb12" },
   "vim-illuminate": { "branch": "master", "commit": "19cb21f513fc2b02f0c66be70107741e837516a1" },
   "vim-kitty": { "branch": "main", "commit": "cb2ecc9a08638c20f22dade37683a3e8e1ba657b" },
-  "vim-slash": { "branch": "master", "commit": "31aee09b7ea8893a18fa34f65e63e364fc998444" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
