@@ -78,7 +78,6 @@
   "tree-sitter-just": { "branch": "main", "commit": "bb0c898a80644de438e6efe5d88d30bf092935cd" },
   "tree-sitter-templ": { "branch": "master", "commit": "7f7f06b3931ca00e8ddfbeab3fc08ad00d297fad" },
   "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "b24b97c538b71b6de0ce9d84e47df27b6ecafd76" },
-  "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" },
   "vim-cool": { "branch": "master", "commit": "9ea940c0d537e55de0de4c0298c04b976960fb12" },
   "vim-illuminate": { "branch": "master", "commit": "19cb21f513fc2b02f0c66be70107741e837516a1" },
   "vim-kitty": { "branch": "main", "commit": "cb2ecc9a08638c20f22dade37683a3e8e1ba657b" },

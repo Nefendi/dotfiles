@@ -458,13 +458,6 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                {
-                    "<leader>u",
-                    '<cmd>lua require("undotree").toggle()<cr>',
-                    desc = "Undotree",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>w", "<cmd>w<CR>", desc = "Write", nowait = true, remap = false },
                 {
                     "<leader>x",

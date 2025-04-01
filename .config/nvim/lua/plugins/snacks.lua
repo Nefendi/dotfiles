@@ -57,6 +57,13 @@ return {
                 desc = "Buffers",
             },
             {
+                "<leader>u",
+                function()
+                    Snacks.picker.undo()
+                end,
+                desc = "Undo History",
+            },
+            {
                 "gr",
                 function()
                     Snacks.picker.lsp_references()
@@ -242,6 +249,7 @@ return {
             bufdelete = { enabled = true },
             image = { enabled = true },
             explorer = { enabled = true },
+            undo = { enabled = true },
             picker = {
                 enabled = true,
                 exclude = {
@@ -302,6 +310,11 @@ return {
                     explorer = {
                         hidden = true,
                         ignored = true,
+                    },
+                    undo = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
                     },
                     projects = {
                         dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories" },
