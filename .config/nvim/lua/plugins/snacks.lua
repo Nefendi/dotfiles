@@ -188,6 +188,51 @@ return {
             explorer = { enabled = true },
             picker = {
                 enabled = true,
+                exclude = {
+                    -- General
+                    ".git/",
+                    ".idea/",
+                    ".vscode/",
+                    "htmlcov/",
+                    ".direnv/",
+                    ".cache/",
+
+                    -- Vim
+                    ".project.nvim",
+                    ".null-ls-root",
+
+                    -- JavaScript
+                    "node_modules/",
+
+                    -- Python
+                    ".venv/",
+                    "venv/",
+                    ".mypy_cache/",
+                    ".pytest_cache/",
+                    "__pycache__",
+                    ".ruff_cache/",
+                    ".hypothesis/",
+
+                    -- Rust
+                    "target/",
+
+                    -- C#
+                    "obj/",
+
+                    -- PHP
+                    "vendor/",
+
+                    -- Elixir
+                    ".elixir_ls/",
+                    "_build/",
+                    "deps/",
+
+                    -- Zig
+                    ".zig-cache/",
+
+                    -- Haskell
+                    ".stack-work/",
+                },
                 sources = {
                     select = {
                         focus = "list",
@@ -260,51 +305,6 @@ return {
                     files = {
                         hidden = true,
                         ignored = true,
-                        exclude = {
-                            -- General
-                            ".git/",
-                            ".idea/",
-                            ".vscode/",
-                            "htmlcov/",
-                            ".direnv/",
-                            ".cache/",
-
-                            -- Vim
-                            ".project.nvim",
-                            ".null-ls-root",
-
-                            -- JavaScript
-                            "node_modules/",
-
-                            -- Python
-                            ".venv/",
-                            "venv/",
-                            ".mypy_cache/",
-                            ".pytest_cache/",
-                            "__pycache__",
-                            ".ruff_cache/",
-                            ".hypothesis/",
-
-                            -- Rust
-                            "target/",
-
-                            -- C#
-                            "obj/",
-
-                            -- PHP
-                            "vendor/",
-
-                            -- Elixir
-                            ".elixir_ls/",
-                            "_build/",
-                            "deps/",
-
-                            -- Zig
-                            ".zig-cache/",
-
-                            -- Haskell
-                            ".stack-work/",
-                        },
                     },
                 },
             },
