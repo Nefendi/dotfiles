@@ -54,10 +54,6 @@ require("lazy").setup {
             ft = "markdown",
         },
         { "kevinhwang91/nvim-bqf", ft = "qf" },
-        {
-            "junegunn/fzf",
-            lazy = false,
-        },
         { "b0o/schemastore.nvim" },
         { "fladson/vim-kitty", ft = "kitty" },
         {

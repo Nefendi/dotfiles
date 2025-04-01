@@ -107,21 +107,6 @@ end, { silent = true, expr = true })
 -- Jaq
 keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 
--- Telescope
--- keymap("n", "<m-g>", ":Telescope git_branches<CR>", opts)
--- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
--- keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
--- keymap("n", "<leader>fT", ":Telescope grep_string<CR>", opts)
--- keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
--- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
--- keymap("n", "<leader>fd", ":Telescope diagnostics bufnr=0<CR>", opts)
--- keymap("n", "<leader>fD", ":Telescope diagnostics<CR>", opts)
--- keymap("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>", opts)
--- keymap("n", "<leader>fS", ":Telescope lsp_dynamic_workspace_symbols<CR>", opts)
--- keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
--- keymap("n", "<leader>fR", ":Telescope registers<CR>", opts)
--- keymap("n", "<leader>fn", ":Telescope notify<CR>", opts)
-
 -- Git
 -- keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
 

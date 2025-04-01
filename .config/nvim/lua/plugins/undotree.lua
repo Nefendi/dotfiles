@@ -14,7 +14,6 @@ return {
                     "Undotree",
                     "UndotreeDiff",
                     "qf",
-                    "TelescopePrompt",
                     "tsplayground",
                 },
                 window = {

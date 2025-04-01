@@ -158,13 +158,6 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                {
-                    "<leader>gb",
-                    "<cmd>Telescope git_branches<cr>",
-                    desc = "Checkout Branch",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>gc", group = "Conflicts", nowait = true, remap = false },
                 {
                     "<leader>gcb",
@@ -222,13 +215,6 @@ return {
                 { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No HL", nowait = true, remap = false },
                 { "<leader>l", group = "LSP", nowait = true, remap = false },
                 {
-                    "<leader>lD",
-                    "<cmd>Telescope diagnostics<cr>",
-                    desc = "Workspace Diagnostics",
-                    nowait = true,
-                    remap = false,
-                },
-                {
                     "<leader>lF",
                     "<cmd>LspToggleAutoFormat<cr>",
                     desc = "Toggle Autoformat",
@@ -236,13 +222,6 @@ return {
                     remap = false,
                 },
                 { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Installer Info", nowait = true, remap = false },
-                {
-                    "<leader>lS",
-                    "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-                    desc = "Workspace Symbols",
-                    nowait = true,
-                    remap = false,
-                },
                 {
                     "<leader>la",
                     "<cmd>lua vim.lsp.buf.code_action()<cr>",
@@ -254,13 +233,6 @@ return {
                     "<leader>lc",
                     "<cmd>lua require('config.lsp').server_capabilities()<cr>",
                     desc = "Get Capabilities",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>ld",
-                    "<cmd>Telescope diagnostics bufnr=0<cr>",
-                    desc = "Document Diagnostics",
                     nowait = true,
                     remap = false,
                 },
@@ -279,20 +251,6 @@ return {
                     remap = false,
                 },
                 { "<leader>li", "<cmd>che lspconfig<cr>", desc = "Info", nowait = true, remap = false },
-                {
-                    "<leader>lm",
-                    "<cmd>Telescope lsp_implementations<cr>",
-                    desc = "Find Implementations",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>lg",
-                    "<cmd>Telescope lsp_definitions<cr>",
-                    desc = "Find Definitions",
-                    nowait = true,
-                    remap = false,
-                },
                 {
                     "<leader>lj",
                     "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
@@ -325,13 +283,6 @@ return {
                     nowait = true,
                     remap = false,
                     replace_keycodes = false,
-                },
-                {
-                    "<leader>ls",
-                    "<cmd>Telescope lsp_document_symbols<cr>",
-                    desc = "Document Symbols",
-                    nowait = true,
-                    remap = false,
                 },
                 {
                     "<leader>lv",

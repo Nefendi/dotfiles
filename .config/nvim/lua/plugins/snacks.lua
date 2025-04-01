@@ -57,7 +57,7 @@ return {
                 desc = "Buffers",
             },
             {
-                "<leader>lR",
+                "gr",
                 function()
                     Snacks.picker.lsp_references()
                 end,
@@ -69,6 +69,27 @@ return {
                     Snacks.picker.lsp_definitions()
                 end,
                 desc = "Goto Definition",
+            },
+            {
+                "gD",
+                function()
+                    Snacks.picker.lsp_declarations()
+                end,
+                desc = "Goto Declaration",
+            },
+            {
+                "gI",
+                function()
+                    Snacks.picker.lsp_implementations()
+                end,
+                desc = "Goto Implementation",
+            },
+            {
+                "gy",
+                function()
+                    Snacks.picker.lsp_type_definitions()
+                end,
+                desc = "Goto T[y]pe Definition",
             },
             {
                 "<leader>.",
@@ -168,6 +189,41 @@ return {
                     Snacks.picker.grep()
                 end,
                 desc = "Grep",
+            },
+            {
+                "<leader>gb",
+                function()
+                    Snacks.picker.git_branches()
+                end,
+                desc = "Git Branches",
+            },
+            {
+                "<leader>lD",
+                function()
+                    Snacks.picker.diagnostics()
+                end,
+                desc = "Diagnostics",
+            },
+            {
+                "<leader>ld",
+                function()
+                    Snacks.picker.diagnostics_buffer()
+                end,
+                desc = "Buffer Diagnostics",
+            },
+            {
+                "<leader>ls",
+                function()
+                    Snacks.picker.lsp_symbols()
+                end,
+                desc = "LSP Symbols",
+            },
+            {
+                "<leader>lS",
+                function()
+                    Snacks.picker.lsp_workspace_symbols()
+                end,
+                desc = "LSP Workspace Symbols",
             },
         },
         ---@type snacks.Config
@@ -282,6 +338,21 @@ return {
                         end,
                     },
                     lsp_definitions = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    lsp_declarations = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    lsp_type_definitions = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    lsp_implementations = {
                         on_show = function(_picker)
                             vim.cmd "stopinsert"
                         end,

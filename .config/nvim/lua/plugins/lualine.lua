@@ -153,10 +153,6 @@ return {
                         "neotest-attach",
                     }
 
-                    if str == "TelescopePrompt" then
-                        return icons.ui.Telescope
-                    end
-
                     local function get_term_num()
                         local t_status_ok, toggle_num = pcall(vim.api.nvim_buf_get_var, 0, "toggle_number")
                         if not t_status_ok then
@@ -256,7 +252,6 @@ return {
                         "lir",
                         "Outline",
                         "toggleterm",
-                        "TelescopePrompt",
                         "lspinfo",
                         "lsp-installer",
                         "",
