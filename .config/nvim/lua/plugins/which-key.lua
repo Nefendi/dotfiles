@@ -142,24 +142,6 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                {
-                    "<leader>e",
-                    function()
-                        require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
-                    end,
-                    desc = "Open Explorer (directory of current file)",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>E",
-                    function()
-                        require("mini.files").open(vim.uv.cwd(), true)
-                    end,
-                    desc = "Open Explorer (current working directory)",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>f", desc = "Find" },
                 { "<leader>g", group = "Git", nowait = true, remap = false },
                 {
