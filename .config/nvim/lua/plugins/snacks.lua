@@ -71,6 +71,13 @@ return {
                 desc = "Goto Definition",
             },
             {
+                "<leader>.",
+                function()
+                    Snacks.explorer()
+                end,
+                desc = "File Explorer",
+            },
+            {
                 "<leader>fc",
                 function()
                     Snacks.picker.commands()
@@ -178,6 +185,7 @@ return {
             debug = { enabled = true },
             bufdelete = { enabled = true },
             image = { enabled = true },
+            explorer = { enabled = true },
             picker = {
                 enabled = true,
                 sources = {
@@ -189,6 +197,10 @@ return {
                         layout = {
                             preview = false,
                         },
+                    },
+                    explorer = {
+                        hidden = true,
+                        ignored = true,
                     },
                     projects = {
                         dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories" },
