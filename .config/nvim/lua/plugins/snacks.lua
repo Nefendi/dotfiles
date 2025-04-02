@@ -309,7 +309,6 @@ return {
                     },
                     explorer = {
                         hidden = true,
-                        ignored = true,
                     },
                     undo = {
                         on_show = function(_picker)
@@ -370,8 +369,36 @@ return {
                             vim.cmd "stopinsert"
                         end,
                     },
-                    grep = { hidden = true, ignored = true },
-                    grep_word = { hidden = true, ignored = true },
+                    grep = {
+                        hidden = true,
+                        win = {
+                            input = {
+                                keys = {
+                                    ["<a-r>"] = { "toggle_regex", mode = { "i", "n" } },
+                                },
+                            },
+                            list = {
+                                keys = {
+                                    ["<a-r>"] = { "toggle_regex", mode = { "i", "n" } },
+                                },
+                            },
+                        },
+                    },
+                    grep_word = {
+                        hidden = true,
+                        win = {
+                            input = {
+                                keys = {
+                                    ["<a-r>"] = { "toggle_regex", mode = { "i", "n" } },
+                                },
+                            },
+                            list = {
+                                keys = {
+                                    ["<a-r>"] = { "toggle_regex", mode = { "i", "n" } },
+                                },
+                            },
+                        },
+                    },
                     lines = {
                         layout = {
                             -- The default ivy setting is great, but it messes up barbecue
@@ -381,14 +408,12 @@ return {
                     },
                     todo_comments = {
                         hidden = true,
-                        ignored = true,
                         on_show = function(_picker)
                             vim.cmd "stopinsert"
                         end,
                     },
                     files = {
                         hidden = true,
-                        ignored = true,
                     },
                 },
             },
