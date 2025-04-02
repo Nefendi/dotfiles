@@ -29,6 +29,13 @@ return {
                 desc = "Lazygit",
             },
             {
+                "<leader>gr",
+                function()
+                    Snacks.gitbrowse()
+                end,
+                desc = "Repo Website",
+            },
+            {
                 "<leader> ",
                 function()
                     Snacks.picker.files()
@@ -251,6 +258,7 @@ return {
             explorer = { enabled = true },
             undo = { enabled = true },
             bigfile = { enabled = true },
+            gitbrowse = { enabled = true },
             picker = {
                 enabled = true,
                 exclude = {
