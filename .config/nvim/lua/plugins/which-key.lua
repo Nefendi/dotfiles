@@ -55,13 +55,6 @@ return {
             }
 
             local mappings = {
-                {
-                    "<leader>/",
-                    '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
-                    desc = "Comment",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>T", group = "Treesitter", nowait = true, remap = false },
                 { "<leader>Tc", "<cmd>TSContextToggle<cr>", desc = "Toggle Context", nowait = true, remap = false },
                 { "<leader>Ti", "<cmd>Inspect<cr>", desc = "Inspect", nowait = true, remap = false },
@@ -477,14 +470,6 @@ return {
 
             local vmappings = {
                 {
-                    mode = { "v" },
-                    {
-                        "<leader>/",
-                        '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',
-                        desc = "Comment",
-                        nowait = true,
-                        remap = false,
-                    },
                     { "<leader>l", group = "LSP", nowait = true, remap = false },
                     {
                         "<leader>la",
