@@ -7,6 +7,7 @@ return {
             "rcarriga/nvim-dap-ui",
             "rcarriga/cmp-dap",
             "LiadOz/nvim-dap-repl-highlights",
+            "theHamsta/nvim-dap-virtual-text",
         },
         config = function()
             local dap = require "dap"
