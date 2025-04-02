@@ -250,6 +250,7 @@ return {
             image = { enabled = true },
             explorer = { enabled = true },
             undo = { enabled = true },
+            bigfile = { enabled = true },
             picker = {
                 enabled = true,
                 exclude = {
