@@ -2,47 +2,37 @@ return {
     {
         "RRethy/vim-illuminate",
         event = "BufReadPost",
-        config = function()
-            local illuminate = require "illuminate"
+        opts = {
+            delay = 200,
+            large_file_cutoff = 2000,
+            large_file_overrides = {
+                providers = { "lsp", "treesitter", "regex" },
+            },
+        },
+        config = function(_, opts)
+            require("illuminate").configure(opts)
 
-            illuminate.configure {
-                -- providers: provider used to get references in the buffer, ordered by priority
-                providers = {
-                    "lsp",
-                    "treesitter",
-                    "regex",
-                },
-                -- delay: delay in milliseconds
-                delay = 120,
-                -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
-                filetypes_denylist = {
-                    "dirvish",
-                    "fugitive",
-                    "NvimTree",
-                    "packer",
-                    "neogitstatus",
-                    "Trouble",
-                    "lir",
-                    "Outline",
-                    "toggleterm",
-                },
-                -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
-                filetypes_allowlist = {},
-                -- modes_denylist: modes to not illuminate, this overrides modes_allowlist
-                modes_denylist = {},
-                -- modes_allowlist: modes to illuminate, this is overriden by modes_denylist
-                modes_allowlist = {},
-                -- providers_regex_syntax_denylist: syntax to not illuminate, this overrides providers_regex_syntax_allowlist
-                -- Only applies to the 'regex' provider
-                -- Use :echom synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
-                providers_regex_syntax_denylist = {},
-                -- providers_regex_syntax_allowlist: syntax to illuminate, this is overriden by providers_regex_syntax_denylist
-                -- Only applies to the 'regex' provider
-                -- Use :echom synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
-                providers_regex_syntax_allowlist = {},
-                -- under_cursor: whether or not to illuminate under the cursor
-                under_cursor = true,
-            }
+            local function map(key, dir, buffer)
+                vim.keymap.set("n", key, function()
+                    require("illuminate")["goto_" .. dir .. "_reference"](true)
+                end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+            end
+
+            map("<a-n>", "next")
+            map("<a-p>", "prev")
+
+            -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    local buffer = vim.api.nvim_get_current_buf()
+                    map("<a-n>", "next", buffer)
+                    map("<a-p>", "prev", buffer)
+                end,
+            })
         end,
+        keys = {
+            { "<a-n>", desc = "Next Reference" },
+            { "<a-p>", desc = "Prev Reference" },
+        },
     },
 }
