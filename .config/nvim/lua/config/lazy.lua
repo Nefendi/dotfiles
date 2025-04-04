@@ -70,7 +70,7 @@ require("lazy").setup {
         { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
         {
             "mrcjkb/rustaceanvim",
-            version = "^5",
+            version = "^6",
             ft = { "rust" },
         },
         {
