@@ -76,8 +76,9 @@ return {
             },
             cmdline = {
                 keymap = {
-                    ["<Tab>"] = { "accept" },
-                    ["<CR>"] = { "accept_and_enter", "fallback" },
+                    ["<Tab>"] = { "select_next", "fallback" },
+                    ["<S-Tab>"] = { "select_prev", "fallback" },
+                    ["<CR>"] = { "accept", "fallback" },
                     ["<C-j>"] = { "select_next", "fallback" },
                     ["<C-k>"] = { "select_prev", "fallback" },
                 },
@@ -88,6 +89,11 @@ return {
                 },
             },
             completion = {
+                accept = {
+                    auto_brackets = {
+                        enabled = true,
+                    },
+                },
                 trigger = {
                     show_on_blocked_trigger_characters = function(ctx)
                         local default = { " ", "\n", "\t" }
