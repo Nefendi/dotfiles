@@ -54,9 +54,6 @@ local FORMAT_ON_SAVE_ON = true
 
 M.lsp_format = function(bufnr, client_id)
     vim.lsp.buf.format {
-        filter = function(client)
-            return not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
-        end,
         bufnr = bufnr,
         id = client_id,
         timeout_ms = 5000,
@@ -77,7 +74,10 @@ M.capabilities = blink_cmp.get_lsp_capabilities(M.capabilities)
 M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
 
 M.on_attach = function(client, bufnr)
-    if client.supports_method "textDocument/formatting" then
+    if
+        not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
+        and (client.supports_method "textDocument/formatting" or client.supports_method "textDocument/rangeFormatting")
+    then
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
             callback = function()
