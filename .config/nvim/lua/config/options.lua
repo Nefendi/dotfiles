@@ -1,4 +1,5 @@
 vim.g.maplocalleader = "\\"
+vim.opt.inccommand = "split"
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 -- noice.nvim hijacks cmdheight and sets it always to 0

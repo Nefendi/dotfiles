@@ -269,13 +269,11 @@ return {
                 {
                     "<leader>lr",
                     function()
-                        return ":Rename " .. vim.fn.expand "<cword>"
+                        local inc_rename = require "inc_rename"
+                        return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand "<cword>"
                     end,
                     desc = "Rename",
                     expr = true,
-                    nowait = true,
-                    remap = false,
-                    replace_keycodes = false,
                 },
                 {
                     "<leader>lv",
