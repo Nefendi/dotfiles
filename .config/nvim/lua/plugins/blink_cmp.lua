@@ -75,6 +75,7 @@ return {
                 nerd_font_variant = "mono",
             },
             cmdline = {
+                enabled = false,
                 keymap = {
                     ["<Tab>"] = { "select_next", "fallback" },
                     ["<S-Tab>"] = { "select_prev", "fallback" },
