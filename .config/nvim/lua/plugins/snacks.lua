@@ -326,6 +326,7 @@ return {
                     },
                     projects = {
                         dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories" },
+                        recent = false,
                         patterns = {
                             ".git",
                             "_darcs",
