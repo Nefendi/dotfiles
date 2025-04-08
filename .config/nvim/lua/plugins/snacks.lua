@@ -205,6 +205,20 @@ return {
                 desc = "Grep",
             },
             {
+                "<leader>fi",
+                function()
+                    Snacks.picker.icons()
+                end,
+                desc = "Icons",
+            },
+            {
+                "<leader>fj",
+                function()
+                    Snacks.picker.jumps()
+                end,
+                desc = "Jumps",
+            },
+            {
                 "<leader>gb",
                 function()
                     Snacks.picker.git_branches()
@@ -424,6 +438,11 @@ return {
                     },
                     files = {
                         hidden = true,
+                    },
+                    jumps = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
                     },
                 },
             },
