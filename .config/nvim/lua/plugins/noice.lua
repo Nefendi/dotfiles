@@ -32,9 +32,16 @@ return {
                             { find = "; after #%d+" },
                             { find = "; before #%d+" },
                             { find = "fewer lines" },
+                            { find = "yanked" },
                         },
                     },
                     view = "mini",
+                },
+                {
+                    filter = {
+                        find = "Checking document ltex",
+                    },
+                    opts = { skip = true },
                 },
             },
             views = {
