@@ -113,10 +113,7 @@ M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
 
     -- nvim-navic
-    local status_navic_ok, navic = pcall(require, "nvim-navic")
-    if not status_navic_ok then
-        return
-    end
+    local navic = require "nvim-navic"
 
     if client.server_capabilities.documentSymbolProvider then
         if client.name == "templ" then

@@ -1,7 +1,4 @@
-local dap_status_ok, dap = pcall(require, "dap")
-if not dap_status_ok then
-    return
-end
+local dap = require "dap"
 
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 local codelldb_adapter = {
@@ -27,10 +24,7 @@ dap.configurations.rust = {
     },
 }
 
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-    return
-end
+local which_key = require "which-key"
 
 local mappings = {
     { "<leader>L", group = "Rust", nowait = true, remap = false },

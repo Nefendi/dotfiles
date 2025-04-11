@@ -1,14 +1,8 @@
-local dap_go_ok, dap_go = pcall(require, "dap-go")
-if not dap_go_ok then
-    return
-end
+local dap_go = require "dap-go"
 
 dap_go.setup()
 
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-    return
-end
+local which_key = require "which-key"
 
 local mappings = {
     { "<leader>L", group = "Go", nowait = true, remap = false },

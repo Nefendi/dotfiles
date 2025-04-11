@@ -8,10 +8,7 @@ local blink_cmp = require "blink.cmp"
 capabilities.textDocument.completion.completionItem.snippetSupport = false
 capabilities = blink_cmp.get_lsp_capabilities(capabilities)
 
-local status, jdtls = pcall(require, "jdtls")
-if not status then
-    return
-end
+local jdtls = require "jdtls"
 
 -- Determine OS
 local home = os.getenv "HOME"
@@ -209,10 +206,7 @@ vim.cmd "command! -buffer JdtUpdateConfig lua require('jdtls').update_project_co
 vim.cmd "command! -buffer JdtBytecode lua require('jdtls').javap()"
 -- vim.cmd "command! -buffer JdtJshell lua require('jdtls').jshell()"
 
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-    return
-end
+local which_key = require "which-key"
 
 local mappings = {
     { "<leader>L", group = "Java", nowait = true, remap = false },

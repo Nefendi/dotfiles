@@ -1,17 +1,11 @@
-local dap_python_status_ok, dap_python = pcall(require, "dap-python")
-if not dap_python_status_ok then
-    return
-end
+local dap_python = require "dap-python"
 
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 
 dap_python.setup(mason_path .. "packages/debugpy/venv/bin/python")
 dap_python.test_runner = "pytest"
 
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-    return
-end
+local which_key = require "which-key"
 
 local mappings = {
     {

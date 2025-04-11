@@ -1,10 +1,7 @@
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
     pattern = { "Cargo.toml" },
     callback = function()
-        local status_ok, which_key = pcall(require, "which-key")
-        if not status_ok then
-            return
-        end
+        local which_key = require "which-key"
 
         local mappings = {
             { "<leader>L", group = "Cargo", nowait = true, remap = false },
