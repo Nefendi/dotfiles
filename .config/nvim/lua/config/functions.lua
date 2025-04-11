@@ -1,18 +1,5 @@
 local M = {}
 
-function M.isempty(s)
-    return s == nil or s == ""
-end
-
-function M.get_buf_option(opt)
-    local status_ok, buf_option = pcall(vim.api.nvim_buf_get_option, 0, opt)
-    if not status_ok then
-        return nil
-    else
-        return buf_option
-    end
-end
-
 function M.toggle_option(option)
     local value = not vim.api.nvim_get_option_value(option, {})
     vim.opt[option] = value
@@ -20,10 +7,7 @@ function M.toggle_option(option)
 end
 
 function M.list_registered_null_ls_providers(file_type, kind)
-    local null_ls_sources__status_ok, null_ls_sources = pcall(require, "null-ls.sources")
-    if not null_ls_sources__status_ok then
-        return
-    end
+    local null_ls_sources = require "null-ls.sources"
 
     local available_sources = null_ls_sources.get_available(file_type)
 
@@ -48,7 +32,8 @@ end
 
 function M.smart_quit()
     local bufnr = vim.api.nvim_get_current_buf()
-    local modified = vim.api.nvim_buf_get_option(bufnr, "modified")
+    local modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
+
     if modified then
         vim.ui.select({ "Yes", "No" }, {
             prompt = "You have unsaved changes. Quit anyway?",
@@ -60,11 +45,6 @@ function M.smart_quit()
     else
         vim.cmd "q"
     end
-end
-
-function M.get_hl_by_name(name)
-    local ret = vim.api.nvim_get_hl_by_name(name.group, true)
-    return string.format("#%06x", ret[name.property])
 end
 
 -- Stolen from https://github.com/LazyVim/LazyVim/blob/ec5981dfb1222c3bf246d9bcaa713d5cfa486fbd/lua/lazyvim/util/ui.lua
