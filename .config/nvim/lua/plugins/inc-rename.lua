@@ -1,7 +1,7 @@
 return {
     {
         "smjonas/inc-rename.nvim",
-        cmd = "IncRename",
-        opts = {},
+        cmd = "Rename",
+        opts = { cmd_name = "Rename" },
     },
 }
