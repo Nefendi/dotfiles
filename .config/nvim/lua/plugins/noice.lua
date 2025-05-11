@@ -39,7 +39,9 @@ return {
                 },
                 {
                     filter = {
-                        find = "Checking document ltex",
+                        any = {
+                            { find = "Checking document ltex" },
+                        },
                     },
                     opts = { skip = true },
                 },

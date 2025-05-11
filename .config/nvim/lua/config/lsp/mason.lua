@@ -110,6 +110,7 @@ mason.setup(settings)
 mason_lspconfig.setup {
     ensure_installed = servers,
     automatic_installation = false,
+    automatic_enable = false,
 }
 
 mason_tool_installer.setup {
