@@ -31,3 +31,4 @@ MichaelAquilina/zsh-you-should-use
 zdharma-continuum/fast-syntax-highlighting kind:defer
 ptavares/zsh-sdkman
 ajeetdsouza/zoxide
+hsaunders1904/pyautoenv
