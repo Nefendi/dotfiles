@@ -59,6 +59,10 @@ bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
 
 autoload -Uz compinit && compinit
 
+# UV
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
 # ALIASES
 alias ls='eza -gF --color=always --group-directories-first --icons'
 alias ll='eza -glhF --color=always --group-directories-first --icons'
