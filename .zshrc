@@ -4,7 +4,7 @@ export ZSH="$HOME"/.oh-my-zsh
 PATH="$HOME/antibody:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 # PATH="$HOME/.emacs.d/bin:$PATH"
-PATH="$HOME/.poetry/bin:$PATH"
+# PATH="$HOME/.poetry/bin:$PATH"
 # PATH="/usr/local/go/bin:$PATH"
 # PATH="$HOME/go/bin:$PATH"
 # PATH="$HOME/.erg/bin:$PATH"
@@ -67,11 +67,11 @@ alias lt='eza -gaThF --color=always --group-directories-first --icons'
 alias g='lazygit'
 alias k='kubectl'
 alias pip='noglob pip'
-alias poetry='noglob poetry'
+# alias poetry='noglob poetry'
 
 alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
 alias updatetools='
-    poetry self update &&
+    uv self update &&
     antidote update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
