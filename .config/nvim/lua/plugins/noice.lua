@@ -41,6 +41,7 @@ return {
                     filter = {
                         any = {
                             { find = "Checking document ltex" },
+                            { find = "No information available" },
                         },
                     },
                     opts = { skip = true },
