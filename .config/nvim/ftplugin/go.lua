@@ -13,7 +13,16 @@ local mappings = {
     { "<leader>Le", "<cmd>GoTestsExp<Cr>", desc = "Add Exported Tests", nowait = true, remap = false },
     { "<leader>Lf", "<cmd>GoGenerate %<Cr>", desc = "Go Generate File", nowait = true, remap = false },
     { "<leader>Lg", "<cmd>GoGenerate<Cr>", desc = "Go Generate", nowait = true, remap = false },
-    { "<leader>Li", "<cmd>GoImpl<Cr>", desc = "Implement Interface", nowait = true, remap = false },
+    {
+        "<leader>Li",
+        function()
+            local interface = vim.fn.input "Implement Interface"
+            vim.cmd("GoImpl " .. interface)
+        end,
+        desc = "Implement Interface",
+        nowait = true,
+        remap = false,
+    },
     { "<leader>Lj", "<cmd>GoTagRm json<Cr>", desc = "Remove JSON tags", nowait = true, remap = false },
     { "<leader>Lt", "<cmd>GoMod tidy<cr>", desc = "Tidy", nowait = true, remap = false },
     { "<leader>Ly", "<cmd>GoTagRm yaml<Cr>", desc = "Remove YAML tags", nowait = true, remap = false },
