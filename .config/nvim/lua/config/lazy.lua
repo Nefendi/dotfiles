@@ -30,6 +30,12 @@ require("lazy").setup {
                 tabout = {
                     enable = true,
                 },
+                cmap = false,
+                extensions = {
+                    filetype = {
+                        nft = { "snacks_picker_input" },
+                    },
+                },
             },
         },
         {
