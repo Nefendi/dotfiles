@@ -284,6 +284,9 @@ return {
                     ".direnv/",
                     ".cache/",
 
+                    -- Syncthing
+                    ".stfolder/",
+
                     -- Vim
                     ".project.nvim",
                     ".null-ls-root",
@@ -319,6 +322,9 @@ return {
 
                     -- Haskell
                     ".stack-work/",
+
+                    -- Obsidian
+                    ".obsidian/",
                 },
                 sources = {
                     select = {

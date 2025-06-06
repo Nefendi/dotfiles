@@ -10,6 +10,12 @@ return {
             render_markdown.setup {
                 -- Whether Markdown should be rendered by default or not
                 enabled = true,
+                completions = { lsp = { enabled = true } },
+                html = {
+                    comment = {
+                        conceal = false,
+                    },
+                },
                 -- Maximum file size (in MB) that this plugin will attempt to render
                 -- Any file larger than this will effectively be ignored
                 max_file_size = 1.5,
