@@ -17,6 +17,7 @@ return {
                 pattern = "VeryLazy",
                 callback = function()
                     Snacks.toggle.dim():map "<leader>D"
+                    Snacks.toggle.zen():map "<leader>z"
                 end,
             })
         end,
@@ -273,6 +274,16 @@ return {
             undo = { enabled = true },
             bigfile = { enabled = true },
             gitbrowse = { enabled = true },
+            zen = {
+                enabled = true,
+                toggles = {
+                    dim = true,
+                    git_signs = false,
+                    mini_diff_signs = false,
+                    diagnostics = true,
+                    inlay_hints = true,
+                },
+            },
             picker = {
                 enabled = true,
                 exclude = {
