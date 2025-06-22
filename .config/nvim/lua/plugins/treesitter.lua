@@ -15,7 +15,6 @@ return {
             { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
             { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
             { "RRethy/nvim-treesitter-endwise", event = "BufReadPost" },
-            "IndianBoy42/tree-sitter-just",
             "vrischmann/tree-sitter-templ",
         },
         init = function(plugin)
@@ -30,6 +29,7 @@ return {
         opts_extend = { "ensure_installed" },
         opts = {
             ensure_installed = "all",
+            ignore_install = { "ipkg" },
             highlight = { enable = true },
             indent = { enable = true },
             autopairs = { enable = true },
@@ -69,7 +69,6 @@ return {
         },
         config = function(_, opts)
             require("nvim-dap-repl-highlights").setup()
-            require("tree-sitter-just").setup {}
 
             local rainbow_delimiters = require "rainbow-delimiters"
 
