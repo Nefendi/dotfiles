@@ -8,6 +8,7 @@ gui:
   showDivergenceFromBaseBranch: arrowAndNumber
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 3
+  useHunkModeInStagingView: true
   theme:
     activeBorderColor:
       - "#ff9e64"
