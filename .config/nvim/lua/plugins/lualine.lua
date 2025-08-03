@@ -381,7 +381,6 @@ return {
                         diff,
                         diagnostics,
                         python_env,
-                        "g:obsidian",
                     },
                     lualine_x = {
                         lsp,
