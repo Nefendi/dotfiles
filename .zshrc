@@ -71,6 +71,7 @@ alias lt='eza -gaThF --color=always --group-directories-first --icons'
 alias g='lazygit'
 alias k='kubectl'
 alias pip='noglob pip'
+alias uv='noglob uv'
 # alias poetry='noglob poetry'
 
 alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
