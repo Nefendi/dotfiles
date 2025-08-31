@@ -36,6 +36,7 @@ return {
                     .. icons.misc.VerySmallDot
                     .. " <summary>",
                 word_diff = false,
+                preview_config = { border = "rounded" },
             }
         end,
     },
