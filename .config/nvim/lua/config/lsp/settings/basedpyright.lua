@@ -36,5 +36,5 @@ return {
             },
         },
     },
-    root_dir = require("lspconfig.util").root_pattern(unpack(root_files)),
+    -- root_dir = require("lspconfig.util").root_pattern(unpack(root_files)),
 }

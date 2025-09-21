@@ -120,8 +120,6 @@ mason_tool_installer.setup {
     start_delay = 3000,
 }
 
-local lspconfig = require "lspconfig"
-
 local opts = {}
 
 for _, server in pairs(servers) do
@@ -234,7 +232,8 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", ansiblels_opts, opts)
     end
 
-    lspconfig[server].setup(opts)
+    vim.lsp.config(server, opts)
+    vim.lsp.enable(server)
 
     ::continue::
 end
