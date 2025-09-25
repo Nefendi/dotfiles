@@ -11,4 +11,7 @@ return {
             },
         },
     },
+    -- NOTE: Avoid starting the server each time pyproject.toml is encountered,
+    -- as it gets annoying in with nested pyproject.toml files
+    root_markers = { ".git" },
 }
