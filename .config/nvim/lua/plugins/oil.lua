@@ -33,6 +33,7 @@ return {
             view_options = {
                 show_hidden = true,
             },
+            confirmation = { border = "rounded" },
             use_default_keymaps = true,
             keymaps = {
                 ["L"] = "actions.select",
