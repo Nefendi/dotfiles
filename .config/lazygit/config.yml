@@ -1,5 +1,4 @@
 # $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
----
 gui:
   nerdFontsVersion: "3"
   enlargedSideViewLocation: top
@@ -38,6 +37,6 @@ git:
   commit:
     autoWrapCommitMessage: true
     autoWrapWidth: 72
-  paging:
-    colorArg: always
-    pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
