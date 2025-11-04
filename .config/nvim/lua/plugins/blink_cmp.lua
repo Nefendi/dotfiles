@@ -1,6 +1,6 @@
 local icons = require "config.icons"
 
-local default_sources = { "lazydev", "lsp", "path", "snippets", "buffer", "crates", "npm" }
+local default_sources = { "lazydev", "lsp", "path", "snippets", "buffer", "crates", "npm", "copilot" }
 local debug_sources = vim.list_extend(vim.deepcopy(default_sources), { "dap" })
 
 vim.g.cmp_active = true
@@ -26,6 +26,7 @@ return {
             "David-Kunz/cmp-npm",
             "Saecki/crates.nvim",
             "rcarriga/cmp-dap",
+            "fang2hou/blink-copilot",
         },
         event = "InsertEnter",
 
@@ -196,6 +197,11 @@ return {
 
                             return items
                         end,
+                    },
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        async = true,
                     },
                 },
             },
