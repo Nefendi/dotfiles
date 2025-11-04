@@ -20,6 +20,26 @@ return {
                     Snacks.toggle.zen():map "<leader>oz"
                     Snacks.toggle.option("wrap", { name = "Wrap" }):map "<leader>ow"
                     Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map "<leader>or"
+
+                    Snacks.toggle({
+                        name = "Completion",
+                        get = function()
+                            return vim.g.cmp_active
+                        end,
+                        set = function(state)
+                            vim.g.cmp_active = state
+                        end,
+                    }):map "<leader>oc"
+
+                    Snacks.toggle({
+                        name = "Copilot Completion",
+                        get = function()
+                            return vim.g.copilot_active
+                        end,
+                        set = function(state)
+                            vim.g.copilot_active = state
+                        end,
+                    }):map "<leader>oC"
                 end,
             })
         end,

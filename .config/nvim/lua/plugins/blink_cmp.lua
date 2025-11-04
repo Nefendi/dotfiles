@@ -4,6 +4,7 @@ local default_sources = { "lazydev", "lsp", "path", "snippets", "buffer", "crate
 local debug_sources = vim.list_extend(vim.deepcopy(default_sources), { "dap" })
 
 vim.g.cmp_active = true
+vim.g.copilot_active = true
 
 vim.api.nvim_set_hl(0, "_BlinkCmpItemSourceName", { fg = "#565f89" })
 vim.api.nvim_set_hl(0, "_BlinkCmpItemKindPackage", { fg = "#F64D00" })
@@ -202,6 +203,9 @@ return {
                         name = "copilot",
                         module = "blink-copilot",
                         async = true,
+                        enabled = function()
+                            return vim.g.copilot_active
+                        end,
                     },
                 },
             },
