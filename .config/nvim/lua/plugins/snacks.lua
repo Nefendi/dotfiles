@@ -16,8 +16,10 @@ return {
             vim.api.nvim_create_autocmd("User", {
                 pattern = "VeryLazy",
                 callback = function()
-                    Snacks.toggle.dim():map "<leader>D"
-                    Snacks.toggle.zen():map "<leader>z"
+                    Snacks.toggle.dim():map "<leader>od"
+                    Snacks.toggle.zen():map "<leader>oz"
+                    Snacks.toggle.option("wrap", { name = "Wrap" }):map "<leader>ow"
+                    Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map "<leader>or"
                 end,
             })
         end,
