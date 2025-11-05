@@ -35,6 +35,6 @@ return {
                     vim.g.copilot_enabled = false
                 end
             end,
-        }):map "<leader>Ac"
+        }):map "<leader>ac"
     end,
 }
