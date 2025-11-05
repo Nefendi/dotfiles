@@ -1,6 +1,7 @@
 local icons = require "config.icons"
 
-local default_sources = { "lazydev", "lsp", "path", "snippets", "buffer", "crates", "npm", "copilot" }
+local default_sources =
+    { "conventional_commits", "lazydev", "lsp", "path", "snippets", "buffer", "crates", "npm", "copilot", "env" }
 local debug_sources = vim.list_extend(vim.deepcopy(default_sources), { "dap" })
 
 vim.g.cmp_active = true
@@ -27,6 +28,8 @@ return {
             "Saecki/crates.nvim",
             "rcarriga/cmp-dap",
             "fang2hou/blink-copilot",
+            "bydlw98/blink-cmp-env",
+            "disrupted/blink-cmp-conventional-commits",
         },
         event = "InsertEnter",
 
@@ -202,6 +205,25 @@ return {
                         name = "copilot",
                         module = "blink-copilot",
                         async = true,
+                    },
+                    env = {
+                        name = "env",
+                        module = "blink-cmp-env",
+                        --- @type blink-cmp-env.Options
+                        opts = {
+                            show_braces = false,
+                            show_documentation_window = true,
+                        },
+                    },
+                    conventional_commits = {
+                        name = "Conventional Commits",
+                        module = "blink-cmp-conventional-commits",
+                        enabled = function()
+                            return vim.bo.filetype == "gitcommit"
+                        end,
+                        ---@module 'blink-cmp-conventional-commits'
+                        ---@type blink-cmp-conventional-commits.Options
+                        opts = {},
                     },
                 },
             },
