@@ -36,7 +36,6 @@ local servers = {
     "elixirls",
     "zls",
     "ansiblels",
-    -- "copilot",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -231,15 +230,6 @@ for _, server in pairs(servers) do
     if server == "ansiblels" then
         local ansiblels_opts = require "config.lsp.settings.ansiblels"
         opts = vim.tbl_deep_extend("force", ansiblels_opts, opts)
-    end
-
-    if server == "copilot" then
-        local copilot_opts = require "config.lsp.settings.copilot"
-        opts = vim.tbl_deep_extend("force", copilot_opts, opts)
-
-        -- Leave on_attach intact
-        -- FIXME: Refactor later
-        opts.on_attach = vim.lsp.config[server].on_attach
     end
 
     vim.lsp.config(server, opts)

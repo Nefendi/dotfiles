@@ -291,6 +291,7 @@ return {
                     remap = false,
                 },
                 { "<leader>o", group = "Options", nowait = true, remap = false },
+                { "<leader>A", group = "AI", nowait = true, remap = false },
                 { "<leader>p", group = "Plugins", nowait = true, remap = false },
                 { "<leader>pC", "<cmd>Lazy clear<cr>", desc = "Clear finished tasks", nowait = true, remap = false },
                 { "<leader>pP", "<cmd>Lazy profile<cr>", desc = "Profile", nowait = true, remap = false },

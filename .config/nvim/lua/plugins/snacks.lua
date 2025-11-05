@@ -32,16 +32,6 @@ return {
                     }):map "<leader>oc"
 
                     Snacks.toggle({
-                        name = "Copilot Completion",
-                        get = function()
-                            return vim.g.copilot_active
-                        end,
-                        set = function(state)
-                            vim.g.copilot_active = state
-                        end,
-                    }):map "<leader>oC"
-
-                    Snacks.toggle({
                         name = "Format On Save",
                         get = function()
                             return vim.g.format_on_save_enabled
