@@ -207,13 +207,6 @@ return {
                 { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk", nowait = true, remap = false },
                 { "<leader>h", "<cmd>nohlsearch<CR>", desc = "No HL", nowait = true, remap = false },
                 { "<leader>l", group = "LSP", nowait = true, remap = false },
-                {
-                    "<leader>lF",
-                    "<cmd>LspToggleAutoFormat<cr>",
-                    desc = "Toggle Autoformat",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Installer Info", nowait = true, remap = false },
                 {
                     "<leader>la",
@@ -233,13 +226,6 @@ return {
                     "<leader>lf",
                     "<cmd>lua require('config.lsp.handlers').lsp_format(0)<cr>",
                     desc = "Format",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>lh",
-                    "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
-                    desc = "Toggle Inlay Hints",
                     nowait = true,
                     remap = false,
                 },
@@ -275,22 +261,6 @@ return {
                     desc = "Rename",
                     expr = true,
                 },
-                {
-                    "<leader>lv",
-                    "<cmd>lua require('lsp_lines').toggle()<cr>",
-                    desc = "Toggle Virtual Lines",
-                    nowait = true,
-                    remap = false,
-                },
-                {
-                    "<leader>lV",
-                    function()
-                        vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-                    end,
-                    desc = "Toggle Diagnostics",
-                    nowait = true,
-                    remap = false,
-                },
                 { "<leader>n", group = "Neogen", nowait = true, remap = false },
                 {
                     "<leader>nF",
@@ -320,7 +290,7 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                { "<leader>o", group = "Toggles", nowait = true, remap = false },
+                { "<leader>o", group = "Options", nowait = true, remap = false },
                 { "<leader>p", group = "Plugins", nowait = true, remap = false },
                 { "<leader>pC", "<cmd>Lazy clear<cr>", desc = "Clear finished tasks", nowait = true, remap = false },
                 { "<leader>pP", "<cmd>Lazy profile<cr>", desc = "Profile", nowait = true, remap = false },

@@ -50,7 +50,7 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 end
 
-local FORMAT_ON_SAVE_ON = true
+vim.g.format_on_save_enabled = true
 
 M.lsp_format = function(bufnr, client_id)
     vim.lsp.buf.format {
@@ -58,12 +58,6 @@ M.lsp_format = function(bufnr, client_id)
         id = client_id,
         timeout_ms = 5000,
     }
-end
-
-local function lsp_format_on_save(bufnr, client_id)
-    if FORMAT_ON_SAVE_ON then
-        M.lsp_format(bufnr, client_id)
-    end
 end
 
 local blink_cmp = require "blink.cmp"
@@ -81,7 +75,9 @@ M.on_attach = function(client, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
             callback = function()
-                lsp_format_on_save(bufnr, client.id)
+                if vim.g.format_on_save_enabled then
+                    M.lsp_format(bufnr, client.id)
+                end
             end,
         })
     end
@@ -123,17 +119,5 @@ M.on_attach = function(client, bufnr)
         navic.attach(client, bufnr)
     end
 end
-
-local function toggle_format_on_save()
-    if not FORMAT_ON_SAVE_ON then
-        FORMAT_ON_SAVE_ON = true
-        vim.notify "Enabled format on save"
-    else
-        FORMAT_ON_SAVE_ON = false
-        vim.notify "Disabled format on save"
-    end
-end
-
-vim.api.nvim_create_user_command("LspToggleAutoFormat", toggle_format_on_save, {})
 
 return M

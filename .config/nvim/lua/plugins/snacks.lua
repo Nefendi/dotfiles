@@ -40,6 +40,46 @@ return {
                             vim.g.copilot_active = state
                         end,
                     }):map "<leader>oC"
+
+                    Snacks.toggle({
+                        name = "Format On Save",
+                        get = function()
+                            return vim.g.format_on_save_enabled
+                        end,
+                        set = function(state)
+                            vim.g.format_on_save_enabled = state
+                        end,
+                    }):map "<leader>lF"
+
+                    Snacks.toggle({
+                        name = "Inlay Hints",
+                        get = function()
+                            return vim.lsp.inlay_hint.is_enabled()
+                        end,
+                        set = function(state)
+                            vim.lsp.inlay_hint.enable(state)
+                        end,
+                    }):map "<leader>lh"
+
+                    Snacks.toggle({
+                        name = "LSP Virtual Lines",
+                        get = function()
+                            return vim.diagnostic.config().virtual_lines
+                        end,
+                        set = function(state)
+                            vim.diagnostic.config { virtual_lines = state }
+                        end,
+                    }):map "<leader>lv"
+
+                    Snacks.toggle({
+                        name = "LSP Diagnostics",
+                        get = function()
+                            return vim.diagnostic.is_enabled()
+                        end,
+                        set = function(state)
+                            vim.diagnostic.enable(state)
+                        end,
+                    }):map "<leader>lV"
                 end,
             })
         end,
