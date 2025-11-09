@@ -56,10 +56,18 @@ return {
 
             local mappings = {
                 { "<leader>T", group = "Treesitter", nowait = true, remap = false },
-                { "<leader>Tc", "<cmd>TSContextToggle<cr>", desc = "Toggle Context", nowait = true, remap = false },
+                { "<leader>Tc", "<cmd>TSContext toggle<cr>", desc = "Toggle Context", nowait = true, remap = false },
                 { "<leader>Ti", "<cmd>Inspect<cr>", desc = "Inspect", nowait = true, remap = false },
                 { "<leader>Tt", "<cmd>InspectTree<cr>", desc = "Inspect Tree", nowait = true, remap = false },
-                { "<leader>Tr", "<cmd>TSToggle rainbow<cr>", desc = "Toggle Rainbow", nowait = true, remap = false },
+                {
+                    "<leader>Tr",
+                    function()
+                        require("rainbow-delimiters").toggle(0)
+                    end,
+                    desc = "Toggle Rainbow",
+                    nowait = true,
+                    remap = false,
+                },
                 { "<leader>W", "<cmd>wa<CR>", desc = "Write All", nowait = true, remap = false },
                 { "<leader>c", "<cmd>lua Snacks.bufdelete()<CR>", desc = "Close Buffer", nowait = true, remap = false },
                 { "<leader>d", group = "Debug", nowait = true, remap = false },

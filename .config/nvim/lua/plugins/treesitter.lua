@@ -3,71 +3,46 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        branch = "master",
+        branch = "main",
         version = false,
         build = ":TSUpdate",
         event = "VeryLazy",
-        lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
-        cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+        cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
         dependencies = {
             { "HiPhish/rainbow-delimiters.nvim", event = "BufReadPre" },
             { "JoosepAlviste/nvim-ts-context-commentstring" },
-            { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPost" },
-            { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPost" },
+            {
+                "nvim-treesitter/nvim-treesitter-context",
+                event = "BufReadPost",
+                opts = {},
+            },
+            { "nvim-treesitter/nvim-treesitter-textobjects" },
             { "RRethy/nvim-treesitter-endwise", event = "BufReadPost" },
             "vrischmann/tree-sitter-templ",
         },
-        init = function(plugin)
-            -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-            -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-            -- no longer trigger the **nvim-treesitter** module to be loaded in time.
-            -- Luckily, the only things that those plugins need are the custom queries, which we make available
-            -- during startup.
-            require("lazy.core.loader").add_to_rtp(plugin)
-            require "nvim-treesitter.query_predicates"
-        end,
-        opts_extend = { "ensure_installed" },
         opts = {
             ensure_installed = "all",
             ignore_install = { "ipkg" },
             highlight = { enable = true },
             indent = { enable = true },
-            autopairs = { enable = true },
-            endwise = {
-                enable = true,
-            },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "<C-space>",
-                    node_incremental = "<C-space>",
-                    scope_incremental = false,
-                    node_decremental = "<bs>",
-                },
-            },
-            textobjects = {
-                move = {
-                    enable = true,
-                    goto_next_start = {
-                        ["]f"] = "@function.outer",
-                        ["]c"] = "@class.outer",
-                        ["]a"] = "@parameter.inner",
-                    },
-                    goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-                    goto_previous_start = {
-                        ["[f"] = "@function.outer",
-                        ["[c"] = "@class.outer",
-                        ["[a"] = "@parameter.inner",
-                    },
-                    goto_previous_end = {
-                        ["[F"] = "@function.outer",
-                        ["[C"] = "@class.outer",
-                        ["[A"] = "@parameter.inner",
-                    },
-                },
-            },
+            folds = { enable = true },
         },
         config = function(_, opts)
+            local TS = require "nvim-treesitter"
+
+            TS.setup(opts)
+
+            vim.api.nvim_create_autocmd("FileType", {
+                group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
+                callback = function(ev)
+                    -- Hihglighting
+                    pcall(vim.treesitter.start, ev.buf)
+
+                    -- Indenting
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
+            })
+
             require("nvim-dap-repl-highlights").setup()
 
             local rainbow_delimiters = require "rainbow-delimiters"
@@ -92,8 +67,6 @@ return {
                 },
                 blacklist = { "html" },
             }
-
-            require("nvim-treesitter.configs").setup(opts)
         end,
     },
 }
