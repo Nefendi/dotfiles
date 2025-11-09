@@ -7,7 +7,7 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "antoinemadec/FixCursorHold.nvim",
             "nvim-neotest/neotest-python",
-            "nvim-neotest/neotest-go",
+            "fredrikaverpil/neotest-golang",
             "haydenmeade/neotest-jest",
             "marilari88/neotest-vitest",
             "jfpedroza/neotest-elixir",
@@ -36,7 +36,7 @@ return {
             opts.adapters = {
                 require "rustaceanvim.neotest",
                 require "neotest-python",
-                require "neotest-go",
+                require "neotest-golang",
                 require "neotest-jest",
                 require "neotest-vitest",
                 require "neotest-elixir",
