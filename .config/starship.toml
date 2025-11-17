@@ -4,7 +4,6 @@ format = "$time$all"
 
 command_timeout = 2000
 
-
 [time]
 disabled = false
 format = '[$time]($style) '
@@ -17,27 +16,41 @@ format = "[$symbol $status]($style) "
 [git_commit]
 only_detached = false
 tag_disabled = false
+tag_symbol = '  '
 
 [kubernetes]
 disabled = false
 
 [sudo]
 disabled = false
+
 [aws]
-symbol = "  "
+symbol = " "
 
 [buf]
 symbol = " "
 
+[bun]
+symbol = " "
+
 [c]
 symbol = " "
+
+[cpp]
+symbol = " "
 
 [conda]
 symbol = " "
 ignore_base = false
 
+[crystal]
+symbol = " "
+
 [dart]
 symbol = " "
+
+[deno]
+symbol = " "
 
 [directory]
 read_only = " 󰌾"
@@ -46,13 +59,22 @@ read_only = " 󰌾"
 symbol = " "
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
 symbol = " "
 
+[fennel]
+symbol = " "
+
+[fortran]
+symbol = " "
+
 [fossil_branch]
 symbol = " "
+
+[gcloud]
+symbol = " "
 
 [git_branch]
 symbol = " "
@@ -61,6 +83,9 @@ format = "on [$symbol$branch( \\[$remote_name/$remote_branch\\])]($style) "
 
 [golang]
 symbol = " "
+
+[gradle]
+symbol = " "
 
 [guix_shell]
 symbol = " "
@@ -83,6 +108,9 @@ symbol = " "
 [julia]
 symbol = " "
 
+[kotlin]
+symbol = " "
+
 [lua]
 symbol = " "
 
@@ -102,13 +130,19 @@ symbol = " "
 [nodejs]
 symbol = " "
 
+[ocaml]
+symbol = " "
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
+AlmaLinux = " "
 Amazon = " "
 Android = " "
+AOSC = " "
 Arch = " "
 Artix = " "
+CachyOS = " "
 CentOS = " "
 Debian = " "
 DragonFly = " "
@@ -120,6 +154,7 @@ Garuda = "󰛓 "
 Gentoo = " "
 HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
+Kali = " "
 Linux = " "
 Mabox = " "
 Macos = " "
@@ -129,6 +164,7 @@ MidnightBSD = " "
 Mint = " "
 NetBSD = " "
 NixOS = " "
+Nobara = " "
 OpenBSD = "󰈺 "
 openSUSE = " "
 OracleLinux = "󰌷 "
@@ -136,30 +172,41 @@ Pop = " "
 Raspbian = " "
 Redhat = " "
 RedHatEnterprise = " "
+RockyLinux = " "
 Redox = "󰀘 "
 Solus = "󰠳 "
 SUSE = " "
 Ubuntu = " "
 Unknown = " "
+Void = " "
 Windows = "󰍲 "
 
 [package]
 symbol = "󰏗 "
 
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
 [pijul_channel]
 symbol = " "
+
+[pixi]
+symbol = "󰏗 "
 
 [python]
 symbol = " "
 detect_files = [
-    ".python-version",
-    "Pipfile",
-    "__init__.py",
-    "pyproject.toml",
-    "requirements.txt",
-    "setup.py",
-    "tox.ini",
-    "environment.yml",
+  ".python-version",
+  "Pipfile",
+  "__init__.py",
+  "pyproject.toml",
+  "requirements.txt",
+  "setup.py",
+  "tox.ini",
+  "environment.yml",
 ]
 
 [rlang]
@@ -169,7 +216,16 @@ symbol = "󰟔 "
 symbol = " "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [scala]
 symbol = " "
+
+[swift]
+symbol = " "
+
+[xmake]
+symbol = " "
+
+[zig]
+symbol = " "
