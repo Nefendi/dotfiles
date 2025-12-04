@@ -28,6 +28,18 @@ return {
             folds = { enable = true },
         },
         config = function(_, opts)
+            -- Detect Helm templates
+            vim.filetype.add {
+                extension = {
+                    gotmpl = "gotmpl",
+                },
+                pattern = {
+                    [".*/templates/.*%.tpl"] = "helm",
+                    [".*/templates/.*%.ya?ml"] = "helm",
+                    ["helmfile.*%.ya?ml"] = "helm",
+                },
+            }
+
             local TS = require "nvim-treesitter"
 
             TS.setup(opts)
