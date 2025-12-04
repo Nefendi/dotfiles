@@ -36,6 +36,7 @@ local servers = {
     "elixirls",
     "zls",
     "ansiblels",
+    "helm_ls",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
