@@ -124,6 +124,9 @@ mason_tool_installer.setup {
 local opts = {}
 
 for _, server in pairs(servers) do
+    -- Remove version
+    server = server:gsub("@.*$", "")
+
     opts = {
         on_attach = require("config.lsp.handlers").on_attach,
         capabilities = require("config.lsp.handlers").capabilities,
