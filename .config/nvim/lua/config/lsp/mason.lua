@@ -30,6 +30,7 @@ local servers = {
     "zls",
     "ansiblels",
     "helm_ls",
+    "gh_actions_ls",
 }
 
 -- TODO: Maybe someday linters and formatters could be automatically installed by Mason itself?
@@ -44,6 +45,7 @@ local linters = {
     "golangci-lint",
     "mypy",
     "ansible-lint",
+    "kube-linter",
 }
 
 local formatters = {

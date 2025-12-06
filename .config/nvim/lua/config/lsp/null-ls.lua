@@ -20,6 +20,7 @@ null_ls.setup {
             disabled_filetypes = { "markdown" },
         },
         diagnostics.actionlint,
+        diagnostics.zsh,
 
         -- Python
         -- NOTE: It is handy in projects with nested configuration files
@@ -64,6 +65,7 @@ null_ls.setup {
                 "{extends: default, rules: {braces: {max-spaces-inside: 1}, comments: {min-spaces-from-content: 1}}}",
             },
         },
+        diagnostics.kube_linter,
 
         -- Git
         diagnostics.gitlint.with {
