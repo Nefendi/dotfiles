@@ -123,4 +123,13 @@ keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 -- Formatting
 -- keymap("n", "<leader>F", "<cmd>LspToggleAutoFormat<cr>", opts)
 
+keymap({ "n", "x", "o" }, "<c-space>", function()
+    require("flash").treesitter {
+        actions = {
+            ["<c-space>"] = "next",
+            ["<BS>"] = "prev",
+        },
+    }
+end, { desc = "Treesitter incremental selection" })
+
 return M
