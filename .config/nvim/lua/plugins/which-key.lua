@@ -237,7 +237,7 @@ return {
                     nowait = true,
                     remap = false,
                 },
-                { "<leader>li", "<cmd>che lspconfig<cr>", desc = "Info", nowait = true, remap = false },
+                { "<leader>li", "<cmd>che vim.lsp<cr>", desc = "Info", nowait = true, remap = false },
                 {
                     "<leader>lj",
                     "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
