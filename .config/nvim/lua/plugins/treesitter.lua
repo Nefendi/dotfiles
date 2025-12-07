@@ -22,7 +22,6 @@ return {
         },
         opts = {
             ensure_installed = "all",
-            ignore_install = { "ipkg" },
             highlight = { enable = true },
             indent = { enable = true },
             folds = { enable = true },
