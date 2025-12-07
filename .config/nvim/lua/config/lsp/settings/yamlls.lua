@@ -2,11 +2,16 @@ local schemastore = require "schemastore"
 
 return {
     settings = {
-        schemaStore = {
-            enable = false,
-        },
         yaml = {
-            schemas = schemastore.yaml.schemas(),
+            schemaStore = {
+                enable = false,
+            },
+            schemas = schemastore.yaml.schemas {
+                ignore = {
+                    -- GitHub Actions LS takes care of that
+                    "GitHub Workflow",
+                },
+            },
         },
     },
 }
