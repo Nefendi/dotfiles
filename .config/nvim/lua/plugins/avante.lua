@@ -42,7 +42,7 @@ return {
             auto_approve_tool_permissions = false,
         },
         selection = {
-            enabled = true,
+            enabled = false,
             hint_display = "delayed",
         },
     },
