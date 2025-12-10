@@ -1,7 +1,18 @@
 local icons = require "config.icons"
 
-local default_sources =
-    { "conventional_commits", "lazydev", "lsp", "path", "snippets", "buffer", "crates", "npm", "copilot", "env" }
+local default_sources = {
+    "avante",
+    "conventional_commits",
+    "lazydev",
+    "lsp",
+    "path",
+    "snippets",
+    "buffer",
+    "crates",
+    "npm",
+    "copilot",
+    "env",
+}
 local debug_sources = vim.list_extend(vim.deepcopy(default_sources), { "dap" })
 
 vim.g.cmp_active = true
@@ -30,6 +41,7 @@ return {
             "fang2hou/blink-copilot",
             "bydlw98/blink-cmp-env",
             "disrupted/blink-cmp-conventional-commits",
+            "Kaiser-Yang/blink-cmp-avante",
         },
         event = "InsertEnter",
 
@@ -224,6 +236,13 @@ return {
                         ---@module 'blink-cmp-conventional-commits'
                         ---@type blink-cmp-conventional-commits.Options
                         opts = {},
+                    },
+                    avante = {
+                        module = "blink-cmp-avante",
+                        name = "Avante",
+                        opts = {
+                            -- options for blink-cmp-avante
+                        },
                     },
                 },
             },
