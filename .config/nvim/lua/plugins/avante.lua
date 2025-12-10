@@ -34,9 +34,9 @@ return {
         provider = "copilot",
         auto_suggestions_provider = "copilot",
         providers = {
-            copilot = {
-                model = "claude-haiku-4.5",
-            },
+            -- copilot = {
+            --     model = "claude-haiku-4.5",
+            -- },
         },
         behaviour = {
             auto_apply_diff_after_generation = false,
