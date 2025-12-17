@@ -230,6 +230,11 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", ansiblels_opts, opts)
     end
 
+    if server == "lemminx" then
+        local lemminx_opts = require "config.lsp.settings.lemminx"
+        opts = vim.tbl_deep_extend("force", lemminx_opts, opts)
+    end
+
     vim.lsp.config(server, opts)
     vim.lsp.enable(server)
 
