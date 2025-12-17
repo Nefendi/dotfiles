@@ -70,7 +70,12 @@ M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFo
 M.on_attach = function(client, bufnr)
     if
         not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
-        and (client.supports_method "textDocument/formatting" or client.supports_method "textDocument/rangeFormatting")
+        and (
+            client.supports_method "textDocument/formatting"
+            or client.supports_method "textDocument/rangeFormatting"
+            -- For some reason lemminx does not support textDocument/formatting but it can format
+            or client.name == "lemminx"
+        )
     then
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
