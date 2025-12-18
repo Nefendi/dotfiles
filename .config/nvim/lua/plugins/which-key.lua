@@ -72,6 +72,7 @@ return {
                 { "<leader>c", "<cmd>lua Snacks.bufdelete()<CR>", desc = "Close Buffer", nowait = true, remap = false },
                 { "<leader>d", group = "Debug", nowait = true, remap = false },
                 { "<leader>a", group = "AI", nowait = true, remap = false },
+                { "<leader>m", group = "Mermaid", nowait = true, remap = false },
                 {
                     "<leader>dC",
                     function()
