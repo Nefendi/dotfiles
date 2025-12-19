@@ -426,6 +426,7 @@ return {
                         layout = {
                             preview = false,
                         },
+                        confirm = "focus_preview",
                     },
                     explorer = {
                         hidden = true,
