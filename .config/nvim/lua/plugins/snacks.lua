@@ -180,6 +180,13 @@ return {
                 desc = "Highlights",
             },
             {
+                "<leader>fm",
+                function()
+                    Snacks.picker.marks()
+                end,
+                desc = "Marks",
+            },
+            {
                 "<leader>fM",
                 function()
                     Snacks.picker.man()
@@ -432,6 +439,11 @@ return {
                         hidden = true,
                     },
                     undo = {
+                        on_show = function(_picker)
+                            vim.cmd "stopinsert"
+                        end,
+                    },
+                    marks = {
                         on_show = function(_picker)
                             vim.cmd "stopinsert"
                         end,
