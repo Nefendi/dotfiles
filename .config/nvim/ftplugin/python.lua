@@ -13,26 +13,23 @@ local mappings = {
         "<cmd>lua require('dap-python').test_class()<cr>",
         desc = "Test Class",
         nowait = true,
-        remap = false,
     },
     {
         "<leader>dT",
         "<cmd>lua require('dap-python').test_method()<cr>",
         desc = "Test Method",
         nowait = true,
-        remap = false,
     },
 }
 
 local vmappings = {
-    { "<leader>d", group = "Debug", mode = "v", nowait = true, remap = false },
+    { "<leader>d", group = "Debug", mode = "v", nowait = true },
     {
         "<leader>ds",
         "<esc><cmd>lua require('dap-python').debug_selection()<cr>",
         desc = "Debug Selection",
         mode = "v",
         nowait = true,
-        remap = false,
     },
 }
 

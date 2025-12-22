@@ -209,63 +209,56 @@ vim.cmd "command! -buffer JdtBytecode lua require('jdtls').javap()"
 local which_key = require "which-key"
 
 local mappings = {
-    { "<leader>L", group = "Java", nowait = true, remap = false },
-    { "<leader>LT", "<Cmd>lua require'jdtls'.test_class()<CR>", desc = "Test Class", nowait = true, remap = false },
+    { "<leader>L", group = "Java", nowait = true },
+    { "<leader>LT", "<Cmd>lua require'jdtls'.test_class()<CR>", desc = "Test Class", nowait = true },
     {
         "<leader>Lc",
         "<Cmd>lua require('jdtls').extract_constant()<CR>",
         desc = "Extract Constant",
         nowait = true,
-        remap = false,
     },
     {
         "<leader>Lo",
         "<Cmd>lua require'jdtls'.organize_imports()<CR>",
         desc = "Organize Imports",
         nowait = true,
-        remap = false,
     },
     {
         "<leader>Lt",
         "<Cmd>lua require'jdtls'.test_nearest_method()<CR>",
         desc = "Test Method",
         nowait = true,
-        remap = false,
     },
-    { "<leader>Lu", "<Cmd>JdtUpdateConfig<CR>", desc = "Update Config", nowait = true, remap = false },
+    { "<leader>Lu", "<Cmd>JdtUpdateConfig<CR>", desc = "Update Config", nowait = true },
     {
         "<leader>Lv",
         "<Cmd>lua require('jdtls').extract_variable()<CR>",
         desc = "Extract Variable",
         nowait = true,
-        remap = false,
     },
 }
 
 local vmappings = {
     {
         mode = { "v" },
-        { "<leader>L", group = "Java", nowait = true, remap = false },
+        { "<leader>L", group = "Java", nowait = true },
         {
             "<leader>Lc",
             "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",
             desc = "Extract Constant",
             nowait = true,
-            remap = false,
         },
         {
             "<leader>Lm",
             "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",
             desc = "Extract Method",
             nowait = true,
-            remap = false,
         },
         {
             "<leader>Lv",
             "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",
             desc = "Extract Variable",
             nowait = true,
-            remap = false,
         },
     },
 }
