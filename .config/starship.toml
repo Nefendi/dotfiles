@@ -22,6 +22,7 @@ tag_symbol = '  '
 disabled = false
 
 [sudo]
+symbol = " "
 disabled = false
 
 [aws]
