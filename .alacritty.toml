@@ -1,79 +1,37 @@
-live_config_reload = false
-working_directory = "None"
-
-[bell]
-animation = "EaseOutExpo"
-color = "#ffffff"
-duration = 0
-
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[[colors.indexed_colors]]
-color = "0xff9e64"
-index = 16
-
-[[colors.indexed_colors]]
-color = "0xdb4b4b"
-index = 17
-
-[colors.bright]
-black = "0x414868"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xc0caf5"
-yellow = "0xe0af68"
+[colors.primary]
+background = '#1a1b26'
+foreground = '#c0caf5'
 
 [colors.normal]
-black = "0x15161e"
-blue = "0x7aa2f7"
-cyan = "0x7dcfff"
-green = "0x9ece6a"
-magenta = "0xbb9af7"
-red = "0xf7768e"
-white = "0xa9b1d6"
-yellow = "0xe0af68"
+black = '#15161e'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#a9b1d6'
 
-[colors.primary]
-background = "0x1a1b26"
-foreground = "0xc0caf5"
-
-[cursor]
-unfocused_hollow = true
-
-[cursor.style]
-shape = "Block"
-
-[debug]
-log_level = "Off"
-persistent_logging = false
-print_events = false
-render_timer = false
-
-[env]
-LC_ALL = "en_US.UTF-8"
+[colors.bright]
+black = '#414868'
+red = '#ff899d'
+green = '#9fe044'
+yellow = '#faba4a'
+blue = '#8db0ff'
+magenta = '#c7a9ff'
+cyan = '#a4daff'
+white = '#c0caf5'
 
 [font]
 size = 14
 
-# [font.bold]
-# family = "Comic Code Ligatures"
-# style = "Bold"
+[font.normal]
+family = "Maple Mono"
+style = "Medium"
 
-# [font.bold_italic]
-# family = "Comic Code Ligatures"
-# style = "BoldItalic"
-
-# [font.italic]
-# family = "Comic Code Ligatures"
-# style = "MediumItalic"
-
-# [font.normal]
-# family = "Comic Code Ligatures"
-# style = "Medium"
+[font.italic]
+family = "Maple Mono"
+style = "SemiBold Italic"
 
 [font.bold]
 family = "Maple Mono"
@@ -81,33 +39,7 @@ style = "Bold"
 
 [font.bold_italic]
 family = "Maple Mono"
-style = "BoldItalic"
-
-[font.italic]
-family = "Maple Mono"
-style = "Italic"
-
-[font.normal]
-family = "Maple Mono"
-style = "Medium"
-
-[font.glyph_offset]
-x = 0
-y = 0
-
-[font.offset]
-x = 0
-y = 0
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Shift"
+style = "Bold Italic"
 
 [[keyboard.bindings]]
 action = "IncreaseFontSize"
@@ -120,55 +52,22 @@ key = "Minus"
 mods = "Control"
 
 [[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "Return"
-mods = "Alt"
-
-[[keyboard.bindings]]
 action = "ResetFontSize"
 key = "Key0"
 mods = "Control"
-
-[[keyboard.bindings]]
-action = "PasteSelection"
-key = "Insert"
-mods = "Shift"
-
-[mouse]
-hide_when_typing = false
 
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
 
 [[mouse.bindings]]
-action = "PasteSelection"
+action = "CopySelection"
 mouse = "Right"
-
-[scrolling]
-history = 5000
-multiplier = 3
 
 [selection]
 save_to_clipboard = true
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
-decorations = "full"
-dynamic_padding = false
-dynamic_title = true
 opacity = 0.9
-startup_mode = "Windowed"
-title = "Alacritty"
-
-[window.class]
-general = "Alacritty"
-instance = "Alacritty"
-
-[window.dimensions]
-columns = 125
-lines = 35
-
-[window.padding]
-x = 6
-y = 6
+dynamic_padding = true
+padding = { x = 6 }
