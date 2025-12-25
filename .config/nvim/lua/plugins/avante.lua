@@ -39,8 +39,9 @@ return {
             -- },
         },
         behaviour = {
-            auto_apply_diff_after_generation = false,
+            auto_apply_diff_after_generation = true,
             auto_approve_tool_permissions = false,
+            auto_set_keymaps = true,
         },
         selection = {
             enabled = false,
