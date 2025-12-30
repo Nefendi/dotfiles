@@ -41,21 +41,6 @@ style = "Bold"
 family = "Maple Mono"
 style = "Bold Italic"
 
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Control"
-
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
