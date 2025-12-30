@@ -55,7 +55,8 @@ antidote load
 source "$HOME/.asdf/plugins/golang/set-env.zsh"
 
 # BINDKEYS
-bindkey '^ ' autosuggest-accept # for accepting zsh-autosuggestions
+bindkey '^ ' autosuggest-accept  # for accepting zsh-autosuggestions
+bindkey '^x^e' edit-command-line # edit commands in editor
 
 autoload -Uz compinit && compinit
 
