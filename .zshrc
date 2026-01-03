@@ -1,5 +1,6 @@
 # ENVIRONMENT VARIABLES
 export ZSH="$HOME"/.oh-my-zsh
+export BUN_INSTALL="$HOME/.bun"
 
 PATH="$HOME/antibody:$PATH"
 PATH="$HOME/.local/bin:$PATH"
@@ -9,6 +10,7 @@ PATH="$HOME/.local/bin:$PATH"
 # PATH="$HOME/go/bin:$PATH"
 # PATH="$HOME/.erg/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
+PATH="$BUN_INSTALL/bin:$PATH"
 
 export EDITOR="nvim"
 
@@ -64,6 +66,9 @@ autoload -Uz compinit && compinit
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
+# BUN COMPLETIONS
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
 # ALIASES
 alias ls='eza -gF --color=always --group-directories-first --icons'
 alias ll='eza -glhF --color=always --group-directories-first --icons'
@@ -82,6 +87,7 @@ alias updatetools='
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
     asdf plugin update --all &&
+    bun upgrade &&
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
 alias updateall='updatesystem && updatetools'
