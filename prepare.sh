@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # mkdir -p "${HOME}"/.config/fish
-mkdir -p "${HOME}"/.config/nvim
 mkdir -p "${HOME}"/.config/pypoetry
 mkdir -p "${HOME}"/.config/pulse
 mkdir -p "${HOME}"/.config/lazygit
 mkdir -p "${HOME}"/.config/zathura
 mkdir -p "${HOME}"/.config/fontconfig/conf.d
 mkdir -p "${HOME}"/.config/eza
+mkdir -p "${HOME}"/.local/share/zsh
 
 # ln -fs "$(realpath .config/nvim/coc-settings.json)" ~/.config/nvim/coc-settings.json
 # ln -fs "$(realpath .config/nvim/init.vim)" ~/.config/nvim/init.vim
@@ -34,3 +34,4 @@ ln -sf "$(realpath .config/fontconfig/conf.d/80-maplemono-fontfeatures.conf)" ~/
 ln -fs "$(realpath .tool-versions)" ~/.tool-versions
 ln -fs "$(realpath .config/zathura/zathurarc)" ~/.config/zathura/zathurarc
 ln -fs "$(realpath .config/eza/theme.yml)" ~/.config/eza/theme.yml
+ln -fs "$(realpath .local/share/zsh/site-functions)" ~/.local/share/zsh/site-functions

@@ -60,6 +60,9 @@ source "$HOME/.asdf/plugins/golang/set-env.zsh"
 bindkey '^ ' autosuggest-accept  # for accepting zsh-autosuggestions
 bindkey '^x^e' edit-command-line # edit commands in editor
 
+# COMPLETIONS
+fpath+=~/.local/share/zsh/site-functions/
+
 autoload -Uz compinit && compinit
 
 # UV
