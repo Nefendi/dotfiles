@@ -61,7 +61,6 @@ eval "$(uvx --generate-shell-completion zsh)"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # ALIASES
-alias watch='watch '
 alias ls='eza -gF --color=always --group-directories-first --icons'
 alias ll='eza -glhF --color=always --group-directories-first --icons'
 alias la='eza -galhF --color=always --group-directories-first --icons'
@@ -70,6 +69,10 @@ alias g='lazygit'
 alias pip='noglob pip'
 alias uv='noglob uv'
 # alias poetry='noglob poetry'
+
+alias watch='watch '
+
+alias -g RG='| rg'
 
 alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
 alias updatetools='
