@@ -28,8 +28,9 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 
-MichaelAquilina/zsh-you-should-use
 zdharma-continuum/fast-syntax-highlighting kind:defer
 ptavares/zsh-sdkman
+# This needs to be after zsh-sdkman for whatever reason
+MichaelAquilina/zsh-you-should-use
 ajeetdsouza/zoxide
 hsaunders1904/pyautoenv
