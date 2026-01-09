@@ -65,6 +65,7 @@ eval "$(uvx --generate-shell-completion zsh)"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # ALIASES
+alias watch='watch '
 alias ls='eza -gF --color=always --group-directories-first --icons'
 alias ll='eza -glhF --color=always --group-directories-first --icons'
 alias la='eza -galhF --color=always --group-directories-first --icons'
