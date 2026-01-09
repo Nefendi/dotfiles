@@ -28,10 +28,6 @@ export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --no-ignore"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
-export ASDF_DATA_DIR="$HOME/.asdf"
-
-PATH="$ASDF_DATA_DIR/shims:$PATH"
-
 export PATH
 
 # YOU-SHOULD-USE
