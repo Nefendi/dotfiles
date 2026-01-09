@@ -79,6 +79,3 @@ alias updatetools='
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
 alias updateall='updatesystem && updatetools'
-
-# STARSHIP
-eval "$(starship init zsh)"
