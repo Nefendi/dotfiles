@@ -4,11 +4,6 @@ export BUN_INSTALL="$HOME/.bun"
 
 PATH="$HOME/antibody:$PATH"
 PATH="$HOME/.local/bin:$PATH"
-# PATH="$HOME/.emacs.d/bin:$PATH"
-# PATH="$HOME/.poetry/bin:$PATH"
-# PATH="/usr/local/go/bin:$PATH"
-# PATH="$HOME/go/bin:$PATH"
-# PATH="$HOME/.erg/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$BUN_INSTALL/bin:$PATH"
 
@@ -39,9 +34,6 @@ PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 export PATH
 
-# ERG
-# export ERG_PATH="$HOME/.erg"
-
 # YOU-SHOULD-USE
 # Source: https://github.com/MichaelAquilina/zsh-you-should-use/blob/master/you-should-use.plugin.zsh
 export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 3)\
@@ -69,7 +61,7 @@ autoload -Uz compinit && compinit
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
-# BUN COMPLETIONS
+# BUN
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # ALIASES
