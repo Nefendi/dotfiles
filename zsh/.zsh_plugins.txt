@@ -20,11 +20,6 @@ ohmyzsh/ohmyzsh path:plugins/yarn
 ohmyzsh/ohmyzsh path:plugins/docker
 ohmyzsh/ohmyzsh path:plugins/starship
 
-
-Aloxaf/fzf-tab
-hlissner/zsh-autopair
-
-zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
@@ -34,3 +29,5 @@ MichaelAquilina/zsh-you-should-use kind:defer
 ptavares/zsh-sdkman
 ajeetdsouza/zoxide
 hsaunders1904/pyautoenv
+Aloxaf/fzf-tab
+hlissner/zsh-autopair
