@@ -68,6 +68,7 @@ alias -g RG='| rg'
 alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
 alias updatetools='
     uv self update &&
+    uv tool upgrade --all &&
     antidote update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
