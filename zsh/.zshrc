@@ -41,6 +41,8 @@ source "$HOME/.asdf/plugins/golang/set-env.zsh"
 # BINDKEYS
 bindkey '^ ' autosuggest-accept  # for accepting zsh-autosuggestions
 bindkey '^x^e' edit-command-line # edit commands in editor
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 
 # COMPLETIONS
 fpath+=~/.local/share/zsh/site-functions/
