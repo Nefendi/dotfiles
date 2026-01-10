@@ -49,6 +49,7 @@ fpath+=~/.local/share/zsh/site-functions/
 # UV
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+autoload -Uz compinit && compinit
 
 # BUN
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
