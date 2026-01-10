@@ -10,7 +10,10 @@ export EDITOR="nvim"
 
 export MANPAGER="nvim +Man!"
 
-# ZSH_TMUX_AUTOSTART=true
+# Start tmux every time unless there is a session running
+export ZSH_TMUX_AUTOSTART=true
+# Do not close the terminal after the session has been killed
+export ZSH_TMUX_AUTOQUIT=false
 
 FZF_DEFAULT_OPTS="--no-mouse --height 75% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window right:hidden:wrap --bind='ctrl-/:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-\\:change-preview-window(down|right)'"
 # Tokyonight Night theme
