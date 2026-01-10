@@ -10,6 +10,8 @@ export EDITOR="nvim"
 
 export MANPAGER="nvim +Man!"
 
+# ZSH_TMUX_AUTOSTART=true
+
 FZF_DEFAULT_OPTS="--no-mouse --height 75% -1 --reverse --multi --inline-info --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window right:hidden:wrap --bind='ctrl-/:toggle-preview,ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-a:select-all+accept,ctrl-\\:change-preview-window(down|right)'"
 # Tokyonight Night theme
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
