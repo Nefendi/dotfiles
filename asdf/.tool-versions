@@ -7,3 +7,4 @@ git 2.52.0
 kubectl 1.35.0
 helm 4.0.4
 kind 0.31.0
+tmux 3.6a
