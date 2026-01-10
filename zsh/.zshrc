@@ -46,9 +46,6 @@ bindkey '^n' history-substring-search-down
 # COMPLETIONS
 fpath+=~/.local/share/zsh/site-functions/
 
-# UV
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
 autoload -Uz compinit && compinit
 
 # BUN
