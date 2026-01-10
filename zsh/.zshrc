@@ -1,5 +1,4 @@
 # ENVIRONMENT VARIABLES
-export ZSH="$HOME"/.oh-my-zsh
 export BUN_INSTALL="$HOME/.bun"
 
 PATH="$HOME/antibody:$PATH"
@@ -46,8 +45,6 @@ bindkey '^n' history-substring-search-down
 
 # COMPLETIONS
 fpath+=~/.local/share/zsh/site-functions/
-
-autoload -Uz compinit && compinit
 
 # UV
 eval "$(uv generate-shell-completion zsh)"
