@@ -44,12 +44,10 @@ return {
 
             require("nvim-dap-repl-highlights").setup()
 
-            local rainbow_delimiters = require "rainbow-delimiters"
-
-            vim.g.rainbow_delimiters = {
+            require("rainbow-delimiters.setup").setup {
                 strategy = {
-                    [""] = rainbow_delimiters.strategy["global"],
-                    vim = rainbow_delimiters.strategy["local"],
+                    [""] = "rainbow-delimiters.strategy.global",
+                    vim = "rainbow-delimiters.strategy.local",
                 },
                 query = {
                     [""] = "rainbow-delimiters",
