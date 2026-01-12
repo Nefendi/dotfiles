@@ -56,6 +56,9 @@ autoload -Uz compinit && compinit
 # BUN
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
+# JUST
+eval "$(just --completions zsh)"
+
 # ALIASES
 alias ls='eza -gF --color=always --group-directories-first --icons'
 alias ll='eza -glhF --color=always --group-directories-first --icons'
