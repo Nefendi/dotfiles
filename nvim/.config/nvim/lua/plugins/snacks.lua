@@ -328,7 +328,7 @@ return {
             },
             debug = { enabled = true },
             bufdelete = { enabled = true },
-            image = { enabled = true },
+            image = { enabled = true, doc = { inline = false } },
             explorer = { enabled = true },
             undo = { enabled = true },
             bigfile = { enabled = true },
