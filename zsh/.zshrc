@@ -11,7 +11,7 @@ export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 
 # Start tmux every time unless there is a session running
-export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=false
 # Do not close the terminal after the session has been killed
 export ZSH_TMUX_AUTOQUIT=false
 
