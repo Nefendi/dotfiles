@@ -1,7 +1,7 @@
 return {
     {
         "monaqa/dial.nvim",
-        keys = { "<C-a>", "<C-x>", { "<C-a>", mode = "v" }, { "<C-x>", mode = "v" } },
+        keys = { "<C-b>", "<C-x>", { "<C-b>", mode = "v" }, { "<C-x>", mode = "v" } },
         config = function()
             local dial_config = require "dial.config"
 
@@ -67,14 +67,14 @@ return {
             local map = require "dial.map"
 
             -- change augends in VISUAL mode
-            vim.api.nvim_set_keymap("n", "<C-a>", map.inc_normal "mygroup", { noremap = true })
+            vim.api.nvim_set_keymap("n", "<C-b>", map.inc_normal "mygroup", { noremap = true })
             vim.api.nvim_set_keymap("n", "<C-x>", map.dec_normal "mygroup", { noremap = true })
-            vim.api.nvim_set_keymap("v", "<C-a>", map.inc_normal "visual", { noremap = true })
+            vim.api.nvim_set_keymap("v", "<C-b>", map.inc_normal "visual", { noremap = true })
             vim.api.nvim_set_keymap("v", "<C-x>", map.dec_normal "visual", { noremap = true })
 
             vim.cmd [[
   " enable only for specific FileType
-  autocmd FileType typescript,javascript,typescriptreact,javascriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-a>", require("dial.map").inc_normal("typescript"), {noremap = true})
+  autocmd FileType typescript,javascript,typescriptreact,javascriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-b>", require("dial.map").inc_normal("typescript"), {noremap = true})
 ]]
         end,
     },
