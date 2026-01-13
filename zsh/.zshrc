@@ -81,7 +81,8 @@ alias updatetools='
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
     asdf plugin update --all &&
-    bun upgrade &&
     tldr --update &&
     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
+# Bun upgrade commented out until https://github.com/oven-sh/bun/issues/10897 gets resolved
+# bun upgrade
 alias updateall='updatesystem && updatetools'
