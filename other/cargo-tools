@@ -8,7 +8,6 @@ cargo-modules
 cargo-nextest
 cargo-update
 cargo-watch
-eza
 fd-find
 git-delta
 hyperfine
