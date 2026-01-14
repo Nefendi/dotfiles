@@ -59,6 +59,9 @@ autoload -Uz compinit && compinit
 # JUST
 eval "$(just --completions zsh)"
 
+# RIPGREP
+eval "$(rg --generate=complete-zsh)"
+
 # ALIASES
 alias ls='eza'
 alias ll='eza -glbGhF --color=always --group-directories-first --icons --git --octal-permissions'
