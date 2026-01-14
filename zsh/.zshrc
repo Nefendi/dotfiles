@@ -60,10 +60,9 @@ autoload -Uz compinit && compinit
 eval "$(just --completions zsh)"
 
 # ALIASES
-alias ls='eza -gF --color=always --group-directories-first --icons'
-alias ll='eza -glhF --color=always --group-directories-first --icons'
-alias la='eza -galhF --color=always --group-directories-first --icons'
-alias lt='eza -gaThF --color=always --group-directories-first --icons'
+alias ls='eza'
+alias ll='eza -glbGhF --color=always --group-directories-first --icons --git --octal-permissions'
+alias la='eza -galbGhF --color=always --group-directories-first --icons --git --octal-permissions'
 alias g='lazygit'
 alias pip='noglob pip'
 alias uv='noglob uv'
