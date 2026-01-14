@@ -10,7 +10,6 @@ cargo-update
 cargo-watch
 fd-find
 git-delta
-hyperfine
 jless
 just
 ripgrep
