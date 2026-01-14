@@ -1,11 +1,10 @@
-bat
+cargo-nextest
 cargo-binstall
 cargo-cache
 cargo-edit
 cargo-expand
 cargo-generate
 cargo-modules
-cargo-nextest
 cargo-update
 cargo-watch
 fd-find
@@ -16,5 +15,4 @@ ripgrep
 starship
 tree-sitter-cli
 trunk
-zoxide
 
