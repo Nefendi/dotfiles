@@ -62,6 +62,9 @@ eval "$(just --completions zsh)"
 # RIPGREP
 eval "$(rg --generate=complete-zsh)"
 
+# GIT-DELTA
+eval "$(delta --generate-completion zsh)"
+
 # ALIASES
 alias ls='eza'
 alias ll='eza -glbGhF --color=always --group-directories-first --icons --git --octal-permissions'
