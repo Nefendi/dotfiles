@@ -449,7 +449,7 @@ return {
                         end,
                     },
                     projects = {
-                        dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories" },
+                        dev = { "~/dev", "~/projects", "~/Desktop", "~/Desktop/Repositories", "~/dotfiles" },
                         recent = false,
                         patterns = {
                             ".git",

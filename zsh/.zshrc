@@ -1,10 +1,7 @@
 # ENVIRONMENT VARIABLES
-export BUN_INSTALL="$HOME/.bun"
-
 PATH="$HOME/antibody:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
-PATH="$BUN_INSTALL/bin:$PATH"
 
 export EDITOR="nvim"
 
@@ -71,40 +68,40 @@ fpath+=~/.local/share/zsh/site-functions/
 
 autoload -Uz compinit && compinit
 
-# BUN
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# JUST
-eval "$(just --completions zsh)"
-
-# RIPGREP
-eval "$(rg --generate=complete-zsh)"
-
-# GIT-DELTA
-eval "$(delta --generate-completion zsh)"
-
 # ALIASES
 alias ls='eza'
-alias ll='eza -glbGhF --color=always --group-directories-first --icons --git --octal-permissions'
-alias la='eza -galbGhF --color=always --group-directories-first --icons --git --octal-permissions'
+alias ll='eza -glbhF --color=always --group-directories-first --icons --git --octal-permissions'
+alias la='eza -galbhF --color=always --group-directories-first --icons --git --octal-permissions'
 alias g='lazygit'
 alias pip='noglob pip'
 alias uv='noglob uv'
+alias task='go-task'
 # alias poetry='noglob poetry'
 
 alias watch='watch '
 
 alias -g RG='| rg'
 
-alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
+# alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
+# alias updatetools='
+#     uv self update &&
+#     uv tool upgrade --all &&
+#     bun upgrade &&
+#     antidote update &&
+#     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
+#     cargo install-update -a &&
+#     asdf plugin update --all &&
+#     tldr --update &&
+#     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
+# alias updateall='updatesystem && updatetools'
+# alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
+
+alias updatesystem='paru -Syu'
 alias updatetools='
-    uv self update &&
     uv tool upgrade --all &&
-    bun upgrade &&
     antidote update &&
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
     cargo install-update -a &&
     asdf plugin update --all &&
-    tldr --update &&
-    (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
+    tldr --update'
 alias updateall='updatesystem && updatetools'

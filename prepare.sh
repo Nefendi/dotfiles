@@ -26,5 +26,5 @@ ETC_PACKAGES=(
   udev
 )
 
-stow --verbose --target="$HOME" "${HOME_PACKAGES[@]}"
+stow --verbose "${HOME_PACKAGES[@]}"
 sudo stow --verbose --target="/etc" "${ETC_PACKAGES[@]}"
