@@ -79,26 +79,16 @@ alias watch='watch '
 
 alias -g RG='| rg'
 
-# alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
-# alias updatetools='
-#     uv self update &&
-#     uv tool upgrade --all &&
-#     bun upgrade &&
-#     antidote update &&
-#     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
-#     cargo install-update -a &&
-#     asdf plugin update --all &&
-#     tldr --update &&
-#     (cd ~/.fzf && git pull && ./install --no-bash --no-fish --key-bindings --completion --no-update-rc)'
-# alias updateall='updatesystem && updatetools'
-# alias updatesystem='sudo nala upgrade && sudo snap refresh && flatpak update'
-
 alias updatesystem='paru -Syu'
 alias updatetools='
-    uv tool upgrade --all &&
-    antidote update &&
-    rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer &&
-    cargo install-update -a &&
-    asdf plugin update --all &&
-    tldr --update'
-alias updateall='updatesystem && updatetools'
+    uv tool upgrade --all
+    antidote update
+    rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer
+    cargo install-update -a
+    asdf plugin update --all
+    tldr --update
+'
+alias updateall='
+    updatesystem
+    updatetools
+'
