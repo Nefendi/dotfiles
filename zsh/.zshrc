@@ -73,10 +73,7 @@ alias ls='eza'
 alias ll='eza -glbhF --color=always --group-directories-first --icons --git --octal-permissions'
 alias la='eza -galbhF --color=always --group-directories-first --icons --git --octal-permissions'
 alias g='lazygit'
-alias pip='noglob pip'
-alias uv='noglob uv'
 alias task='go-task'
-# alias poetry='noglob poetry'
 
 alias watch='watch '
 
