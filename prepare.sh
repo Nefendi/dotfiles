@@ -18,6 +18,7 @@ HOME_PACKAGES=(
   pulse
   starship
   tmux
+  uv
   zathura
   zsh
 )
