@@ -50,7 +50,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 export PATH
 
 # ANTIDOTE
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source '/usr/share/zsh-antidote/antidote.zsh'
 
 antidote load
 
