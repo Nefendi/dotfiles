@@ -11,7 +11,7 @@ local servers = {
     "yamlls",
     "bashls",
     "dockerls",
-    "cmake",
+    -- "cmake",
     "taplo",
     "clangd",
     "ltex",
