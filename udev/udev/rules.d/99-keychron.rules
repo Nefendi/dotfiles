@@ -1,1 +1,1 @@
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="08a0", MODE="0660", GROUP="nefendi", TAG+="uaccess", TAG+="udev-acl"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="08a0", MODE="0660", GROUP="keychron", TAG+="uaccess", TAG+="udev-acl"
