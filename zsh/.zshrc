@@ -54,6 +54,8 @@ source '/usr/share/zsh-antidote/antidote.zsh'
 
 antidote load
 
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
 # GOLANG
 source "$HOME/.asdf/plugins/golang/set-env.zsh"
 
