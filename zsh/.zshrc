@@ -72,8 +72,9 @@ autoload -Uz compinit && compinit
 
 # ALIASES
 alias ls='eza'
-alias ll='eza -glbhF --group-directories-first --icons --git --octal-permissions'
-alias la='eza -galbhF --group-directories-first --icons --git --octal-permissions'
+alias ll='ls -glbhF --group-directories-first --icons --git --octal-permissions'
+alias l='ll'
+alias la='ll -a'
 alias g='lazygit'
 alias task='go-task'
 
