@@ -12,8 +12,6 @@ format = '[$time]($style) '
 disabled = false
 map_symbol = true
 format = "[$symbol $status]($style) "
-sigint_symbol = "󰟾"
-not_executable_symbol = ""
 
 [git_commit]
 only_detached = false
@@ -24,7 +22,6 @@ tag_symbol = '  '
 disabled = false
 
 [sudo]
-symbol = "󰆥 "
 disabled = false
 
 [aws]
