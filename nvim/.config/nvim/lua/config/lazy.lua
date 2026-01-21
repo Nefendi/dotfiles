@@ -77,7 +77,7 @@ require("lazy").setup {
         {
             "mrcjkb/rustaceanvim",
             version = "^6",
-            ft = { "rust" },
+            lazy = false,
         },
         {
             "folke/lazydev.nvim",
