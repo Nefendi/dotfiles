@@ -175,8 +175,7 @@ for _, server in pairs(servers) do
     end
 
     if server == "texlab" then
-        local texlab_opts = require "config.lsp.settings.texlab"
-        opts = vim.tbl_deep_extend("force", texlab_opts, opts)
+        goto enable
     end
 
     if server == "clangd" then
@@ -249,6 +248,9 @@ for _, server in pairs(servers) do
     end
 
     vim.lsp.config(server, opts)
+
+    ::enable::
+
     vim.lsp.enable(server)
 
     ::continue::
