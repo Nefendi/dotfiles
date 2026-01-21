@@ -116,16 +116,28 @@ mason_tool_installer.setup {
     start_delay = 3000,
 }
 
-local opts = {}
+vim.lsp.config("*", {
+    capabilities = require("config.lsp.handlers").capabilities,
+})
+
+local lsp_cmds = vim.api.nvim_create_augroup("lsp_cmds", { clear = true })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = lsp_cmds,
+    desc = "Global on_attach behaviour",
+    callback = function(event)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        local bufnr = event.buf
+
+        require("config.lsp.handlers").on_attach(client, bufnr)
+    end,
+})
 
 for _, server in pairs(servers) do
     -- Remove version
     server = server:gsub("@.*$", "")
 
-    opts = {
-        on_attach = require("config.lsp.handlers").on_attach,
-        capabilities = require("config.lsp.handlers").capabilities,
-    }
+    local opts = {}
 
     if server == "jsonls" then
         local jsonls_opts = require "config.lsp.settings.jsonls"
