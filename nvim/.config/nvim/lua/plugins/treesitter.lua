@@ -10,7 +10,6 @@ return {
         cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
         dependencies = {
             { "HiPhish/rainbow-delimiters.nvim", event = "BufReadPre" },
-            { "JoosepAlviste/nvim-ts-context-commentstring" },
             {
                 "nvim-treesitter/nvim-treesitter-context",
                 event = "BufReadPost",
