@@ -15,8 +15,10 @@ return {
             },
             highlights = {
                 FloatBorder = {
-                    guifg = "#27a1b9",
-                    guibg = "#16161e",
+                    link = "FloatBorder",
+                },
+                NormalFloat = {
+                    link = "NormalFloat",
                 },
             },
         },
