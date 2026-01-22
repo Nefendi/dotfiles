@@ -33,21 +33,27 @@ M.setup = function()
     }
 
     vim.diagnostic.config(config)
-
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-    })
-
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "rounded",
-    })
 end
 
-local function lsp_keymaps(bufnr)
-    local opts = { noremap = true, silent = true }
-    local keymap = vim.api.nvim_buf_set_keymap
-    keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+local show_documentation = function()
+    local filetype = vim.bo.filetype
+
+    if vim.tbl_contains({ "vim", "help" }, filetype) then
+        vim.cmd("h " .. vim.fn.expand "<cword>")
+    elseif vim.tbl_contains({ "man" }, filetype) then
+        vim.cmd("Man " .. vim.fn.expand "<cword>")
+    elseif vim.fn.expand "%:t" == "Cargo.toml" then
+        require("crates").show_popup()
+    else
+        vim.lsp.buf.hover()
+    end
+end
+
+local lsp_keymaps = function(bufnr)
+    vim.keymap.set("n", "gl", vim.diagnostic.open_float, { buffer = bufnr, desc = "Show diagnostics" })
+    vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Show signature help" })
+    vim.keymap.set({ "i", "s" }, "<C-S>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Show signature help" })
+    vim.keymap.set("n", "K", show_documentation, { buffer = bufnr, desc = "Show documentation" })
 end
 
 vim.g.format_on_save_enabled = true
@@ -70,14 +76,13 @@ M.capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFo
 M.on_attach = function(client, bufnr)
     if
         not functions.contains(servers_to_turn_off_formatting_capabilities, client.name)
-        and (
-            client.supports_method "textDocument/formatting"
-            or client.supports_method "textDocument/rangeFormatting"
-            -- For some reason lemminx does not support textDocument/formatting but it can format
-            or client.name == "lemminx"
-        )
+            and not client.supports_method "textDocument/willSaveWaitUntil"
+            and client.supports_method "textDocument/formatting"
+        -- For some reason lemminx does not support textDocument/formatting but it can format
+        or client.name == "lemminx"
     then
         vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("lsp_auto_formatting", { clear = false }),
             buffer = bufnr,
             callback = function()
                 if vim.g.format_on_save_enabled then
@@ -113,7 +118,6 @@ M.on_attach = function(client, bufnr)
 
     lsp_keymaps(bufnr)
 
-    -- nvim-navic
     local navic = require "nvim-navic"
 
     if client.server_capabilities.documentSymbolProvider then

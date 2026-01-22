@@ -66,22 +66,6 @@ keymap("v", ">", ">gv", opts)
 -- Open with a system application
 keymap("n", "gx", [[:silent execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
-M.show_documentation = function()
-    local filetype = vim.bo.filetype
-
-    if vim.tbl_contains({ "vim", "help" }, filetype) then
-        vim.cmd("h " .. vim.fn.expand "<cword>")
-    elseif vim.tbl_contains({ "man" }, filetype) then
-        vim.cmd("Man " .. vim.fn.expand "<cword>")
-    elseif vim.fn.expand "%:t" == "Cargo.toml" then
-        require("crates").show_popup()
-    else
-        vim.lsp.buf.hover()
-    end
-end
-
-keymap("n", "K", ":lua require('config.keymaps').show_documentation()<CR>", opts)
-
 -- Plugins --
 
 -- Noice

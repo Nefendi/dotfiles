@@ -116,6 +116,15 @@ mason_tool_installer.setup {
     start_delay = 3000,
 }
 
+-- Remove default LSP keybindings
+vim.keymap.del({ "n", "x" }, "gra")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grt")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gO")
+vim.keymap.del({ "i", "s" }, "<C-S>")
+
 vim.lsp.config("*", {
     capabilities = require("config.lsp.handlers").capabilities,
 })
@@ -125,9 +134,9 @@ local lsp_cmds = vim.api.nvim_create_augroup("lsp_cmds", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
     group = lsp_cmds,
     desc = "Global on_attach behaviour",
-    callback = function(event)
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        local bufnr = event.buf
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        local bufnr = args.buf
 
         require("config.lsp.handlers").on_attach(client, bufnr)
     end,

@@ -62,13 +62,7 @@ require("lazy").setup {
         { "kevinhwang91/nvim-bqf", ft = "qf" },
         { "b0o/schemastore.nvim" },
         { "fladson/vim-kitty", ft = "kitty" },
-        {
-            "neovim/nvim-lspconfig",
-            lazy = false,
-            config = function()
-                require "config.lsp"
-            end,
-        },
+        { "neovim/nvim-lspconfig" },
         { "williamboman/mason.nvim", build = ":MasonUpdate" },
         { "williamboman/mason-lspconfig.nvim" },
         { "WhoIsSethDaniel/mason-tool-installer.nvim" },
