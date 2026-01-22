@@ -25,6 +25,7 @@ HOME_PACKAGES=(
 
 ETC_PACKAGES=(
   udev
+  xml
 )
 
 stow --verbose "${HOME_PACKAGES[@]}"
