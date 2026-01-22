@@ -14,6 +14,7 @@ HOME_PACKAGES=(
   latex
   lazygit
   nvim
+  paru
   poetry
   pulse
   starship
