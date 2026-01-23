@@ -3,7 +3,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = {
         "qf",
         "help",
-        "man",
         "lspinfo",
         "lir",
         "null-ls-info",
@@ -14,7 +13,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     callback = function()
         vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true })
         vim.keymap.set("n", "<esc>", "<cmd>close<cr>", { buffer = true })
-        vim.opt_local.buflisted = false
     end,
 })
 
