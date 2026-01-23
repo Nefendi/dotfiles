@@ -49,6 +49,11 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="true"
 
 export PATH
 
+# OPTIONS
+setopt extendedglob
+setopt dotglob
+setopt correct
+
 # ANTIDOTE
 source '/usr/share/zsh-antidote/antidote.zsh'
 
