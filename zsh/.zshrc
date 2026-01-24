@@ -87,6 +87,8 @@ alias watch='watch '
 
 alias -g RG='| rg'
 
+alias f='nvim -c :edit .'
+
 alias updatesystem='paru -Syu'
 alias updatetools='
     uv tool upgrade --all
