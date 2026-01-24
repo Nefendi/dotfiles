@@ -639,18 +639,11 @@ return {
                     { section = "header" },
                     { section = "keys", gap = 1, padding = 1 },
                     { section = "startup" },
+                    { text = "\n\n" },
                     {
-                        align = "right",
                         text = {
                             {
-                                [[
-
-
-I swear, by my life and my love of it,
-that I will never live for the sake of another man,
-nor ask another man to live for mine.
-
-                                       -- John Galt]],
+                                require("config.dashboard_utils").random_quote(60),
                                 hl = "SnacksDashboardKey",
                             },
                         },
