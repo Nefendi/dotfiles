@@ -89,6 +89,10 @@ require("lazy").setup {
             "mfussenegger/nvim-ansible",
             event = "VimEnter",
         },
+        {
+            "benomahony/oil-git.nvim",
+            dependencies = { "stevearc/oil.nvim" },
+        },
     },
     ui = {
         border = "rounded",

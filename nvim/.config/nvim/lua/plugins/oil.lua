@@ -36,9 +36,12 @@ return {
             confirmation = { border = "rounded" },
             use_default_keymaps = true,
             keymaps = {
+                ["<C-l>"] = {},
+                ["<C-h>"] = {},
+                ["<C-b>"] = { "actions.select", opts = { horizontal = true } },
                 ["L"] = "actions.select",
                 ["H"] = { "actions.parent", mode = "n" },
-                ["<leader>p"] = "actions.preview",
+                ["gp"] = "actions.preview",
                 ["<leader>c"] = { "actions.close", mode = "n" },
                 ["<leader>e"] = { "actions.close", mode = "n" },
                 ["<leader>r"] = "actions.refresh",
