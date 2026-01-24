@@ -21,7 +21,6 @@ null_ls.setup {
         },
         diagnostics.actionlint,
         diagnostics.zsh,
-        diagnostics.gitleaks,
 
         -- Python
         -- NOTE: It is handy in projects with nested configuration files

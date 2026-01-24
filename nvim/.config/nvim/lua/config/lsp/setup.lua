@@ -47,7 +47,6 @@ local linters = {
     "mypy",
     "ansible-lint",
     "kube-linter",
-    "gitleaks",
 }
 
 local formatters = {
