@@ -13,6 +13,7 @@ HOME_PACKAGES=(
   kitty
   latex
   lazygit
+  niri
   nvim
   paru
   poetry
