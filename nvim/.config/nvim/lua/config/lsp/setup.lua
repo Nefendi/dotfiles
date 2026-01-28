@@ -15,7 +15,7 @@ local servers = {
     -- "cmake",
     "taplo",
     "clangd",
-    "ltex",
+    "ltex_plus",
     "texlab",
     "marksman",
     "gopls",
