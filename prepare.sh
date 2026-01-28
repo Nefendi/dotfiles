@@ -19,6 +19,7 @@ HOME_PACKAGES=(
   poetry
   pulse
   starship
+  swaylock
   tmux
   uv
   zathura
