@@ -1,0 +1,9 @@
+image=$HOME/Desktop/Wallpapers/wallhaven-lyz3d2.png
+fade-in=10
+grace=10
+indicator-radius=160
+ring-color=ffffff
+inside-color=00000000
+line-color=00000000
+text-color=ffffff
+show-failed-attempts=true
