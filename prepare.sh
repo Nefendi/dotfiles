@@ -15,6 +15,7 @@ HOME_PACKAGES=(
   latex
   lazygit
   niri
+  noctalia
   nvim
   paru
   poetry
