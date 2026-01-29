@@ -1,0 +1,18 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[mgr]
+prepend_keymap = [
+  { on = [
+    "g",
+    "?",
+  ], run = "help", desc = "Open help" },
+  { on = "Q", run = "quit", desc = "Quit the process" },
+  { on = "q", run = "quit --no-cwd-file", desc = "Quit without outputting cwd-file" },
+  { on = "<S-a>", run = "toggle_all --state=on", desc = "Select all files" },
+]
+
+[help]
+prepend_keymap = [
+  { on = "q", run = "close", desc = "Hide the help" },
+  { on = "/", run = "filter", desc = "Filter help items" },
+]

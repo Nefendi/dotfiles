@@ -75,6 +75,16 @@ fpath+=~/.local/share/zsh/site-functions/
 
 autoload -Uz compinit && compinit
 
+# YAZI
+unalias y
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
 # ALIASES
 alias ls='eza'
 alias ll='ls -glbhF --group-directories-first --icons --git --octal-permissions'
@@ -87,7 +97,7 @@ alias watch='watch '
 
 alias -g RG='| rg'
 
-alias f='nvim -c :edit .'
+alias n='nvim'
 
 alias updatesystem='paru -Syu'
 alias updatetools='

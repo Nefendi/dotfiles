@@ -24,6 +24,7 @@ HOME_PACKAGES=(
   swaylock
   tmux
   uv
+  yazi
   zathura
   zsh
 )
