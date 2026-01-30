@@ -650,7 +650,7 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "automationEnabled": false,
+        "automationEnabled": true,
         "directory": "/home/nefendi/Desktop/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
