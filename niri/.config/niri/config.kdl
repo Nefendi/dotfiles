@@ -288,6 +288,7 @@ binds {
 }
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "protonvpn-app"
 spawn-at-startup "flameshot"
 spawn-at-startup "xwayland-satellite"
