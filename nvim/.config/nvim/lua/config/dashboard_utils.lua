@@ -37,7 +37,7 @@ local quotes = {
     {
         "Let me give you a tip on a clue to men's characters: the man who damns money has obtained it dishonorably; the man who respects it has earned it.",
         "",
-        "— Francisco d'Anconia'",
+        "— Francisco d'Anconia",
         "",
         "",
         'Ayn Rand, "Atlas Shrugged"',
