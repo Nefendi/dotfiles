@@ -32,13 +32,15 @@ Item {
         // Skip if current threshold already matches saved value
         if (currentThreshold === saved)
             return
-        if (saved >= batteryMinThresh && saved <= batteryMaxThresh
-                && isWritable) {
-            Logger.i("BatteryThreshold",
-                     "Restored charge threshold to " + saved + "%")
-            thresholdWriter.command = ["/bin/bash", "-c", `echo ${saved} > ${thresholdFile}`]
-            thresholdWriter.running = true
+        if (saved >= batteryMinThresh && saved <= batteryMaxThresh && isWritable) {
+            setThreshold(saved)
         }
+    }
+
+    function setThreshold(value) {
+        Logger.i("BatteryThreshold", "Restored charge threshold to " + value + "%")
+        thresholdWriter.command = ["/bin/bash", "-c", `echo ${value} > ${thresholdFile}`]
+        thresholdWriter.running = true
     }
 
     onIsWritableChanged: {
