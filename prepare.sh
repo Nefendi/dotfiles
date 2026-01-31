@@ -3,10 +3,8 @@
 HOME_PACKAGES=(
   alacritty
   asdf
-  conda
   elixir
   eza
-  fish
   fontconfig
   git
   haskell
@@ -20,7 +18,6 @@ HOME_PACKAGES=(
   poetry
   pulse
   starship
-  swaylock
   tmux
   uv
   yazi
