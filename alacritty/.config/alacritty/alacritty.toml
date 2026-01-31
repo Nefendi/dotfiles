@@ -56,3 +56,40 @@ save_to_clipboard = true
 opacity = 0.9
 dynamic_padding = true
 padding = { x = 6 }
+
+# Unmap
+[[keyboard.bindings]]
+key = "="
+mods = "Control"
+action = "ReceiveChar"
+
+[[keyboard.bindings]]
+key = "-"
+mods = "Control"
+action = "ReceiveChar"
+
+[[keyboard.bindings]]
+key = "0"
+mods = "Control"
+action = "ReceiveChar"
+
+# Actual bindings
+[[keyboard.bindings]]
+key = "+"
+mods = "Control|Shift"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "_"
+mods = "Control|Shift"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Backspace"
+mods = "Control|Shift"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "["
+mods = "Control"
+action = "ToggleViMode"
