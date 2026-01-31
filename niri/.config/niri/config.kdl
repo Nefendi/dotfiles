@@ -105,6 +105,8 @@ hotkey-overlay {
 
 prefer-no-csd
 
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -270,7 +272,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    F12 hotkey-overlay-title="Open Flameshot" { spawn "flameshot" "gui"; }
+    F12                                                             { screenshot; }
+    Ctrl+F12 hotkey-overlay-title="Take a Screenshot of the Screen" { screenshot-screen write-to-disk=false; }
+    Alt+F12  hotkey-overlay-title="Take a Screenshot of the Window" { screenshot-window write-to-disk=false; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -294,7 +298,6 @@ binds {
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "protonvpn-app"
-spawn-at-startup "flameshot"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swayidle" "-w" "before-sleep" "qs -c noctalia-shell ipc call lockScreen lock"
 

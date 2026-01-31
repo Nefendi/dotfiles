@@ -7,7 +7,6 @@ HOME_PACKAGES=(
   elixir
   eza
   fish
-  flameshot
   fontconfig
   git
   haskell
