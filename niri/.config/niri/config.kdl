@@ -5,7 +5,7 @@ environment {
 input {
     keyboard {
         repeat-delay 200
-        repeat-rate 25
+        repeat-rate 35
 
         numlock
     }
@@ -39,7 +39,7 @@ gestures {
 output "eDP-1" {
     mode "1920x1200"
     position x=2560 y=0
-    scale 1.0
+    scale 1.25
 }
 
 output "DP-2" {
