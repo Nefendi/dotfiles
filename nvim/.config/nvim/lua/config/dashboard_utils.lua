@@ -48,6 +48,13 @@ local quotes = {
         "",
         'Ayn Rand, "Atlas Shrugged"',
     },
+    {
+        "— My dear fellow, who will let you?",
+        "— That’s not the point. The point is, who will stop me?",
+        "",
+        "",
+        'Ayn Rand, "The Fountainhead"',
+    },
 }
 
 -- Stolen from: https://github.com/folke/snacks.nvim/issues/137
