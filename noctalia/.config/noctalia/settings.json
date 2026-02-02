@@ -9,6 +9,7 @@
         "enableClipPreview": true,
         "enableClipboardHistory": false,
         "enableSettingsSearch": true,
+        "enableWindowsSearch": true,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
         "pinnedApps": [
@@ -33,11 +34,13 @@
         "volumeStep": 5
     },
     "bar": {
+        "autoHideDelay": 500,
+        "autoShowDelay": 150,
         "backgroundOpacity": 1,
         "barType": "floating",
         "capsuleOpacity": 1,
         "density": "comfortable",
-        "exclusive": true,
+        "displayMode": "always_visible",
         "floating": true,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -45,139 +48,16 @@
         "marginHorizontal": 4,
         "marginVertical": 4,
         "monitors": [
-            "eDP-1",
-            "DP-2"
+            "DP-2",
+            "eDP-1"
         ],
         "outerCorners": false,
         "position": "top",
         "screenOverrides": [
             {
                 "density": "comfortable",
-                "enabled": true,
-                "name": "eDP-1",
-                "widgets": {
-                    "center": [
-                        {
-                            "characterCount": 2,
-                            "colorizeIcons": false,
-                            "emptyColor": "secondary",
-                            "enableScrollWheel": true,
-                            "focusedColor": "primary",
-                            "followFocusedScreen": false,
-                            "groupedBorderOpacity": 1,
-                            "hideUnoccupied": false,
-                            "iconScale": 0.8,
-                            "id": "Workspace",
-                            "labelMode": "index",
-                            "occupiedColor": "secondary",
-                            "showApplications": false,
-                            "showBadge": true,
-                            "showLabelsOnlyWhenOccupied": true,
-                            "unfocusedIconsOpacity": 1
-                        },
-                        {
-                            "customFont": "Adwaita Sans",
-                            "formatHorizontal": "HH:mm ddd, MMM dd",
-                            "formatVertical": "HH mm - dd MM",
-                            "id": "Clock",
-                            "tooltipFormat": "HH:mm ddd, MMM dd",
-                            "useCustomFont": false,
-                            "usePrimaryColor": false
-                        }
-                    ],
-                    "left": [
-                        {
-                            "compactMode": false,
-                            "diskPath": "/",
-                            "id": "SystemMonitor",
-                            "showCpuTemp": true,
-                            "showCpuUsage": true,
-                            "showDiskUsage": true,
-                            "showGpuTemp": false,
-                            "showLoadAverage": false,
-                            "showMemoryAsPercent": false,
-                            "showMemoryUsage": true,
-                            "showNetworkStats": true,
-                            "showSwapUsage": true,
-                            "useMonospaceFont": true,
-                            "usePrimaryColor": false
-                        },
-                        {
-                            "compactMode": false,
-                            "compactShowAlbumArt": true,
-                            "compactShowVisualizer": false,
-                            "hideMode": "idle",
-                            "hideWhenIdle": false,
-                            "id": "MediaMini",
-                            "maxWidth": 300,
-                            "panelShowAlbumArt": true,
-                            "panelShowVisualizer": true,
-                            "scrollingMode": "always",
-                            "showAlbumArt": true,
-                            "showArtistFirst": true,
-                            "showProgressRing": true,
-                            "showVisualizer": false,
-                            "useFixedWidth": false,
-                            "visualizerType": "linear"
-                        }
-                    ],
-                    "right": [
-                        {
-                            "blacklist": [
-                            ],
-                            "colorizeIcons": false,
-                            "drawerEnabled": false,
-                            "hidePassive": false,
-                            "id": "Tray",
-                            "pinned": [
-                            ]
-                        },
-                        {
-                            "hideWhenZero": false,
-                            "hideWhenZeroUnread": true,
-                            "id": "NotificationHistory",
-                            "showUnreadBadge": true
-                        },
-                        {
-                            "displayMode": "onhover",
-                            "id": "Bluetooth"
-                        },
-                        {
-                            "displayMode": "onhover",
-                            "id": "Network"
-                        },
-                        {
-                            "displayMode": "onhover",
-                            "id": "VPN"
-                        },
-                        {
-                            "displayMode": "alwaysShow",
-                            "hideIfIdle": true,
-                            "hideIfNotDetected": true,
-                            "id": "Battery",
-                            "showNoctaliaPerformance": false,
-                            "showPowerProfiles": false,
-                            "warningThreshold": 30
-                        },
-                        {
-                            "displayMode": "alwaysShow",
-                            "id": "Volume",
-                            "middleClickCommand": "pwvucontrol || pavucontrol"
-                        },
-                        {
-                            "displayMode": "alwaysShow",
-                            "id": "Microphone",
-                            "middleClickCommand": "pwvucontrol || pavucontrol"
-                        },
-                        {
-                            "id": "NightLight"
-                        },
-                        {
-                            "colorName": "error",
-                            "id": "SessionMenu"
-                        }
-                    ]
-                }
+                "enabled": false,
+                "name": "eDP-1"
             }
         ],
         "showCapsule": true,
@@ -219,8 +99,10 @@
                     "compactMode": false,
                     "diskPath": "/",
                     "id": "SystemMonitor",
+                    "showCpuFreq": true,
                     "showCpuTemp": true,
                     "showCpuUsage": true,
+                    "showDiskAsFree": true,
                     "showDiskUsage": true,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
@@ -591,7 +473,7 @@
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
         "cpuWarningThreshold": 80,
-        "criticalColor": "",
+        "criticalColor": "#f7768e",
         "diskCriticalThreshold": 90,
         "diskPollingInterval": 30000,
         "diskWarningThreshold": 80,
@@ -610,8 +492,8 @@
         "tempCriticalThreshold": 90,
         "tempPollingInterval": 3000,
         "tempWarningThreshold": 80,
-        "useCustomColors": false,
-        "warningColor": ""
+        "useCustomColors": true,
+        "warningColor": "#ffeb3b"
     },
     "templates": {
         "activeTemplates": [
@@ -665,6 +547,7 @@
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "solidColor": "#1a1a2e",
+        "sortOrder": "name",
         "transitionDuration": 500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade",
