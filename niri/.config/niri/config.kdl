@@ -157,10 +157,10 @@ binds {
     // Mod+Ctrl+Down  { move-window-down; }
     // Mod+Ctrl+Up    { move-window-up; }
     // Mod+Ctrl+Right { move-column-right; }
-    Mod+Ctrl+H     { move-column-left; }
-    Mod+Ctrl+J     { move-window-down; }
-    Mod+Ctrl+K     { move-window-up; }
-    Mod+Ctrl+L     { move-column-right; }
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+J     { move-window-down; }
+    Mod+Shift+K     { move-window-up; }
+    Mod+Shift+L     { move-column-right; }
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
@@ -171,17 +171,17 @@ binds {
 
     Mod+Home hotkey-overlay-title="Focus the First Column" { focus-column-first; }
     Mod+End  hotkey-overlay-title="Focus the Last Column" { focus-column-last; }
-    Mod+Ctrl+Home hotkey-overlay-title="Move Column to First" { move-column-to-first; }
-    Mod+Ctrl+End hotkey-overlay-title="Move Column to Last" { move-column-to-last; }
+    Mod+Shift+Home hotkey-overlay-title="Move Column to First" { move-column-to-first; }
+    Mod+Shift+End hotkey-overlay-title="Move Column to Last" { move-column-to-last; }
 
     // Mod+Shift+Left  { focus-monitor-left; }
     // Mod+Shift+Down  { focus-monitor-down; }
     // Mod+Shift+Up    { focus-monitor-up; }
     // Mod+Shift+Right { focus-monitor-right; }
-    Mod+Shift+H hotkey-overlay-title="Focus Monitor to the Left" { focus-monitor-left; }
-    Mod+Shift+J hotkey-overlay-title="Focus Monitor Down" { focus-monitor-down; }
-    Mod+Shift+K hotkey-overlay-title="Focus Monitor Up" { focus-monitor-up; }
-    Mod+Shift+L hotkey-overlay-title="Focus Monitor to the Right" { focus-monitor-right; }
+    Mod+Ctrl+H hotkey-overlay-title="Focus Monitor to the Left" { focus-monitor-left; }
+    Mod+Ctrl+J hotkey-overlay-title="Focus Monitor Down" { focus-monitor-down; }
+    Mod+Ctrl+K hotkey-overlay-title="Focus Monitor Up" { focus-monitor-up; }
+    Mod+Ctrl+L hotkey-overlay-title="Focus Monitor to the Right" { focus-monitor-right; }
     //
     // Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     // Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
@@ -202,15 +202,15 @@ binds {
 
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+Shift+U         { move-column-to-workspace-down; }
+    Mod+Shift+I         { move-column-to-workspace-up; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
     // ...
 
-    Mod+Shift+U hotkey-overlay-title="Move Workspace Down" { move-workspace-down; }
-    Mod+Shift+I hotkey-overlay-title="Move Workspace Up" { move-workspace-up; }
+    Mod+Ctrl+U hotkey-overlay-title="Move Workspace Down" { move-workspace-down; }
+    Mod+Ctrl+I hotkey-overlay-title="Move Workspace Up" { move-workspace-up; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
