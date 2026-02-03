@@ -22,8 +22,6 @@ input {
 
     trackpoint {
     }
-
-    focus-follows-mouse max-scroll-amount="0%"
 }
 
 cursor {
@@ -51,8 +49,6 @@ layout {
     gaps 24
 
     center-focused-column "never"
-
-    always-center-single-column
 
     preset-column-widths {
         proportion 0.33333
