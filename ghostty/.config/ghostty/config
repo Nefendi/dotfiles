@@ -1,0 +1,69 @@
+# --- Theme & Font ---
+theme = tokyonight_night
+font-family = "Maple Mono SemiBold"
+
+font-size = 14
+font-feature = -calt
+window-padding-x = 4
+window-padding-y = 2
+background-opacity = 0.9
+bell-features = no-attention, no-title
+link-url = true
+
+# --- Cursor & Shell ---
+cursor-style = block
+cursor-style-blink = false
+shell-integration = detect
+shell-integration-features = no-cursor
+copy-on-select = true
+
+# --- Window ---
+window-decoration = auto
+
+# --- Scrollback ---
+scrollback-limit = 1000000000
+
+# --- Keybindings ---
+# Unbinds
+keybind = ctrl+-=unbind
+keybind = ctrl+equal=unbind
+keybind = ctrl+0=unbind
+
+# Split Navigation
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>j=goto_split:down
+keybind = ctrl+a>k=goto_split:up
+keybind = ctrl+a>l=goto_split:right
+
+# Creation
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>shift+\=new_split:right
+keybind = ctrl+a>-=new_split:down
+keybind = ctrl+a>,=prompt_surface_title
+
+
+# Tab Navigation
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+
+# Closing
+keybind = ctrl+a>x=close_surface
+keybind = ctrl+a>shift+7=close_tab
+
+# Resizing
+keybind = ctrl+shift+l=resize_split:right,25
+keybind = ctrl+shift+h=resize_split:left,25
+keybind = ctrl+shift+k=resize_split:up,25
+keybind = ctrl+shift+j=resize_split:down,25
+keybind = ctrl+a>shift+e=equalize_splits
+
+# Config & Utils
+keybind = ctrl+a>r=reload_config
+
+# Open Scrollback in Editor
+keybind = ctrl+a>left_bracket=write_scrollback_file:open
+
+# Font Size (Global)
+keybind = ctrl+shift+equal=increase_font_size:1
+keybind = ctrl+shift+minus=decrease_font_size:1
+keybind = ctrl+shift+backspace=reset_font_size
