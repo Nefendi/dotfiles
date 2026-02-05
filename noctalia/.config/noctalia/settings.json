@@ -86,13 +86,13 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
+                    "clockColor": "none",
                     "customFont": "Adwaita Sans",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false,
-                    "usePrimaryColor": false
+                    "useCustomFont": false
                 }
             ],
             "left": [
@@ -176,13 +176,12 @@
                 },
                 {
                     "deviceNativePath": "",
-                    "displayMode": "alwaysShow",
+                    "displayMode": "icon-always",
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false,
-                    "warningThreshold": 30
+                    "showPowerProfiles": false
                 },
                 {
                     "id": "NightLight"
