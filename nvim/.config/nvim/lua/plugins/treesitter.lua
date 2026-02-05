@@ -18,6 +18,10 @@ return {
             { "nvim-treesitter/nvim-treesitter-textobjects" },
             { "RRethy/nvim-treesitter-endwise", event = "BufReadPost" },
             "vrischmann/tree-sitter-templ",
+            {
+                "bezhermoso/tree-sitter-ghostty",
+                build = "make nvim_install",
+            },
         },
         opts = {
             ensure_installed = "all",
