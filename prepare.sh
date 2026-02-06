@@ -6,6 +6,7 @@ HOME_PACKAGES=(
   elixir
   eza
   fontconfig
+  gemini
   ghostty
   git
   haskell
