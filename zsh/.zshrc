@@ -21,6 +21,8 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --layout=reverse \
   --border=none \
   --color=bg+:#283457 \
+  # Transparency
+  # --color=bg:-1 \
   --color=bg:#1a1b26 \
   --color=border:#27a1b9 \
   --color=fg:#c0caf5 \
