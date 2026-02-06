@@ -177,7 +177,7 @@
                 {
                     "deviceNativePath": "",
                     "displayMode": "icon-always",
-                    "hideIfIdle": false,
+                    "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
