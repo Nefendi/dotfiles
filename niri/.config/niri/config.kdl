@@ -291,7 +291,7 @@ binds {
     // moving the mouse or pressing any other key.
     // Mod+Shift+P hotkey-overlay-title="Power Off Monitors" { power-off-monitors; }
 
-    Mod+Shift+N hotkey-overlay-title="Restart Noctalia Shell" { spawn-sh "killall qs; systemctl --user restart noctalia"; }
+    Mod+Shift+N hotkey-overlay-title="Restart Noctalia Shell" { spawn-sh "killall qs; qs -c noctalia-shell"; }
 }
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
