@@ -7,7 +7,6 @@ HOME_PACKAGES=(
   eza
   fontconfig
   gemini
-  ghostty
   git
   haskell
   kitty
