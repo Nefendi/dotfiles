@@ -1,4 +1,4 @@
-set guioptions none
+set guioptions s
 set sandbox none
 
 map i recolor
