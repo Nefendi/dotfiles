@@ -102,7 +102,6 @@ alias n='nvim'
 alias updatesystem='paru -Syu'
 alias updatetools='
     uv tool upgrade --all
-    antidote update
     rustup self update && rustup update && rm -f ~/.cargo/bin/rust-analyzer
     cargo install-update -a
     asdf plugin update --all
