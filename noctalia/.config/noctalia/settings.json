@@ -57,8 +57,142 @@
         "screenOverrides": [
             {
                 "density": "comfortable",
-                "enabled": false,
-                "name": "eDP-1"
+                "enabled": true,
+                "name": "eDP-1",
+                "widgets": {
+                    "center": [
+                        {
+                            "characterCount": 2,
+                            "colorizeIcons": false,
+                            "emptyColor": "secondary",
+                            "enableScrollWheel": true,
+                            "focusedColor": "primary",
+                            "followFocusedScreen": false,
+                            "groupedBorderOpacity": 1,
+                            "hideUnoccupied": false,
+                            "iconScale": 0.8,
+                            "id": "Workspace",
+                            "labelMode": "index",
+                            "occupiedColor": "secondary",
+                            "pillSize": 0.6,
+                            "reverseScroll": false,
+                            "showApplications": false,
+                            "showBadge": true,
+                            "showLabelsOnlyWhenOccupied": true,
+                            "unfocusedIconsOpacity": 1
+                        },
+                        {
+                            "clockColor": "none",
+                            "customFont": "Adwaita Sans",
+                            "formatHorizontal": "HH:mm ddd, MMM dd",
+                            "formatVertical": "HH mm - dd MM",
+                            "id": "Clock",
+                            "tooltipFormat": "HH:mm ddd, MMM dd",
+                            "useCustomFont": false
+                        }
+                    ],
+                    "left": [
+                        {
+                            "compactMode": false,
+                            "diskPath": "/",
+                            "iconColor": "none",
+                            "id": "SystemMonitor",
+                            "showCpuFreq": true,
+                            "showCpuTemp": true,
+                            "showCpuUsage": true,
+                            "showDiskAvailable": true,
+                            "showDiskUsage": true,
+                            "showDiskUsageAsPercent": false,
+                            "showGpuTemp": false,
+                            "showLoadAverage": false,
+                            "showMemoryAsPercent": false,
+                            "showMemoryUsage": true,
+                            "showNetworkStats": true,
+                            "showSwapUsage": true,
+                            "textColor": "none",
+                            "useMonospaceFont": true
+                        }
+                    ],
+                    "right": [
+                        {
+                            "blacklist": [
+                            ],
+                            "chevronColor": "none",
+                            "colorizeIcons": false,
+                            "drawerEnabled": false,
+                            "hidePassive": false,
+                            "id": "Tray",
+                            "pinned": [
+                            ]
+                        },
+                        {
+                            "defaultSettings": {
+                                "activeColor": "primary",
+                                "hideInactive": false,
+                                "inactiveColor": "none",
+                                "removeMargins": false
+                            },
+                            "id": "plugin:privacy-indicator"
+                        },
+                        {
+                            "hideWhenZero": false,
+                            "hideWhenZeroUnread": true,
+                            "iconColor": "none",
+                            "id": "NotificationHistory",
+                            "showUnreadBadge": true,
+                            "unreadBadgeColor": "primary"
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "iconColor": "none",
+                            "id": "Bluetooth",
+                            "textColor": "none"
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "iconColor": "none",
+                            "id": "Network",
+                            "textColor": "none"
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "iconColor": "none",
+                            "id": "VPN",
+                            "textColor": "none"
+                        },
+                        {
+                            "displayMode": "alwaysShow",
+                            "iconColor": "none",
+                            "id": "Volume",
+                            "middleClickCommand": "pwvucontrol || pavucontrol",
+                            "textColor": "none"
+                        },
+                        {
+                            "displayMode": "alwaysShow",
+                            "iconColor": "none",
+                            "id": "Microphone",
+                            "middleClickCommand": "pwvucontrol || pavucontrol",
+                            "textColor": "none"
+                        },
+                        {
+                            "deviceNativePath": "",
+                            "displayMode": "icon-always",
+                            "hideIfIdle": true,
+                            "hideIfNotDetected": true,
+                            "id": "Battery",
+                            "showNoctaliaPerformance": false,
+                            "showPowerProfiles": false
+                        },
+                        {
+                            "iconColor": "none",
+                            "id": "NightLight"
+                        },
+                        {
+                            "iconColor": "error",
+                            "id": "SessionMenu"
+                        }
+                    ]
+                }
             }
         ],
         "showCapsule": true,
